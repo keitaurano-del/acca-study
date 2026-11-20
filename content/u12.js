@@ -54,6 +54,15 @@
           }
         },
         {
+          title: '原価に入れるもの',
+          paras: ['家を買うと、代金のほかに登記の費用や司法書士への報酬も払う。どれも家を手に入れるのに欠かせないので、家の値段に入れる。', '無形資産も同じ。買った特許や商標の原価は、購入代金に、名義の移転や登録に直接かかった費用（法律費用、出願料・登録料など）を足した額。この分も資産にする（資本化）。', 'ただし、自分で育てたブランドやのれんは、これまでどおり載せない（次のスライド）。'],
+          example: {
+            problem: 'Tako Co は他社から商標を $8,000 で買った。名義を移す法律費用 $500、商標の登録料 $300 も払った。新しい店名の広告に $2,000 使った。商標の原価と、費用にする金額は？',
+            steps: ['購入代金 $8,000 は原価', '法律費用 $500 と登録料 $300 は、商標を手に入れるのに直接かかった → 原価に入れる', '原価: $8,000 ＋ $500 ＋ $300 ＝ $8,800', '広告費 $2,000 は商標を手に入れる費用ではない → 費用'],
+            answer: '商標（無形資産）$8,800、費用 $2,000'
+          }
+        },
+        {
           title: '自分で育てたものは載せない',
           paras: ['他社から買ったブランドは、払った金額という原価がはっきりしている。だから資産に載せる。', '一方、自分で何年もかけて育てた店名・ロゴ・顧客リスト・のれんは、資産に載せられない（IAS 38）。', '広告費、従業員の研修費、開業準備の費用も、使ったときに費用（expense）にする。']
         },
@@ -64,7 +73,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['無形資産＝物理的な形がなく、識別可能な非貨幣性資産', '特許権・商標権・著作権・ライセンス・ソフトウェア・開発費・のれんなどがある', '買ったものは原価で載せる。自分で育てたブランドやのれんは載せない']
+          numbered: ['無形資産＝物理的な形がなく、識別可能な非貨幣性資産', '特許権・商標権・著作権・ライセンス・ソフトウェア・開発費・のれんなどがある', '買ったものは原価（購入代金＋法律費用・登録料など）で載せる。自分で育てたブランドやのれんは載せない']
         },
         {
           title: '英単語',
@@ -78,6 +87,8 @@
             ['copyright', 'コピーライト', '著作権'],
             ['licence / franchise', 'ライセンス / フランチャイズ', '他社の名前や技術を使う権利'],
             ['goodwill', 'グッドウィル', 'のれん'],
+            ['legal fees', 'リーガル フィーズ', '弁護士などへの法律費用（原価に入れる）'],
+            ['registration costs', 'レジストレーション コスツ', '出願料・登録料（原価に入れる）'],
             ['internally generated', 'インターナリー ジェネレイテッド', '自社で作り出した（自分で育てた）']
           ]
         }
@@ -87,7 +98,8 @@
         { q: 'Which of the following is an intangible non-current asset?', choices: ['A delivery van', 'A purchased patent', 'Inventory of flour', 'Trade receivables'], answer: 1, explain: '特許権は形のない非流動資産。van は有形固定資産。在庫（inventory）は流動資産。売掛金は「決まった額のお金を受け取る権利」なので貨幣性で、無形資産ではない。' },
         { q: '何年もかけて自社で育てた人気ブランド。財政状態計算書に資産として載せる？', choices: ['載せる。価値が高いから', '載せない。原価を信頼できる形で測れないから', '載せる。これまでの広告費の合計を原価にする', '載せない。ブランドは有形資産だから'], answer: 1, explain: '自分で育てたブランドは載せられない（IAS 38）。広告費のどこまでがブランドを作ったか切り分けられないので、広告費を原価にすることもできない。' },
         { q: 'Which of the following can be recognised as an intangible asset in the statement of financial position?', choices: ['A brand name developed internally over ten years', 'The cost of a staff training course', 'A licence purchased from another company to use its software', 'An advertising campaign expected to increase sales'], answer: 2, explain: '他社から買ったライセンスは原価がはっきりしているので無形資産。自社で育てたブランド、研修費、広告費は費用にする。' },
-        { q: '焼き器（有形）と商標権（無形）。共通することは？', choices: ['どちらも1年を超えて使う非流動資産', 'どちらも流動資産', 'どちらも買った年に全部費用にする', 'どちらも負債'], answer: 0, explain: '形があるかどうかが違うだけで、どちらも長く役に立つ非流動資産。買った年に全部費用にはしない。' }
+        { q: '焼き器（有形）と商標権（無形）。共通することは？', choices: ['どちらも1年を超えて使う非流動資産', 'どちらも流動資産', 'どちらも買った年に全部費用にする', 'どちらも負債'], answer: 0, explain: '形があるかどうかが違うだけで、どちらも長く役に立つ非流動資産。買った年に全部費用にはしない。' },
+        { q: 'A company buys a patent for $20,000. It also pays legal fees of $1,500 to register the patent in its name, and spends $3,000 advertising the product that uses the patent. At what amount should the patent be recognised?', choices: ['$20,000', '$21,500', '$24,500', '$23,000'], answer: 1, explain: '購入代金 $20,000 ＋ 登録の法律費用 $1,500 ＝ $21,500。法律費用は特許を手に入れるのに直接かかったので資本化する。広告費 $3,000 は費用。$20,000 は法律費用を費用にした間違い、$24,500 は広告費まで入れた間違い、$23,000 は広告費を入れて法律費用を抜いた間違い。' }
       ]
     },
     {
@@ -284,15 +296,11 @@
           list: ['ふつうは定額法（straight-line）で、残存価額はゼロ', '年の途中で始まったら月割りにする', '帳簿価額 ＝ 原価 − 償却累計額']
         },
         {
-          title: '開発費の償却はいつから？',
-          paras: ['開発費は、完成して使えるようになったとき（available for use）、つまり商業生産や販売が始まったときから償却する。決算日にまだ開発中なら、償却費はゼロ。'],
-          svg: `<svg viewBox="0 0 440 210" role="img" aria-label="開発中は償却せず、販売が始まってから償却する" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">開発費の一生</text><rect x="20" y="56" width="176" height="40" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="81" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">開発中</text><rect x="208" y="56" width="212" height="40" rx="8" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="314" y="81" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">販売中</text><path d="M20 116H420" stroke="var(--edge)" stroke-width="1.5" fill="none"/><circle cx="202" cy="116" r="6" fill="var(--ink)"/><text x="108" y="144" text-anchor="middle" fill="var(--ink)">支出を資産に足す</text><text x="108" y="168" text-anchor="middle" fill="var(--ink)">償却しない</text><text x="314" y="144" text-anchor="middle" fill="var(--ink)">毎年、償却する</text><text x="314" y="168" text-anchor="middle" fill="var(--ink)">帳簿価額が減る</text><text x="202" y="198" text-anchor="middle" fill="var(--quiet)">● ここで商業生産・販売が始まる</text></svg>`
-        },
-        {
-          title: '例題①: 年の途中で販売開始',
+          title: '開発費の償却はいつから？（例題①）',
+          paras: ['開発費は、完成して使えるようになったとき（available for use）、つまり商業生産や販売が始まったときから償却する。開発中は支出を資産に足すだけで、決算日にまだ開発中なら償却費はゼロ。'],
           example: {
             problem: 'Tako Co は開発費 $120,000 を資産にした。冷凍たこ焼きの販売は 20X7年4月1日に始まり、5年間売れる見込み。残存価額はゼロ。決算日は12月31日。20X7年の償却費と、20X7年末の帳簿価額は？',
-            steps: ['年間の償却費: $120,000 ÷ 5年 ＝ $24,000', '20X7年は4月〜12月の9か月', '償却費: $24,000 × 9/12 ＝ $18,000', '帳簿価額: $120,000 − $18,000 ＝ $102,000'],
+            steps: ['年間の償却費: $120,000 ÷ 5年 ＝ $24,000', '販売開始の4月から償却する: 20X7年は4月〜12月の9か月', '償却費: $24,000 × 9/12 ＝ $18,000', '帳簿価額: $120,000 − $18,000 ＝ $102,000'],
             answer: '償却費 $18,000、帳簿価額 $102,000'
           }
         },
@@ -314,7 +322,7 @@
           title: '例題②: 買った特許',
           example: {
             problem: '20X8年1月1日、Tako Co は新しい焼き器の特許を $50,000 で買った。法律上は20年守られるが、技術が古くなるので役に立つのは10年と見込む。決算日は12月31日。20X8年の償却費と、20X9年末の帳簿価額は？',
-            steps: ['耐用年数は、役に立つ10年を使う（法律上の20年ではない）', '年間の償却費: $50,000 ÷ 10 ＝ $5,000', '20X8年は1月から丸1年なので $5,000', '20X9年末の償却累計額: $5,000 × 2 ＝ $10,000', '帳簿価額: $50,000 − $10,000 ＝ $40,000'],
+            steps: ['耐用年数は、役に立つ10年を使う（法律上の20年ではない。「最長5年」のような上限もない）', '年間の償却費: $50,000 ÷ 10 ＝ $5,000', '20X8年は1月から丸1年なので $5,000', '20X9年末の償却累計額: $5,000 × 2 ＝ $10,000', '帳簿価額: $50,000 − $10,000 ＝ $40,000'],
             answer: '20X8年の償却費 $5,000、20X9年末の帳簿価額 $40,000'
           }
         },
@@ -327,18 +335,24 @@
           }
         },
         {
-          title: '償却しないもの・見直し',
-          list: ['のれん（goodwill）: 償却しない。毎年、価値が下がっていないか確かめる（減損の検討、impairment review）', '耐用年数に予見できる限りがない（indefinite useful life）無形資産: 償却せず、毎年減損の検討をする', '決算日にまだ開発中の開発費: 販売が始まっていないので償却しない'],
-          after: '耐用年数は毎年見直す。変わったら、その時点の帳簿価額を残りの年数で割り直す（有形固定資産と同じ）。'
+          title: '償却期間に上限はない',
+          paras: ['スマホは3年、冷蔵庫は10年と、役に立つ年数は物ごとに違う。無形資産の償却にも「最長5年」のような上限はない。'],
+          list: ['限りがある（finite useful life）: その年数で償却', '限りが予見できない（indefinite useful life）: 償却せず、毎年減損の検討（impairment review）', 'のれん（goodwill）: 同じく償却せず、毎年減損の検討'],
+          after: '耐用年数は毎年見直し、変わったら残りの年数で割り直す。'
+        },
+        {
+          title: '再評価モデルはまれ',
+          paras: ['中古車には相場があり、今の値段がすぐ分かる。一点物の手作り看板には相場がない。', '無形資産はふつう原価モデル（cost model）で載せる。時価に置き換える再評価モデル（revaluation model）は、活発な市場（active market）があるときだけ使える。'],
+          note: { kind: 'warn', text: 'よくある間違い: 有形固定資産と同じく、自由に再評価できると思う。特許やブランドは1つずつ違って相場がないので、無形資産の再評価はまれ。' }
         },
         {
           title: 'なぜ？ 少しずつ費用にする理由',
           paras: ['特許も開発の成果も、何年も売上を生む。それなのに買った年や販売開始の年に全部を費用にすると、その年だけ利益が小さく、後の年は大きく見えてしまう。', '売上を生む期間に少しずつ費用を割り当てれば、毎年の利益が実態に合う。これが償却の目的。'],
-          note: { kind: 'warn', text: 'よくある間違い: ①開発中から償却する（販売開始から）②年の途中で始まったのに1年分償却する（月割り）③法律上の保護期間を使う（役に立つ期間が短ければそちら）。' }
+          note: { kind: 'warn', text: 'よくある間違い: ①開発中から償却する（販売開始から）②年の途中で始まったのに1年分償却する（月割り）③法律上の保護期間や「5年」のような決まった年数を使う（役に立つ期間を使う）。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['償却＝無形資産の原価を、役に立つ期間に割り当てて費用にすること', '開発費は販売（商業生産）が始まってから。ふつう定額法・残存価額ゼロ・月割り', '仕訳は Dr Amortisation expense / Cr Accumulated amortisation']
+          numbered: ['償却＝無形資産の原価を、役に立つ期間に割り当てて費用にすること。決まった上限の年数はない', '開発費は販売（商業生産）が始まってから。ふつう定額法・残存価額ゼロ・月割り', '仕訳は Dr Amortisation expense / Cr Accumulated amortisation']
         },
         {
           title: '英単語',
@@ -346,7 +360,10 @@
             ['amortisation', 'アモタイゼーション', '償却（無形資産の原価を費用にしていく）'],
             ['accumulated amortisation', '', '償却累計額'],
             ['useful life', 'ユースフル ライフ', '耐用年数（役に立つ期間）'],
-            ['indefinite useful life', 'インデフィニット ユースフル ライフ', '耐用年数に予見できる限りがない'],
+            ['finite useful life', 'ファイナイト ユースフル ライフ', '耐用年数に限りがある（その年数で償却）'],
+            ['indefinite useful life', 'インデフィニット ユースフル ライフ', '耐用年数に予見できる限りがない（償却しない）'],
+            ['revaluation model', 'リバリュエーション モデル', '再評価モデル（時価に置き換える方法）'],
+            ['active market', 'アクティブ マーケット', '活発な市場（相場がある市場）'],
             ['impairment review', 'インペアメント レビュー', '減損の検討（価値が下がっていないか確かめる）'],
             ['carrying amount', 'キャリング アマウント', '帳簿価額'],
             ['commercial production', 'コマーシャル プロダクション', '商業生産（償却を始める合図）'],
@@ -359,7 +376,7 @@
         { q: 'Development costs of $90,000 were capitalised. Commercial production began on 1 October 20X4 and the product is expected to sell for 3 years. The year end is 31 December. What is the amortisation charge for the year ended 31 December 20X4?', type: 'number', answer: 7500, unit: '$', explain: '$90,000 ÷ 3 ＝ $30,000（1年分）。10月〜12月の3か月なので $30,000 × 3/12 ＝ $7,500。' },
         { q: 'In the year ended 31 December 20X5 a company spent $12,000 on research and $40,000 on a development project which meets all the IAS 38 criteria. The project is still in development at the year end. Development costs of $60,000 capitalised in earlier years relate to a product which went on sale on 1 January 20X4 and is amortised over 4 years. What is the total amount charged to profit or loss for the year?', type: 'number', answer: 27000, unit: '$', explain: '研究 $12,000 ＋ 販売中の開発費の償却 $60,000 ÷ 4 ＝ $15,000、合計 $27,000。$40,000 は資産で、まだ開発中なので償却もしない。' },
         { q: 'A patent was purchased for $80,000 on 1 January 20X1. It gives legal protection for 16 years, but is expected to generate benefits for only 8 years. What is the carrying amount at 31 December 20X3?', choices: ['$65,000', '$50,000', '$60,000', '$70,000'], answer: 1, explain: '役に立つ8年を使う。$80,000 ÷ 8 ＝ $10,000。3年分で累計 $30,000、帳簿価額 $50,000。$65,000 は法律上の16年を使った間違い。$60,000 は2年分しか引いていない。' },
-        { q: '償却費 $18,000 を記録する仕訳は？', choices: ['Dr Amortisation expense / Cr Accumulated amortisation', 'Dr Accumulated amortisation / Cr Amortisation expense', 'Dr Development expenditure / Cr Amortisation expense', 'Dr Amortisation expense / Cr Cash'], answer: 0, explain: '費用が増えるので借方に償却費、資産を減らす累計額は貸方。現金は動かないので Cash は使わない。' },
+        { q: 'Are the following statements about IAS 38 true or false? (1) Intangible assets must be amortised over a maximum period of five years. (2) The revaluation model may be used for an intangible asset only if there is an active market for it.', choices: ['(1) true, (2) true', '(1) true, (2) false', '(1) false, (2) true', '(1) false, (2) false'], answer: 2, explain: '(1) は誤り。償却期間に決まった上限はない。耐用年数に限りがあればその年数で償却し、限りが予見できないものは償却せず毎年減損の検討をする。(2) は正しい。活発な市場（相場）があるときだけ再評価でき、特許やブランドには相場がないのでまれ。' },
         { q: '会社を買ったときに生じたのれん（goodwill）は、その後どう扱う？', choices: ['毎年、定額法で償却する', '償却せず、毎年減損の検討をする', '買った年に全部費用にする', '資産に載せられない'], answer: 1, explain: '買ったのれんは無形資産として載せるが、償却しない。毎年、価値が下がっていないか確かめる。載せられないのは自分で育てたのれん。' }
       ]
     }
@@ -371,6 +388,7 @@
     { id: 'L58-4', lesson: 'L58', q: '自分で育てたブランドやのれんを資産に載せない理由は？', a: '原価を信頼できる形で測れず、載せると会社を良く見せすぎるから' },
     { id: 'L58-5', lesson: 'L58', q: '他社から買った無形資産は、最初いくらで記録する？', a: '原価（cost）' },
     { id: 'L58-6', lesson: 'L58', q: 'identifiable（識別可能）の意味は？', a: '切り離して売れるか、契約・法律で守られた権利であること' },
+    { id: 'L58-7', lesson: 'L58', q: '買った特許・商標の原価に入れるものは？', a: '購入代金＋直接かかった費用（法律費用・出願料・登録料）。広告費は費用' },
     { id: 'L59-1', lesson: 'L59', q: '研究（research）の定義は？', a: '新しい科学的・技術的な知識を得るための、独自の計画的な調査' },
     { id: 'L59-2', lesson: 'L59', q: '開発（development）の定義は？', a: '研究成果などを、商業生産の前に新しい製品や工程の計画・設計に当てはめること' },
     { id: 'L59-3', lesson: 'L59', q: '研究費の処理は？', a: 'いつも費用（SPL）にする' },
@@ -386,10 +404,10 @@
     { id: 'L60-6', lesson: 'L60', q: '条件を満たした開発費を現金で払った仕訳は？', a: 'Dr Development expenditure（無形資産）/ Cr Cash' },
     { id: 'L61-1', lesson: 'L61', q: 'amortisation（償却）とは？ 目的は？', a: '無形資産の原価を耐用年数にわたって費用にすること。売上を生む期間に原価を割り当てるため' },
     { id: 'L61-2', lesson: 'L61', q: '研究 $10,000、開発中の開発費 $25,000、販売中の開発費の償却 $24,000。損益の費用合計は？', a: '$34,000（開発中の $25,000 は資産で、償却もしない）' },
-    { id: 'L61-3', lesson: 'L61', q: '開発費の償却はいつから始める？', a: '商業生産・販売が始まったときから' },
-    { id: 'L61-4', lesson: 'L61', q: '開発費 $120,000、5年、4月1日販売開始、12月決算。初年度の償却費は？', a: '$120,000 ÷ 5 × 9/12 ＝ $18,000' },
+    { id: 'L61-4', lesson: 'L61', q: '開発費 $120,000、5年、4月1日販売開始、12月決算。初年度の償却費は？', a: '販売開始から月割り: $120,000 ÷ 5 × 9/12 ＝ $18,000' },
     { id: 'L61-5', lesson: 'L61', q: '償却費の仕訳は？', a: 'Dr Amortisation expense / Cr Accumulated amortisation' },
     { id: 'L61-6', lesson: 'L61', q: '償却しない無形資産は？', a: 'のれんと、耐用年数に予見できる限りがないもの（毎年減損の検討）' },
-    { id: 'L61-7', lesson: 'L61', q: '特許の法律上の保護が20年、役に立つのは10年。耐用年数は？', a: '10年（役に立つ期間の方）' }
+    { id: 'L61-7', lesson: 'L61', q: '償却期間に「最長5年」などの上限はある？ 法律上20年・役に立つ10年の特許は？', a: '上限はない。役に立つ10年で償却する' },
+    { id: 'L61-8', lesson: 'L61', q: '無形資産に再評価モデルを使えるのはどんなとき？', a: '活発な市場（相場）があるときだけ。特許やブランドには相場がなく、まれ' }
   ]
 });

@@ -11,7 +11,7 @@
       minutes: 12,
       recall: true,
       exam: 'both',
-      outcomes: ['G1(a)'],
+      outcomes: ['G1(a)', 'B1(a)viii'],
       slides: [
         {
           title: '引越しの日の「持ち物リスト」',
@@ -370,7 +370,8 @@
         {
           title: '資本の部分が個人事業の特徴',
           formula: 'closing capital ＝ opening capital ＋ capital introduced ＋ profit − drawings',
-          paras: ['会社なら株式資本や利益剰余金を並べる（後の部）。個人事業は資本が1本で、1年の動きをそのまま SFP の中で見せる。', '引出しは費用ではないので、SPL には出てこない。ここ、資本の中で引く。']
+          paras: ['会社なら株式資本や利益剰余金を並べる（後の部）。個人事業は資本が1本で、1年の動きをそのまま SFP の中で見せる。', '引出しは費用ではないので、SPL には出てこない。ここ、資本の中で引く。'],
+          note: { kind: 'tip', text: '期末調整の前の試算表では、資本は期首の残高（前期繰越、b/f）。減価償却累計額と貸倒引当金も、今年の分が未記録なら b/f。調整を加えてから SFP に載る（L100）。この例の累計額は今年の償却費を記録済み。' }
         },
         {
           title: '例題: SFP を作る',
@@ -595,6 +596,25 @@
           list: ['① 期末在庫は $8,000', '② 設備は原価の20%で定額法の減価償却。今年分はまだ記録していない', '③ 12月分の電気代 $600 の請求書が、まだ届いていない', '④ 家賃 $9,000 は、20X6年1月1日〜20X7年3月31日の15か月分', '⑤ 売掛金のうち $400 は回収できないので償却する。貸倒引当金は、残りの売掛金の5%にする', '⑥ 借入金は20X6年1月1日に借りた。利息は年5%で、試算表には半年分しか入っていない', '⑦ オーナーが原価 $500 の商品を家に持ち帰ったが、記録していない']
         },
         {
+          title: '調整の前に SFP へ写せる数字は？',
+          paras: ['年初の通帳の残高は、1年の出入りを足し引きして、はじめて年末の残高になる。試算表の期首の残高（前期繰越、b/f）も同じ。期末に動くなら、まだ SFP の数字ではない。'],
+          formula: 'そのまま SFP に使える ＝ 期末調整で動かない残高だけ',
+          table: {
+            caption: 'Green Café の試算表で確かめる',
+            head: ['残高', 'そのまま？'],
+            rows: [
+              ['Equipment at cost 40,000', 'はい'],
+              ['Bank 2,900、Trade payables 4,000', 'はい（調整なし）'],
+              ['Bank loan 12,000', 'はい（20X9年返済で非流動）'],
+              ['Inventory 6,000', 'いいえ（期首。①の期末 8,000 に替わる）'],
+              ['Accumulated depreciation 10,000', 'いいえ（b/f。②の 8,000 を足す）'],
+              ['Allowance for receivables 200', 'いいえ（b/f。⑤で新しい額にする）'],
+              ['Trade receivables 5,000', 'いいえ（⑤の償却 400 を引く）'],
+              ['Capital 20,000', 'いいえ（期首。＋利益−引出し）']
+            ]
+          }
+        },
+        {
           title: '手順1: 調整仕訳を書く',
           example: {
             problem: '追加情報①〜⑦の期末調整の仕訳を書く。',
@@ -653,12 +673,9 @@
           after: '減価償却累計額は 10,000 ＋ 8,000 ＝ 18,000。借入金は20X9年返済なので全額が非流動。合計 39,070 で一致。'
         },
         {
-          title: 'なぜ？ 仕訳から始める理由',
-          paras: ['調整は1つで SPL と SFP の両方を動かす（L99）。頭の中だけで済ませると、片方だけ直して合計が合わなくなる。仕訳を書けば、借方と貸方の2か所が必ずそろう。', 'K1（2027年7月から）のシラバスには「試算表への期末調整の仕訳を作る」が独立した項目として入っている。仕訳を書く力そのものが問われる。']
-        },
-        {
-          title: 'よくある間違い',
-          note: { kind: 'warn', text: '前払いの家賃まで全部費用にする（費用は今年の12か月分だけ）。利息の未払を忘れ、試算表の 300 だけを財務費用にする。貸倒れを償却する前の売掛金 5,000 に5%をかける（償却後の 4,600 にかける）。引当金の残高 230 を全部費用にする（費用は増えた 30 だけ）。持ち帰った商品を引出しに足し忘れる。' }
+          title: 'なぜ仕訳から？ よくある間違い',
+          paras: ['調整は1つで SPL と SFP の両方を動かす（L99）。頭の中だけで直すと片方を忘れるが、仕訳を書けば2か所が必ずそろう。K1（2027年7月から）では、調整仕訳を作る力そのものが問われる。'],
+          note: { kind: 'warn', text: '前払いの家賃まで全部費用にする（今年の12か月分だけ）。利息の未払を忘れる。償却前の売掛金 5,000 に5%をかける（償却後の 4,600 にかける）。引当金の残高 230 を全部費用にする（費用は増えた 30 だけ）。持ち帰った商品を引出しに足し忘れる。期首（b/f）の残高を SFP にそのまま写す。' }
         },
         {
           title: '覚えるのは3つだけ',
@@ -673,7 +690,8 @@
             ['prepayments', 'プリペイメンツ', '前払費用'],
             ['irrecoverable debts', 'イリカバラブル・デッツ', '貸倒れ（費用）'],
             ['allowance for receivables', '', '貸倒引当金'],
-            ['goods taken for own use', '', 'オーナーが私用に持ち出した商品']
+            ['goods taken for own use', '', 'オーナーが私用に持ち出した商品'],
+            ['brought forward (b/f)', 'ブロート・フォワード', '前期繰越（期首の残高）']
           ]
         }
       ],
@@ -682,7 +700,7 @@
         { q: 'Trade receivables at the year end are $8,000 before writing off an irrecoverable debt of $500. The allowance for receivables is to be 4% of receivables. The opening allowance is $250. What is the total irrecoverable debts expense for the year?', choices: ['$550', '$500', '$800', '$570'], answer: 0, explain: '償却後の売掛金 7,500 × 4% ＝ 300。引当金は 250 から 50 増える。費用＝償却 500 ＋ 増加 50 ＝ 550。$570 は償却前の 8,000 に4%をかけた答え、$800 は引当金の残高 300 を全部費用にした答え。' },
         { q: 'Green Café の例で、⑥の利息の未払 $300 を計上し忘れたら、当期利益はいくらになる？', type: 'number', answer: 14970, unit: '$', explain: '財務費用が 300 少なくなるので、利益は 14,670 ＋ 300 ＝ 14,970。同時に流動負債（未払費用）も 300 少なくなる。' },
         { q: 'A bank loan of $20,000 with interest at 6% per year was taken out on 1 April 20X1. The year end is 31 December 20X1 and no interest has been paid. What is the accrual for loan interest at 31 December 20X1?', choices: ['$900', '$1,200', '$300', '$0'], answer: 0, explain: '1年の利息は 20,000 × 6% ＝ 1,200。4月〜12月の9か月分なので 1,200 × 9/12 ＝ 900。まだ払っていないので全額が未払費用。$1,200 は12か月分にした答え、$300 は残りの3か月分。' },
-        { q: '追加情報「オーナーが原価 $500 の商品を家に持ち帰った（未記録）」の仕訳は？', choices: ['Dr Drawings 500 / Cr Purchases 500', 'Dr Purchases 500 / Cr Drawings 500', 'Dr Drawings 500 / Cr Revenue 500', 'Dr Inventory 500 / Cr Drawings 500'], answer: 0, explain: 'オーナーの私用なので引出しを増やし、売れていないので仕入を原価で減らす。売上（revenue）にはしない。2つ目は借方と貸方が逆。' },
+        { q: 'A sole trader\'s trial balance at 31 December 20X7 includes the balances below. Adjustments are still needed for closing inventory, depreciation for the year and the allowance for receivables. There are no adjustments to trade payables. Can each balance be included in the statement of financial position at its trial balance amount (Yes/No)? (1) Inventory $9,000 (2) Accumulated depreciation b/f $14,000 (3) Capital at 1 January 20X7 $30,000 (4) Trade payables $6,500', choices: ['(1) No (2) No (3) No (4) Yes', '(1) Yes (2) No (3) No (4) Yes', '(1) No (2) Yes (3) No (4) Yes', '(1) No (2) No (3) Yes (4) Yes'], answer: 0, explain: '(1) 試算表の在庫は期首在庫。SFP には期末在庫が載る。(2) b/f の減価償却累計額に、今年の償却費を足してから載せる。(3) 期首資本に当期利益を足し、引出しを引いて期末資本にする。(4) 買掛金は調整がないのでそのまま。2つ目は試算表の在庫を期末と勘違いした答え、3つ目は b/f の累計額を最終の数字と勘違いした答え、4つ目は期首資本をそのまま写した答え。' },
         { q: 'Green Café の SFP で、流動負債の合計はいくら？', choices: ['$4,900', '$4,600', '$4,000', '$16,900'], answer: 0, explain: '買掛金 4,000 ＋ 未払費用 900（電気代 600 ＋ 利息 300）＝ 4,900。$4,600 は利息の未払を忘れた答え、$4,000 は買掛金だけ。借入金は20X9年返済なので非流動で、入れると $16,900 になり誤り。' }
       ]
     }
@@ -713,6 +731,7 @@
     { id: 'L98-4', lesson: 'L98', q: '設備は SFP にいくらで載せる？', a: '帳簿価額＝原価−減価償却累計額' },
     { id: 'L98-5', lesson: 'L98', q: 'なぜ SFP の合計は必ず一致する？', a: 'SPL 行きの残高を当期利益にまとめて資本に足しただけだから' },
     { id: 'L98-6', lesson: 'L98', q: 'SFP の合計が合わないとき、まず探すのは？', a: '片方の計算書にしか入れていない数字（期末在庫など）' },
+    { id: 'L98-7', lesson: 'L98', q: '調整前の試算表の資本・減価償却累計額・貸倒引当金は、ふつう何の残高？', a: '期首（b/f）の残高。利益・引出しや今年の調整を加えてから SFP に載る' },
     { id: 'L99-1', lesson: 'L99', q: 'SPL と SFP をつなぐ数字は？', a: '当期利益。SFP の資本に足される' },
     { id: 'L99-2', lesson: 'L99', q: '純資産から利益を求める式は？', a: '期末純資産−期首純資産−資本の拠出＋引出し' },
     { id: 'L99-3', lesson: 'L99', q: 'なぜ期末調整は両方の計算書を動かす？', a: '仕訳の片方が SPL の勘定、もう片方が SFP の勘定になるから' },
@@ -724,6 +743,7 @@
     { id: 'L100-3', lesson: 'L100', q: '貸倒引当金の割合はどの売掛金にかける？', a: '貸倒れを償却した後の売掛金' },
     { id: 'L100-4', lesson: 'L100', q: '貸倒引当金のうち、今年の費用になるのは？', a: '引当金の増えた分だけ（残高の全額ではない）' },
     { id: 'L100-5', lesson: 'L100', q: '利息が半年分しか払われていない借入金の調整は？', a: '残りを未払計上: Dr Loan interest / Cr Accruals' },
-    { id: 'L100-6', lesson: 'L100', q: 'Green Café の当期利益と資産合計は？', a: '当期利益 $14,670、資産合計 $39,070' }
+    { id: 'L100-6', lesson: 'L100', q: 'Green Café の当期利益と資産合計は？', a: '当期利益 $14,670、資産合計 $39,070' },
+    { id: 'L100-7', lesson: 'L100', q: '調整前の試算表の数字を、そのまま SFP に使えるのは？', a: '期末調整で動かない残高だけ（設備の原価・預金・買掛金など）' }
   ]
 });

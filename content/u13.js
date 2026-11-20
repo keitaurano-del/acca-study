@@ -77,8 +77,8 @@
       id: 'L63',
       no: 63,
       title: '未払費用（accruals）',
-      goal: '使ったのにまだ払っていない費用を計算し、仕訳と今年の費用の額を出せるようになる',
-      minutes: 14,
+      goal: '使ったのにまだ払っていない費用を計算し、買掛金・未払金と区別して、仕訳と今年の費用の額を出せるようになる',
+      minutes: 16,
       recall: true,
       exam: 'both',
       outcomes: ['D7(a)', 'D7(b)'],
@@ -89,7 +89,7 @@
         },
         {
           title: '未払費用（accruals）とは',
-          paras: ['期間中に発生した（使った）のに、決算日までに払っていない費用。請求書もまだ届いていないことが多い。', '期末に、その金額を費用に足し、同じ金額を負債にする。たこ焼き屋の12月の電気代 $200 なら、次の仕訳になる。'],
+          paras: ['期間中に発生した（使った）のに、決算日までに払っていない費用。決算日の時点で請求書がまだ届いていない（帳簿に記録していない）ので、金額は見積もる。', '期末に、その金額を費用に足し、同じ金額を負債にする。たこ焼き屋の12月の電気代 $200 なら、次の仕訳になる。'],
           journal: [
             { side: 'Dr', account: 'Electricity expense（電気代）', amount: '200' },
             { side: 'Cr', account: 'Accruals（未払費用）', amount: '200' }
@@ -114,30 +114,40 @@
           }
         },
         {
-          title: '例題: 2年目は期首の未払がある',
+          title: 'いつも使える式と、2年目の例題',
+          formula: '今年の費用 ＝ 支払額 − 期首の未払 ＋ 期末の未払',
           example: {
             problem: '20X2年中に払った電気代は $1,750。この中には、2月に払った請求書 $450（うち $300 は 20X1年の分）が入っている。20X2年12月31日の未払費用は $400。20X2年の電気代は？',
             steps: ['払った $1,750 のうち、20X1年の分 $300 は去年すでに費用にした → 引く', '今年使ったのに、まだ払っていない $400 → 足す', '$1,750 − $300 ＋ $400 ＝ $1,850'],
-            answer: '20X2年の電気代は $1,850'
+            answer: '20X2年の電気代は $1,850（式: $1,750 − $300 ＋ $400）'
           }
         },
         {
-          title: 'いつも使える式',
-          formula: '今年の費用 ＝ 支払額 − 期首の未払 ＋ 期末の未払',
-          paras: ['期首の未払費用は、去年の費用を今年払ったもの。だから引く。期末の未払費用は、今年の費用を来年払うもの。だから足す。', '試験の計算問題の多くは、この式で解ける。']
+          title: '請求書が届いたら、未払費用ではない',
+          paras: ['立て替えてもらった飲み代は、金額を聞く前は「たぶん4,000円」と見込みでメモする。レシートで金額が決まれば、確定した借りになる。', '未払費用は、決算日までに請求書が届いていない（記帳していない）費用で、金額は見積もる。請求書を受け取って元帳に記録した後の借りは、買掛金（trade payables）やその他の未払金（other payables）になる。']
+        },
+        {
+          title: '商品が届いて、請求書はまだ',
+          paras: ['12月29日、たこ焼き屋に小麦粉 $600 が届いた。請求書は1月に届く。商品は今年受け取ったので、今年の仕入に含める。請求書がないので、買掛金ではなく未払費用にする。', '年末に使わずに残っていれば、期末在庫（closing inventory）にも数える。'],
+          journal: [
+            { side: 'Dr', account: 'Purchases（仕入）', amount: '600' },
+            { side: 'Cr', account: 'Accruals（未払費用）', amount: '600' }
+          ]
         },
         {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '請求額 $450 を全部、未払費用にしない。1月分は来年の費用。また、期首の未払費用を足してしまう間違いも多い。期首は引く、期末は足す。' }
+          note: { kind: 'warn', text: '請求額 $450 を全部、未払費用にしない。1月分は来年の費用。期首の未払費用を足してしまう間違いも多い。期首は引く、期末は足す。また、受け取って記帳済みの請求書は、未払費用ではなく買掛金・未払金。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['未払費用＝使ったのに、決算日までに払っていない費用', '仕訳は Dr 費用 / Cr Accruals。未払費用は流動負債', '今年の費用 ＝ 支払額 − 期首の未払 ＋ 期末の未払']
+          numbered: ['未払費用＝使ったのに払っておらず、請求書も未記帳の費用（見積もる）。記帳済みなら payables', '仕訳は Dr 費用 / Cr Accruals。未払費用は流動負債', '今年の費用 ＝ 支払額 − 期首の未払 ＋ 期末の未払']
         },
         {
           title: '英単語',
           words: [
             ['accrual', 'アクルーアル', '未払費用（1件分）'],
+            ['goods received not invoiced', '', '届いたが請求書がまだの商品（仕入に含め、未払費用にする）'],
+            ['trade payables / other payables', '', '買掛金 / その他の未払金（請求書を記帳済みの借り）'],
             ['accruals', 'アクルーアルズ', '未払費用（財政状態計算書の科目名）'],
             ['accrued expense', 'アクルード エクスペンス', '未払費用（同じ意味）'],
             ['in arrears', 'イン アリアーズ', '後払いで'],
@@ -151,7 +161,8 @@
         { q: 'Rent paid during the year was $9,000. The opening accrual was $1,000 and the closing accrual was $1,500. What is the rent expense for the year?', choices: ['$9,500', '$8,500', '$11,500', '$6,500'], answer: 0, explain: '$9,000 − $1,000 ＋ $1,500 ＝ $9,500。$8,500 は期首と期末の足し引きを逆にした答え。$11,500 は両方足した答え。' },
         { q: '12月分の水道代 $80 がまだ払われていない。決算の仕訳は？', choices: ['Dr Water expense $80 / Cr Accruals $80', 'Dr Accruals $80 / Cr Water expense $80', 'Dr Water expense $80 / Cr Cash $80', 'Dr Prepayments $80 / Cr Water expense $80'], answer: 0, explain: '費用を増やし（借方）、負債の未払費用を増やす（貸方）。2つ目は逆。まだ払っていないので Cash は使わない。4つ目は前払費用の仕訳。' },
         { q: '未払費用は財政状態計算書のどこに入る？', choices: ['流動資産', '流動負債', '非流動負債', '資本'], answer: 1, explain: '後で払う義務なので負債。ふつう1年以内に払うので流動負債。' },
-        { q: '20X1年中に払った電話代は $1,050。期首（1月1日）の未払費用は $80、期末（12月31日）の未払費用は $110。20X1年の電話代（費用）はいくら？', type: 'number', answer: 1080, unit: '$', explain: '$1,050 − $80 ＋ $110 ＝ $1,080。期首の $80 は去年の費用なので引き、期末の $110 は今年の費用なので足す。' }
+        { q: '20X1年中に払った電話代は $1,050。期首（1月1日）の未払費用は $80、期末（12月31日）の未払費用は $110。20X1年の電話代（費用）はいくら？', type: 'number', answer: 1080, unit: '$', explain: '$1,050 − $80 ＋ $110 ＝ $1,080。期首の $80 は去年の費用なので引き、期末の $110 は今年の費用なので足す。' },
+        { q: 'At 31 December 20X1 a business has these unpaid items: (1) electricity used in December, for which no invoice had been received by the year end; (2) goods received on 29 December, for which the supplier\'s invoice had not been received; (3) a supplier\'s invoice for November goods, received and recorded in the payables ledger. Which items should be included in accruals?', choices: ['(1) and (2) only', '(1) only', '(1), (2) and (3)', '(2) and (3) only'], answer: 0, explain: '(1) と (2) は決算日に請求書が届いていないので、見積もって未払費用にする。(2) の商品は今年受け取ったので、今年の仕入にも含める。(3) は請求書を受け取り記帳済みなので、未払費用ではなく買掛金（trade payables）。(1) only は届いた商品を見落とした答え。(1), (2) and (3) は記帳済みの請求書まで未払費用にした答え。' }
       ]
     },
     {
@@ -333,8 +344,8 @@
       id: 'L66',
       no: 66,
       title: '仕訳と翌期の振り戻し、元帳での調整',
-      goal: '4つのずれの期末仕訳と翌期の振り戻しを書き、元帳の勘定から今年の金額を出せるようになる',
-      minutes: 15,
+      goal: '4つのずれの期末仕訳と翌期の振り戻しを書き、試算表に残った去年の残高を差額で直し、元帳の勘定から今年の金額を出せるようになる',
+      minutes: 17,
       recall: true,
       exam: 'both',
       outcomes: ['D7(c)', 'D7(d)'],
@@ -344,13 +355,9 @@
           paras: ['年末に「12月のスマホ代 8,000円、未払い」とメモして、今年の出費に入れた。1月に実際に8,000円を払う。', 'このとき、また「出費 8,000円」と書くと、同じ出費を2回数えてしまう。だから年が明けたら、去年のメモを打ち消す。これが振り戻し（reversal）。']
         },
         {
-          title: '期末調整の流れ',
-          numbered: ['試算表を見る。費用・収益の勘定には、ふつう払った・受け取った金額が入っていて、期末の調整はまだ入っていない', '請求書や契約を見て、4つのずれを計算する', '期末の仕訳を書いて、元帳に転記する', '調整後の金額を損益計算書へ、未払・前払などの残高を財政状態計算書へ載せる', '翌期の初日に、期末の仕訳を逆にして振り戻す']
-        },
-        {
-          title: '期末の仕訳 4種類',
-          table: { caption: '期末の調整仕訳', head: ['ずれ', '借方（Dr）', '貸方（Cr）'], rows: [['未払費用', '費用', 'Accruals'], ['前払費用', 'Prepayments', '費用'], ['未収収益', 'Accrued income', '収益'], ['前受収益', '収益', 'Deferred income']] },
-          after: 'どれも、片方で費用・収益を今年の正しい額に直し、もう片方で資産か負債を作る。'
+          title: '期末調整の流れと仕訳4種類',
+          numbered: ['試算表を見る。費用・収益は、ふつう払った・受け取った額のまま', '4つのずれを計算し、期末の仕訳を書いて元帳に転記する', '調整後の費用・収益は損益計算書へ、残高は財政状態計算書へ', '翌期の初日に、期末の仕訳を逆にして振り戻す'],
+          table: { caption: '期末の調整仕訳', head: ['ずれ', '借方（Dr）', '貸方（Cr）'], rows: [['未払費用', '費用', 'Accruals'], ['前払費用', 'Prepayments', '費用'], ['未収収益', 'Accrued income', '収益'], ['前受収益', '収益', 'Deferred income']] }
         },
         {
           title: '翌期の初日に振り戻す',
@@ -360,6 +367,15 @@
             { side: 'Cr', account: 'Electricity expense（電気代）', amount: '300' }
           ],
           after: '2月に請求書 $450 を払い、全額を電気代にしても、貸方 $300 と相殺され、残るのは1月分の $150 だけ。前払費用 $3,000 も同じく Dr Rent expense / Cr Prepayments で戻し、1月〜3月の家賃が今年の費用になる。'
+        },
+        {
+          title: '試算表に去年の残高が残っているとき',
+          paras: ['家計簿に去年の「未払い 300円」のメモが残っていて、今年の正解は400円。消して書き直しても、100円書き足しても、最後は400円で同じ。', '振り戻しをしていないと、調整前の試算表に去年末の残高が残る。必要な期末残高との差額だけを仕訳する。'],
+          example: {
+            problem: '調整前の試算表: 電気代 $1,750（今年の支払額）、Accruals $300（去年末の残高のまま）。今年末に必要な未払費用は $400。仕訳と、今年の電気代は？',
+            steps: ['差額を出す: 必要な $400 − 試算表の $300 ＝ $100 増やす', '仕訳: Dr Electricity expense $100 / Cr Accruals $100', '電気代: $1,750 ＋ $100 ＝ $1,850。Accruals は $300 ＋ $100 ＝ $400', '確かめ（振り戻して書き直す方法）: Dr Accruals $300 / Cr 電気代 $300、Dr 電気代 $400 / Cr Accruals $400。電気代 $1,750 − $300 ＋ $400 ＝ $1,850 で同じ'],
+            answer: 'Dr Electricity expense $100 / Cr Accruals $100。電気代 $1,850、未払費用 $400'
+          }
         },
         {
           title: '1つの勘定で調整する（未払費用）',
@@ -393,7 +409,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['期末の仕訳: 費用・収益を今年の額に直し、資産か負債を作る', '翌期の初日に、期末の仕訳を逆にして振り戻す（二重計上を防ぐ）', '元帳では b/d と c/d を書き、損益計算書への金額は差額で出す']
+          numbered: ['期末の仕訳: 費用・収益を今年の額に直し、資産か負債を作る', '翌期の初日に振り戻す。振り戻さず試算表に残高が残っていたら、差額だけ仕訳する','元帳では b/d と c/d を書き、損益計算書への金額は差額で出す']
         },
         {
           title: '英単語',
@@ -403,7 +419,8 @@
             ['balance b/d (brought down)', '', '前期繰越'],
             ['balance c/d (carried down)', '', '次期繰越'],
             ['transfer to profit or loss', '', '損益計算書への振替'],
-            ['adjusting entry', '', '期末の調整仕訳']
+            ['adjusting entry', '', '期末の調整仕訳'],
+            ['unadjusted trial balance', '', '調整前の試算表']
           ]
         }
       ],
@@ -411,7 +428,7 @@
         { q: 'On 1 January 20X2, an accrual of $500 for electricity made at 31 December 20X1 is reversed. Which journal entry is made?', choices: ['Dr Accruals $500, Cr Electricity expense $500', 'Dr Electricity expense $500, Cr Accruals $500', 'Dr Electricity expense $500, Cr Cash $500', 'Dr Prepayments $500, Cr Electricity expense $500'], answer: 0, explain: '振り戻しは、期末の仕訳（Dr 費用 / Cr Accruals）の逆。2つ目は期末の仕訳そのもの。' },
         { q: 'The insurance account has an opening prepayment of $600. Payments during the year were $4,000 and the closing prepayment is $900. What amount is transferred to the statement of profit or loss?', type: 'number', answer: 3700, unit: '$', explain: '$4,000 ＋ $600 − $900 ＝ $3,700。期首の前払は今年の費用なので足し、期末の前払は来年の分なので引く。' },
         { q: 'The rent account shows an opening accrual of $300, payments during the year of $5,000 and a closing prepayment of $400. What is the rent expense for the year?', choices: ['$4,300', '$5,700', '$5,100', '$4,900'], answer: 0, explain: '$5,000 − $300 − $400 ＝ $4,300。期首の未払は去年の費用、期末の前払は来年の費用なので、どちらも引く。$5,700 は両方足した答え。' },
-        { q: '期末の前受収益の仕訳は？', choices: ['Dr 収益 / Cr Deferred income', 'Dr Deferred income / Cr 収益', 'Dr Accrued income / Cr 収益', 'Dr 収益 / Cr Accrued income'], answer: 0, explain: 'もらいすぎた分だけ収益を減らし（借方）、負債の前受収益を作る（貸方）。2つ目は翌期の振り戻し。3つ目は未収収益の仕訳。' },
+        { q: 'The trial balance at 31 December 20X2 shows prepayments for rent of $500. This is last year\'s closing balance, which was not reversed. The prepayment required at 31 December 20X2 is $350. Which journal entry is needed?', choices: ['Dr Rent expense $150, Cr Prepayments $150', 'Dr Prepayments $150, Cr Rent expense $150', 'Dr Prepayments $350, Cr Rent expense $350', 'Dr Rent expense $500, Cr Prepayments $500'], answer: 0, explain: '必要な $350 に対し、試算表には $500 ある。前払費用（資産）を差額 $150 だけ減らし（貸方）、その分を今年の家賃に足す（借方）。2つ目は向きが逆。3つ目は試算表の $500 を無視して $350 を足した答えで、前払費用が $850 になる。4つ目は振り戻しだけで、今年末の $350 を計上し直していない。' },
         { q: 'The rental income account has an opening debit balance b/d of $500 (rent owed by the tenant). Rent received during the year was $5,500. At the year end, the tenant had paid $300 of rent in advance. What is the rental income for the year?', choices: ['$4,700', '$6,300', '$5,300', '$5,700'], answer: 0, explain: '期首の未収 $500 は去年の収益、期末の前受 $300 は来年の収益。どちらも引く: $5,500 − $500 − $300 ＝ $4,700。勘定では借方に b/d $500・c/d $300・損益への振替 $4,700、貸方に受取 $5,500。$6,300 は両方足した答え、$5,300 と $5,700 は片方の足し引きを逆にした答え。' },
         { q: '費用の勘定で、期首の Balance b/d が貸方にある。期首にあった調整は？', choices: ['未払費用', '前払費用'], answer: 0, explain: '未払費用は負債なので貸方残高。b/d は残高の側に書く。前払費用なら借方に b/d が来る。' }
       ]
@@ -508,12 +525,13 @@
     { id: 'L62-4', lesson: 'L62', q: 'なぜ発生主義を使う？', a: '支払いの時期で数字がぶれず、その期間の本当のもうけが分かるから' },
     { id: 'L62-5', lesson: 'L62', q: '発生主義で作らない財務諸表は？', a: 'キャッシュフロー計算書' },
     { id: 'L62-6', lesson: 'L62', q: '期末に直すずれ4種類は？', a: '未払費用・前払費用・未収収益・前受収益' },
-    { id: 'L63-1', lesson: 'L63', q: '未払費用（accruals）とは？', a: '使ったのに、決算日までに払っていない費用' },
+    { id: 'L63-1', lesson: 'L63', q: '未払費用（accruals）とは？', a: '使ったのに決算日までに払っておらず、請求書も未着・未記帳の費用（金額は見積もる）' },
     { id: 'L63-2', lesson: 'L63', q: '未払費用の期末仕訳は？', a: 'Dr 費用 / Cr Accruals' },
     { id: 'L63-3', lesson: 'L63', q: '未払費用は財政状態計算書のどこ？', a: '流動負債' },
     { id: 'L63-4', lesson: 'L63', q: 'なぜ未払費用は負債？', a: '使ったサービスの代金を後で払う義務があるから' },
     { id: 'L63-5', lesson: 'L63', q: '今年の費用の式（未払費用あり）は？', a: '支払額 − 期首の未払 ＋ 期末の未払' },
     { id: 'L63-6', lesson: 'L63', q: '3か月分の請求 $600、うち決算日までの分が1か月。未払費用は？', a: '$200（$600 ÷ 3 × 1）' },
+    { id: 'L63-7', lesson: 'L63', q: '未払費用（accrual）と買掛金・未払金（payables）の分かれ目は？', a: '決算日に請求書が未着・未記帳なら見積もって accrual（届いた商品も同じ）。記帳済みなら payables' },
     { id: 'L64-1', lesson: 'L64', q: '前払費用（prepayments）とは？', a: '払ったけれど、来年に属する費用' },
     { id: 'L64-2', lesson: 'L64', q: '前払費用の期末仕訳は？', a: 'Dr Prepayments / Cr 費用' },
     { id: 'L64-3', lesson: 'L64', q: 'なぜ前払費用は資産？', a: '来年サービスを受ける権利が残っていて、将来役に立つから' },
@@ -529,10 +547,10 @@
     { id: 'L66-1', lesson: 'L66', q: '振り戻し（reversal）とは？', a: '翌期の初日に、期末の調整仕訳を逆にして打ち消すこと' },
     { id: 'L66-2', lesson: 'L66', q: 'なぜ振り戻す？', a: '翌期に払った額を全額記録しても、二重計上にならないように' },
     { id: 'L66-3', lesson: 'L66', q: '未払費用 $500 と前払費用 $200 の振り戻し仕訳は？', a: 'Dr Accruals $500 / Cr 費用 $500、Dr 費用 $200 / Cr Prepayments $200' },
-    { id: 'L66-4', lesson: 'L66', q: '費用の勘定で、期首の未払費用（b/d）はどちら側？', a: '貸方（負債なので貸方残高）' },
-    { id: 'L66-5', lesson: 'L66', q: '費用の勘定で、期首の前払費用（b/d）はどちら側？', a: '借方（資産なので借方残高）' },
+    { id: 'L66-4', lesson: 'L66', q: '費用の勘定で、期首の未払費用（b/d）と前払費用（b/d）はどちら側？', a: '未払費用は貸方（負債）、前払費用は借方（資産）' },
     { id: 'L66-6', lesson: 'L66', q: '元帳で損益計算書に振り替える額はどう出す？', a: 'ほかの行を全部書いた後の差額' },
     { id: 'L66-7', lesson: 'L66', q: '収益の勘定で、期首の未収収益（b/d）はどちら側？ 前受収益は？', a: '未収収益は借方（資産）、前受収益は貸方（負債）' },
+    { id: 'L66-8', lesson: 'L66', q: '試算表に去年の未払費用 $300 が残り、今年末の必要額は $400。仕訳は？', a: 'Dr 費用 $100 / Cr Accruals $100。差額だけ（振り戻して書き直しても結果は同じ）' },
     { id: 'L67-1', lesson: 'L67', q: '未払費用を計上すると、利益と純資産は？', a: 'どちらも同じ額だけ減る' },
     { id: 'L67-2', lesson: 'L67', q: '前払費用を計上すると、利益と純資産は？', a: 'どちらも同じ額だけ増える' },
     { id: 'L67-3', lesson: 'L67', q: 'なぜ利益と純資産は同じだけ動く？', a: '仕訳の片方が費用・収益、もう片方が資産・負債だから' },

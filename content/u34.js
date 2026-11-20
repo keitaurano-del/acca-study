@@ -415,20 +415,20 @@
         {
           title: '例題: 統制勘定と一覧',
           example: {
-            problem: '統制勘定は借方 $28,750、一覧の合計は $29,400。(1) 売上日記帳の合計が $1,000 少なかった（個別の転記は正しい）。(2) 貸倒れ $430 を個別勘定では償却したが、総勘定元帳に記録していない。(3) 貸方残高 $150 の得意先を、一覧に借方で入れた。(4) 残高 $310 の得意先が一覧から漏れた。(5) 入金 $540 を個別勘定に $450 と書いた。修正後の残高は？',
-            steps: ['統制勘定は (1)(2): 28,750 ＋ 1,000 − 430 ＝ $29,320', '仕訳: Dr Receivables control 1,000 / Cr Revenue 1,000。Dr Irrecoverable debts 430 / Cr Receivables control 430', '一覧は (3)(4)(5): (3) −150 を ＋150 で数えた → −300。(4) ＋310。(5) 入金を $90 少なく引いた → −90', '一覧: 29,400 − 300 ＋ 310 − 90 ＝ $29,320', '両方が $29,320 で一致'],
-            answer: '修正後の売掛金 $29,320'
+            problem: '統制勘定は借方 $28,750、一覧の合計は $29,400。(1) 売上日記帳の合計が $1,000 少なかった（個別の転記は正しい）。(2) 貸倒れ $430 を個別勘定では償却したが、総勘定元帳に記録していない。(3) 貸方残高 $150 の得意先を、一覧に借方で入れた。(4) 残高 $310 の得意先が一覧から漏れた。(5) 入金 $540 を個別勘定に $450 と書いた。貸方残高の得意先は (3) の1社だけ。貸倒引当金は $1,470。修正後の残高と、SFP の表示は？',
+            steps: ['統制勘定は (1)(2): 28,750 ＋ 1,000 − 430 ＝ $29,320', '仕訳: Dr Receivables control 1,000 / Cr Revenue 1,000。Dr Irrecoverable debts 430 / Cr Receivables control 430', '一覧は (3)(4)(5): (3) −150 を ＋150 で数えた → −300。(4) ＋310。(5) 入金を $90 少なく引いた → −90', '一覧: 29,400 − 300 ＋ 310 − 90 ＝ $29,320。両方が一致', '$29,320 は差し引きの数字。借方残高の得意先の合計は 29,320 ＋ 150 ＝ $29,470', 'SFP の売掛金: 29,470 − 1,470 ＝ $28,000。(3) の $150 は流動負債（other payables）', '確かめ: 28,000 − 150 ＝ 27,850 ＝ 29,320 − 1,470'],
+            answer: '修正後の残高 $29,320。SFP は売掛金 $28,000（流動資産）と、払いすぎの $150（流動負債）に分けて載せる'
           }
         },
         {
           title: 'SFP に載せる売掛金',
-          paras: ['SFP の売掛金（trade receivables）は、修正後の統制勘定の残高から貸倒引当金を引いた金額。得意先の記録の合計でも、直す前の残高でもない。', '例: 修正後 $29,320、貸倒引当金 $1,320 なら、SFP には $28,000。'],
-          formula: 'SFP の売掛金 ＝ 修正後の統制勘定 − allowance for receivables',
-          note: { kind: 'warn', text: '届いていない入金（cash in transit）を、期末の売掛金から引かない。お金は期末にはまだ届いていない。' }
+          paras: ['SFP の売掛金（trade receivables）は、修正後の借方残高の得意先の合計から貸倒引当金を引く。得意先の記録の合計ではない。', '払いすぎて貸方残高になった得意先には、会社がお金を返す義務がある。友達が借りた額より多く返してきたら、多い分は自分の「借り」になるのと同じ。'],
+          formula: 'SFP の売掛金 ＝ 借方残高の合計 − allowance for receivables',
+          note: { kind: 'warn', text: '貸方残高はマイナスの売掛金ではなく、負債（payables）に載せる。届いていない入金も売掛金から引かない。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['統制勘定の借方: 掛け売上・不渡り。貸方: 回収・売上戻り・貸倒れ・相殺。引当金と現金売上は入らない', '時間差は得意先の側で調整、自分の誤りは自分の帳簿を直す。総勘定元帳の誤りだけ仕訳', 'SFP の売掛金 ＝ 修正後の統制勘定 − 貸倒引当金']
+          numbered: ['統制勘定の借方: 掛け売上・不渡り。貸方: 回収・売上戻り・貸倒れ・相殺。引当金と現金売上は入らない', '時間差は得意先の側で調整、自分の誤りは自分の帳簿を直す。総勘定元帳の誤りだけ仕訳', 'SFP の売掛金 ＝ 借方残高の合計 − 貸倒引当金。貸方残高は負債']
         },
         {
           title: '英単語',
@@ -438,7 +438,7 @@
             ['statement of account', 'ステートメント・オブ・アカウント', '得意先に送る取引・残高の明細書'],
             ['cash in transit', 'キャッシュ・イン・トランジット', 'まだ届いていない入金'],
             ['dishonoured cheque', 'ディスオナード・チェック', '不渡りの小切手'],
-            ['credit balance', 'クレジット・バランス', '貸方残高（得意先の払いすぎなど）'],
+            ['credit balance', 'クレジット・バランス', '貸方残高（得意先の払いすぎなど。SFP では負債）'],
             ['sales day book', '', '売上日記帳']
           ]
         }
@@ -449,7 +449,7 @@
         { q: 'When reconciling a customer\'s records with the receivables ledger, which of the following is a timing difference?', choices: ['Goods invoiced on 31 December which the customer received on 2 January', 'A credit note issued to the customer but not recorded in the receivables ledger', 'An invoice posted to the wrong customer account', 'A receipt recorded twice in the receivables ledger'], answer: 0, explain: '月末に送った請求書が年明けに届くのは時間差。ほかの3つは自分の帳簿の誤りなので、自分の帳簿を直す。' },
         { q: 'An irrecoverable debt of $430 was written off in the customer\'s individual account but was not recorded in the general ledger. Which journal entry corrects this?', choices: ['Dr Irrecoverable debts $430, Cr Receivables control $430', 'Dr Receivables control $430, Cr Irrecoverable debts $430', 'Dr Allowance for receivables $430, Cr Receivables control $430', 'No journal is needed; adjust the list of balances only'], answer: 0, explain: '総勘定元帳で、費用の記録と売掛金の減少が漏れている。費用を借方、統制勘定を貸方。2つ目は左右が逆。個別勘定はもう正しいので一覧は直さない。' },
         { q: 'After correcting errors, the receivables control account shows $45,600. The allowance for receivables is $2,100. Customer records total $44,000 because of cash in transit. What amount is reported as trade receivables in the statement of financial position?', choices: ['$43,500', '$45,600', '$44,000', '$41,900'], answer: 0, explain: '修正後の統制勘定 $45,600 − 引当金 $2,100 ＝ $43,500。得意先の記録の合計は、届いていない入金の分だけ少ないだけで使わない。$41,900 は得意先の記録から引当金を引いた間違い。' },
-        { q: '得意先が12月30日に払ったお金が、1月3日に届いた。12月31日の自分の帳簿はどうする？', choices: ['直さない。得意先の記録の側で足して調整する', '売掛金から引く', '銀行の残高に足す', '売上を減らす'], answer: 0, explain: '期末にはまだお金を受け取っていないので、売掛金は残ったまま。時間差なので相手の数字の側で調整する。' }
+        { q: 'At the year end, the receivables ledger shows debit balances of $38,600 and credit balances of $400. The receivables control account agrees with the net total of $38,200. The allowance for receivables is $1,600. What should be reported in the statement of financial position?', choices: ['Trade receivables $37,000 and a payable of $400', 'Trade receivables $36,600 and no payable', 'Trade receivables $38,200 and no payable', 'Trade receivables $37,000 and no payable'], answer: 0, explain: '売掛金は借方残高 38,600 − 引当金 1,600 ＝ $37,000。払いすぎの $400 は会社が返す義務なので負債に載せる。$36,600 は貸方残高をマイナスの売掛金として差し引いた間違い。$38,200 は引当金も忘れている。4つ目は $400 の負債を載せ忘れている。' }
       ]
     }
   ],
@@ -482,6 +482,7 @@
     { id: 'X05-3', lesson: 'X05', q: '得意先の記録と照合する目的は？', a: '第三者の独立した記録と比べ、誤りを見つけて正しく回収・表示するため' },
     { id: 'X05-4', lesson: 'X05', q: '届いていない入金（cash in transit）はどう扱う？', a: '時間差。得意先の記録の側で調整し、自分の帳簿は直さない' },
     { id: 'X05-5', lesson: 'X05', q: '貸倒れを総勘定元帳に記録し忘れた。直す仕訳は？', a: 'Dr Irrecoverable debts / Cr Receivables control' },
-    { id: 'X05-6', lesson: 'X05', q: 'SFP に載せる売掛金は？', a: '修正後の統制勘定の残高 − 貸倒引当金' }
+    { id: 'X05-6', lesson: 'X05', q: 'SFP に載せる売掛金は？', a: '修正後の借方残高の得意先の合計 − 貸倒引当金' },
+    { id: 'X05-7', lesson: 'X05', q: '得意先元帳の貸方残高（払いすぎ）は SFP のどこ？', a: 'マイナスの売掛金ではなく負債（payables）' }
   ]
 });

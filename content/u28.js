@@ -264,58 +264,61 @@
         {
           title: '3つの区分の定義',
           paras: ['キャッシュフロー計算書は、現金の動きを3つに分ける（IAS 7 の定義）。'],
-          list: ['営業活動（operating activities）: 本業で売上を生む活動。投資にも財務にも入らないものはここ', '投資活動（investing activities）: 固定資産などの長く使う資産や投資を、買う・売る', '財務活動（financing activities）: 株主の出資や借入の大きさ・中身が変わる（株の発行、借入、返済、利息と配当の支払）']
+          list: ['営業活動（operating activities）: 本業で売上を生む活動。投資にも財務にも入らないものはここ', '投資活動（investing activities）: 固定資産などの長く使う資産や投資を、買う・売る', '財務活動（financing activities）: 株主の出資や借入の大きさ・中身が変わる（株の発行、借入、返済、配当の支払）']
         },
         {
           title: 'どこに何が入るか',
-          svg: `<svg viewBox="0 0 440 300" role="img" aria-label="営業、投資、財務の3つの区分と、それぞれに入る主な項目" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">現金の動きを3つの箱に分ける</text><rect x="20" y="52" width="128" height="200" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="84" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">営業活動</text><text x="84" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">operating</text><text x="84" y="130" text-anchor="middle" fill="var(--ink)">顧客からの入金</text><text x="84" y="156" text-anchor="middle" fill="var(--ink)">仕入先への支払</text><text x="84" y="182" text-anchor="middle" fill="var(--ink)">給料の支払</text><text x="84" y="208" text-anchor="middle" fill="var(--ink)">法人税の支払</text><rect x="156" y="52" width="128" height="200" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="220" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">投資活動</text><text x="220" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">investing</text><text x="220" y="130" text-anchor="middle" fill="var(--ink)">固定資産の購入</text><text x="220" y="156" text-anchor="middle" fill="var(--ink)">固定資産の売却</text><text x="220" y="182" text-anchor="middle" fill="var(--ink)">受取利息</text><text x="220" y="208" text-anchor="middle" fill="var(--ink)">受取配当</text><rect x="292" y="52" width="128" height="200" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="356" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">財務活動</text><text x="356" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">financing</text><text x="356" y="130" text-anchor="middle" fill="var(--ink)">株式の発行</text><text x="356" y="156" text-anchor="middle" fill="var(--ink)">借入・返済</text><text x="356" y="182" text-anchor="middle" fill="var(--ink)">利息の支払</text><text x="356" y="208" text-anchor="middle" fill="var(--ink)">配当の支払</text><text x="220" y="284" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">3つの合計 ＝ 現金の増減</text></svg>`,
-          caption: '法人税の支払は営業、受取利息と受取配当は投資、利息の支払と配当の支払は財務に入れる。個人事業なら、資本の拠出（capital introduced）と引出し（drawings）が財務に入る。'
+          svg: `<svg viewBox="0 0 440 300" role="img" aria-label="営業、投資、財務の3つの区分と、それぞれに入る主な項目" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">現金の動きを3つの箱に分ける</text><rect x="20" y="52" width="128" height="200" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="84" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">営業活動</text><text x="84" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">operating</text><text x="84" y="130" text-anchor="middle" fill="var(--ink)">顧客からの入金</text><text x="84" y="156" text-anchor="middle" fill="var(--ink)">仕入先への支払</text><text x="84" y="182" text-anchor="middle" fill="var(--ink)">給料の支払</text><text x="84" y="208" text-anchor="middle" fill="var(--ink)">法人税の支払</text><text x="84" y="234" text-anchor="middle" fill="var(--ink)">利息の支払</text><rect x="156" y="52" width="128" height="200" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="220" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">投資活動</text><text x="220" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">investing</text><text x="220" y="130" text-anchor="middle" fill="var(--ink)">固定資産の購入</text><text x="220" y="156" text-anchor="middle" fill="var(--ink)">固定資産の売却</text><text x="220" y="182" text-anchor="middle" fill="var(--ink)">受取利息</text><text x="220" y="208" text-anchor="middle" fill="var(--ink)">受取配当</text><rect x="292" y="52" width="128" height="200" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="356" y="80" text-anchor="middle" font-size="16" font-weight="600" fill="var(--ink)">財務活動</text><text x="356" y="100" text-anchor="middle" font-size="12.5" fill="var(--quiet)">financing</text><text x="356" y="130" text-anchor="middle" fill="var(--ink)">株式の発行</text><text x="356" y="156" text-anchor="middle" fill="var(--ink)">借入・返済</text><text x="356" y="182" text-anchor="middle" fill="var(--ink)">配当の支払</text><text x="220" y="284" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">3つの合計 ＝ 現金の増減</text></svg>`,
+          caption: 'ACCA の標準の形では、法人税の支払と利息の支払は営業、受取利息と受取配当は投資、配当の支払は財務に入れる。個人事業なら、資本の拠出（capital introduced）と引出し（drawings）が財務に入る。'
         },
         {
           title: '利息と配当は迷いやすい',
           table: {
-            caption: '今の IAS 7（IFRS 18 による改正後）',
+            caption: 'ACCA の標準の形（proforma）',
             head: ['項目', '区分'],
             rows: [
-              ['Interest paid（利息の支払）', '財務'],
+              ['Interest paid（利息の支払）', '営業'],
               ['Interest received（受取利息）', '投資'],
               ['Dividends received（受取配当）', '投資'],
               ['Dividends paid（配当の支払）', '財務'],
               ['Income taxes paid（法人税の支払）', '営業']
             ]
           },
-          after: '利息の支払は、借りたお金のコストなので借入と同じ財務。受取利息・受取配当は、投資から得た稼ぎなので投資。',
-          note: { kind: 'warn', text: '古い IAS 7 は選択を認めていたので、古い教材では利息の支払が営業に入っていることがある。ACCA は2025年9月から、IFRS 18 で改正された上の表の形で出題している。' }
+          after: '利息の支払は、本業を続けるためにふだん払うコストとして、法人税と同じ営業に入れる。受取利息・受取配当は投資から得た稼ぎなので投資。配当の支払は株主への還元なので財務。',
+          note: { kind: 'tip', text: 'IAS 7 は、利息の支払を財務活動に入れることも認めている。試験で計算書の形（proforma）が示されたら、その形に従う。示されていなければ、この表の形で答える。' }
         },
         {
-          title: '現金が動かない取引は載せない',
-          paras: ['キャッシュフロー計算書に載るのは、現金が実際に動いた取引だけ。次のものはどの区分にも入らない。'],
-          list: ['減価償却費、貸倒れ、引当金の計上', '無償増資（bonus issue）、固定資産の再評価', '掛けの売上・掛けの仕入（現金は回収・支払のときに動く）', '株を渡して資産を手に入れる、社債を株に替える'],
-          after: '現金とすぐ現金にできる短期の預金（現金同等物、cash equivalents）の間の移し替えも、現金の中での移動なので載せない。'
-        },
-        {
-          title: '利益と現金への影響',
+          title: '現金が動くものだけを載せる',
+          paras: ['キャッシュフロー計算書に載るのは、現金が実際に動いた取引だけ。「現金」の列が動くかで判断する。'],
           table: {
             head: ['取引', '利益', '現金'],
             rows: [
               ['現金で売る', '増える', '増える'],
               ['掛けで売る', '増える', '変わらない'],
               ['売掛金を回収する', '変わらない', '増える'],
-              ['買掛金を払う', '変わらない', '減る'],
               ['減価償却費を計上する', '減る', '変わらない'],
               ['設備を現金で買う', '変わらない', '減る'],
-              ['お金を借りる', '変わらない', '増える'],
-              ['配当を払う', '変わらない', '減る']
+              ['お金を借りる', '変わらない', '増える']
             ]
           },
-          after: '「現金」の列が動くものだけが、キャッシュフロー計算書に載る。'
+          after: '減価償却費・貸倒れ・引当金の計上、無償増資（bonus issue）、再評価、株を渡して資産を手に入れる取引も、現金が動かないのでどの区分にも載せない。'
+        },
+        {
+          title: '現金同等物と当座借越',
+          paras: ['計算書の最後の「現金」は、現金及び現金同等物（cash and cash equivalents）。現金と預金に、すぐ現金にできる短期の預金（ふつう満期3か月以内）を足したもの。この中の移し替えは載せない。', 'すぐ返す約束（repayable on demand）で資金繰りに使う当座借越（bank overdraft）は、ここから差し引く。口座に3万円あっても、すぐ返す借りが1万円なら、使えるのは2万円。'],
+          table: {
+            head: ['期末', '$'],
+            rows: [['Cash at bank（預金）', '3,000'], ['Bank overdraft（当座借越）', '(1,000)']],
+            total: ['Cash and cash equivalents', '2,000']
+          },
+          note: { kind: 'tip', text: '差し引くのは CF計算書の中だけ。財政状態計算書では相殺せず、預金 $3,000 を流動資産、当座借越 $1,000 を流動負債に別々に載せる（L113）。' }
         },
         {
           title: '例題: 3つに分けて合計する',
           example: {
             problem: 'Tako Co の今年の現金の動き: ①顧客からの入金 $60,000 ②仕入先と従業員への支払 $41,000 ③法人税の支払 $3,000 ④利息の支払 $1,000 ⑤オーブンの購入 $15,000 ⑥古いバンの売却 $4,000（売却益 $500）⑦受取利息 $200 ⑧株式の発行 $10,000 ⑨借入の返済 $6,000 ⑩配当の支払 $2,500。ほかに減価償却費 $5,000。3つの区分と現金の増減は？',
-            steps: ['営業: ①②③ → $60,000 − $41,000 − $3,000 ＝ $16,000', '投資: ⑤⑥⑦ → −$15,000 ＋ $4,000 ＋ $200 ＝ −$10,800', '売却益 $500 は別の行にしない。入った現金 $4,000 の中に含まれている', '財務: ④⑧⑨⑩ → −$1,000 ＋ $10,000 − $6,000 − $2,500 ＝ $500', '減価償却費 $5,000 は現金が動かないので、どこにも入らない', '合計: $16,000 − $10,800 ＋ $500 ＝ $5,700'],
-            answer: '営業 ＋$16,000、投資 −$10,800、財務 ＋$500。現金は $5,700 増えた'
+            steps: ['営業: ①②③④ → $60,000 − $41,000 − $3,000 − $1,000 ＝ $15,000（利息の支払④も営業）', '投資: ⑤⑥⑦ → −$15,000 ＋ $4,000 ＋ $200 ＝ −$10,800', '売却益 $500 は別の行にしない。入った現金 $4,000 の中に含まれている', '財務: ⑧⑨⑩ → $10,000 − $6,000 − $2,500 ＝ ＋$1,500', '減価償却費 $5,000 は現金が動かないので、どこにも入らない', '合計: $15,000 − $10,800 ＋ $1,500 ＝ $5,700'],
+            answer: '営業 ＋$15,000、投資 −$10,800、財務 ＋$1,500。現金は $5,700 増えた'
           }
         },
         {
@@ -324,12 +327,12 @@
         },
         {
           title: 'よくある間違い',
-          list: ['配当の支払を投資活動に入れる（正しくは財務）', '利息の支払を営業活動に入れる（古い形。今は財務）', '受取利息を財務活動に入れる（正しくは投資）', '固定資産の売却収入を営業に入れる（正しくは投資）', '売却益だけを投資の入金にする（入るのは売った代金の全額）'],
+          list: ['配当の支払を投資活動に入れる（正しくは財務）', '受取利息を財務活動に入れる（正しくは投資）', '固定資産の売却収入を営業に入れる（正しくは投資）', '売却益だけを投資の入金にする（入るのは売った代金の全額）', 'すぐ返す当座借越を財務の借入にする（現金及び現金同等物から引く）'],
           note: { kind: 'warn', text: '減価償却費や無償増資を「どこかの区分」に入れようとしない。現金が動いていないので、どこにも載らない。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['営業＝本業、投資＝長く使う資産や投資の売買、財務＝株主と貸し手とのやりとり', '税金の支払は営業、受取利息・受取配当は投資、利息の支払と配当の支払は財務', '現金が動かない取引（減価償却・無償増資・再評価・掛け取引）は載せない']
+          numbered: ['営業＝本業、投資＝長く使う資産や投資の売買、財務＝株主と貸し手とのやりとり', '税金と利息の支払は営業、受取利息・受取配当は投資、配当の支払は財務（形が示されたらそれに従う）','現金が動かない取引（減価償却・無償増資・再評価・掛け取引）は載せない']
         },
         {
           title: '英単語',
@@ -340,24 +343,25 @@
             ['interest paid / received', '', '利息の支払 / 受取利息'],
             ['dividends paid / received', '', '配当の支払 / 受取配当'],
             ['cash equivalents', 'キャッシュ イクイバレンツ', '現金同等物（すぐ現金にできる短期の預金など）'],
+            ['bank overdraft', 'オーバードラフト', '当座借越（すぐ返すものは現金同等物から引く）'],
             ['non-cash transaction', '', '現金が動かない取引']
           ]
         }
       ],
       quiz: [
-        { q: 'In which section of the statement of cash flows is interest received shown?', choices: ['Investing activities', 'Operating activities', 'Financing activities', 'It is not shown'], answer: 0, explain: '受取利息は投資活動（投資から得た稼ぎ）。利息の支払と配当の支払は財務活動なので、混同しやすい。' },
-        { q: 'In which section of the statement of cash flows is interest paid by a trading company shown?', choices: ['Financing activities', 'Operating activities', 'Investing activities', 'It is not shown'], answer: 0, explain: '利息の支払は、借りたお金のコストなので財務活動（IFRS 18 で改正された今の IAS 7）。営業活動は古い IAS 7 で認められていた形で、今の試験では間違い。' },
+        { q: 'In which section of the statement of cash flows is interest paid by a trading company shown, using the standard ACCA proforma?', choices: ['Operating activities', 'Financing activities', 'Investing activities', 'It is not shown'], answer: 0, explain: 'ACCA の標準の形では、利息の支払は法人税の支払と同じく営業活動。IAS 7 は財務活動に入れることも認めているので、問題に形（proforma）が示されていればそれに従う。財務活動に入るのは配当の支払。投資活動は受取利息・受取配当の方。' },
         { q: 'Which of the following transactions does NOT appear in a statement of cash flows?', choices: ['A bonus issue of shares', 'A rights issue of shares', 'Repayment of a bank loan', 'Purchase of a vehicle for cash'], answer: 0, explain: '無償増資は剰余金を株式資本に移すだけで、現金は動かない。株主割当増資は現金で株を発行するので財務活動の入金。借入の返済は財務、車の購入は投資。' },
         { q: 'Tako Co は今年、設備を $12,000 で現金購入し、古い設備を $3,000 で売った（売却益 $500）。受取利息は $400。投資活動によるキャッシュフロー（純額）は？（マイナスならマイナスで答える）', type: 'number', answer: -8600, unit: '$', explain: '−$12,000 ＋ $3,000 ＋ $400 ＝ −$8,600。売却益 $500 は売った代金 $3,000 に含まれているので、別に足さない。足すと −$8,100 になる。' },
-        { q: '財務活動に入るものは？', choices: ['配当の支払', '受取配当', '法人税の支払', '固定資産の売却収入'], answer: 0, explain: '配当の支払は株主とのやりとりなので財務。受取配当と売却収入は投資、法人税の支払は営業。「配当」という言葉だけで判断せず、払うのか受け取るのかを見る。' },
-        { q: '顧客からの入金 $50,000、仕入先と従業員への支払 $32,000、法人税の支払 $4,000、利息の支払 $1,500、銀行からの借入 $10,000。営業活動によるキャッシュフローは？', type: 'number', answer: 14000, unit: '$', explain: '$50,000 − $32,000 − $4,000 ＝ $14,000。利息の支払 $1,500 と借入 $10,000 は財務活動なので入れない。利息も引くと $12,500（古い形）、借入も入れると $24,000 になる。' }
+        { q: '投資活動に入るものは？', choices: ['受取利息', '利息の支払', '配当の支払', '法人税の支払'], answer: 0, explain: '受取利息は投資から得た稼ぎなので投資活動（受取配当も同じ）。利息の支払と法人税の支払は営業、配当の支払は財務。「利息」「配当」という言葉だけで判断せず、払うのか受け取るのかを見る。' },
+        { q: '顧客からの入金 $50,000、仕入先と従業員への支払 $32,000、法人税の支払 $4,000、利息の支払 $1,500、銀行からの借入 $10,000。営業活動によるキャッシュフローは？（ACCA の標準の形で）', type: 'number', answer: 12500, unit: '$', explain: '$50,000 − $32,000 − $4,000 − $1,500 ＝ $12,500。利息の支払も営業に入れる。借入 $10,000 は財務活動なので入れない。利息を引き忘れると $14,000、借入まで入れると $22,500 になる。' },
+        { q: 'At the year end a company has cash at bank of $5,000 and a bank overdraft of $1,500. The overdraft is repayable on demand and forms part of the company\'s cash management. What is the closing cash and cash equivalents figure in the statement of cash flows?', type: 'number', answer: 3500, unit: '$', explain: '$5,000 − $1,500 ＝ $3,500。すぐ返す当座借越は現金及び現金同等物から差し引く。$5,000 は借越を無視、$6,500 は足してしまった間違い。ただし財政状態計算書では相殺せず、預金 $5,000（流動資産）と当座借越 $1,500（流動負債）を別々に載せる。' }
       ]
     },
     {
       id: 'L141',
       no: 141,
       title: '営業CFを間接法で計算する',
-      goal: '営業利益から出発して調整し、営業活動によるキャッシュフローを間接法で計算できるようになる',
+      goal: '税引前利益から出発して調整し、営業活動によるキャッシュフローを間接法で計算できるようになる',
       minutes: 15,
       recall: true,
       exam: 'both',
@@ -375,24 +379,26 @@
             caption: 'Cash flows from operating activities',
             head: ['行', '向き'],
             rows: [
-              ['Operating profit（営業利益）', 'スタート'],
+              ['Profit before tax（税引前利益）', 'スタート'],
+              ['Finance costs（財務費用）', '＋'],
+              ['Investment income（受取利息・配当）', '−'],
               ['Depreciation / amortisation（減価償却費）', '＋'],
-              ['Loss on disposal（売却損）', '＋'],
-              ['Profit on disposal（売却益）', '−'],
+              ['Loss / (profit) on disposal（売却損益）', '損は＋ 益は−'],
               ['(Increase) / decrease in inventories', '増えたら− 減ったら＋'],
               ['(Increase) / decrease in trade receivables', '増えたら− 減ったら＋'],
               ['Increase / (decrease) in trade payables', '増えたら＋ 減ったら−'],
-              ['Cash from operating activities before income taxes', '小計'],
+              ['Cash generated from operations', '小計'],
+              ['Interest paid（利息の支払）', '−'],
               ['Income taxes paid（法人税の支払）', '−']
             ],
             total: ['Net cash from operating activities', '合計']
           }
         },
         {
-          title: 'スタートは営業利益',
-          paras: ['今の IAS 7（IFRS 18 による改正後）では、間接法は営業利益（operating profit）から始める。ACCA は2025年9月からこの形で出題している。', '営業利益は、財務費用（finance costs）と受取利息・配当（investment income）より上の利益。だから営業の区分では、利息を調整しなくてよい。利息の支払は財務、受取利息・配当は投資に書く。'],
-          formula: '営業利益 ＝ 税引前利益 ＋ 財務費用 − 受取利息・配当',
-          note: { kind: 'tip', text: '問題に税引前利益（profit before tax）しかないときは、この式で営業利益に直してから始める。古い教材の「税引前利益から始めて利息を足し戻す」形は、今の試験では使わない。' }
+          title: 'スタートは税引前利益',
+          paras: ['ACCA の標準の形では、間接法は税引前利益（profit before tax）から始める。', '財務費用（finance costs）は足し戻す。実際に払った利息は、小計の下で「利息の支払」として引くので、ここで戻さないと二重に引くことになる。', '受取利息・配当（investment income）は引く。受け取った現金は投資活動に書くので、営業に残すと二重に数える。'],
+          formula: '税引前利益 ＋ 財務費用 − 受取利息・配当',
+          note: { kind: 'tip', text: 'たとえ: 家計簿の「ローン利息」と通帳の引き落とし額はずれることがある。だから費用をいったん戻し、引き落とされた額で引き直す。' }
         },
         {
           title: '① 現金が動かない損益を戻す',
@@ -410,54 +416,54 @@
         {
           title: '例題①: Tako Co の営業CF',
           example: {
-            problem: 'Tako Co の営業利益は $8,000（財務費用・受取利息はないので、税引前利益も $8,000）。減価償却費 $2,000。在庫は $4,000 → $5,000、売掛金は $6,000 → $8,000、買掛金は $3,000 → $3,500。未払法人税は期首 $1,000・期末 $1,300、今年の法人税費用は $1,500。営業活動によるキャッシュフローは？',
-            steps: ['営業利益 $8,000 からスタート', '減価償却費を足し戻す: ＋$2,000 → $10,000', '在庫が $1,000 増えた: −$1,000 → $9,000', '売掛金が $2,000 増えた: −$2,000 → $7,000', '買掛金が $500 増えた: ＋$500 → 営業から生じた現金（cash from operating activities before income taxes）$7,500', '法人税の支払: $1,000 ＋ $1,500 − $1,300 ＝ $1,200'],
+            problem: 'Tako Co の税引前利益は $8,000（財務費用・受取利息はない）。減価償却費 $2,000。在庫は $4,000 → $5,000、売掛金は $6,000 → $8,000、買掛金は $3,000 → $3,500。未払法人税は期首 $1,000・期末 $1,300、今年の法人税費用は $1,500。営業活動によるキャッシュフローは？',
+            steps: ['税引前利益 $8,000 からスタート（財務費用・受取利息がないので、その調整はない）', '減価償却費を足し戻す: ＋$2,000 → $10,000', '在庫が $1,000 増えた: −$1,000 → $9,000', '売掛金が $2,000 増えた: −$2,000 → $7,000', '買掛金が $500 増えた: ＋$500 → 営業から生じた現金（cash generated from operations）$7,500', '法人税の支払: $1,000 ＋ $1,500 − $1,300 ＝ $1,200'],
             answer: '$7,500 − $1,200 ＝ 営業CF $6,300'
           }
         },
         {
           title: '税金は「払った額」を引く',
-          paras: ['営業利益は税金を引く前の利益。だから小計の下で、今年実際に払った法人税を引く。費用の額ではない。', '利息の支払も同じ式で計算できる。ただし書くのは財務活動（L144）。'],
+          paras: ['税引前利益は税金を引く前の利益。だから小計の下で、今年実際に払った法人税を引く。費用の額ではない。', '利息の支払も同じ式で計算し、小計の下で営業活動の中で引く。IAS 7 は財務活動に書くことも認めているので、問題に形が示されたらそれに従う。'],
           formula: '支払額 ＝ 期首の未払 ＋ 今年の費用 − 期末の未払',
           tAccount: { name: 'Tax payable', debit: [['Cash paid（逆算）', '1,200']], credit: [['Balance b/d', '1,000'], ['SPL tax expense', '1,500']], balance: { side: 'debit', label: 'Balance c/d', amount: '1,300' } }
         },
         {
-          title: '例題②: 税引前利益しか分からない場合',
+          title: '例題②: 財務費用と受取利息がある場合',
           example: {
             problem: '税引前利益 $45,000（財務費用 $3,000 を引いた後、受取利息 $1,000 を足した後）。減価償却費 $9,000、設備の売却益 $2,000。在庫は $4,000 減少、売掛金は $6,000 増加、買掛金は $3,000 減少。未払利息は期首 $500・期末 $800。未払法人税は期首 $7,000・期末 $8,000、法人税費用 $10,000。営業CFは？',
-            steps: ['営業利益に直す: $45,000 ＋ 財務費用 $3,000 − 受取利息 $1,000 ＝ $47,000', '減価償却費 ＋$9,000、売却益 −$2,000 → $54,000', '在庫の減少 ＋$4,000、売掛金の増加 −$6,000、買掛金の減少 −$3,000 → 営業から生じた現金 $49,000', '税金の支払: $7,000 ＋ $10,000 − $8,000 ＝ $9,000', '利息の支払 $500 ＋ $3,000 − $800 ＝ $2,700 は財務活動へ。受取利息 $1,000 は投資活動へ'],
-            answer: '$49,000 − $9,000 ＝ 営業CF $40,000'
+            steps: ['税引前利益 $45,000 ＋ 財務費用 $3,000 − 受取利息 $1,000 ＝ $47,000', '減価償却費 ＋$9,000、売却益 −$2,000 → $54,000', '在庫の減少 ＋$4,000、売掛金の増加 −$6,000、買掛金の減少 −$3,000 → 営業から生じた現金 $49,000', '利息の支払: $500 ＋ $3,000 − $800 ＝ $2,700', '税金の支払: $7,000 ＋ $10,000 − $8,000 ＝ $9,000', '受取利息 $1,000 は投資活動へ'],
+            answer: '$49,000 − $2,700 − $9,000 ＝ 営業CF $37,300'
           }
         },
         {
           title: 'よくある間違い',
-          list: ['税引前利益や当期利益からそのまま始める。スタートは営業利益', '運転資本の符号を逆にする（売掛金の増加を足すなど）', '売却益を足してしまう。売却益は引き、売却損は足す', '利息の支払を営業の区分で引く（古い形。今は財務）'],
+          list: ['財務費用を足し戻さない、受取利息・配当を引かない', '運転資本の符号を逆にする（売掛金の増加を足すなど）', '売却益を足してしまう。売却益は引き、売却損は足す', '財務費用を足し戻したのに、利息の支払を小計の下で引き忘れる'],
           note: { kind: 'warn', text: '税金は、損益計算書の費用ではなく「実際に払った額」を引く。期首と期末の未払で調整する。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['営業利益から出発し、現金の動かない損益（減価償却・売却損益）を戻す', '運転資本の資産が増えたら引く、負債が増えたら足す（在庫・売掛金・買掛金）', '税金は実際に払った額（期首未払＋費用−期末未払）を引く。利息の支払は財務へ']
+          numbered: ['税引前利益から出発し、財務費用を足し、受取利息・配当を引き、現金の動かない損益（減価償却・売却損益）を戻す', '運転資本の資産が増えたら引く、負債が増えたら足す（在庫・売掛金・買掛金）', '営業から生じた現金から、実際に払った利息と税金（期首未払＋費用−期末未払）を引く']
         },
         {
           title: '英単語',
           words: [
             ['indirect method', 'インダイレクト メソッド', '間接法（利益から調整する）'],
-            ['operating profit', 'オペレーティング プロフィット', '営業利益（間接法のスタート）'],
+            ['profit before tax', '', '税引前利益（間接法のスタート）'],
             ['working capital', 'ワーキング キャピタル', '運転資本（在庫・売掛金・買掛金など）'],
-            ['cash from operating activities before income taxes', '', '営業から生じた現金（小計。古い名前は cash generated from operations）'],
-            ['finance costs / investment income', '', '財務費用 / 受取利息・配当（どちらも営業利益の下）'],
-            ['income taxes paid', '', '法人税の支払'],
+            ['cash generated from operations', '', '営業から生じた現金（小計）'],
+            ['finance costs / investment income', '', '財務費用（足し戻す） / 受取利息・配当（引く）'],
+            ['interest paid / income taxes paid', '', '利息の支払 / 法人税の支払（どちらも小計の下で引く）'],
             ['net cash from operating activities', '', '営業活動によるキャッシュフロー']
           ]
         }
       ],
       quiz: [
-        { q: 'Operating profit was $30,000 and depreciation was $5,000. Inventory increased by $2,000, trade receivables decreased by $1,500 and trade payables increased by $1,000. What was the cash from operating activities before income taxes?', choices: ['$35,500', '$32,500', '$33,500', '$25,500'], answer: 0, explain: '$30,000 + $5,000 − $2,000 + $1,500 + $1,000 ＝ $35,500。$32,500 は売掛金の向きが逆、$33,500 は買掛金の向きが逆、$25,500 は減価償却費を引いてしまった間違い。' },
+        { q: 'Profit before tax was $30,000 and there were no finance costs or investment income. Depreciation was $5,000. Inventory increased by $2,000, trade receivables decreased by $1,500 and trade payables increased by $1,000. What was the cash generated from operations?', choices: ['$35,500', '$32,500', '$33,500', '$25,500'], answer: 0, explain: '$30,000 + $5,000 − $2,000 + $1,500 + $1,000 ＝ $35,500。$32,500 は売掛金の向きが逆、$33,500 は買掛金の向きが逆、$25,500 は減価償却費を引いてしまった間違い。' },
         { q: 'Tax payable was $4,000 at the start of the year and $5,500 at the end. The income tax expense for the year was $6,000. How much tax was paid during the year?', type: 'number', answer: 4500, unit: '$', explain: '$4,000 + $6,000 − $5,500 ＝ $4,500。費用の $6,000 をそのまま支払にしない。期末の未払 $5,500 はまだ払っていない。' },
-        { q: 'Which of the following is deducted from operating profit when calculating cash from operating activities using the indirect method?', choices: ['An increase in trade receivables', 'The depreciation charge', 'An increase in trade payables', 'A loss on disposal of equipment'], answer: 0, explain: '売掛金が増えた＝売上は利益に入ったが代金が入っていない、なので引く。減価償却費と売却損は現金が出ない費用なので足す。買掛金の増加はまだ払っていないので足す。' },
-        { q: '財務費用（支払利息）は $2,400。未払利息は期首 $300、期末 $500。今年の利息の支払は？', type: 'number', answer: 2200, unit: '$', explain: '$300 ＋ $2,400 − $500 ＝ $2,200。税金と同じ式。利息の支払 $2,200 は営業ではなく財務活動に書く。' },
-        { q: '営業利益には設備の売却益 $3,000 が含まれている。間接法ではどうする？', choices: ['利益から $3,000 を引き、売った代金の全額を投資活動に書く', '利益に $3,000 を足す', '何もしない', '$3,000 を投資活動の入金にする'], answer: 0, explain: '売却益は現金の動きではない。利益から引いておき、実際に入った売却代金を投資活動に全額書く。足すと、売却の効果を二重に数える。' },
-        { q: 'Profit before tax was $20,000, after deducting finance costs of $2,000 and adding investment income of $500. Depreciation was $3,000, there were no working capital changes and income taxes paid were $4,000. What was the net cash from operating activities?', type: 'number', answer: 20500, unit: '$', explain: '営業利益 ＝ $20,000 ＋ $2,000 − $500 ＝ $21,500。＋減価償却費 $3,000 ＝ $24,500、−税金 $4,000 ＝ $20,500。税引前利益から始めると $19,000 になる。利息の支払は財務、受取利息・配当は投資に書く。' }
+        { q: 'A company has no finance costs or investment income. Which of the following is deducted from profit before tax when calculating cash generated from operations using the indirect method?', choices: ['An increase in trade receivables', 'The depreciation charge', 'An increase in trade payables', 'A loss on disposal of equipment'], answer: 0, explain: '売掛金が増えた＝売上は利益に入ったが代金が入っていない、なので引く。減価償却費と売却損は現金が出ない費用なので足す。買掛金の増加はまだ払っていないので足す。' },
+        { q: '財務費用（支払利息）は $2,400。未払利息は期首 $300、期末 $500。今年の利息の支払は？', type: 'number', answer: 2200, unit: '$', explain: '$300 ＋ $2,400 − $500 ＝ $2,200。税金と同じ式。利息の支払 $2,200 は、営業から生じた現金の下で、営業活動の中で引く（ACCA の標準の形）。費用の $2,400 は税引前利益に足し戻してある。' },
+        { q: '税引前利益には設備の売却益 $3,000 が含まれている。間接法ではどうする？', choices: ['利益から $3,000 を引き、売った代金の全額を投資活動に書く', '利益に $3,000 を足す', '何もしない', '$3,000 を投資活動の入金にする'], answer: 0, explain: '売却益は現金の動きではない。利益から引いておき、実際に入った売却代金を投資活動に全額書く。足すと、売却の効果を二重に数える。' },
+        { q: 'Profit before tax was $20,000, after deducting finance costs of $2,000 and adding investment income of $500. All finance costs were paid in cash during the year. Depreciation was $3,000, there were no working capital changes and income taxes paid were $4,000. Using the standard ACCA proforma, what was the net cash from operating activities?', type: 'number', answer: 18500, unit: '$', explain: '$20,000 ＋ 財務費用 $2,000 − 受取利息・配当 $500 ＋ 減価償却費 $3,000 ＝ 営業から生じた現金 $24,500。− 利息の支払 $2,000 − 税金 $4,000 ＝ $18,500。利息の支払を引き忘れると $20,500、受取利息・配当を引き忘れると $19,000 になる。受け取った $500 は投資活動に書く。' }
       ]
     }
   ],
@@ -480,14 +486,16 @@
     { id: 'L139-5', lesson: 'L139', q: 'なぜ損益計算書と並べて見る？', a: '稼ぐ力と現金を生む力は別。両方の弱点を補い合えるから' },
     { id: 'L139-6', lesson: 'L139', q: 'CF計算書は将来の現金を示す？', a: '示さない（過去の情報）。ただ将来の現金を予測する土台にはなる（利点）' },
     { id: 'L140-1', lesson: 'L140', q: '営業・投資・財務の中身は？', a: '営業＝本業、投資＝長く使う資産や投資の売買、財務＝株主と貸し手とのやりとり' },
-    { id: 'L140-2', lesson: 'L140', q: '利息と配当の区分は？（今の IAS 7）', a: '利息の支払・配当の支払は財務、受取利息・受取配当は投資' },
+    { id: 'L140-2', lesson: 'L140', q: '利息と配当の区分は？（ACCA の標準の形）', a: '利息の支払は営業、配当の支払は財務、受取利息・受取配当は投資' },
     { id: 'L140-3', lesson: 'L140', q: 'CF計算書に載らない取引の例は？', a: '減価償却、無償増資、再評価、掛けの売上（回収まで）' },
     { id: 'L140-4', lesson: 'L140', q: '法人税の支払の区分は？', a: '営業活動' },
     { id: 'L140-5', lesson: 'L140', q: '固定資産の売却益は投資CFにどう書く？', a: '別の行にしない。売った代金の全額を売却収入として書く' },
-    { id: 'L141-1', lesson: 'L141', q: '間接法のスタートは？', a: '営業利益（operating profit）。税引前利益なら財務費用を足し、受取利息・配当を引いて直す' },
+    { id: 'L140-6', lesson: 'L140', q: 'すぐ返す当座借越は、CF計算書でどう扱う？', a: '現金及び現金同等物から差し引く。SFP では相殺せず流動負債に載せる' },
+    { id: 'L140-7', lesson: 'L140', q: '利息の支払を財務活動に入れてもよい？', a: 'IAS 7 は認めている。問題に形（proforma）が示されたらそれに従う' },
+    { id: 'L141-1', lesson: 'L141', q: '間接法のスタートは？', a: '税引前利益（profit before tax）。財務費用を足し、受取利息・配当を引いてから調整を続ける' },
     { id: 'L141-2', lesson: 'L141', q: '運転資本の増減の符号のルールは？', a: '資産（在庫・売掛金）が増えたら引く、負債（買掛金）が増えたら足す' },
     { id: 'L141-3', lesson: 'L141', q: '売却損益は間接法でどうする？', a: '売却損は足す、売却益は引く。代金は投資活動に書く' },
-    { id: 'L141-4', lesson: 'L141', q: '間接法で財務費用・利息の支払はどう扱う？', a: '営業利益の下なので調整しない。利息の支払は財務活動に書く' },
+    { id: 'L141-4', lesson: 'L141', q: '間接法で財務費用・利息の支払はどう扱う？', a: '財務費用は足し戻し、実際に払った利息を小計の下で営業の中で引く' },
     { id: 'L141-5', lesson: 'L141', q: '税金・利息の支払額の計算は？', a: '期首の未払 ＋ 今年の費用 − 期末の未払' },
     { id: 'L141-6', lesson: 'L141', q: '在庫が増えたら、なぜ引く？', a: '仕入れて現金を払ったが、売れ残りは費用に入っていないから' }
   ]

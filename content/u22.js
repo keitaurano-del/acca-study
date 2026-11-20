@@ -110,17 +110,18 @@
         },
         {
           title: '違い①: 法律上の「人」かどうか',
-          paras: ['会社は、持ち主とは別の法人（separate legal entity）。会社の名前で財産を持ち、契約を結び、訴えたり訴えられたりできる。会社の借金は会社の借金。', '個人事業とパートナーシップは、法律上はオーナー本人と同じ。お店の借金は、そのままオーナー個人の借金になる。']
+          paras: ['会社は、持ち主とは別の法人（separate legal entity）。自分の名前で財産を持ち、契約し、訴えたり訴えられたりできる。', '会社の借金は会社自身の借金。大人の子が自分の名前で組んだローンは、子が全額を返す。お金を出してあげた親（＝株主）は、出した分より多くは払わない。', '個人事業とパートナーシップは、法律上はオーナー本人と同じ。お店の借金は、そのままオーナー個人の借金になる。']
         },
         {
           title: '違い②: 責任の範囲',
-          svg: `<svg viewBox="0 0 440 300" role="img" aria-label="個人事業とパートナーシップは個人の財産まで責任を負い、株主は株の代金までしか失わない" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">返せない借金は、どこまで追ってくる？</text><rect x="20" y="52" width="400" height="92" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="80" font-size="16" font-weight="600" fill="var(--ink)">個人事業・パートナーシップ</text><text x="40" y="106" fill="var(--ink)">お店の財産で足りなければ</text><text x="40" y="128" fill="var(--ink)">自宅や貯金も使って返す（無限責任）</text><rect x="20" y="160" width="400" height="92" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="40" y="188" font-size="16" font-weight="600" fill="var(--ink)">有限責任会社の株主</text><text x="40" y="214" fill="var(--ink)">失うのは、株の代金（払う約束の分）まで</text><text x="40" y="236" fill="var(--ink)">足りない借金は会社の問題（有限責任）</text><text x="220" y="284" text-anchor="middle" font-size="12.5" fill="var(--quiet)">unlimited liability / limited liability</text></svg>`,
-          caption: '個人事業主とパートナーは無限責任（unlimited liability）。株主は有限責任（limited liability）で、失うのは株に払ったお金と、まだ払っていない約束の分まで。'
+          svg: `<svg viewBox="0 0 440 300" role="img" aria-label="個人事業とパートナーシップは個人の財産まで責任を負い、株主は株の代金までしか失わない" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">返せない借金は、どこまで追ってくる？</text><rect x="20" y="52" width="400" height="92" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="80" font-size="16" font-weight="600" fill="var(--ink)">個人事業・パートナーシップ</text><text x="40" y="106" fill="var(--ink)">お店の財産で足りなければ</text><text x="40" y="128" fill="var(--ink)">自宅や貯金も使って返す（無限責任）</text><rect x="20" y="160" width="400" height="92" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="40" y="188" font-size="16" font-weight="600" fill="var(--ink)">有限責任会社の株主</text><text x="40" y="214" fill="var(--ink)">失うのは、株の代金（払う約束の分）まで</text><text x="40" y="236" fill="var(--ink)">会社の借金は会社が返す（株主は有限責任）</text><text x="220" y="284" text-anchor="middle" font-size="12.5" fill="var(--quiet)">unlimited liability / limited liability</text></svg>`,
+          caption: '個人事業主とパートナーは無限責任（unlimited liability）。株主は有限責任（limited liability）で、失うのは株に払ったお金と、まだ払っていない約束の分まで。',
+          note: { kind: 'warn', text: '「有限責任」で限られるのは株主の責任。会社自身の責任は限られない。会社は自分の借金を、財産を全部使ってでも全額返す義務を負う。' }
         },
         {
           example: {
             problem: 'お店の財産は $30,000、借金は $50,000。お店の財産を全部使っても $20,000 足りない。持ち主が個人事業主の場合と、会社（株の代金は全額払込済み）の場合で、足りない $20,000 はどうなる？',
-            steps: ['足りない額: $50,000 − $30,000 ＝ $20,000', '個人事業: 法律上はオーナー本人の借金。残り $20,000 は、オーナー個人の貯金や家などから返す', '会社: 借金は会社のもの。会社の財産 $30,000 で返せる分だけ返す', '株主は払い込んだ株の代金を失うだけで、追加では払わない。残り $20,000 は、お金を貸した側（債権者、creditors）の損になる'],
+            steps: ['足りない額: $50,000 − $30,000 ＝ $20,000', '個人事業: 法律上はオーナー本人の借金。残り $20,000 は、オーナー個人の貯金や家などから返す', '会社: 借金は会社自身のもの。会社は財産 $30,000 を全部使って返す（会社の責任に上限はない）', '株主は払い込んだ株の代金を失うだけで、追加では払わない。会社にもう財産がないので、残り $20,000 は、お金を貸した側（債権者、creditors）の損になる'],
             answer: '個人事業はオーナーが $20,000 を個人で負担する。会社なら株主は追加で払わない'
           }
         },
@@ -155,7 +156,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['会社は法律上の別の人で、株主が替わっても続く。個人事業とパートナーシップは本人と同じ', '個人事業主とパートナーは無限責任（パートナーは連帯）。株主は株の代金まで', '会社の税金と取締役の給料は費用。個人事業主の税金と「給料」は drawings']
+          numbered: ['会社は法律上の別の人で、株主が替わっても続く。個人事業とパートナーシップは本人と同じ', '個人事業主とパートナーは無限責任（パートナーは連帯）。株主は株の代金まで。会社自身は自分の借金を全額負う', '会社の税金と取締役の給料は費用。個人事業主の税金と「給料」は drawings']
         },
         {
           title: '英単語',
@@ -174,7 +175,7 @@
       quiz: [
         { q: 'Which of the following statements about a limited liability company is correct?', choices: ['The shareholders are personally liable for all of the debts of the company', 'The company is a separate legal entity from its owners', 'The company ceases to exist when a shareholder dies', 'The profits of the company are taxed only as the personal income of the shareholders'], answer: 1, explain: '会社は持ち主と別の法人。株主の責任は有限、株主が亡くなっても会社は続く（perpetual succession）、税金は会社自身が払う。' },
         { q: 'A shareholder bought 2,000 shares at $1.50 each. So far she has paid $1.00 per share. The company is now unable to pay its debts. What is the maximum further amount she can be required to pay?', type: 'number', answer: 1000, unit: '$', explain: '有限責任でも、未払いの代金は払う。1株あたり未払い $1.50 − $1.00 ＝ $0.50。2,000 × $0.50 ＝ $1,000。全額 $3,000 や払込済みの $2,000 は引っかけ。' },
-        { q: '個人事業の財産は $20,000、借金は $35,000。お店の財産を全部使ったあと、債権者がオーナー個人の財産から取り立てられる額は？', choices: ['$0（お店と個人は別だから）', '$15,000', '$35,000', '$20,000'], answer: 1, explain: '個人事業は無限責任。足りない $35,000 − $20,000 ＝ $15,000 は個人の財産から返す。「$0」は会計上の企業実体の公準と、法律上の扱いを混ぜた引っかけ。' },
+        { q: 'Is the following statement true or false? "Limited liability means that a company is only liable for its own debts up to the amount of its share capital."', choices: ['True', 'False'], answer: 1, explain: '誤り（False）。有限責任で限られるのは株主の責任。会社は法律上の別の人なので、自分の借金は全額負い、財産を全部使ってでも返す。株主は株の代金（未払い分を含む）より多くは払わない。「会社の責任も株式資本まで」は、株主の責任と会社の責任を混ぜた引っかけ。' },
         { q: 'A and B are partners. The partnership cannot pay debts of $40,000. B has no personal assets. What is the maximum amount A can be required to pay?', choices: ['$20,000', '$40,000', '$0', '$80,000'], answer: 1, explain: 'パートナーは連帯責任（joint and several liability）。B が払えなければ、A に全額 $40,000 を請求できる。半分の $20,000 は「持ち分だけ」と考えた間違い。' },
         { q: 'A sole trader paid her personal income tax of $3,000 from the business bank account. How should this be treated in the business accounts?', choices: ['As an expense in the statement of profit or loss', 'As drawings', 'As a liability of the business', 'As a reduction in revenue'], answer: 1, explain: '個人事業の所得税はオーナー個人の税金。お店のお金で払ったら drawings。会社なら税金は会社の費用になるが、個人事業では費用にしない。' },
         { q: 'A director of a limited liability company, who also owns 60% of its shares, is paid a salary of $30,000. How is the salary treated in the financial statements of the company?', choices: ['As drawings', 'As a dividend', 'As an expense', 'It is not recorded because she is an owner'], answer: 2, explain: '会社は法律上の別の人なので、取締役への給料は会社の費用（staff costs）。株主であっても drawings や配当にはならない。' }
@@ -512,9 +513,9 @@
     { id: 'L107-2', lesson: 'L107', q: '個人事業主とパートナーの責任は？', a: '無限責任（unlimited liability）。足りなければ個人の財産で返す' },
     { id: 'L107-3', lesson: 'L107', q: 'joint and several liability とは？', a: '連帯責任。ほかのパートナーが払えなければ1人に全額を請求できる' },
     { id: 'L107-4', lesson: 'L107', q: '1株$2で500株、1株$1.20だけ払込済み。会社が倒れたら追加でいくら？', a: '500 × ($2 − $1.20) ＝ $400' },
-    { id: 'L107-5', lesson: 'L107', q: '個人事業主の所得税をお店の口座から払ったら？', a: 'drawings。オーナー個人の税金なので費用にしない' },
-    { id: 'L107-6', lesson: 'L107', q: '株主でもある取締役の給料は、会社の会計でどう扱う？', a: '会社の費用。会社は法律上の別の人だから' },
+    { id: 'L107-5', lesson: 'L107', q: '個人事業主の所得税（お店の口座から払った）と、株主でもある取締役の給料は？', a: '所得税は drawings（費用にしない）。取締役の給料は会社の費用' },
     { id: 'L107-7', lesson: 'L107', q: 'perpetual succession とは？', a: '株主が替わったり亡くなったりしても、会社が続くこと' },
+    { id: 'L107-8', lesson: 'L107', q: '「有限責任」で責任が限られるのは誰？ 会社自身は？', a: '限られるのは株主。会社は自分の借金を、財産を全部使ってでも全額負う' },
     { id: 'L108-1', lesson: 'L108', q: '個人事業のメリットを2つ', a: '始めるのが簡単で安い。財務諸表を公開しなくてよい（全部自分で決められる）' },
     { id: 'L108-2', lesson: 'L108', q: 'パートナーシップのデメリットを2つ', a: '無限の連帯責任（他人の判断の借金も負う）。意見が割れる' },
     { id: 'L108-3', lesson: 'L108', q: '会社のメリットを3つ', a: '有限責任、お金を集めやすい、持ち主が替わっても続く' },

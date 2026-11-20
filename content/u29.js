@@ -29,11 +29,13 @@
               ['Cash paid to employees（従業員への支払）', '(7,000)'],
               ['Cash paid for other expenses（その他の費用の支払）', '(3,000)'],
               ['Cash generated from operations（営業から生じた現金）', '7,500'],
+              ['Interest paid（利息の支払）', '0'],
               ['Income taxes paid（法人税の支払）', '(1,200)']
             ],
             total: ['Net cash from operating activities', '6,300']
           },
-          after: '直接法と間接法で違うのは「営業から生じた現金」（シラバスの言葉では cash from operating activities before income taxes）まで。その下の利息と税金の支払は、どちらの方法でも同じ。'
+          after: '直接法と間接法で違うのは「営業から生じた現金」まで。その下の利息と税金の支払は、どちらの方法でも同じ。Tako Co は借入がないので、利息の支払は 0。',
+          note: { kind: 'tip', text: 'ACCA の標準の形では、利息の支払は営業活動に入れる。IAS 7 は、利息の支払を財務活動に入れることも認めている。試験で計算書の形（proforma）が示されたら、その形に従う。' }
         },
         {
           title: '顧客からの入金を計算する',
@@ -83,7 +85,7 @@
             ['indirect method', 'インダイレクト メソッド', '間接法（利益から調整する）'],
             ['cash receipts from customers', '', '顧客からの入金'],
             ['cash paid to suppliers and employees', '', '仕入先と従業員への支払'],
-            ['cash generated from operations', '', '営業から生じた現金'],
+            ['cash generated from operations', '', '営業から生じた現金（シラバスでは cash from operating activities before income taxes）'],
             ['net cash from operating activities', '', '営業活動によるキャッシュフロー（純額）'],
             ['IAS 7', '', 'キャッシュフロー計算書の会計基準']
           ]
@@ -125,7 +127,7 @@
               ['Dividends received（受取配当）', '入る']
             ]
           },
-          after: 'ACCA の標準の形では、受け取った利息と配当は投資活動に入れる。'
+          after: 'ACCA の標準の形では、受取利息と受取配当は投資活動に入れる（IAS 7 は営業活動に入れることも認めている）。利息の支払は営業活動（L144）。'
         },
         {
           title: '売却収入を逆算する',
@@ -226,7 +228,7 @@
               ['Dividends paid（配当の支払）', '出る']
             ]
           },
-          note: { kind: 'tip', text: 'ACCA の標準の形では、利息の支払（interest paid）は営業活動、配当の支払は財務活動に入れる。IAS 7 はほかの区分も認めているが、試験はこの形で覚える。' }
+          note: { kind: 'tip', text: 'ACCA の標準の形では、利息の支払（interest paid）は営業活動、配当の支払は財務活動に入れる。IAS 7 は、利息の支払を財務活動に入れることも認めている。試験で計算書の形（proforma）が示されたら、その形に従う。' }
         },
         {
           title: '株式発行による収入',
@@ -279,7 +281,7 @@
         {
           title: 'よくある間違い',
           list: ['株式資本の増加だけを見て、株式払込剰余金を忘れる', '無償増資を現金での発行として数える', '配当の逆算に税引前利益を使う（使うのは当期利益＝税引後）'],
-          note: { kind: 'warn', text: '利息の支払を財務CFに入れてしまう。ACCA の標準の形では、利息の支払は営業CF。財務CFに入るのは配当の支払。' }
+          note: { kind: 'warn', text: '形が示されていないのに、利息の支払を財務CFに書いてしまう。ACCA の標準の形では、利息の支払は営業活動に入れる（IAS 7 は財務活動に入れることも認めている）。財務CFに入るのは配当の支払。' }
         },
         {
           title: '覚えるのは3つだけ',
@@ -321,12 +323,13 @@
           title: '1年分の家計を3つに分けて振り返る',
           paras: ['1年の終わりに、口座の残高が12万円から4.5万円に減っていた。何にお金が動いたのかを3つに分けて振り返る。'],
           list: ['生活（給料と生活費）→ 営業', '買い物（車や家電の購入・売却）→ 投資', '借りた・返した・親からの援助 → 財務'],
-          after: '3つを足すと、残高の変化（−7.5万円）にぴったり一致する。キャッシュフロー計算書（statement of cash flows）は、これを会社でやったもの。'
+          after: '3つを足すと、残高の変化（−7.5万円）にぴったり一致する。キャッシュフロー計算書（statement of cash flows）は、これを会社でやったもの。営業 → 投資 → 財務の順に作り、最後に現金の増減と照らし合わせる。'
         },
         {
-          title: '作る順番',
-          paras: ['ここでの「現金」は、現金及び現金同等物（cash and cash equivalents）。手元の現金と預金に、すぐ現金にできて値動きがほとんどない短期の投資（ふつう満期まで3か月以内）を加えたもの。すぐ返す当座借越（bank overdraft）は差し引くことがある。'],
-          numbered: ['営業CF: 税引前利益から間接法で調整し、利息と税金の支払を引く', '投資CF: PPE の購入額と売却収入を逆算する', '財務CF: 株式発行・借入の増減・配当を逆算する', '3つを足して期首の現金に加え、期末の現金と一致するか確かめる']
+          title: '「現金」の範囲と当座借越',
+          paras: ['ここでの「現金」は、現金及び現金同等物（cash and cash equivalents）。現金と預金に、すぐ現金にできて値動きの小さい短期の投資（ふつう満期まで3か月以内）を足したもの。', '総合口座は、残高が足りないと自動で貸してくれて、通帳がマイナスになる。会社の当座借越（bank overdraft）も同じ「マイナスの預金」で、日々の資金繰りの一部。だから求めればすぐ返す（repayable on demand）当座借越は、現金及び現金同等物から必ず差し引く（L140）。'],
+          formula: '現金及び現金同等物 ＝ 現金・預金 ＋ 現金同等物 − 当座借越',
+          note: { kind: 'warn', text: '当座借越の増減を、財務CFの借入や返済に書かない。差し引くのは CF計算書の中だけで、財政状態計算書では預金と当座借越を別々に載せる。' }
         },
         {
           title: '問題: Tako Co の財政状態計算書',
@@ -337,17 +340,18 @@
               ['PPE（帳簿価額）', '130,000', '100,000'],
               ['Inventory', '22,000', '18,000'],
               ['Trade receivables', '25,000', '28,000'],
-              ['Cash and cash equivalents', '4,500', '12,000'],
+              ['Cash at bank', '6,500', '13,000'],
               ['Share capital', '60,000', '50,000'],
               ['Share premium', '15,000', '10,000'],
               ['Retained earnings', '50,500', '36,500'],
               ['Loan notes', '30,000', '40,000'],
               ['Trade payables', '16,000', '14,000'],
               ['Interest payable', '1,000', '500'],
-              ['Tax payable', '9,000', '7,000']
+              ['Tax payable', '9,000', '7,000'],
+              ['Bank overdraft', '2,000', '1,000']
             ]
           },
-          after: '上の4行が資産、下の7行が資本と負債。どちらの年も合計は一致する（20X5 $181,500、20X4 $158,000）。'
+          after: '上の4行が資産、下の8行が資本と負債。どちらの年も合計は一致する（20X5 $183,500、20X4 $159,000）。当座借越は求めればすぐ返す約束。'
         },
         {
           title: '問題: 損益計算書と追加情報',
@@ -364,17 +368,27 @@
             ],
             total: ['Profit for the year', '24,000']
           },
-          after: '営業費用には減価償却費 $15,000 と、設備の売却損 $2,000 が入っている。売った設備の帳簿価額は $6,000。配当は払ったが、金額は書かれていない。'
+          after: '営業費用には減価償却費 $15,000 と、設備の売却損 $2,000 が入っている。売った設備の帳簿価額は $6,000。法人税費用 $8,000 は、今年の見積もり $9,000 から前期の過大計上 $1,000 を引いた額。配当は払ったが、金額は書かれていない。'
         },
         {
           title: '例題①: 営業CF（間接法）',
           formula: '利息・税金の支払 ＝ 期首の未払 ＋ 今年の費用 − 期末の未払',
           example: {
             problem: 'Tako Co の営業活動によるキャッシュフローを間接法で作る。',
-            steps: ['税引前利益 $32,000 からスタート', '現金が動かない費用を足し戻す: 減価償却費 ＋$15,000、売却損 ＋$2,000', '財務費用 ＋$4,000 も足し戻す（実際に払った利息を下で別に引くため）。ここまでで $53,000', '在庫の増加 −$4,000、売掛金の減少 ＋$3,000、買掛金の増加 ＋$2,000 → 営業から生じた現金 $54,000', '利息の支払: $500 ＋ $4,000 − $1,000 ＝ $3,500', '税金の支払: $7,000 ＋ $8,000 − $9,000 ＝ $6,000'],
+            steps: ['税引前利益 $32,000 からスタート', '現金が動かない費用を足し戻す: 減価償却費 ＋$15,000、売却損 ＋$2,000', '財務費用 ＋$4,000 も足し戻す（実際に払った利息を下で別に引くため）。ここまでで $53,000', '在庫の増加 −$4,000、売掛金の減少 ＋$3,000、買掛金の増加 ＋$2,000 → 営業から生じた現金 $54,000', '利息の支払: $500 ＋ $4,000 − $1,000 ＝ $3,500（ACCA の標準の形では営業活動に入れる。IAS 7 は、利息の支払を財務活動に入れることも認めている）', '税金の支払: $7,000 ＋ $8,000 − $9,000 ＝ $6,000（費用は過大計上を引いた後の $8,000 をそのまま使う）'],
             answer: '$54,000 − $3,500 − $6,000 ＝ 営業CF $44,500'
           },
           note: { kind: 'warn', text: '当期利益（税引後 $24,000）から始めない。スタートは税引前利益。税金は「実際に払った額」を下で引く。' }
+        },
+        {
+          title: '税金の支払は「費用の合計」で逆算する',
+          paras: ['損益計算書の法人税費用（income tax expense）には、前期の過少計上（under-provision）や過大計上（over-provision）の調整が入っている（L128）。支払の逆算には、この費用の合計をそのまま使う。'],
+          example: {
+            problem: '未払法人税は期首 $7,000、期末 $8,000（今年の見積もり）。法人税費用は $8,500 で、前期の過少計上 $500 を含む。今年払った税金は？',
+            steps: ['費用は合計の $8,500 を使う（過少計上 $500 を外さない）', '$7,000 ＋ $8,500 − $8,000 ＝ $7,500', '中身: 去年の税金を $7,000 と見積もったが、実際は $500 多い $7,500 を今年払った'],
+            answer: '税金の支払は $7,500。今年の見積もり $8,000 だけで計算すると $7,000 になり、$500 ずれる'
+          },
+          tAccount: { name: 'Tax payable', debit: [['Cash paid（逆算）', '7,500']], credit: [['Balance b/d', '7,000'], ['SPL tax charge', '8,500']], balance: { side: 'debit', label: 'Balance c/d', amount: '8,000' } }
         },
         {
           title: '例題②: 投資CFと財務CF',
@@ -422,7 +436,7 @@
             ],
             total: ['Cash and cash equivalents at 31 December 20X5', '4,500']
           },
-          after: '期末 $4,500 は財政状態計算書の現金と一致する。これで完成。'
+          after: '照合: 期首 $12,000 ＝ 預金 $13,000 − 当座借越 $1,000。期末 $4,500 ＝ 預金 $6,500 − 当座借越 $2,000。どちらも財政状態計算書と一致する。これで完成。'
         },
         {
           title: 'なぜ？ 最後に現金と照らし合わせる',
@@ -432,14 +446,16 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['順番は 営業（税引前利益から間接法）→ 投資 → 財務 → 期首の現金に足して期末と照合', '利息・税金の支払＝期首の未払＋今年の費用−期末の未払', '財務費用は足し戻してから、実際に払った利息を引く（二重に引かない）']
+          numbered: ['順番は 営業（税引前利益から間接法）→ 投資 → 財務 → 期首の現金に足して期末と照合', '利息・税金の支払＝期首の未払＋損益計算書の費用（前期の過少・過大計上を含む）−期末の未払', '現金及び現金同等物は、すぐ返す当座借越を差し引いた額。当座借越は財務CFに書かない']
         },
         {
           title: '英単語',
           words: [
             ['statement of cash flows', '', 'キャッシュフロー計算書'],
             ['cash and cash equivalents', 'キャッシュ イクイバレンツ', '現金及び現金同等物'],
-            ['bank overdraft', 'オーバードラフト', '当座借越'],
+            ['bank overdraft', 'オーバードラフト', '当座借越（すぐ返すものは現金から差し引く）'],
+            ['repayable on demand', 'リペイアブル オン ディマンド', '求められたらすぐ返す'],
+            ['under-provision / over-provision', '', '前期の過少計上 / 過大計上（法人税費用に入っている）'],
             ['profit before tax', '', '税引前利益（間接法のスタート）'],
             ['interest paid / income taxes paid', '', '利息の支払 / 法人税の支払'],
             ['net increase / decrease in cash', '', '現金の純増加 / 純減少']
@@ -448,9 +464,9 @@
       ],
       quiz: [
         { q: 'Profit before tax was $50,000 and depreciation was $8,000. Inventory increased by $3,000, trade receivables decreased by $2,000 and trade payables decreased by $1,000. There was no interest. What was the cash generated from operations?', choices: ['$40,000', '$52,000', '$56,000', '$60,000'], answer: 2, explain: '$50,000 + $8,000 − $3,000 + $2,000 − $1,000 ＝ $56,000。売掛金の減少は回収が進んだので足す。$52,000 は売掛金の向きが逆、$60,000 は運転資本の向きが全部逆、$40,000 は減価償却費を引いてしまった。' },
-        { q: 'Tax payable was $12,000 at the start of the year and $15,000 at the end. The income tax expense for the year was $18,000. How much tax was paid in the year?', type: 'number', answer: 15000, unit: '$', explain: '$12,000 + $18,000 − $15,000 ＝ $15,000。費用の $18,000 をそのまま支払にしない。期末の未払 $15,000 はまだ払っていない。' },
-        { q: '期首の現金 $12,000、営業CF ＋$30,000、投資CF −$45,000、財務CF ＋$10,000。期末の現金は？', type: 'number', answer: 7000, unit: '$', explain: '3つの合計は $30,000 − $45,000 + $10,000 ＝ −$5,000。$12,000 − $5,000 ＝ $7,000。' },
-        { q: 'Which of the following is correctly classified, using the standard ACCA format for a statement of cash flows?', choices: ['Interest received - financing activities', 'Dividends paid - financing activities', 'Purchase of intangible assets - operating activities', 'Proceeds from issue of shares - investing activities'], answer: 1, explain: '配当の支払は財務活動。受取利息と無形資産の購入は投資活動、株式発行の収入は財務活動。' },
+        { q: 'Tax payable was $12,000 at the start of the year and $15,000 at the end (the estimate for the current year). The income tax expense in the statement of profit or loss was $14,000, after deducting an over-provision of $1,000 for the previous year. How much tax was paid in the year?', type: 'number', answer: 11000, unit: '$', explain: '$12,000 + $14,000 − $15,000 ＝ $11,000。費用は過大計上を引いた後の $14,000 をそのまま使う。去年の負債 $12,000 を、$1,000 少ない $11,000 で払い終えた。見積もりの $15,000 を費用に使うと $12,000、過大計上をもう一度引くと $10,000 になる。' },
+        { q: 'At 31 December a company had cash at bank of $9,000, a short-term deposit of $3,000 maturing in two months, and a bank overdraft of $2,500 that is repayable on demand. What were its cash and cash equivalents?', type: 'number', answer: 9500, unit: '$', explain: '$9,000 + $3,000 − $2,500 ＝ $9,500。すぐ返す当座借越は差し引く。当座借越を無視すると $12,000、足してしまうと $14,500。2か月で満期の預金は現金同等物に入る。' },
+        { q: 'Which of the following is correctly classified, using the standard ACCA format for a statement of cash flows?', choices: ['Interest received - financing activities', 'Dividends paid - financing activities', 'Purchase of intangible assets - operating activities', 'Increase in a bank overdraft repayable on demand - financing activities'], answer: 1, explain: '配当の支払は財務活動。受取利息と無形資産の購入は投資活動。すぐ返す当座借越は現金及び現金同等物の中で差し引くので、増えても財務活動の借入には書かない。' },
         { q: 'Tako Co（売上 $200,000、売掛金 期首 $28,000・期末 $25,000）を直接法で計算すると、顧客からの入金はいくら？', type: 'number', answer: 203000, unit: '$', explain: '$28,000 + $200,000 − $25,000 ＝ $203,000。仕入先への支払は 仕入 $124,000（$120,000 + $22,000 − $18,000）から $14,000 + $124,000 − $16,000 ＝ $122,000。費用の支払は $44,000 − $15,000 − $2,000 ＝ $27,000。$203,000 − $122,000 − $27,000 ＝ $54,000 で、間接法と同じになる。' },
         { q: 'Which of the following would be added to profit before tax when calculating cash generated from operations using the indirect method?', choices: ['Profit on disposal of PPE', 'Increase in trade receivables', 'Decrease in inventory', 'Increase in prepayments'], answer: 2, explain: '在庫が減った＝買わずに手持ちを売ったので、現金は利益より多い。だから足す。売却益は引く。売掛金と前払費用の増加は、現金が出ていった（または入っていない）ので引く。' }
       ]
@@ -471,13 +487,14 @@
     { id: 'L144-1', lesson: 'L144', q: '財務活動に入る主なものは？', a: '株式発行の収入、借入の収入と返済、配当の支払' },
     { id: 'L144-2', lesson: 'L144', q: '株式発行による収入の出し方は？', a: '株式資本＋株式払込剰余金の合計の増加。無償増資は現金ゼロ' },
     { id: 'L144-3', lesson: 'L144', q: '配当の支払の逆算は？', a: '期首利益剰余金＋当期利益−期末利益剰余金' },
-    { id: 'L144-4', lesson: 'L144', q: 'ACCA の標準の形で、利息の支払と配当の支払はどこ？', a: '利息の支払は営業CF、配当の支払は財務CF' },
+    { id: 'L144-4', lesson: 'L144', q: 'ACCA の標準の形で、利息の支払と配当の支払はどこ？', a: '利息の支払は営業CF（IAS 7 は財務CFも認める）、配当の支払は財務CF' },
     { id: 'L144-5', lesson: 'L144', q: '借入の増減を見るときの注意は？', a: '流動と非流動に分かれていたら、合計してから比べる' },
     { id: 'L145-1', lesson: 'L145', q: 'CF計算書を作る順番は？', a: '営業（間接法）→投資→財務→期首の現金に足して期末と照合' },
-    { id: 'L145-2', lesson: 'L145', q: '税金・利息の支払の逆算は？', a: '期首の未払＋今年の費用−期末の未払' },
+    { id: 'L145-2', lesson: 'L145', q: '税金・利息の支払の逆算は？', a: '期首の未払＋損益計算書の費用（税金は前期の過少・過大計上を含む）−期末の未払' },
     { id: 'L145-3', lesson: 'L145', q: '間接法で財務費用を足し戻す理由は？', a: '実際に払った利息を下で別に引くから。足し戻さないと二重に引く' },
-    { id: 'L145-4', lesson: 'L145', q: '現金及び現金同等物とは？', a: '現金と預金に、満期3か月以内などの値動きが小さい短期投資を加えたもの' },
+    { id: 'L145-4', lesson: 'L145', q: '現金及び現金同等物とは？当座借越は？', a: '現金・預金＋満期3か月以内などの短期投資。すぐ返す当座借越は差し引く' },
     { id: 'L145-5', lesson: 'L145', q: '3区分の合計は何と一致する？', a: '期首から期末までの現金及び現金同等物の増減' },
-    { id: 'L145-6', lesson: 'L145', q: '間接法のスタートは？', a: '税引前利益（profit before tax）。当期利益（税引後）ではない' }
+    { id: 'L145-6', lesson: 'L145', q: '間接法のスタートは？', a: '税引前利益（profit before tax）。当期利益（税引後）ではない' },
+    { id: 'L145-7', lesson: 'L145', q: '税金の支払の逆算で、前期の過少・過大計上は？', a: '外さない。損益計算書の法人税費用（調整後の合計）をそのまま使う' }
   ]
 });

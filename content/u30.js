@@ -40,7 +40,7 @@
           title: '目安は「普通株の50%超」',
           paras: ['株主総会は多数決。議決権（voting rights）のある普通株を半分より多く持てば、取締役を選べて方針を決められる。だから、ふつうは支配がある。'],
           formula: '支配の目安 ＝ 議決権のある普通株の 50% 超',
-          note: { kind: 'tip', text: '優先株（preference shares）はふつう投票権がないので数えない。また「50%超」なので、ちょうど50%は目安を満たさない。' }
+          note: { kind: 'tip', text: '数えるのは票（議決権）だけ。優先株（preference shares）はふつう票がない。貸付金や社債（loans、loan notes、bonds）も、お金を貸しただけで票はない。どちらも何%持っても数えない。ちょうど50%は「50%超」ではない。' }
         },
         {
           title: '50%以下でも支配になるとき',
@@ -50,15 +50,16 @@
         },
         {
           title: 'なぜ？ 「支配」で線を引く理由',
-          paras: ['親会社は、子会社のお金や工場を自分の思いどおりに使える。外から見ると、2社は実質1つの会社と同じ。', 'だから親会社の株主や銀行には、グループ全体の姿を見せる必要がある。', '親会社が子会社を「買った（取得した）」と見て、子会社の資産・負債を取得日の公正価値で取り込み、のれんを計算するやり方を取得法（acquisition accounting）という。K1 はこの言葉で出る。']
+          paras: ['親会社は、子会社のお金や工場を自分の思いどおりに使える。外から見ると、2社は実質1つのまとまり（経済的な実体）と同じ。', 'だから親会社の株主や銀行には、グループ全体の姿を見せる必要がある。', '親会社が子会社を「買った（取得した）」と見て、子会社の資産・負債を取得日の公正価値で取り込み、のれんを計算するやり方を取得法（acquisition accounting）という。K1 はこの言葉で出る。']
         },
         {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '「株を一番多く持っている株主＝親会社」ではない。たとえば普通株の35%が最大でも、ほかに権利がなければ支配はない。逆に30%でも、取締役の過半数を選べれば支配がある。優先株を足して計算するのも間違い。' }
+          paras: ['キッチンカーの例なら、お金を「出した（出資した）」友だちは多数決に入れる。お金を「貸した」友だちは、返してもらう約束があるだけで票はない。'],
+          note: { kind: 'warn', text: '「株を一番多く持っている株主＝親会社」ではない。普通株の35%が最大でも、ほかに権利がなければ支配はない。逆に30%でも、取締役の過半数を選べれば支配がある。優先株や、子会社の社債・貸付金を足して計算するのも間違い。貸し手は株主総会の票を持たない。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['親会社＝子会社を支配する会社、子会社＝支配される会社', '支配の目安は、議決権のある普通株の50%超（優先株は数えない）', '50%以下でも、取締役の過半数を選べるなど本当に決められれば支配']
+          numbered: ['親会社＝子会社を支配する会社、子会社＝支配される会社', '支配の目安は、議決権のある普通株の50%超（優先株・社債・貸付金は数えない）', '50%以下でも、取締役の過半数を選べるなど本当に決められれば支配']
         },
         {
           title: '英単語',
@@ -68,6 +69,7 @@
             ['control', 'コントロール', '支配'],
             ['group', 'グループ', '親会社と子会社のまとまり'],
             ['voting rights', 'ボーティング・ライツ', '議決権（株主総会で投票する権利）'],
+            ['loan notes / bonds', 'ローン・ノーツ／ボンズ', '社債（お金を貸した証書。議決権はない）'],
             ['variable returns', 'ヴェアリアブル・リターンズ', '変動するリターン（配当など）'],
             ['acquisition accounting', 'アクイジション・アカウンティング', '取得法（子会社を買ったものとして連結する方法）']
           ]
@@ -77,7 +79,7 @@
         { q: 'ある会社が別の会社を支配しているかどうかの、ふつうの目安は？', choices: ['議決権のある普通株の50%超を持つ', '優先株を含めた全部の株の50%超を持つ', '普通株の20%以上を持つ', 'ほかのどの株主よりも多くの株を持つ'], answer: 0, explain: '方針は株主総会の多数決で決まるので、票（議決権）のある普通株の半分より多くが目安。優先株はふつう票がない。20%以上は関連会社の目安。一番多くても半分以下なら決められない。' },
         { q: 'Which of the following does NOT, on its own, indicate that A Co controls B Co?', choices: ['A Co holds 60% of the ordinary (voting) shares of B Co', 'A Co can appoint or remove a majority of the board of directors of B Co', 'A Co holds 70% of the non-voting preference shares of B Co', 'A Co has power to govern the financial and operating policies of B Co under an agreement'], answer: 2, explain: '投票権のない優先株は、何%持っても方針を決める力にならない。ほかの3つは、どれも支配を示す。' },
         { q: 'C Co holds 40% of the ordinary shares of D Co and has the right to appoint 5 of the 8 directors of D Co. Which statement is correct?', choices: ['D Co is a subsidiary of C Co because C Co controls the board', 'D Co is not a subsidiary because C Co holds less than 50% of the shares', 'D Co is a subsidiary only if C Co also holds preference shares', 'C Co is a subsidiary of D Co'], answer: 0, explain: '取締役8人のうち5人（過半数）を選べるので、方針を決められる＝支配。50%以下でも子会社になる。株の割合だけで判断するのはよくある間違い。' },
-        { q: '支配の3つの要素に入らないものは？', choices: ['相手の会社の大事な活動を決める力がある', '相手の会社の調子で、自分のリターンが変わる', 'その力を使って、リターンの大きさを左右できる', '相手の会社の株を100%持っている'], answer: 3, explain: '100%持つ必要はない。力・リターン・その2つのつながり、の3つがそろえば支配。' },
+        { q: "E Co holds 30% of the ordinary shares of F Co and 80% of F Co's loan notes. E Co has no other rights over F Co. Which statement is correct?", choices: ['F Co is not a subsidiary. Loan notes carry no voting rights, so E Co has only 30% of the votes', 'F Co is a subsidiary, because E Co holds 80% of the loan notes', 'F Co is a subsidiary, because shares and loan notes together give E Co more than 50%', 'F Co can never be a subsidiary while E Co holds less than 50% of the ordinary shares'], answer: 0, explain: '社債（loan notes）はお金を貸した証書で、議決権はない。投票権のない優先株と同じく、何%持っても支配には数えない。票は普通株の30%だけ。4つ目は、取締役の過半数を選べるなどの権利があれば50%以下でも支配になるので間違い。' },
         { q: 'According to IFRS 10, an investor controls an investee when the investor:', choices: ['is exposed, or has rights, to variable returns from its involvement with the investee and has the ability to affect those returns through its power over the investee', 'holds more than 50% of all the shares of the investee, including preference shares', 'has significant influence over the financial and operating policies of the investee', 'holds 20% or more of the voting rights of the investee'], answer: 0, explain: '支配の定義は「力・変動するリターン・その2つのつながり」の3つ。2つ目は優先株まで数えた間違い。3つ目と4つ目は関連会社（重要な影響力、20%以上）の目安で、支配ではない。' },
         { q: 'Tako Co は Sauce Co の普通株を45%しか持たないが、契約で Sauce Co の方針を全部決められる。Sauce Co を子会社と判断する根拠になる考え方は？', choices: ['実質優先（substance over form）', '慎重性（prudence）', '継続企業（going concern）', '重要性（materiality）'], answer: 0, explain: '持ち株の割合（形）より、本当に方針を決められるか（中身）で判断する。これが実質優先の考え方。' }
       ]
@@ -97,13 +99,18 @@
           paras: ['親が、子どもの名前の口座に10万円入れた。親の家計簿には「子どもの口座へ 10万円」の1行しかない。', 'でも子どもの口座では、その10万円で自転車を買い、ローンも組んでいるかもしれない。', '家族全体の本当の持ち物と借金を知るには、親と子の家計簿を合わせる必要がある。会社のグループも同じ。']
         },
         {
-          title: '親会社だけの成績表では見えない',
-          paras: ['Tako Co は Sauce Co の普通株の80%を $280,000 で買った。Tako Co だけの財政状態計算書（SFP）には、子会社への投資（investment in subsidiary）$280,000 が非流動資産として1行載るだけ。', 'Sauce Co の工場・在庫・借入金は、どこにも出てこない。これでは Tako Co の株主は、グループ全体の姿が分からない。']
+          title: 'なぜ？ 親会社だけの成績表では見えない',
+          paras: ['Tako Co は Sauce Co の普通株の80%を $280,000 で買った。Tako Co だけの財政状態計算書（SFP）には、子会社への投資（investment in subsidiary）$280,000 が非流動資産として1行載るだけ。', 'Sauce Co の工場・在庫・借入金は出てこない。借金を全部子会社に背負わせれば、親会社の成績表だけはきれいに見えてしまう。', '株主や銀行がグループ全体の姿を知るには、連結した成績表がいる。']
         },
         {
           title: '連結財務諸表とは',
-          paras: ['連結財務諸表（consolidated financial statements）は、親会社と子会社を1つの会社（single economic entity）として見せる財務諸表。グループ財務諸表（group financial statements）ともいう。親会社が作る。'],
+          paras: ['連結財務諸表（consolidated financial statements）は、親会社と子会社を1つの経済的な実体（single economic entity）として見せる財務諸表。グループ財務諸表（group financial statements）ともいう。親会社が作る。'],
           svg: `<svg viewBox="0 0 440 300" role="img" aria-label="親会社の投資の1行を、子会社の資産と負債100%に入れかえる" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">投資の1行を、中身に入れかえる</text><rect x="20" y="56" width="176" height="128" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="82" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">Tako Co だけ</text><text x="108" y="112" text-anchor="middle" fill="var(--ink)">自分の資産・負債</text><text x="108" y="140" text-anchor="middle" fill="var(--ink)">＋ 子会社への投資</text><text x="108" y="164" text-anchor="middle" fill="var(--quiet)">$280,000</text><path d="M202 120L232 120" stroke="var(--edge)" stroke-width="1.5" fill="none"/><path d="M228 113L240 120L228 127z" fill="var(--edge)"/><rect x="244" y="56" width="176" height="128" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="332" y="82" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">連結</text><text x="332" y="112" text-anchor="middle" fill="var(--ink)">Tako Co の資産・負債</text><text x="332" y="140" text-anchor="middle" fill="var(--ink)">＋ Sauce Co の</text><text x="332" y="164" text-anchor="middle" fill="var(--ink)">資産・負債 100%</text><text x="20" y="226" font-size="15" font-weight="600" fill="var(--ink)">80%しか持っていなくても、100%足す</text><text x="20" y="254" fill="var(--ink)">残り20%の持ち主の分＝非支配持分（NCI）</text><text x="20" y="280" fill="var(--ink)">資本の部に、別の行で載せる</text></svg>`
+        },
+        {
+          title: 'グループは1つの法人ではない',
+          paras: ['家族の家計をまとめて見ても、親と子は別々の人。子どもの口座は子どもの名前のまま。', 'グループも同じ。連結は、経済的に1つのまとまり（economic entity）として見せるための成績表。グループという新しい法人（legal entity）ができるわけではない。'],
+          list: ['Tako Co も Sauce Co も、それぞれ別の法人（separate legal entity）のまま', '契約・借入・税金は各社が自分の名前でする', '各社は自分の財務諸表も作る。連結はその上に親会社が作る']
         },
         {
           title: 'なぜ？ 80%でも100%足す理由',
@@ -111,14 +118,14 @@
         },
         {
           title: '非支配持分（NCI）',
-          paras: ['非支配持分（non-controlling interest、NCI）は、子会社の資本のうち、親会社のものではない部分。80%子会社なら、ほかの株主の20%の分。'],
+          paras: ['非支配持分（non-controlling interest、NCI）は、子会社の資本のうち、親会社のものではない部分。80%子会社なら、ほかの株主の20%の分。', '100%子会社（wholly owned subsidiary）には、ほかの株主がいないので NCI はない。NCI が出るのは、親会社の持ち分が100%未満のときだけ。'],
           table: {
             caption: '連結 SFP の資本の部（形だけ）',
             head: ['資本（equity）', '$'],
             rows: [['株式資本（親会社の分だけ）', 'X'], ['株式払込剰余金（親会社の分だけ）', 'X'], ['利益剰余金', 'X'], ['親会社の株主に帰属する資本', 'X'], ['非支配持分（NCI）', 'X']],
             total: ['資本合計', 'X']
           },
-          after: 'NCI は資本の中に、親会社の株主の分とは別の行で載る。返すお金ではないので負債ではない。'
+          after: 'NCI は資本の中に別の行で載る。返すお金ではないので負債ではない。'
         },
         {
           title: '損益計算書では最後に分ける',
@@ -127,7 +134,8 @@
             problem: 'Tako Co は Sauce Co の80%を持つ。Sauce Co の当期の利益は $50,000。NCI の分はいくら？',
             steps: ['NCI の割合は 100% − 80% ＝ 20%', 'NCI の分は $50,000 × 20% ＝ $10,000', '親会社の株主の分は $50,000 × 80% ＝ $40,000'],
             answer: 'NCI に帰属する利益は $10,000'
-          }
+          },
+          after: 'もし Sauce Co が100%子会社なら、NCI は 0%。NCI の分は $0 で、利益 $50,000 は全部親会社の株主の分になる。'
         },
         {
           title: '単純投資（trade investment）',
@@ -139,22 +147,20 @@
           }
         },
         {
-          title: 'なぜ？ 連結が必要な理由',
-          paras: ['親会社だけの成績表では、子会社の資産・負債・利益が「投資」の1行に隠れてしまう。', 'たとえば借金を全部子会社に背負わせれば、親会社の成績表だけはきれいに見える。連結すれば、子会社の借金もグループの負債として表に出る。', '親会社の株主がお金を出しているのは、実質グループ全体。だからグループ全体の成績表がいる。']
-        },
-        {
           title: 'よくある間違い',
           note: { kind: 'warn', text: '「80%持っているから資産も80%だけ足す」は間違い。資産・負債は100%足し、20%分は NCI として資本で示す。NCI を負債に入れるのも間違い。また、連結 SFP の株式資本は親会社の分だけで、子会社の株式資本は足さない（のれんの計算で使う）。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['連結財務諸表＝グループを1つの会社として見せる成績表。子会社の資産・負債は100%足す', 'NCI＝子会社の資本のうち親会社のものでない分。資本の中に別の行で載せる', '単純投資＝支配も重要な影響力もない保有（ふつう20%未満）。連結しない']
+          numbered: ['連結財務諸表＝グループを1つの経済的な実体として見せる成績表（法人は各社別々のまま）。子会社の資産・負債は100%足す', 'NCI＝子会社の資本のうち親会社のものでない分（100%子会社にはない）。資本の中に別の行で載せる', '単純投資＝支配も重要な影響力もない保有（ふつう20%未満）。連結しない']
         },
         {
           title: '英単語',
           words: [
             ['consolidated financial statements', '', '連結財務諸表（グループ財務諸表）'],
-            ['single economic entity', '', '1つの経済的な実体（グループを1社とみなす）'],
+            ['single economic entity', '', '1つの経済的な実体（グループを1つのまとまりとみなす）'],
+            ['separate legal entity', '', '別々の法人（グループの各社はそれぞれ法人のまま）'],
+            ['wholly owned subsidiary', 'ホーリー・オウンド・サブシディアリー', '100%子会社（NCI がない）'],
             ['non-controlling interest (NCI)', 'ノン・コントローリング・インタレスト', '非支配持分'],
             ['owners of the parent', '', '親会社の株主'],
             ['investment in subsidiary', '', '子会社への投資（親会社だけの SFP の資産）'],
@@ -168,7 +174,8 @@
         { q: 'How is the non-controlling interest presented in the consolidated statement of financial position?', choices: ['Within equity, separately from the equity attributable to the owners of the parent', 'As a non-current liability', 'As a current liability', 'As a deduction from non-current assets'], answer: 0, explain: 'NCI は子会社のほかの株主の取り分なので資本の一部。返すお金ではないので負債ではない。' },
         { q: "P Co owns 75% of S Co. S Co's profit for the year is $60,000. What profit is attributable to the non-controlling interest?", type: 'number', answer: 15000, unit: '$', explain: 'NCI の割合は 25%。$60,000 × 25% ＝ $15,000。$45,000 は親会社の株主の分。' },
         { q: 'X Co holds 8% of the ordinary shares of Y Co and has no other rights over Y Co. How should X Co treat its holding?', choices: ['As a trade (simple) investment', 'As a subsidiary, by consolidation', 'As an associate, using the equity method', 'It is not recorded at all'], answer: 0, explain: '8%で、ほかの権利もないので、支配も重要な影響力もない。単純投資として資産に載せ、配当を収益にする。' },
-        { q: '連結財務諸表を作る一番の理由は？', choices: ['親会社だけの成績表では、子会社の資産・負債・利益が「投資」の1行に隠れてしまうから', '子会社が自分の成績表を作らなくてよくするため', 'NCI に配当を払う金額を決めるため', '親会社の税金を計算するため'], answer: 0, explain: '親会社の株主や銀行が、グループ全体の本当の姿を知るため。子会社も自分の成績表は作る。' }
+        { q: '連結財務諸表について正しいものは？', choices: ['グループを1つの経済的な実体として見せる。親会社も子会社も、それぞれ別の法人のまま', '連結するとグループという新しい法人ができ、子会社は法人でなくなる', '連結財務諸表があるので、子会社は自分の財務諸表を作らなくてよい', 'グループが1つの法人として、グループ全体の税金を払うために作る'], answer: 0, explain: '連結は、親会社だけの成績表では「投資」の1行に隠れる子会社の中身を、経済的な1つのまとまりとして見せるもの。法人はできないし、各社は別々の法人のまま。子会社も自分の財務諸表を作り、契約や税金も各社が自分の名前でする。' },
+        { q: "P Co owns 100% of the ordinary shares of S Co. S Co's profit for the year is $40,000. Which statement is correct?", choices: ['There is no non-controlling interest, so all $40,000 is attributable to the owners of the parent', 'NCI is always shown, so $8,000 (20%) is attributable to the NCI', 'All $40,000 is attributable to the NCI, because S Co is a separate legal entity', 'S Co is not consolidated, because it has no other shareholders'], answer: 0, explain: '100%子会社にはほかの株主がいないので NCI はない。NCI が出るのは持ち分が100%未満のときだけ。20%は80%子会社の例を丸暗記した間違い。100%子会社も支配しているので連結する。' }
       ]
     },
     {
@@ -436,11 +443,14 @@
     { id: 'L146-4', lesson: 'L146', q: '50%以下でも支配になる例は？', a: '取締役の過半数を選べる・辞めさせられる、契約で方針を決められる、など' },
     { id: 'L146-5', lesson: 'L146', q: 'なぜ優先株は支配の判断で数えない？', a: 'ふつう投票権がなく、方針を決める力にならないから' },
     { id: 'L146-6', lesson: 'L146', q: '取得法（acquisition accounting）とは？', a: '親会社が子会社を買ったと見て、資産・負債を公正価値で取り込み、のれんを出す連結のやり方' },
-    { id: 'L147-1', lesson: 'L147', q: '連結財務諸表とは？', a: '親会社と子会社を1つの会社として見せる財務諸表。親会社が作る' },
+    { id: 'L146-7', lesson: 'L146', q: '相手の会社の社債・貸付金（loan notes、bonds）を持つと、支配の判断で数える？', a: '数えない。お金を貸しただけで議決権がないから（優先株と同じ）' },
+    { id: 'L147-1', lesson: 'L147', q: '連結財務諸表とは？', a: '親会社と子会社を1つの経済的な実体として見せる財務諸表。親会社が作る' },
     { id: 'L147-2', lesson: 'L147', q: '80%子会社の資産・負債は、連結で何%足す？ なぜ？', a: '100%。支配していて、全部を思いどおりに使えるから' },
     { id: 'L147-3', lesson: 'L147', q: '非支配持分（NCI）とは？ 連結 SFP のどこに載る？', a: '子会社の資本のうち親会社のものでない分。資本の中に別の行で載る' },
     { id: 'L147-4', lesson: 'L147', q: '単純投資（trade investment）とは？', a: '支配も重要な影響力もない保有（ふつう20%未満）。投資として資産に載せ、配当を収益にする' },
     { id: 'L147-5', lesson: 'L147', q: '75%子会社の利益が $40,000。NCI の分は？', a: '$10,000（$40,000 × 25%）' },
+    { id: 'L147-6', lesson: 'L147', q: 'グループ（group）は1つの法人？', a: '違う。各社が別々の法人のまま。連結は経済的な1つのまとまりとして見せるだけ' },
+    { id: 'L147-7', lesson: 'L147', q: '100%子会社（wholly owned subsidiary）の NCI は？', a: 'ない。NCI が出るのは親会社の持ち分が100%未満のときだけ' },
     { id: 'L148-1', lesson: 'L148', q: '保有割合の計算式は？', a: '持っている普通株の数 ÷ 普通株の総数' },
     { id: 'L148-2', lesson: 'L148', q: '株式資本 $50,000、額面 $0.50。株数は？', a: '100,000株（$50,000 ÷ $0.50）' },
     { id: 'L148-3', lesson: 'L148', q: '普通株ちょうど50%、ほかの権利なし。子会社？', a: 'ふつうは違う。目安は50%「超」' },

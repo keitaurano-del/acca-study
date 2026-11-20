@@ -34,7 +34,7 @@
         {
           title: '見積もりと実際はずれる',
           svg: `<svg viewBox="0 0 440 324" role="img" aria-label="法人税は期末に見積もり、翌年に払った額との差を翌年の費用で調整する" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">税金は「見積もって、翌年に精算」</text><rect x="20" y="52" width="400" height="64" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="80" font-size="15" font-weight="600" fill="var(--ink)">① 20X1年末: 見積もり $5,000</text><text x="40" y="102" font-size="12.5" fill="var(--quiet)">Dr Income tax expense / Cr Tax payable</text><line x1="220" y1="118" x2="220" y2="134" stroke="var(--edge)" stroke-width="2"/><path d="M214 134L220 144L226 134z" fill="var(--edge)"/><rect x="20" y="148" width="400" height="64" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="176" font-size="15" font-weight="600" fill="var(--ink)">② 20X2年: 実際に払ったのは $5,400</text><text x="40" y="198" font-size="12.5" fill="var(--quiet)">Dr Tax payable / Cr Cash</text><line x1="220" y1="214" x2="220" y2="230" stroke="var(--edge)" stroke-width="2"/><path d="M214 230L220 240L226 230z" fill="var(--edge)"/><rect x="20" y="244" width="400" height="64" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="40" y="272" font-size="15" font-weight="600" fill="var(--ink)">③ 足りなかった $400 は20X2年の費用</text><text x="40" y="294" font-size="12.5" fill="var(--ink)">under-provision（見積もり不足）</text></svg>`,
-          caption: '見積もりが少なすぎたら過少計上（under-provision）、多すぎたら過大計上（over-provision）。差は過去に戻って直さず、精算した年（今年）の費用で調整する。'
+          caption: '見積もりが少なすぎたら過少計上（under-provision）、多すぎたら過大計上（over-provision）。差は過去に戻って直さず、精算した年（今年）の費用で調整する。ここの provision は「税金の見積もり額」の意味で、IAS 37 の引当金（L77）とは別物。'
         },
         {
           title: '今年の法人税費用の式',
@@ -80,7 +80,8 @@
             ['under-provision', 'アンダー・プロビジョン', '前年の見積もり不足。今年の費用に足す'],
             ['over-provision', 'オーバー・プロビジョン', '前年の見積もり過大。今年の費用から引く'],
             ['estimate', 'エスティメイト', '見積もり'],
-            ['prior year', 'プライアー・イヤー', '前年']
+            ['prior year', 'プライアー・イヤー', '前年'],
+            ['provision（税金の文脈）', 'プロビジョン', '計上した税金の見積もり額。IAS 37 の引当金（L77）とは別の使い方']
           ]
         }
       ],
@@ -90,7 +91,7 @@
         { q: 'Bean Co estimates its income tax for 20X5 at $12,000. The previous year tax was over-provided by $1,500. What is the tax payable in the statement of financial position at 31 December 20X5?', choices: ['$10,500', '$13,500', '$12,000', '$1,500'], answer: 2, explain: '負債に残るのは今年の見積もり $12,000 だけ。前年の差 $1,500 は損益計算書の費用で調整済み。$10,500 は費用と負債を取り違えた答え。' },
         { q: '試算表に Income tax の借方残高 $400 がある。これは何？', choices: ['前年の見積もり不足（under-provision）', '前年の見積もり過大（over-provision）', '今年の税金の未払い', '売上税の預かり'], answer: 0, explain: '前年の負債より多く払ったので、借方に残った。今年の費用に $400 を足す。' },
         { q: 'Which journal records the estimated income tax at the year end?', choices: ['Dr Income tax expense, Cr Tax payable', 'Dr Tax payable, Cr Income tax expense', 'Dr Tax payable, Cr Cash', 'Dr Retained earnings, Cr Tax payable'], answer: 0, explain: '費用（借方）を増やし、まだ払っていない負債（貸方）を増やす。Dr Tax payable / Cr Cash は翌年に払ったときの仕訳。' },
-        { q: '個人事業の損益計算書に税金の行がなかった理由は？', choices: ['事業とオーナーは別に扱い、税金はオーナー個人が払うから', '個人事業はもうけに税金がかからないから', '税金は資産になるから', '税金は売上から直接引かれるから'], answer: 0, explain: '個人事業の税金はオーナー個人のもの。お店のお金で払っても引出し（drawings）になる。会社は法律上別の人なので、自分の法人税を費用にする。' }
+        { q: '「前年の税金は under-provision だった」の provision は、何を指している？', choices: ['前年に計上した税金の見積もり額', 'IAS 37 の引当金（保証引当金など）', '貸倒引当金（allowance for receivables）', '偶発負債として注記した額'], answer: 0, explain: 'ここの provision は「税金をいくらと見積もって計上したか」という意味。IAS 37 の引当金（L77）は、時期か金額が不確かな負債で、計上の3条件や注記のルールがある。法人税は IAS 37 の対象ではない。bank が「銀行」と「川の土手」で別の意味になるのと同じで、under-provision を見て IAS 37 の条件を考えなくてよい。' }
       ]
     },
     // ---------------------------------------------------------------- L129
@@ -324,8 +325,9 @@
       outcomes: ['G1(b)'],
       slides: [
         {
-          title: '自分の持ち物リストを2段に分ける',
-          paras: ['自分の財産を書き出すとき、「すぐ使えるもの（財布、普通預金）」と「長く持つもの（車、家）」に分けると分かりやすい。', '借金も「今月のカード払い」と「あと30年の住宅ローン」では重さが違う。会社の財政状態計算書（SFP）も、この「すぐ」と「長く」で分ける。']
+          title: '持ち物リストを「すぐ」と「長く」に分ける',
+          paras: ['財産は「すぐ使えるもの（財布、普通預金）」と「長く持つもの（車、家）」、借金は「今月のカード払い」と「あと30年の住宅ローン」に分けると分かりやすい。', '会社の財政状態計算書（SFP）も同じで、境目は12か月。銀行や取引先は「近いうちの支払いを、近いうちに入るお金で払えるか」を一目で知りたいから。'],
+          formula: '期末日から12か月以内に現金になる・払う → 流動（current）'
         },
         {
           title: '会社の SFP の形',
@@ -334,23 +336,32 @@
             head: ['区分', '主な中身'],
             rows: [
               ['非流動資産', '有形固定資産（PPE）、無形資産'],
-              ['流動資産', '棚卸資産、売掛金とその他の債権（前払費用を含む）、現金'],
+              ['流動資産（current assets）', '棚卸資産、売掛金とその他の債権（前払費用を含む）、現金'],
               ['資本（equity）', '株式資本、株式払込剰余金、再評価剰余金、利益剰余金'],
               ['非流動負債', '1年より先に返す社債・借入、長期の引当金'],
-              ['流動負債', '買掛金とその他の債務（未払費用を含む）、未払法人税、未払配当、当座借越、1年以内に返す借入']
+              ['流動負債（current liabilities）', '買掛金とその他の債務（未払費用を含む）、未払法人税、未払配当、当座借越、1年以内に返す借入']
             ]
           },
           after: '個人事業の「capital」の1行が、会社では4つの資本の行に分かれる。'
         },
         {
-          title: '「すぐ」の境目は12か月',
-          formula: '期末日から12か月以内に現金になる・払う → current',
-          paras: ['期末日から12か月以内に現金になる資産は流動資産（current assets）、12か月以内に払う負債は流動負債（current liabilities）。', 'なぜ分ける？ 銀行や取引先が知りたいのは「近いうちの支払いを、近いうちに入るお金で払えるか」。分けておくと一目で分かる。']
-        },
-        {
           title: '損益と配当はここに入る',
           svg: `<svg viewBox="0 0 440 380" role="img" aria-label="当期利益と配当は利益剰余金へ、再評価益は再評価剰余金へ、税金の見積もりと未払利息は流動負債へ入る" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">損益と配当は SFP のここに入る</text><text x="108" y="62" text-anchor="middle" fill="var(--quiet)">SPLOCI・SOCE</text><text x="332" y="62" text-anchor="middle" fill="var(--quiet)">SFP</text><rect x="20" y="76" width="176" height="48" rx="8" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="108" y="105" text-anchor="middle" font-weight="600" fill="var(--ink)">当期利益 $77,000</text><rect x="244" y="76" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="332" y="105" text-anchor="middle" fill="var(--ink)">利益剰余金（＋）</text><rect x="20" y="136" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="165" text-anchor="middle" fill="var(--ink)">配当 $20,000</text><rect x="244" y="136" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="332" y="165" text-anchor="middle" fill="var(--ink)">利益剰余金（−）</text><rect x="20" y="196" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="225" text-anchor="middle" fill="var(--ink)">再評価益 $15,000</text><rect x="244" y="196" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="332" y="225" text-anchor="middle" fill="var(--ink)">再評価剰余金</text><rect x="20" y="256" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="285" text-anchor="middle" fill="var(--ink)">税の見積もり $22,000</text><rect x="244" y="256" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="332" y="285" text-anchor="middle" fill="var(--ink)">未払法人税</text><rect x="20" y="316" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="108" y="345" text-anchor="middle" fill="var(--ink)">未払の利息 $5,000</text><rect x="244" y="316" width="176" height="48" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="332" y="345" text-anchor="middle" fill="var(--ink)">買掛金とその他の債務</text><path d="M200 100H232M232 94L240 100L232 106z" stroke="var(--edge)" stroke-width="2" fill="var(--edge)"/><path d="M200 160H232M232 154L240 160L232 166z" stroke="var(--edge)" stroke-width="2" fill="var(--edge)"/><path d="M200 220H232M232 214L240 220L232 226z" stroke="var(--edge)" stroke-width="2" fill="var(--edge)"/><path d="M200 280H232M232 274L240 280L232 286z" stroke="var(--edge)" stroke-width="2" fill="var(--edge)"/><path d="M200 340H232M232 334L240 340L232 346z" stroke="var(--edge)" stroke-width="2" fill="var(--edge)"/></svg>`,
           caption: 'L130 の Tako Co の数字。利益剰余金の動きは持分変動計算書（SOCE、L127）で見せる。'
+        },
+        {
+          title: '試算表の3つの残高は「期首」の数字',
+          paras: ['家計簿の「前月から繰越」は月初の残高。今月の出入りを入れないと、月末の残高にならない。', '会社の試算表の貸倒引当金・減価償却累計額・利益剰余金も、ふつうは期首（b/f、brought forward）の残高。今年の動きを入れてから SFP に出す。'],
+          table: {
+            caption: '例: Ika Co（$）',
+            head: ['試算表の残高', '期首 ＋ 今年の動き ＝ SFP'],
+            rows: [
+              ['貸倒引当金', '2,200 ＋ 800 ＝ 3,000'],
+              ['減価償却累計額', '25,000 ＋ 9,000 ＝ 34,000'],
+              ['利益剰余金', '40,000 ＋ 30,000 − 10,000 ＝ 60,000']
+            ]
+          },
+          after: '800 は売掛金 $60,000 × 5% ＝ $3,000 に合わせる増加分。9,000 は今年の減価償却、30,000 と 10,000 は当期利益と配当。'
         },
         {
           title: 'Tako Co の期末の残高',
@@ -361,7 +372,7 @@
               ['PPE（再評価・減価償却の後の帳簿価額）', '325,000'],
               ['Inventory（期末）', '40,000'],
               ['Trade receivables', '50,000'],
-              ['Allowance for receivables', '2,000'],
+              ['Allowance for receivables（調整後の期末の額）', '2,000'],
               ['Prepayments', '3,000'],
               ['Cash', '16,000'],
               ['Share capital（$1 shares）', '100,000'],
@@ -437,7 +448,8 @@
             ['trade and other receivables', '', '売掛金とその他の債権'],
             ['trade and other payables', '', '買掛金とその他の債務'],
             ['bank overdraft', 'バンク・オーバードラフト', '当座借越（流動負債）'],
-            ['total equity and liabilities', '', '資本と負債の合計']
+            ['total equity and liabilities', '', '資本と負債の合計'],
+            ['brought forward（b/f）', 'ブロート・フォワード', '前期から繰り越した期首の残高']
           ]
         }
       ],
@@ -446,7 +458,7 @@
         { q: 'At 31 December 20X6 a company has a loan of $60,000, repayable in equal annual instalments of $12,000 starting on 30 June 20X7. How is the loan shown in the statement of financial position?', choices: ['Current liabilities $12,000, non-current liabilities $48,000', 'Non-current liabilities $60,000', 'Current liabilities $60,000', 'Current liabilities $48,000, non-current liabilities $12,000'], answer: 0, explain: '12か月以内（20X7年6月）に返す $12,000 が流動負債、残りの $48,000 が非流動負債。' },
         { q: 'Which of the following is shown under current liabilities?', choices: ['Bank overdraft', 'Loan notes repayable in five years', 'Share premium', 'Revaluation surplus'], answer: 0, explain: '当座借越はいつでも返済を求められる借入なので流動負債。株式払込剰余金と再評価剰余金は資本で、負債ではない。' },
         { q: '今年の税金の見積もり $22,000、前年の見積もり不足 $1,000。SFP の未払法人税は？', choices: ['$22,000', '$23,000', '$21,000', '$1,000'], answer: 0, explain: '負債は今年の見積もりだけ。$23,000 は損益計算書の法人税費用（L128）。' },
-        { q: '社債の利息のうち期末に未払の $5,000 は、SFP のどこ？', choices: ['流動負債（買掛金とその他の債務）', '非流動負債（社債と同じ行）', '資本から引く', '財務費用から引く'], answer: 0, explain: '利息は12か月以内に払うので流動負債。社債の元本とは分けて考える。' },
+        { q: 'A company\'s trial balance at 31 December 20X6 shows trade receivables of $40,000 and an allowance for receivables brought forward of $1,500. The allowance should be 5% of trade receivables at the year end. What is the net trade receivables figure in the statement of financial position?', type: 'number', answer: 38000, unit: '$', explain: '試算表の引当金 $1,500 は期首（b/f）の残高。期末に必要な額 $40,000 × 5% ＝ $2,000 まで $500 増やす（損益計算書の費用）。SFP は $40,000 − $2,000 ＝ $38,000。期首の $1,500 をそのまま引くと $38,500 の間違い。' },
         { q: 'Trade receivables are $50,000, the allowance for receivables is $2,000 and prepayments are $3,000. What is the figure for trade and other receivables?', choices: ['$51,000', '$55,000', '$53,000', '$47,000'], answer: 0, explain: '$50,000 − $2,000 ＋ $3,000 ＝ $51,000。$55,000 は引当金を足してしまった答え、$47,000 は前払費用を引いてしまった答え。' }
       ]
     },
@@ -473,7 +485,7 @@
         {
           title: '有形固定資産の注記に書くこと',
           paras: ['種類（class）ごとに書く。例: 土地建物、機械。'],
-          list: ['測定の基礎（原価か再評価額か）', '減価償却の方法（定額法など）と、耐用年数または償却率', '期首と期末の取得原価（または評価額）と減価償却累計額', '期首から期末への帳簿価額の動き: 取得、売却、再評価、減価償却', '再評価した場合: 再評価日、独立した鑑定人（independent valuer）が関わったか、原価のままなら帳簿価額はいくらだったか、再評価剰余金の動き']
+          list: ['測定の基礎（原価か再評価額か）', '減価償却の方法（定額法など）と、耐用年数または償却率', '期首と期末の取得原価（または評価額）と減価償却累計額', '期首から期末への帳簿価額の動き: 取得、売却、再評価、減価償却、減損損失（impairment losses）','再評価した場合: 再評価日、独立した鑑定人（independent valuer）が関わったか、原価のままなら帳簿価額はいくらだったか、再評価剰余金の動き']
         },
         {
           title: '注記の表の形',
@@ -499,19 +511,23 @@
           title: '例題: 注記の数字を埋める',
           example: {
             problem: 'Tako Co の機械の取得原価は期首 $70,000。今年 $20,000 の機械を買い、原価 $10,000（減価償却累計額 $6,000）の機械を売った。期首の減価償却累計額は $30,000。減価償却は期末の取得原価の15%（定額法。買った年は1年分、売った年はゼロ）。今年の減価償却費と、期末の帳簿価額は？',
-            steps: ['期末の取得原価 ＝ $70,000 ＋ $20,000 − $10,000 ＝ $80,000', '今年の減価償却費 ＝ $80,000 × 15% ＝ $12,000', '期末の減価償却累計額 ＝ $30,000 ＋ $12,000 − 売った機械の分 $6,000 ＝ $36,000', '期末の帳簿価額 ＝ $80,000 − $36,000 ＝ $44,000', '検算: 期首の帳簿価額 $40,000 ＋ $20,000 − 売った機械の帳簿価額 $4,000 − $12,000 ＝ $44,000'],
+            steps: ['期末の取得原価 ＝ $70,000 ＋ $20,000 − $10,000 ＝ $80,000', '今年の減価償却費 ＝ $80,000 × 15% ＝ $12,000', '期末の減価償却累計額 ＝ $30,000 ＋ $12,000 − 売った機械の分 $6,000 ＝ $36,000', '期末の帳簿価額 ＝ $80,000 − $36,000 ＝ $44,000', '検算: 期首の帳簿価額 $40,000 ＋ 取得 $20,000 − 売った機械の帳簿価額（$10,000 − $6,000 ＝ $4,000）− 減価償却 $12,000 ＝ $44,000。減損損失はなし'],
             answer: '減価償却費 $12,000、期末の帳簿価額 $44,000'
           }
         },
         {
-          title: '帳簿価額の動きを図で',
-          svg: `<svg viewBox="0 0 440 332" role="img" aria-label="期首の帳簿価額に取得を足し、売却と減価償却を引くと期末の帳簿価額になる" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">帳簿価額の動きを注記で見せる</text><rect x="20" y="52" width="400" height="40" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="78" font-size="15" fill="var(--ink)">期首の帳簿価額</text><text x="400" y="78" text-anchor="end" font-size="15" font-weight="600" fill="var(--ink)">$40,000</text><rect x="20" y="100" width="400" height="40" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="126" font-size="15" fill="var(--ink)">＋ 取得（additions）</text><text x="400" y="126" text-anchor="end" font-size="15" font-weight="600" fill="var(--ink)">$20,000</text><rect x="20" y="148" width="400" height="40" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="174" font-size="15" fill="var(--ink)">− 売った機械の帳簿価額</text><text x="400" y="174" text-anchor="end" font-size="15" font-weight="600" fill="var(--ink)">$4,000</text><rect x="20" y="196" width="400" height="40" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="40" y="222" font-size="15" fill="var(--ink)">− 今年の減価償却</text><text x="400" y="222" text-anchor="end" font-size="15" font-weight="600" fill="var(--ink)">$12,000</text><rect x="20" y="244" width="400" height="40" rx="8" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="40" y="270" font-size="15" font-weight="600" fill="var(--ink)">期末の帳簿価額</text><text x="400" y="270" text-anchor="end" font-size="15" font-weight="600" fill="var(--ink)">$44,000</text><text x="220" y="314" text-anchor="middle" fill="var(--quiet)">期首 ＋ 取得 − 売却 − 減価償却 ＝ 期末</text></svg>`,
-          caption: '売った機械の帳簿価額 ＝ 原価 $10,000 − 累計額 $6,000 ＝ $4,000。注記では原価と累計額の両方から消す。'
+          title: '無形資産の注記に書くこと',
+          paras: ['種類ごとに書く（社内で作った開発費と、買ったものは分ける）。'],
+          list: ['耐用年数が有限か、決まっていない（indefinite）か。有限なら耐用年数か償却率と、償却（amortisation）の方法', '期首と期末の取得原価・償却累計額と、帳簿価額の動き（取得、売却、償却、減損損失 impairment losses）', '償却費が入っている損益計算書の行と、その年に費用にした研究開発費（R&D）の合計額'],
+          after: '資産1つずつの一覧、開発プロジェクトの説明、仕入先の名前は書かなくてよい。スマホ代の明細に通話相手の一覧が載らないのと同じで、種類ごとの合計を見せる。'
         },
         {
-          title: '無形資産の注記に書くこと',
-          paras: ['種類ごとに、社内で作ったもの（開発費など）と買ったものを分けて書く。'],
-          list: ['耐用年数が有限か、決まっていない（indefinite）か。有限なら耐用年数か償却率と、償却（amortisation）の方法', '期首と期末の取得原価と償却累計額、帳簿価額の動き', '償却費が損益計算書のどの行に入っているか', 'その年に費用にした研究開発費（research and development）の合計額']
+          title: '例題: 無形資産の注記の数字',
+          example: {
+            problem: 'Ika Co は新しい冷凍食品の開発費（development costs）を無形資産にしている。期首の取得原価 $50,000、償却累計額 $20,000。今年 $10,000 を追加で資産にした。売却はない。償却は期末の取得原価の20%（定額法）。期末に、減損損失（impairment loss）$5,000 を計上した。期末の帳簿価額は？',
+            steps: ['期末の取得原価 ＝ $50,000 ＋ $10,000 ＝ $60,000', '今年の償却 ＝ $60,000 × 20% ＝ $12,000', '減損損失は、資産の価値が帳簿価額より下がった分を費用にして、帳簿価額を下げる額。償却と同じ累計額の行に足す', '期末の償却・減損の累計額（accumulated amortisation and impairment）＝ $20,000 ＋ $12,000 ＋ $5,000 ＝ $37,000。期末の帳簿価額 ＝ $60,000 − $37,000 ＝ $23,000', '帳簿価額の動き: 期首 $30,000 ＋ 取得 $10,000 − 償却 $12,000 − 減損損失 $5,000 ＝ $23,000'],
+            answer: '期末の帳簿価額 $23,000。注記の動きには取得 $10,000、償却 $12,000、減損損失 $5,000 を並べる'
+          }
         },
         {
           title: '棚卸資産の注記に書くこと',
@@ -521,11 +537,11 @@
         {
           title: 'よくある間違い',
           note: { kind: 'warn', text: '注記は「間違った数字を説明で直す場所」ではない。費用や負債にすべきものは本体に記録する。注記は本体の数字を説明し、補うためのもの。' },
-          list: ['売却で原価だけ消して、減価償却累計額を消し忘れる', '今年の減価償却費を取得原価の行に入れる → 累計額の行', '棚卸資産の注記に「売値」や「仕入先の名前」が必要と思う → 求められていない']
+          list: ['売却で原価だけ消して、減価償却累計額を消し忘れる', '今年の減価償却費を取得原価の行に入れる → 累計額の行', '注記に資産1つずつの一覧、仕入先の名前、在庫の売値が必要と思う → 求められていない。種類ごとの合計で書く', '減損損失を帳簿価額の動きから落とす → 取得・売却・償却と並べて書く']
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['注記＝本体の数字の内訳・会計方針・本体にない情報', 'PPE の注記: 期首 ＋ 取得 − 売却 − 減価償却 ＝ 期末（原価と累計額それぞれで）', '棚卸資産の注記: 方針（低い方・FIFO 等）、種類ごとの額、費用にした額、評価減']
+          numbered: ['注記＝本体の数字の内訳・会計方針・本体にない情報', 'PPE・無形資産の注記: 期首 ＋ 取得 − 売却 − 減価償却（償却）− 減損損失 ＝ 期末の帳簿価額', '棚卸資産の注記: 方針（低い方・FIFO 等）、種類ごとの額、費用にした額、評価減']
         },
         {
           title: '英単語',
@@ -535,7 +551,9 @@
             ['additions / disposals', 'アディションズ / ディスポーザルズ', '取得 / 売却'],
             ['class of assets', '', '資産の種類（土地建物、機械など）'],
             ['independent valuer', 'インディペンデント・ヴァリュアー', '独立した鑑定人'],
-            ['cost formula', '', '原価の計算方法（FIFO など）']
+            ['cost formula', '', '原価の計算方法（FIFO など）'],
+            ['amortisation', 'アモーティゼーション', '無形資産の償却'],
+            ['impairment loss', 'インペアメント・ロス', '減損損失（価値が帳簿価額より下がった分の費用）']
           ]
         }
       ],
@@ -545,7 +563,7 @@
         { q: 'Which of the following is NOT required to be disclosed for inventories?', choices: ['The selling price of each product', 'The cost formula used, for example FIFO', 'The total carrying amount of inventories', 'The amount of any write-down recognised as an expense'], answer: 0, explain: '棚卸資産の注記に売値は求められない。方針（原価の計算方法）、帳簿価額の合計、評価減の額は書く。' },
         { q: 'Which of the following must be disclosed for each class of property, plant and equipment?', choices: ['The depreciation methods used', 'The name of the supplier of each asset', 'The insurance cost of each asset', 'The market value of every asset held at cost'], answer: 0, explain: '種類ごとに、減価償却の方法、耐用年数または償却率、期首・期末の原価と累計額、帳簿価額の動きを書く。仕入先や保険料は求められない。' },
         { q: 'A company revalued its land and buildings during the year. Which of the following must be disclosed in the notes?', choices: ['The effective date of the revaluation and whether an independent valuer was involved', 'The name of the bank that holds the title deeds', 'The expected selling price of the buildings next year', 'Nothing, because the revaluation gain is shown in other comprehensive income'], answer: 0, explain: '再評価したら、再評価日と独立した鑑定人が関わったかを注記に書く（原価のままの帳簿価額と再評価剰余金の動きも）。OCI に出すだけでは足りない。来年の売値は求められない。' },
-        { q: '無形資産の注記に特有の項目は？', choices: ['その年に費用にした研究開発費の合計額', '原価の計算方法（先入先出法など）', '再評価した鑑定人の名前', '借入の担保にした在庫の額'], answer: 0, explain: '研究開発費の合計額は無形資産（IAS 38）の注記。原価の計算方法と担保の在庫は棚卸資産の注記。' }
+        { q: 'Which of the following must be disclosed in the notes for each class of intangible assets? (1) A reconciliation of the carrying amount at the beginning and end of the year, showing additions, disposals, amortisation and impairment losses (2) A list of every individual intangible asset held (3) The total research and development expenditure recognised as an expense in the year (4) A description of every development project and the names of suppliers', choices: ['1 and 3 only', '1, 2 and 3 only', '1, 3 and 4 only', '2 and 4 only'], answer: 0, explain: '(1) 帳簿価額の動き（取得・売却・償却・減損損失）と (3) 費用にした研究開発費の合計は必ず書く。(2) 資産1つずつの一覧と (4) プロジェクトごとの説明・仕入先の名前は求められない。注記は種類ごとの合計で見せる。減損損失を忘れて (1) を外したり、詳しいほど良いと思って (2) や (4) を入れたりするのがよくある間違い。' }
       ]
     }
   ],
@@ -556,6 +574,7 @@
     { id: 'L128-4', lesson: 'L128', q: '試算表の Income tax が借方残高なら？', a: '前年の見積もり不足（under-provision）。今年の費用に足す' },
     { id: 'L128-5', lesson: 'L128', q: 'なぜ見積もりの差を前年に戻して直さない？', a: '間違いではなく後から良い情報が来ただけなので、分かった年の費用で調整する' },
     { id: 'L128-6', lesson: 'L128', q: '見積もり $5,000、払ったのは $5,400、今年の見積もり $6,000。法人税費用は？', a: '$6,400（不足 $400 を足す）' },
+    { id: 'L128-7', lesson: 'L128', q: '税金の under/over-provision の provision は IAS 37 の引当金？', a: '違う。計上した税金の見積もり額のこと。IAS 37 の引当金（L77）とは別' },
     { id: 'L129-1', lesson: 'L129', q: '損益計算書の本体に必ず出す主な行は？', a: '売上収益・法人税費用・当期利益（＋関連会社の持分・やめた事業）' },
     { id: 'L129-2', lesson: 'L129', q: '配当は損益計算書に入る？', a: '入らない。SOCE で利益剰余金から引く' },
     { id: 'L129-3', lesson: 'L129', q: '重要な収益・費用はどう示す？', a: '性質と金額を別に示す（本体の行か注記）' },
@@ -573,11 +592,13 @@
     { id: 'L131-4', lesson: 'L131', q: '当座借越はどこ？', a: '流動負債。現金から引いて隠さない' },
     { id: 'L131-5', lesson: 'L131', q: '会社の資本の4つの行は？', a: '株式資本・株式払込剰余金・再評価剰余金・利益剰余金' },
     { id: 'L131-6', lesson: 'L131', q: '分割返済の借入の表示は？', a: '12か月以内に返す分は流動負債、残りは非流動負債' },
+    { id: 'L131-7', lesson: 'L131', q: '会社の試算表の貸倒引当金・減価償却累計額・利益剰余金は？', a: 'ふつう期首（b/f）の残高。今年の動きを入れてから SFP に出す' },
     { id: 'L132-1', lesson: 'L132', q: '注記の目的は？', a: '本体の数字の内訳、会計方針、本体にない情報を伝えること' },
-    { id: 'L132-2', lesson: 'L132', q: 'PPE の帳簿価額の動き（注記）は？', a: '期首 ＋ 取得 − 売却 − 減価償却 ＝ 期末' },
+    { id: 'L132-2', lesson: 'L132', q: 'PPE の帳簿価額の動き（注記）は？', a: '期首 ＋ 取得 − 売却 − 減価償却 − 減損損失 ＝ 期末（再評価があれば加減）' },
     { id: 'L132-3', lesson: 'L132', q: '再評価した PPE の注記に追加で書くことは？', a: '再評価日、独立した鑑定人が関わったか、原価のままの帳簿価額' },
     { id: 'L132-4', lesson: 'L132', q: '棚卸資産の注記の主な中身は？', a: '方針（低い方・FIFO 等）、種類ごとの額、費用にした額、評価減' },
     { id: 'L132-5', lesson: 'L132', q: '無形資産の注記に特有の項目は？', a: '耐用年数が有限か、償却費の行、費用にした研究開発費の合計' },
-    { id: 'L132-6', lesson: 'L132', q: '資産を売ったとき、注記ではどこから消す？', a: '取得原価と減価償却累計額の両方' }
+    { id: 'L132-6', lesson: 'L132', q: '資産を売ったとき、注記ではどこから消す？', a: '取得原価と減価償却累計額の両方' },
+    { id: 'L132-7', lesson: 'L132', q: '無形資産の帳簿価額の動き（注記）に並べる項目と、書かなくてよいものは？', a: '取得・売却・償却・減損損失。資産1つずつの一覧、プロジェクトの説明、仕入先名は不要' }
   ]
 });

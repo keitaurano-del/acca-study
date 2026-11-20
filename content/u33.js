@@ -361,6 +361,12 @@
           after: 'Tako Co のサイクルは 37.9日 → 68.8日。現金が当座借越になった理由の1つになる。'
         },
         {
+          title: '売掛金の日数を短くする要因',
+          paras: ['立て替えたお金も「今日返せば 100円まける」と言えば早く戻る。会社も手を打てば回収が早まる。'],
+          list: ['早期支払割引（early settlement discount）を出す: 早く払う客が増える。割引の分、入るお金は減る', '回収の管理（credit control）を厳しくする: 支払い期限を短く、信用調査、早めの督促', '売掛金を売る（factoring）: 専門の会社に売り、すぐ現金にする。手数料がかかる', '現金売上を増やす: 売掛金が生まれない（分母が売上全体なら日数が縮む）'],
+          after: '例: Tako Co が期末に売掛金 $30,000 を売ると、(80,000 − 30,000) ÷ 500,000 × 365 ＝ 36.5日。58.4日から短くなる。'
+        },
+        {
           title: 'よくある間違い',
           note: { kind: 'warn', text: '在庫と買掛金は売上原価（または仕入高）で、売掛金は売上で割る。逆にしない。日数は短いほど速いが、回転率（回）は大きいほど速い。向きを取り違えない。' },
           paras: ['問題に「平均」とあれば、平均在庫 ＝（期首 ＋ 期末）÷ 2 を使う。何も書いていなければ期末の金額を使う。', '月数で聞かれたら × 365 の代わりに × 12。']
@@ -378,14 +384,15 @@
             ['payables payment period', 'ペイアブルズ ペイメント ピリオド', '買掛金の支払日数'],
             ['asset turnover', 'アセット ターンオーバー', '資産回転率'],
             ['working capital cycle', 'ワーキング キャピタル サイクル', '運転資本のサイクル（cash operating cycle）'],
-            ['credit control', 'クレジット コントロール', '売掛金の回収管理']
+            ['credit control', 'クレジット コントロール', '売掛金の回収管理'],
+            ['factoring', 'ファクタリング', '売掛金を専門の会社に売って早く現金にすること']
           ]
         }
       ],
       quiz: [
         { q: 'Trade receivables are $72,000 and credit sales for the year are $657,000. What is the receivables collection period in days (365-day year)?', type: 'number', answer: 40, unit: '日', explain: '72,000 ÷ 657,000 × 365 ＝ 40日（657,000 ÷ 365 ＝ 1,800、72,000 ÷ 1,800 ＝ 40）。' },
         { q: 'Opening inventory was $30,000 and closing inventory was $50,000. Cost of sales was $292,000. Using AVERAGE inventory, what is the inventory holding period (365-day year)?', choices: ['50 days', '62.5 days', '37.5 days', '7.3 days'], answer: 0, explain: '平均在庫 ＝ (30,000 ＋ 50,000) ÷ 2 ＝ $40,000。40,000 ÷ 292,000 × 365 ＝ 50日。62.5日は期末、37.5日は期首だけを使った間違い。7.3 は在庫回転率（回）で、日数ではない。' },
-        { q: '売掛金の日数が 30日から 50日に伸びた。考えられる理由として最も適切なのは？', choices: ['仕入先への支払いを遅らせた', '回収の管理（credit control）が甘くなった、または客に長い支払い期限を認めた', '現金で売る割合が増えた', '在庫を増やした'], answer: 1, explain: '売掛金の日数は「売ってから回収するまで」。仕入先への支払いは買掛金の日数、在庫は在庫の日数の話。現金売上が増えると売掛金は減るので、日数はむしろ短くなる。' },
+        { q: "Which of the following is MOST likely to REDUCE a company's receivables collection period?", choices: ['Offering an early settlement discount to credit customers', 'Giving a major customer 90 days to pay instead of 30 days', 'Stopping credit checks on new credit customers', 'Paying trade payables more quickly than before'], answer: 0, explain: '早期支払割引があると、客は早く払うので回収が早まる。支払い期限を長くする・信用調査をやめるのは、回収を遅くする（日数が伸びる）。仕入先への支払いは買掛金の日数の話で、売掛金の日数は変わらない。ほかに回収管理の強化、売掛金の売却（factoring）、現金売上を増やすことも日数を短くする。' },
         { q: 'Which of the following statements about the payables payment period is correct?', choices: ['A longer period helps cash flow but may damage relationships with suppliers', 'It is calculated using revenue', 'A longer period always means the company is in financial difficulty', 'It is calculated as trade receivables divided by cost of sales'], answer: 0, explain: '支払いを遅らせると現金は手元に残るが、割引を逃したり、仕入先に嫌われたりする。分母は仕入高（なければ売上原価）で、売上ではない。長い＝必ず経営難、とは限らない。' },
         { q: 'A company has an inventory holding period of 45 days, a receivables collection period of 38 days and a payables payment period of 50 days. What is the length of its working capital cycle in days?', type: 'number', answer: 33, unit: '日', explain: '45 ＋ 38 − 50 ＝ 33日。買掛金の日数は、仕入先のお金を使える期間なので引く。全部足すと 133日の間違いになる。' },
         { q: '売上 $600,000、使用資本 $400,000。資産回転率は？', choices: ['1.5回', '0.67回', '66.7%', '150日'], answer: 0, explain: '600,000 ÷ 400,000 ＝ 1.5回。使用資本 $1 で売上 $1.5 を生んだ。逆に割ると 0.67 になる。' }
@@ -698,6 +705,7 @@
     { id: 'L163-4', lesson: 'L163', q: '運転資本のサイクルの式は？', a: '在庫の日数 ＋ 売掛金の日数 − 買掛金の日数' },
     { id: 'L163-5', lesson: 'L163', q: '資産回転率の式は？', a: '売上 ÷ 使用資本（回）' },
     { id: 'L163-6', lesson: 'L163', q: '買掛金の日数が長くなるメリットとデメリットは？', a: '現金が手元に残る。ただし割引を逃す、仕入先との関係が悪くなる' },
+    { id: 'L163-7', lesson: 'L163', q: '売掛金の日数を短くする手を4つ挙げると？', a: '早期支払割引、回収管理の強化、売掛金の売却（factoring）、現金売上を増やす' },
     { id: 'L164-1', lesson: 'L164', q: 'gearing の式（2通り）は？', a: 'debt ÷（debt ＋ equity）× 100、または debt ÷ equity × 100' },
     { id: 'L164-2', lesson: 'L164', q: 'gearing の debt に入るものは？', a: '利息の付く長期の借入（銀行借入、社債、償還する優先株）' },
     { id: 'L164-3', lesson: 'L164', q: 'interest cover の式は？', a: 'PBIT ÷ finance costs（回）' },

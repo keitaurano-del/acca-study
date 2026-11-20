@@ -11,7 +11,7 @@
       minutes: 14,
       recall: true,
       exam: 'both',
-      outcomes: ['D8(h)'],
+      outcomes: ['D8(h)', 'K1:C7(f)'],
       slides: [
         {
           title: 'ツケは全部は戻らない',
@@ -81,6 +81,7 @@
             ['irrecoverable debts expense', '', '貸倒れ費用（損益計算書の費用）'],
             ['increase / decrease in allowance', '', '引当金の増加 / 減少'],
             ['required allowance', '', '期末に必要な引当金の額'],
+            ['amount charged to profit or loss in respect of the allowance', '', '引当金について今年 SPL に入る額（増減だけ）'],
             ['balance b/d (brought down)', '', '前期繰越（期首の残高）']
           ]
         }
@@ -90,6 +91,7 @@
         { q: 'A business has trade receivables of $40,000 at 31 December 20X2. An allowance for receivables of 4% is required. The allowance brought forward is $1,200. What is the charge to the statement of profit or loss for the allowance for the year?', type: 'number', answer: 400, unit: '$', explain: '必要な額は $40,000 × 4% ＝ $1,600。すでに $1,200 あるので、費用にするのは差額の $400。$1,600 は期末残高の全部を費用にしてしまったときの間違い。' },
         { q: 'At 31 March 20X3 the allowance for receivables needs to be $1,800. The allowance at 1 April 20X2 was $2,300. Which journal entry is needed?', choices: ['Dr Allowance for receivables $500, Cr Irrecoverable debts expense $500', 'Dr Irrecoverable debts expense $500, Cr Allowance for receivables $500', 'Dr Irrecoverable debts expense $1,800, Cr Allowance for receivables $1,800', 'Dr Allowance for receivables $1,800, Cr Trade receivables $1,800'], answer: 0, explain: '$2,300 から $1,800 に $500 減らす。引当金を減らすので借方、費用が減るので貸方。2つ目は増やすときの向きで逆。3つ目は差額ではなく全額。' },
         { q: '売掛金の元帳残高 $50,000 のうち $3,000 を貸倒れとして償却する。引当金は残りの売掛金の 3%。期首の引当金は $1,200。引当金はどう動く？', choices: ['$210 増やす', '$300 増やす', '$1,410 増やす', '$210 減らす'], answer: 0, explain: '償却後の売掛金は $47,000。必要な引当金は $47,000 × 3% ＝ $1,410。$1,410 − $1,200 ＝ $210 の増加。$300 は償却前の $50,000 に % を掛けた間違い。$1,410 は差額でなく全額。' },
+        { q: 'At 31 December 20X5, trade receivables are $52,000 before writing off a debt of $2,000. The allowance for receivables is to be 4% of receivables. The allowance at 1 January 20X5 was $1,500. What is the amount charged to profit or loss in respect of the allowance for receivables for the year?', choices: ['$500', '$2,000', '$2,500', '$580'], answer: 0, explain: '償却後の売掛金は $50,000。必要な引当金は $50,000 × 4% ＝ $2,000。問われているのは引当金の分だけなので、増減の $2,000 − $1,500 ＝ $500。$2,000 は期末残高そのもの（SFP の数字）。$2,500 は償却 $2,000 を足した貸倒れ費用の合計で、引当金の分だけではない。$580 は償却前の $52,000 に 4% を掛けた間違い（$2,080 − $1,500）。' },
         { q: '貸倒引当金を作るとき、売掛金（Trade receivables）の勘定を直接減らさないのはなぜ？', choices: ['どの客が払わないかまだ分からず、客ごとの売掛金を消せないから', '引当金は負債なので、売掛金とは関係ないから', '売掛金は一度記録したら減らしてはいけないから', '引当金は税金の計算だけに使うから'], answer: 0, explain: '特定の客の回収不能が確定したら売掛金を償却する（L71）。引当金は「誰か分からない見込み」なので、売掛金は残したまま別の勘定で引く。引当金は負債ではなく、資産を減らす側の勘定。' }
       ]
     },
@@ -101,7 +103,7 @@
       minutes: 15,
       recall: true,
       exam: 'both',
-      outcomes: ['D8(g)', 'D8(i)'],
+      outcomes: ['D8(g)', 'D8(i)', 'K1:C7(e)'],
       slides: [
         {
           title: '貸したお金を数え直す',
@@ -132,9 +134,10 @@
           }
         },
         {
-          title: '例題の答えを表で見る',
-          table: { caption: 'SPL: 貸倒れ費用の内訳', head: ['項目', '$'], rows: [['Write-off（Ono）', '1,500'], ['Increase in allowance', '410'], ['Debt recovered（Sato）', '(300)']], total: ['Irrecoverable debts expense', '1,610'] },
-          paras: ['SFP の流動資産には Trade receivables $45,590 の1行だけを載せる（$47,000 − $1,410）。', '利益は $1,610 減る。純資産も、売掛金の純額が $47,500 から $45,590 へ $1,910 減り、現金が $300 増えるので、合わせて $1,610 減る。利益と同じ額になる。']
+          title: '問われている数字を見分ける',
+          paras: ['体重計で「今の体重は？」と「この1年で何kg増えた？」は別の質問。引当金も同じで、今ある残高と、今年の増減（SPL に入る額）を分けて読む。'],
+          table: { caption: '例題で、問い方ごとの答え', head: ['英語の問い方', '何の数字', '$'], rows: [['amount charged to profit or loss in respect of the allowance', '引当金の増減だけ', '410'], ['total irrecoverable debts expense', '償却 1,500 ＋ 増加 410 − 回収 300', '1,610'], ['allowance for receivables (SFP)', '引当金の期末残高', '1,410'], ['net trade receivables (SFP)', '47,000 − 1,410', '45,590']] },
+          after: '利益は $1,610 減る。純資産も、売掛金の純額が $47,500 から $45,590 へ $1,910 減り、現金が $300 増えて、同じ $1,610 減る。'
         },
         {
           title: 'よく出る形: 回収を売掛金に記録していた',
@@ -264,7 +267,7 @@
       minutes: 15,
       recall: true,
       exam: 'both',
-      outcomes: ['D8(k)'],
+      outcomes: ['D8(k)', 'K1:C7(g)', 'K1:B1(c)(iv)'],
       slides: [
         {
           title: 'カードの利用明細と家計簿',
@@ -344,12 +347,14 @@
     { id: 'L73-4', lesson: 'L73', q: '今年動かす引当金の額の計算は？', a: '期末に必要な額 − 期首の引当金（差額だけ）' },
     { id: 'L73-5', lesson: 'L73', q: '引当金の % を掛ける前にすることは？', a: '先に貸倒れを償却して、売掛金を減らしておく' },
     { id: 'L73-6', lesson: 'L73', q: 'なぜ償却ではなく引当金を使う？', a: 'どの客が払わないかまだ分からず、客ごとの売掛金を消せないから' },
+    { id: 'L73-7', lesson: 'L73', q: '"amount charged to profit or loss in respect of the allowance" は何の額？', a: '引当金の今年の増減だけ（期末に必要な額 − 期首）。期末残高ではない' },
     { id: 'L74-1', lesson: 'L74', q: 'SPL の貸倒れ費用の式は？', a: '償却額 ＋ 引当金の増加（− 減少）− 回収額' },
     { id: 'L74-2', lesson: 'L74', q: 'SFP での売掛金の金額は？', a: '償却後の売掛金 − 貸倒引当金 ＝ 純額。流動資産に載せる' },
     { id: 'L74-3', lesson: 'L74', q: '貸倒引当金の期末残高は負債？', a: '違う。売掛金から引く（資産のマイナス）' },
     { id: 'L74-4', lesson: 'L74', q: '償却済みの債権を回収したときの仕訳と利益への影響は？', a: 'Dr Bank / Cr Irrecoverable debts expense。利益が増える' },
     { id: 'L74-6', lesson: 'L74', q: '償却済み債権の入金を Cr Trade receivables にしていたら？', a: 'Dr Trade receivables / Cr Irrecoverable debts expense で直す。% はその後で掛ける' },
     { id: 'L74-5', lesson: 'L74', q: 'SPL に入るのは引当金の何？', a: '今年の増減だけ。期末残高そのものではない' },
+    { id: 'L74-7', lesson: 'L74', q: 'total irrecoverable debts expense と、引当金の分の charge の違いは？', a: '合計は 償却 ＋ 引当金の増加（− 減少）− 回収。引当金の分は増減だけ' },
     { id: 'L75-1', lesson: 'L75', q: 'contra とは？', a: '同じ相手への売掛金と買掛金を、合意して消し合うこと' },
     { id: 'L75-2', lesson: 'L75', q: 'contra の仕訳は？', a: 'Dr Trade payables / Cr Trade receivables' },
     { id: 'L75-3', lesson: 'L75', q: '相殺できる最大の額は？', a: '売掛金と買掛金のうち小さい方' },

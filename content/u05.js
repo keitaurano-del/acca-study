@@ -95,19 +95,15 @@
       id: 'L27',
       no: 27,
       title: '早期支払割引（settlement discount）',
-      goal: '早期支払割引を、お客さんが使うかどうかの見込みに合わせて売上に反映し、見込みが外れたときの調整まで仕訳できるようになる',
-      minutes: 15,
+      goal: '早期支払割引を、お客さんが使うかどうかの見込みに合わせて売上に反映し、見込みが外れたときの調整まで仕訳し、売上税をどの金額にかけるかも判断できるようになる',
+      minutes: 17,
       recall: true,
       exam: 'both',
       outcomes: ['D1(f)ii', 'K1:C1(b)'],
       slides: [
         {
           title: '「早く払えば5%引き」',
-          paras: ['英会話教室の請求書に「10日以内に払えば5%引き」と書いてある。月謝は2万円。早く払えば1万9千円、遅れると2万円。', 'このように、早く払ってくれたら引く値引きを早期支払割引（settlement discount）という。請求した時点では、お客さんがそれを使うかどうか、まだ分からない。']
-        },
-        {
-          title: '取引値引きとの違い',
-          paras: ['売る側から見た早期支払割引は、discounts allowed（与えた割引）とも呼ばれる。'],
+          paras: ['英会話教室の請求書に「10日以内に払えば5%引き」。月謝2万円なら、早く払えば1万9千円、遅れると2万円。', 'これが早期支払割引（settlement discount）。売る側からは discounts allowed（与えた割引）とも呼ぶ。請求した時点では、使うかどうかまだ分からない。'],
           table: { caption: '2つの値引き', head: ['比べる点', '取引値引き', '早期支払割引'], rows: [['いつ決まる？', '売る時点', '払う時点'], ['条件', 'まとめ買い・業者', '期限内に払う'], ['売る時点の金額', 'もう確定', 'まだ分からない']] }
         },
         {
@@ -146,8 +142,7 @@
         {
           title: '4つのパターンのまとめ',
           table: { caption: '見込みと実際', head: ['見込み → 実際', '分かった時点の調整'], rows: [['使う → 使った', 'なし'], ['使う → 使わなかった', '売上を増やす（Cr Revenue）'], ['使わない → 使わなかった', 'なし'], ['使わない → 使った', '売上を減らす（Dr Revenue）']] },
-          after: '割引を費用（expense）にはしない。最後に売上が「実際に受け取った金額」になるよう直すだけ。',
-          note: { kind: 'tip', text: '早期支払割引と売上税が一緒に出る問題では、売上税をどの金額にかけるかは問題文の指示に従う。' }
+          after: '割引を費用（expense）にはしない。最後に売上が「実際に受け取った金額」になるよう直すだけ。'
         },
         {
           title: '例題',
@@ -156,6 +151,17 @@
             steps: ['まず取引値引き: $12,000 × 10% ＝ $1,200 → $10,800', '次に早期支払割引: $10,800 × 4% ＝ $432', '使うと見込むので、売上は $10,800 − $432 ＝ $10,368', '仕訳: Dr Trade receivables 10,368 / Cr Revenue 10,368', '40日後なので割引は使えない。入金は $10,800', '仕訳: Dr Bank 10,800 / Cr Trade receivables 10,368 / Cr Revenue 432'],
             answer: '(1) $10,368　(2) 入金 $10,800、追加の売上 $432'
           }
+        },
+        {
+          title: '売上税はどの金額にかける？',
+          paras: ['取引値引きは、いつも売上税を計算する前に引く。', '早期支払割引は、ACCA FA の問題ではふつう、割引後の金額に売上税をかける。お客さんが使うかどうかは関係ない。期限が過ぎて全額を払っても、税は計算し直さない。請求書を出す時点で税額を1回だけ決めるイメージ。'],
+          formula: '売上税 ＝ 定価 ×（1 − 取引値引き）×（1 − 早期支払割引）× 税率',
+          example: {
+            problem: 'たこ焼き屋がホテルに定価 $2,000 で掛け売りした。取引値引き10%、「10日以内に払えば5%引き」、売上税20%。ホテルは割引を使うと見込まれる。(1) 売上税は？ (2) 売る時点の仕訳は？ (3) 実際は30日後に払った。入金額は？',
+            steps: ['取引値引きを先に: $2,000 × 90% ＝ $1,800', '早期支払割引の後の金額: $1,800 × 95% ＝ $1,710', '売上税はこれにかける: $1,710 × 20% ＝ $342', '使うと見込むので売上は $1,710。売掛金は $1,710 ＋ $342 ＝ $2,052', '仕訳: Dr Trade receivables 2,052 / Cr Revenue 1,710 / Cr Sales tax 342', '30日後なので割引なし。入金は $1,800 ＋ $342 ＝ $2,142。税は $342 のまま', '仕訳: Dr Bank 2,142 / Cr Trade receivables 2,052 / Cr Revenue 90'],
+            answer: '(1) $342　(2) Dr Trade receivables 2,052 / Cr Revenue 1,710 / Cr Sales tax 342　(3) $2,142（追加の売上 $90）'
+          },
+          note: { kind: 'tip', text: '問題文に「売上税は○○にかける」と指示があれば、必ずその指示に従う。国によって税のルールが違うため。' }
         },
         {
           title: 'よくある間違い',
@@ -174,17 +180,18 @@
             ['discounts allowed', 'ディスカウンツ・アラウド', '与えた割引（売る側の割引）'],
             ['variable consideration', 'ヴァリアブル・コンシダレーション', '変動対価（変わりうる受取額）'],
             ['expected to take the discount', '', '割引を使うと見込まれる'],
+            ['sales tax', 'セールス・タックス', '売上税'],
             ['within 10 days', '', '10日以内に']
           ]
         }
       ],
       quiz: [
-        { q: 'A business sells goods on credit for $2,000 and offers a 5% settlement discount for payment within 7 days. The customer is expected to take the discount. What revenue should be recognised at the date of sale?', choices: ['$2,000', '$1,900', '$100', '$2,100'], answer: 1, explain: '使うと見込むので、割引後の $2,000 × 95% ＝ $1,900 で売上を記録する。$2,000 は使わないと見込むときの金額。' },
         { q: 'Goods were sold for $4,000 with a 3% settlement discount for payment within 10 days. The customer was not expected to take the discount, but paid within 10 days. Which entry records the receipt?', choices: ['Dr Bank $3,880, Dr Revenue $120, Cr Trade receivables $4,000', 'Dr Bank $3,880, Dr Discounts allowed (expense) $120, Cr Trade receivables $4,000', 'Dr Bank $3,880, Cr Trade receivables $3,880', 'Dr Bank $4,000, Cr Trade receivables $3,880, Cr Revenue $120'], answer: 0, explain: '売上は $4,000 で記録済み。割引 $4,000 × 3% ＝ $120 を使われたので、入金は $3,880。$120 は売上を減らす（Dr Revenue）。費用にするのは昔のやり方。3つ目だと売掛金が $120 残ってしまう。' },
         { q: 'Goods with a list price of $6,000 are sold on credit. A trade discount of 20% is given, and a settlement discount of 5% is offered for payment within 14 days. The customer is expected to take the settlement discount. What revenue is recorded at the date of sale?', type: 'number', answer: 4560, unit: '$', explain: '取引値引きを先に: $6,000 × 80% ＝ $4,800。次に早期支払割引: $4,800 × 95% ＝ $4,560。両方を定価から引いて $6,000 × 75% ＝ $4,500 とするのは間違い。' },
         { q: '割引を使うと見込んで、売上と売掛金を $950 で記録した。期末の時点で割引の期限は過ぎたが、まだ入金はない。正しいのは？', choices: ['売掛金を $1,000 にし、差額 $50 を売上に足す（Dr Trade receivables 50 / Cr Revenue 50）', '入金されるまで何もしない。売掛金は $950 のまま', '売掛金を $1,000 にし、差額 $50 を受けた割引（discounts received）にする', '売掛金は $950 のまま。$50 を費用から引く'], answer: 0, explain: '期限が過ぎた時点で、お客さんは $1,000 全額を払う義務があると分かる。だから入金を待たずに売掛金と売上を $50 増やす。discounts received は買った側の勘定。' },
         { q: 'スーパーが早期支払割引を使って、$1,000 の買掛金を $950 で払った。スーパー側（買った側）では、割引 $50 をどう記録する？', choices: ['受けた割引（discounts received）として収益にする', '自分の売上を減らす', '仕入を $50 増やす'], answer: 0, explain: '買った側では、早く払って受けた割引は discounts received（L25）。Dr Trade payables 1,000 / Cr Bank 950 / Cr Discounts received 50。売上を減らすのは売った側。' },
-        { q: 'Which statement about settlement discounts offered to customers is correct under IFRS 15?', choices: ['They are recorded as an expense called discounts allowed', 'Revenue is measured at the amount the business expects to receive, taking into account whether the discount is expected to be taken', 'They are deducted from the list price before any trade discount', 'Nothing is recorded until the customer pays'], answer: 1, explain: '早期支払割引は変動対価。受け取れると見込む金額で売上を決める。費用にはしない。取引値引きが先、早期支払割引は後。掛け売上は売った時点で記録する。' }
+        { q: 'Which statement about settlement discounts offered to customers is correct under IFRS 15?', choices: ['They are recorded as an expense called discounts allowed', 'Revenue is measured at the amount the business expects to receive, taking into account whether the discount is expected to be taken', 'They are deducted from the list price before any trade discount', 'Nothing is recorded until the customer pays'], answer: 1, explain: '早期支払割引は変動対価。受け取れると見込む金額で売上を決める。費用にはしない。取引値引きが先、早期支払割引は後。掛け売上は売った時点で記録する。' },
+        { q: 'Goods with a list price of $5,000 are sold on credit. A trade discount of 20% is given and a settlement discount of 4% is offered for payment within 14 days. Sales tax is 20%. The customer is not expected to take the settlement discount. Using the usual ACCA FA convention, what is the sales tax on the invoice?', choices: ['$768', '$800', '$960', '$1,000'], answer: 0, explain: '取引値引きを先に: $5,000 × 80% ＝ $4,000。売上税は早期支払割引の後の金額にかける: $4,000 × 96% ＝ $3,840、× 20% ＝ $768。使わないと見込んでも税は同じ。$800 は早期支払割引を引き忘れた金額、$960 は取引値引きを引かずに定価 × 96% にかけた金額、$1,000 は定価にかけた金額。' }
       ]
     },
     {
@@ -375,7 +382,7 @@
     { id: 'L27-3', lesson: 'L27', q: '使うと見込んだのに期限が過ぎた（全額を払う）。差額は？', a: '期限が過ぎた時点で売上に足す（Cr Revenue）。入金と一緒に書くことが多い' },
     { id: 'L27-4', lesson: 'L27', q: '使わないと見込んだのに割引を使われた。差額は？', a: '入金時に売上を減らす（Dr Revenue）。費用にはしない' },
     { id: 'L27-5', lesson: 'L27', q: 'なぜ見込みで売上を決める？', a: 'IFRS 15 で売上は受け取れると見込む金額。割引で変わる変動対価だから' },
-    { id: 'L27-6', lesson: 'L27', q: '取引値引きと早期支払割引、どちらを先に引く？', a: '取引値引きが先。早期支払割引は値引き後の金額にかける' },
+    { id: 'L27-6', lesson: 'L27', q: '取引値引き・早期支払割引・売上税。計算する順番は？', a: '取引値引き → 早期支払割引 → 残りに売上税。割引を使わなくても税は同じ' },
     { id: 'L27-7', lesson: 'L27', q: '割引後で売上を記録。期末に期限は過ぎたが未入金。売掛金は？', a: '全額。差額を Dr Trade receivables / Cr Revenue で足す' },
     { id: 'L28-1', lesson: 'L28', q: '銀行勘定で、入金・出金はどちら側？', a: '入金は借方（Dr Bank）、出金は貸方（Cr Bank）' },
     { id: 'L28-2', lesson: 'L28', q: '掛けのお客さんから $600 入金。仕訳は？', a: 'Dr Bank 600 / Cr Trade receivables 600（売上は増やさない）' },

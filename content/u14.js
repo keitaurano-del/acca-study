@@ -19,7 +19,7 @@
         },
         {
           title: '売掛金と買掛金',
-          paras: ['売掛金（trade receivables）: 掛けで売った相手から、あとで受け取るお金。資産になる。', '買掛金（trade payables）: 掛けで買った相手に、あとで払うお金。負債になる。'],
+          paras: ['売掛金（trade receivables）: 掛けで売った相手から、あとで受け取るお金。資産になる。', '買掛金（trade payables）: 掛けで買った相手に、あとで払うお金。負債になる。', 'どちらもふつう1年以内に片づくので、流動資産（current assets）・流動負債（current liabilities）に分ける。'],
           note: { kind: 'tip', text: 'receive＝受け取る、pay＝払う。receivables は「受け取れるもの」、payables は「払うべきもの」と覚える。' }
         },
         {
@@ -30,7 +30,7 @@
         },
         {
           title: 'ツケが生まれて、消える',
-          paras: ['掛けで売った日に売掛金が生まれ（借方）、入金された日に消える（Dr Bank / Cr Trade receivables）。L21 で学んだ形。', '買掛金は逆。掛けで買うと貸方に生まれ、払うと借方で消える。下は、たこ焼き屋が売った日の仕訳。'],
+          paras: ['掛けで売った日に売掛金が生まれ（借方）、入金された日に消える（Dr Bank / Cr Trade receivables）。L21 で学んだ形。', '買掛金は逆。掛けで買うと貸方に生まれ、払うと借方で消える。下は、たこ焼き屋が売った日の仕訳。', '帳簿とは別に、お客さんごとの明細（売掛金元帳、receivables ledger）も付けて、誰にいくら残っているかを管理する。'],
           journal: [
             { side: 'Dr', account: 'Trade receivables（売掛金）', amount: '500' },
             { side: 'Cr', account: 'Revenue（売上）', amount: '500' }
@@ -57,13 +57,23 @@
               ['売掛金 trade receivables', '掛けで売った商品・サービスの代金'],
               ['その他の債権 other receivables', '前払費用、未収収益、従業員への貸付、戻ってくる売上税'],
               ['買掛金 trade payables', '掛けで買った商品・サービスの代金（仕入先への未払い）'],
-              ['その他の債務 other payables', '未払費用、前受収益、納める売上税、未払いの給料']
+              ['その他の債務 other payables', '請求書が届いた未払いの経費、前受収益、納める売上税']
             ]
           }
         },
         {
           title: '財政状態計算書のどこに載る？',
-          paras: ['売掛金はふつう1年以内に回収するので流動資産（current assets）。財政状態計算書では、その他の債権とまとめて「trade and other receivables」の行に載ることが多い。', '買掛金も1年以内に払うので流動負債（current liabilities）。「trade and other payables」の行になる。', '帳簿とは別に、お客さんごとの明細（売掛金元帳、receivables ledger）も付けて、誰にいくら残っているかを管理する。']
+          paras: ['売掛金は、その他の債権とまとめて「trade and other receivables」の行に載る。', '払う側は「trade and other payables」の行。決算日に払っていない次の3つが、まとめてここに載る。'],
+          table: {
+            caption: '決算日（12月31日）にまだ払っていないもの',
+            head: ['中身', '呼び名'],
+            rows: [
+              ['掛けで仕入れた商品の代金', '買掛金 trade payables'],
+              ['12月の電気代。請求書は届いた', 'その他の債務 other payables'],
+              ['12月のガス代。請求書はまだ', '未払費用 accruals（L63）']
+            ]
+          },
+          after: '請求書が届けば、払う金額が決まった債務になる。まだなら、使った分を見積もって未払費用にする。'
         },
         {
           title: 'なぜ？ 入金を待たずに記録する理由',
@@ -84,6 +94,8 @@
             ['trade receivables', 'トレード・レシーバブルズ', '売掛金'],
             ['trade payables', 'トレード・ペイアブルズ', '買掛金'],
             ['other receivables / other payables', '', 'その他の債権 / その他の債務'],
+            ['accruals', 'アクルーアルズ', '未払費用（使ったが請求書がまだの費用）'],
+            ['trade and other payables', '', '買掛金及びその他の債務（財政状態計算書の行）'],
             ['credit sale / credit purchase', '', '掛け売上 / 掛け仕入'],
             ['current assets / current liabilities', '', '流動資産 / 流動負債'],
             ['receivables ledger', '', '売掛金元帳（お客さんごとの明細）']
@@ -92,9 +104,9 @@
       ],
       quiz: [
         { q: 'Which of the following is a trade receivable?', choices: ['An amount owed by a customer for goods sold on credit', 'An amount owed to a supplier for goods bought on credit', 'Cash received from a customer for a cash sale', 'A loan made to the business by its bank'], answer: 0, explain: '売掛金は「掛けで売った相手から受け取るお金」。2つ目は買掛金（払う側）、3つ目はその場で受け取った現金なので売掛金は生まれない、4つ目は借入金（負債）。' },
-        { q: 'Which of the following would be included in trade and other payables in the statement of financial position?', choices: ['An accrued electricity expense', 'Rent paid in advance', 'A bank loan repayable in five years', 'An amount owed by a customer'], answer: 0, explain: '未払費用（accrual）は other payables なので trade and other payables に入る。前払家賃は前払費用で other receivables（資産）。5年後に返す銀行借入は借入金（loans）で非流動負債。お客さんが払うお金は売掛金（資産）。' },
+        { q: 'Which of the following would be included in trade and other payables in the statement of financial position?', choices: ['An accrued electricity expense', 'Rent paid in advance', 'A bank loan repayable in five years', 'An amount owed by a customer'], answer: 0, explain: '未払費用（accrual）は、使ったのに請求書がまだ届いていない費用。請求書が届いて未払いならその他の債務（other payables）。どちらも trade and other payables に入る。前払家賃は前払費用で other receivables（資産）。5年後に返す銀行借入は借入金（loans）で非流動負債。お客さんが払うお金は売掛金（資産）。' },
         { q: '期首の売掛金 $3,200、掛け売上 $27,500、入金 $25,900、売上戻り $600。期末の売掛金は？', type: 'number', answer: 4200, unit: '$', explain: '$3,200 ＋ $27,500 − $25,900 − $600 ＝ $4,200。入金と売上戻りはどちらも売掛金を減らす（貸方）。' },
-        { q: 'たこ焼き屋がスーパーに $500 を掛けで売った。スーパーの帳簿では何が増える？', choices: ['売掛金（資産）', '買掛金（負債）', '売上（収益）', '何も記録しない'], answer: 1, explain: '買ったスーパーは「あとで払う」側なので買掛金（負債）。売掛金と売上が増えるのは、売ったたこ焼き屋の方。' },
+        { q: '決算日は12月31日。12月の電気代 $200 は請求書が届いたが、まだ払っていない。12月のガス代 $80 は使ったが、請求書はまだ届いていない。正しいのは？', choices: ['電気代は未払費用、ガス代はその他の債務。どちらも trade and other payables に載る', '電気代は買掛金。ガス代は請求書が届くまで何も記録しない', '電気代はその他の債務、ガス代は未払費用。どちらも trade and other payables に載る', '電気代はその他の債務。ガス代は来年払うので来年の費用'], answer: 2, explain: '請求書が届いて未払いならその他の債務、請求書がまだなら未払費用（L63）。1つ目は逆。2つ目: 本業の仕入ではない経費は買掛金ではなく、請求書がなくても使った分は今年の費用。4つ目: 払う時期ではなく使った期間で費用にする。' },
         { q: 'お客さんが、来月渡す商品の手付金 $200 を先に払った。お店から見て正しいのは？', choices: ['売掛金が $200 増える', '前受収益（負債）が $200 増える', '売上が $200 増える'], answer: 1, explain: 'まだ商品を渡していないので、売上にはならない。お金は先にもらったので「商品を渡す義務」＝前受収益（負債）。売掛金は「まだもらっていない」ときに生まれるもの。' },
         { q: 'Opening trade receivables were $8,000. Credit sales for the year were $50,000 and cash received from credit customers was $47,000. What were closing trade receivables?', choices: ['$11,000', '$5,000', '$105,000', '$3,000'], answer: 0, explain: '$8,000 ＋ $50,000 − $47,000 ＝ $11,000。$5,000 は掛け売上を引いて入金を足してしまった（逆にした）ときの答え。' }
       ]
@@ -435,8 +447,8 @@
     { id: 'L68-3', lesson: 'L68', q: '期末の売掛金を出す式は？', a: '期首 ＋ 掛け売上 − 入金 − 売上戻り' },
     { id: 'L68-4', lesson: 'L68', q: 'なぜ入金前に売掛金と売上を記録する？', a: '発生主義。商品を渡した時点で稼ぎ、受け取る権利が生まれるから' },
     { id: 'L68-5', lesson: 'L68', q: '銀行からの借入は買掛金？', a: '違う。買掛金は仕入先への未払いだけ。借入は loans（借入金）' },
-    { id: 'L68-6', lesson: 'L68', q: '財政状態計算書で売掛金が載る行の英語は？', a: 'trade and other receivables（流動資産）' },
-    { id: 'L68-7', lesson: 'L68', q: '前払家賃・未払費用は、それぞれ何に入る？', a: '前払家賃は other receivables（資産）、未払費用は other payables（負債）' },
+    { id: 'L68-6', lesson: 'L68', q: '前払家賃・未払費用は、財政状態計算書のどの行？', a: '前払家賃は trade and other receivables、未払費用は trade and other payables' },
+    { id: 'L68-7', lesson: 'L68', q: '払っていない経費。請求書が届いた場合と、まだの場合の呼び名は？', a: '届いた→その他の債務、まだ→未払費用（accrual）。どちらも trade and other payables' },
     { id: 'L69-1', lesson: 'L69', q: '掛けで売るメリットを3つ', a: '売上が増える、ライバルに負けない、大口・継続の関係ができる' },
     { id: 'L69-2', lesson: 'L69', q: '掛けで売るコストを3つ', a: '貸倒れ、入金が遅れる分のお金のコスト（利息）、事務コスト' },
     { id: 'L69-3', lesson: 'L69', q: '与信限度（credit limit）とは？', a: 'お客さんごとに決める、売掛金残高の上限（金額）' },

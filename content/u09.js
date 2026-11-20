@@ -100,9 +100,10 @@
           after: '資産にした支出は財政状態計算書に資産として載る。費用にした支出は、その期の損益計算書に費用として載る。シラバスでは asset expenditure（資産にする支出）と expenses charged to profit or loss（損益計算書の費用にするもの）という言い方も出る。意味は同じ。'
         },
         {
-          title: '支出の行き先',
+          title: 'なぜ？ 支出の行き先を分ける理由',
+          paras: ['200万円の車を買った年に全部を費用にすると、その年だけ費用が大きすぎ、次の年からは車の費用がゼロになる。でも車は7年間、毎年同じように役に立つ。', '何年も役に立つものは資産にして、使う年に少しずつ費用にする。そうすると毎年のもうけが実際の働きに合う。これが次の「減価償却」につながる。'],
           svg: `<svg viewBox="0 0 440 316" role="img" aria-label="資産にする支出は財政状態計算書に載り少しずつ費用になる。費用にする支出は今年の損益計算書に載る" font-size="14"><text x="20" y="32" font-size="17" font-weight="600" fill="var(--ink)">支出の行き先は2つ</text><rect x="20" y="52" width="192" height="60" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="116" y="78" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">資産にする支出</text><text x="116" y="99" text-anchor="middle" font-size="12.5" fill="var(--ink)">capital expenditure</text><rect x="228" y="52" width="192" height="60" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="324" y="78" text-anchor="middle" font-size="15" font-weight="600" fill="var(--ink)">費用にする支出</text><text x="324" y="99" text-anchor="middle" font-size="12.5" fill="var(--quiet)">revenue expenditure</text><line x1="116" y1="112" x2="116" y2="134" stroke="var(--edge)" stroke-width="1.5"/><path d="M110 134L116 144L122 134z" fill="var(--edge)"/><line x1="324" y1="112" x2="324" y2="134" stroke="var(--edge)" stroke-width="1.5"/><path d="M318 134L324 144L330 134z" fill="var(--edge)"/><rect x="20" y="146" width="192" height="60" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="116" y="172" text-anchor="middle" fill="var(--ink)">財政状態計算書に</text><text x="116" y="194" text-anchor="middle" fill="var(--ink)">資産として載る</text><rect x="228" y="146" width="192" height="60" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="324" y="172" text-anchor="middle" fill="var(--ink)">損益計算書に</text><text x="324" y="194" text-anchor="middle" fill="var(--ink)">今年の費用として載る</text><line x1="116" y1="206" x2="116" y2="228" stroke="var(--edge)" stroke-width="1.5"/><path d="M110 228L116 238L122 228z" fill="var(--edge)"/><rect x="20" y="240" width="192" height="60" rx="10" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="116" y="266" text-anchor="middle" fill="var(--ink)">使う年に少しずつ費用へ</text><text x="116" y="288" text-anchor="middle" fill="var(--ink)">（減価償却）</text><text x="324" y="268" text-anchor="middle" fill="var(--quiet)">今年の利益から全額引く</text></svg>`,
-          caption: '資産にした支出も、最後は減価償却で少しずつ費用になる。違うのは「いつ費用になるか」。'
+          caption: 'どちらも最後は費用になる。違うのは「いつ費用になるか」だけ。'
         },
         {
           title: '取得原価に含めるもの（IAS 16）',
@@ -129,8 +130,10 @@
           note: { kind: 'tip', text: '迷ったら「前より良くなったか、元に戻っただけか」を考える。良くなったなら資産、戻っただけなら費用。' }
         },
         {
-          title: 'なぜ？ 分ける理由',
-          paras: ['焼き機 $10,300 を買った年に全部を費用にすると、その年は大赤字、次の年からは焼き機の費用がゼロで大もうけに見える。でも焼き機は毎年同じように働いている。', '何年も役に立つものは資産にして、使う年に少しずつ費用にする。そうすると、毎年のもうけが実際の働きに合う。これが次の「減価償却」につながる。']
+          title: '法律で必要になった安全設備',
+          paras: ['家のたとえ: 法律で火災警報器が義務になり、新しく付けた。家に前は無かったものが加わる。電池交換や点検は今の状態を保つだけ。'],
+          list: ['法律や規制で必要な新しい安全・環境の設備（例: 機械に安全カバー safety guard を付ける）→ 資産。前は無かったものが加わり、無いと機械を使い続けられないから', 'すでにある安全カバーの修理・点検 → 費用。今の状態を保つだけ'],
+          note: { kind: 'warn', text: '「生産量が増えないから費用」は間違い。もうけを直接増やさなくても、法律で必要な新しい設備は資産。' }
         },
         {
           title: '間違えると、どちらにずれる？',
@@ -143,7 +146,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['何年も役に立つ支出は資産、その期間で役目が終わる支出は費用', '取得原価＝購入価格（値引き後）＋使える状態にするまでの直接費', '研修・保守・修理・保険は費用。改良は資産、修理は費用']
+          numbered: ['何年も役に立つ支出は資産、その期間で役目が終わる支出は費用', '取得原価＝購入価格（値引き後）＋使える状態にするまでの直接費', '研修・保守・修理・保険は費用。改良と、法律で必要な新しい安全設備は資産']
         },
         {
           title: '英単語',
@@ -155,14 +158,15 @@
             ['directly attributable costs', '', '使える状態にするまでに直接かかった費用'],
             ['installation', 'インストレーション', '据付'],
             ['repairs and maintenance', '', '修理・保守'],
-            ['improvement', 'インプルーブメント', '改良（性能を上げる）']
+            ['improvement', 'インプルーブメント', '改良（性能を上げる）'],
+            ['safety guard', 'セーフティ・ガード', '機械の安全カバー']
           ]
         }
       ],
       quiz: [
-        { q: 'パン屋がオーブンを買った。購入価格 $6,000、運送費 $200、据付費 $400、初年度の保険料 $300、スタッフ研修 $150。取得原価はいくら？', type: 'number', answer: 6600, unit: '$', explain: '$6,000 ＋ $200 ＋ $400 ＝ $6,600。保険料と研修は使い始めた後のための支出なので費用。全部足した $7,050 は引っかけ。' },
+        { q: 'A company bought a machine for $40,000. Delivery cost $1,000, installation cost $2,000, staff training cost $500 and a two-year maintenance contract cost $3,000. At what amount should the machine be recorded?', type: 'number', answer: 43000, unit: '$', explain: '$40,000 ＋ $1,000 ＋ $2,000 ＝ $43,000。研修 $500 と保守契約 $3,000 は使い始めた後のための支出なので費用。全部足した $46,500 や、保守契約まで入れた $46,000 は引っかけ。' },
         { q: 'Which of the following should be treated as capital expenditure?', choices: ['Repainting the outside of the shop', 'Building an extension to the shop to add a new seating area', 'Annual servicing of the delivery van', 'Insurance on a new machine'], answer: 1, explain: '増築は店の能力を上げる改良なので資産。塗り直しと点検は元の状態を保つための支出、保険は維持費なので、どれも費用。' },
-        { q: 'A company bought a machine for $40,000. Delivery cost $1,000, installation cost $2,000 and a two-year maintenance contract cost $3,000. At what amount should the machine be recorded?', choices: ['$40,000', '$43,000', '$46,000', '$41,000'], answer: 1, explain: '$40,000 ＋ $1,000 ＋ $2,000 ＝ $43,000。保守契約は使い始めた後のための支出なので費用。$46,000 は保守契約まで入れた間違い。' },
+        { q: 'New safety regulations require a company to fit safety guards to its existing machines. The guards cost $8,000. Later in the year, $600 was spent repairing one of the guards. How should these amounts be treated?', choices: ['Both amounts are capital expenditure', '$8,000 capital expenditure and $600 revenue expenditure', '$8,000 revenue expenditure and $600 capital expenditure', 'Both amounts are revenue expenditure, because the guards do not increase output'], answer: 1, explain: '法律で必要になった新しい安全カバー $8,000 は資産。機械が前は持っていなかったものが加わり、それが無いと機械を使い続けられないから。カバーの修理 $600 は今の状態を保つだけなので費用。1つ目は修理まで資産にしている。3つ目は逆。4つ目の「生産量が増えないから費用」は、よくある間違い。' },
         { q: 'Which of the following costs should NOT be included in the cost of a new machine?', choices: ['Import duties', 'Cost of testing the machine before use', 'Cost of training staff to use the machine', 'Site preparation costs'], answer: 2, explain: '研修費は機械そのものではなく人にかかる費用なので、原価に入れずに費用にする。関税・試運転・設置場所の準備は、使える状態にするための直接費。' },
         { q: '修理代 $1,500 を、間違えて資産として記録した。正しい処理と比べて、今年の利益はどうなる？（減価償却は考えない）', choices: ['$1,500 過大', '$1,500 過少', '変わらない', '$3,000 過大'], answer: 0, explain: '本来は費用で利益が $1,500 減るはずだった。資産にしたので費用が足りず、利益が $1,500 多すぎる。資産も $1,500 多すぎる。' },
         { q: '売上税に登録しているお店が機械を買い、売上税 $600 を払った。この $600 はどうする？', choices: ['機械の原価に含める', '売上税の勘定に入れて、預かった売上税から差し引く', '費用にする', '資本から差し引く'], answer: 1, explain: '登録事業者は払った売上税を取り戻せるので、原価にも費用にもならない。売上税のレッスンと同じ考え方。取り戻せない場合だけ原価に含める。' }
@@ -195,7 +199,7 @@
         {
           title: '勘定は種類ごと・原価で',
           paras: ['有形固定資産は、種類ごとに勘定を分ける（Land and buildings、Plant and machinery、Motor vehicles など）。', 'この勘定には取得原価（cost）だけを記録する。使って減った分（減価償却）は、あとで学ぶ別の勘定に記録する。原価の勘定はそのまま残す。'],
-          tAccount: { name: 'Motor vehicles – cost', debit: [['Balance b/d', '30,000'], ['Bank（新しいバン）', '20,500']], credit: [], balance: { side: 'debit', label: 'Balance c/d', amount: '50,500' } }
+          tAccount: { name: 'Motor vehicles – cost', debit: [['Balance b/d', '30,000'], ['Bank（新しいバン）', '20,500']], credit: [], balance: { side: 'credit', label: 'Balance c/d', amount: '50,500' } }
         },
         {
           title: '「仕入」と「買掛金」は使わない',
@@ -523,13 +527,13 @@
     { id: 'L41-4', lesson: 'L41', q: 'なぜ流動と非流動を分けて見せる？', a: 'すぐ払える力（流動）と、長く稼ぐ土台（非流動）を区別して見せるため' },
     { id: 'L41-5', lesson: 'L41', q: 'property, plant and equipment の訳は？', a: '有形固定資産。形のある非流動資産' },
     { id: 'L41-6', lesson: 'L41', q: '財政状態計算書の資産の並び順は？', a: '非流動資産が先、流動資産が後' },
-    { id: 'L42-1', lesson: 'L42', q: 'capital expenditure とは？', a: '非流動資産を買う・作る・性能を上げる支出。資産にする' },
-    { id: 'L42-2', lesson: 'L42', q: 'revenue expenditure とは？', a: '事業を回し、資産を今の状態に保つ支出。その期の費用にする' },
+    { id: 'L42-1', lesson: 'L42', q: 'capital expenditure と revenue expenditure の違いは？', a: 'capital: 非流動資産を買う・作る・良くする支出で資産に。revenue: 今の状態を保つ支出で費用に' },
     { id: 'L42-3', lesson: 'L42', q: 'IAS 16 で取得原価に含めるものは？', a: '購入価格（値引き後）＋使える状態にするまでの直接費（運送・据付・試運転など）' },
     { id: 'L42-4', lesson: 'L42', q: '研修費や保守契約は機械の原価に入る？', a: '入らない。使い始めた後の支出なので費用' },
     { id: 'L42-5', lesson: 'L42', q: '改良と修理の見分け方は？', a: '前より良くなった（改良）なら資産、元に戻っただけ（修理）なら費用' },
     { id: 'L42-6', lesson: 'L42', q: '資産にすべき支出を費用にすると？', a: '今年の利益と資産が、どちらも過少になる' },
     { id: 'L42-7', lesson: 'L42', q: 'なぜ何年も使うものは資産にする？', a: '使う年に少しずつ費用にして、毎年のもうけを実際の働きに合わせるため' },
+    { id: 'L42-8', lesson: 'L42', q: '法律で必要になった新しい安全カバーを機械に付ける支出は？', a: '資産。前は無かったものが加わり、無いと機械を使えない。既存カバーの修理は費用' },
     { id: 'L43-1', lesson: 'L43', q: '有形固定資産を銀行払いで買った仕訳は？', a: 'Dr 資産の勘定（例 Plant and machinery）/ Cr Bank' },
     { id: 'L43-2', lesson: 'L43', q: '機械を後払いで買ったときの貸方は？', a: 'Other payables（Trade payables ではない）' },
     { id: 'L43-3', lesson: 'L43', q: 'なぜ機械の購入に Purchases を使わない？', a: 'Purchases は売るための商品の勘定で、売上原価になるから' },

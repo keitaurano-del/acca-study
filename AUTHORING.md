@@ -68,7 +68,7 @@
 - formula: 'assets ＝ capital ＋ liabilities'（強調ボックス。式やルールの1行）
 - note: { kind: 'warn' | 'tip', text: '…' }（warn＝よくある間違い、tip＝コツ）
 - table: { caption: '…', head: ['項目', '$'], rows: [['売上', '1,000'], ...], total: ['合計', '1,000'] }（列は最大3。財務諸表の抜粋などに使う。数字は文字列で、桁区切りあり）
-- tAccount: { name: 'Cash', debit: [['Capital', '1,000']], credit: [['Rent', '200']], balance: { side: 'debit', label: 'Balance c/d', amount: '800' } }（T勘定。balance は任意）
+- tAccount: { name: 'Cash', debit: [['Capital', '1,000']], credit: [['Rent', '200']], balance: { side: 'credit', label: 'Balance c/d', amount: '800' } }（T勘定。balance は任意）
 - journal: [ { side: 'Dr', account: 'Rent expense', amount: '200' }, { side: 'Cr', account: 'Cash', amount: '200' } ]（仕訳。勘定科目は英語、必要なら '（家賃）' のように日本語を添える）
 - example: { problem: '問題文', steps: ['手順1', '手順2', ...], answer: '答え' }（例題。アプリは手順を1つずつタップで見せる）
 - svg: '<svg …>…</svg>'（図。下の図のルール参照）

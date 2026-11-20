@@ -26,7 +26,8 @@
         {
           title: '負債のおさらいと、引当金の定義',
           paras: ['負債（liability）は、過去の出来事から生じた今の義務で、払うと会社からお金などの資源が出ていくもの。', '引当金は、その負債のうち、時期か金額がはっきりしないもの。ルールは国際会計基準の IAS 37 で決まっている。'],
-          formula: 'provision ＝ a liability of uncertain timing or amount'
+          formula: 'provision ＝ a liability of uncertain timing or amount',
+          note: { kind: 'warn', text: '貸倒引当金（allowance for receivables）は名前が似ているが、売掛金を減らす項目。IAS 37 の引当金（負債）ではない。' }
         },
         {
           title: '原因は過去、支払いは未来',
@@ -54,16 +55,26 @@
         {
           title: 'たこ焼き屋で確かめる',
           paras: ['たこ焼き屋は家庭用のたこ焼き器セットも売っている。期末日は12月31日。'],
-          list: ['1年保証つきで売ったセットの修理代 → 払うのはほぼ確実で、金額も見積もれる。引当金', 'お客さんが「やけどした」と店を訴えた。弁護士は「店が負ける可能性は低い」→ 偶発負債', '店が油の仕入先を「不良品だった」と訴えた。弁護士は「勝てそう」→ 偶発資産']
+          list: ['1年保証つきで売ったセットの修理代 → 払うのはほぼ確実で、金額も見積もれる。引当金', 'お客さんが「やけどした」と店を訴えた。弁護士は「店が負ける可能性は低い」→ 偶発負債', '店が油の仕入先を「不良品だった」と訴えた。弁護士は「勝てそう」→ 偶発資産'],
+          note: { kind: 'tip', text: '偶発負債と偶発資産は帳簿に記録しない（仕訳を切らない）。必要なときに注記で説明するだけ。' }
         },
         {
           title: 'なぜ？ 引当金にルールがある理由',
           paras: ['1つ目: 費用は原因が起きた期に入れる（発生主義）。保証の修理代は、売った年の売上のための費用。払う年まで待つと、売った年の利益が大きく見えすぎる。', '2つ目: 昔は、もうかった年に大きな引当金を作り、苦しい年に取り崩して利益を平らに見せる会社があった。IAS 37 は「今の義務がある」ときだけ計上させて、これを防いでいる。']
         },
         {
-          title: 'よくある間違い',
-          paras: ['未払費用（accruals）との違いに注意。電気代の未払いは金額も時期もほぼ決まっているので未払費用。引当金は「不確かさ」が大きいもの。', '貸倒引当金（allowance for receivables）は名前が似ているが、売掛金を減らす項目。IAS 37 の引当金（負債）ではない。'],
-          note: { kind: 'warn', text: '偶発負債と偶発資産は、帳簿に記録しない（仕訳を切らない）。財務諸表の数字には入らず、必要なときに注記で説明するだけ。' }
+          title: 'よくある間違い: 未払費用と混同する',
+          paras: ['未払費用（accruals）は、使ったのに請求書がまだ届いていない費用。期末日に金額を見積もって計上する。見積もりでも、不確かさは引当金よりずっと小さい。'],
+          table: {
+            caption: '期末日の状態で見分ける',
+            head: ['期末日の状態', '何になる？'],
+            rows: [
+              ['12月分の電気代。請求書が届き金額が決まった', 'その他の債務（other payables）。請求済みの未払い'],
+              ['12月分の電気代。請求書はまだで金額を見積もる', '未払費用（accruals）'],
+              ['修理代を払う義務はある。金額も時期も不確か', '引当金（provision）']
+            ]
+          },
+          note: { kind: 'warn', text: '請求書が届いたのに払っていないものを未払費用と呼んでしまう。それは payables。未払費用は「請求書がまだ」のもの。' }
         },
         {
           title: '覚えるのは3つだけ',
@@ -80,16 +91,18 @@
             ['obligating event', '', '債務発生事象（義務を生んだ出来事）'],
             ['legal obligation', '', '法的義務（契約・法律による）'],
             ['constructive obligation', 'コンストラクティブ・オブリゲーション', '推定的義務（いつものやり方・公表した方針による）'],
-            ['IAS 37', '', '引当金・偶発負債・偶発資産の国際会計基準']
+            ['IAS 37', '', '引当金・偶発負債・偶発資産の国際会計基準'],
+            ['accruals', 'アクルーアルズ', '未払費用。使ったが請求書がまだ届いていない費用']
           ]
         }
       ],
       quiz: [
-        { q: '引当金（provision）の説明として正しいのはどれ？', choices: ['時期か金額が不確かな負債', 'あるかどうかが未来の出来事で決まる、かもしれない義務', '売掛金の帳簿価額を減らす項目', '金額も時期も決まっている未払いの費用'], answer: 0, explain: '引当金は今の義務がある負債で、時期か金額が不確かなもの。2つ目は偶発負債、3つ目は貸倒引当金、4つ目は未払費用（accruals）の説明。' },
+        { q: '引当金（provision）の説明として正しいのはどれ？', choices: ['時期か金額が不確かな負債', 'あるかどうかが未来の出来事で決まる、かもしれない義務', '売掛金の帳簿価額を減らす項目', '使ったが請求書がまだ来ず、見積もって計上する費用'], answer: 0, explain: '引当金は今の義務がある負債で、時期か金額が不確かなもの。2つ目は偶発負債、3つ目は貸倒引当金、4つ目は未払費用（accruals）の説明。未払費用も見積もりだが、不確かさは小さい。' },
         { q: 'IAS 37 defines a provision as:', choices: ['A liability of uncertain timing or amount', 'A possible obligation whose existence will be confirmed only by uncertain future events', 'A possible asset that arises from past events', 'An amount transferred from retained earnings'], answer: 0, explain: '引当金は「時期か金額が不確かな負債」。2つ目は偶発負債、3つ目は偶発資産の定義。利益剰余金からの振替は引当金ではない。' },
         { q: 'Which of the following is a constructive obligation?', choices: ['A shop has a published policy of giving refunds within 30 days, although the law does not require it', 'A company plans to repaint its offices next year', 'A company must repay a bank loan under the loan agreement', 'A company expects to make operating losses next year'], answer: 0, explain: '公表した返金方針のせいで、お客さんは返金を当然期待している。これが推定的義務。2つ目は自分の判断でやめられる計画で、義務ではない。3つ目は契約による法的義務。4つ目の将来の赤字は義務ではない。' },
         { q: 'お客さんに訴えられたが、弁護士は「会社が負ける可能性は低い」と言っている。これは何に当たる？', choices: ['引当金', '偶発負債', '偶発資産', '未払費用'], answer: 1, explain: '払うかどうかが裁判の結果（未来の出来事）で決まり、払う可能性も高くない。だから偶発負債。払うのがほぼ確実なら引当金になる。' },
-        { q: '前の部で学んだ貸倒引当金（allowance for receivables）と、この部の引当金（provision）の違いは？', choices: ['貸倒引当金は売掛金を減らす項目、provision は負債', 'どちらも負債の一種で、同じもの', '貸倒引当金は負債、provision は資産を減らす項目', 'どちらも注記に書くだけで、帳簿には記録しない'], answer: 0, explain: '貸倒引当金は資産（売掛金）を減らす項目。IAS 37 の provision は、いつか払う負債。名前が似ているので混同しやすい。どちらも帳簿に記録する。' }
+        { q: '前の部で学んだ貸倒引当金（allowance for receivables）と、この部の引当金（provision）の違いは？', choices: ['貸倒引当金は売掛金を減らす項目、provision は負債', 'どちらも負債の一種で、同じもの', '貸倒引当金は負債、provision は資産を減らす項目', 'どちらも注記に書くだけで、帳簿には記録しない'], answer: 0, explain: '貸倒引当金は資産（売掛金）を減らす項目。IAS 37 の provision は、いつか払う負債。名前が似ているので混同しやすい。どちらも帳簿に記録する。' },
+        { q: 'At 31 December, a company has used electricity in December but has not yet received the bill. It estimates the bill at $400. How should the $400 be recorded?', choices: ['As an accrual (accrued expense)', 'As a provision under IAS 37', 'As a payable for an invoiced bill', 'As a contingent liability in the notes'], answer: 0, explain: '使った分の請求書がまだ届いていないので未払費用（accrual）。金額は見積もりだが不確かさは小さく、引当金ではない。請求書が届いて金額が決まっていれば payables。使った電気代は払うのが確実なので、偶発負債でもない。' }
       ]
     },
     // ---------------------------------------------------------------- L78
@@ -181,7 +194,7 @@
         { q: 'A company has been sued. Its lawyers say it is possible, but not probable, that the company will have to pay damages. What is the correct treatment?', choices: ['Recognise a provision', 'Disclose a contingent liability in a note', 'Recognise a contingent asset', 'No recognition or disclosure'], answer: 1, explain: '払う側の possible は偶発負債として注記する。計上はしない。何もしないでよいのは remote のときだけ。' },
         { q: 'A company is suing a supplier. Its lawyers say the company will probably win $25,000. What is the correct treatment?', choices: ['Recognise an asset of $25,000', 'Disclose a contingent asset in a note', 'Disclose a contingent liability in a note', 'No disclosure is required'], answer: 1, explain: 'もらう側は probable なら注記だけ。資産に計上するのは virtually certain のとき。払う側と同じく「probable で計上」と思い込むのが典型的な間違い。' },
         { q: '期末日12月31日。(a) 今年売った商品の保証修理。払う可能性が高く、見積りは $8,000。(b) お客さんからの訴訟。負ける可能性は possible で、負ければ $20,000。(c) 来年の春に店を $15,000 で改装する予定（業者とは未契約）。(d) 店が仕入先を訴えていて、勝つ可能性は probable、もらえる額は $5,000。財政状態計算書に計上する引当金の合計はいくら？', type: 'number', answer: 8000, unit: '$', explain: '計上するのは (a) の $8,000 だけ。(b) は possible なので偶発負債として注記。(c) は自分の判断でやめられるので今の義務がなく、何もしない。(d) はもらう側の probable なので偶発資産として注記。$28,000 と答えるのは (b) を、$43,000 は (c) も足してしまったときの間違い。' },
-        { q: '引当金を計上する条件にふくまれないものは？', choices: ['過去の出来事から生じた今の義務がある', '払う可能性が高い（probable）', '金額を信頼できる形で見積もれる', '支払う相手と支払日が決まっている'], answer: 3, explain: '相手や日付が決まっていなくてもよい。時期や金額が不確かだからこそ引当金になる。決まっているなら、未払費用などのふつうの負債。' },
+        { q: '引当金を計上する条件にふくまれないものは？', choices: ['過去の出来事から生じた今の義務がある', '払う可能性が高い（probable）', '金額を信頼できる形で見積もれる', '支払う相手と支払日が決まっている'], answer: 3, explain: '相手や日付が決まっていなくてもよい。時期や金額が不確かだからこそ引当金になる。決まっているなら、請求済みの未払い（payables）などのふつうの負債。' },
         { q: 'Which of the following should be recognised as a provision at 31 December?', choices: ['Expected operating losses of $50,000 for next year', 'A major repair of machinery planned for next year costing $10,000', 'Repairs under a one-year warranty on goods sold this year, which past experience shows will be claimed', 'A legal claim which the lawyers consider remote'], answer: 2, explain: '保証は売った時点で義務が生まれ、実績から払う可能性が高いと分かる。将来の営業損失と予定の修理は今の義務ではない。remote の訴訟は何もしない。' }
       ]
     },
@@ -389,6 +402,7 @@
     { id: 'L77-4', lesson: 'L77', q: '法的義務と推定的義務の違いは？', a: '法的＝契約・法律による。推定的＝いつものやり方や公表した方針で、相手が当然期待しているもの' },
     { id: 'L77-5', lesson: 'L77', q: 'なぜ IAS 37 は「今の義務」があるときだけ引当金を認める？', a: 'もうかった年に作り、苦しい年に取り崩して利益を平らに見せるのを防ぐため' },
     { id: 'L77-6', lesson: 'L77', q: '偶発負債・偶発資産は仕訳する？', a: 'しない。必要なときに注記で説明するだけ' },
+    { id: 'L77-7', lesson: 'L77', q: '未払費用（accruals）と、請求済みの未払い（payables）の違いは？', a: '未払費用＝使ったが請求書がまだ来ず、金額を見積もる費用。請求書が届き金額が決まれば payables' },
     { id: 'L78-1', lesson: 'L78', q: '引当金を計上する3つの条件は？', a: '今の義務がある・払う可能性が高い（probable）・金額を信頼できる形で見積もれる' },
     { id: 'L78-2', lesson: 'L78', q: '払う側で可能性が possible のときは？', a: '偶発負債として注記する。計上はしない' },
     { id: 'L78-3', lesson: 'L78', q: 'もらう側で可能性が probable のときは？', a: '偶発資産として注記する。資産に計上するのは virtually certain のとき' },

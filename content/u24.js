@@ -233,7 +233,7 @@
             { side: 'Cr', account: 'Share capital（株式資本）', amount: '50,000' },
             { side: 'Cr', account: 'Share premium（株式払込剰余金）', amount: '70,000' }
           ],
-          tAccount: { name: 'Share premium', debit: [], credit: [['Balance b/d', '30,000'], ['Cash（株の発行）', '70,000']], balance: { side: 'credit', label: 'Balance c/d', amount: '100,000' } },
+          tAccount: { name: 'Share premium', debit: [], credit: [['Balance b/d', '30,000'], ['Cash（株の発行）', '70,000']], balance: { side: 'debit', label: 'Balance c/d', amount: '100,000' } },
           note: { kind: 'tip', text: '株の発行にかかった費用（issue costs）は、費用にせず share premium から差し引く: Dr Share premium / Cr Cash。' }
         },
         {

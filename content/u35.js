@@ -92,7 +92,7 @@
         {
           title: '利益の分配（appropriation）',
           paras: ['損益計算書で出した当期の利益を、パートナーに配り分けることを appropriation of profit（利益の分配）という。使う道具は4つ。'],
-          list: ['給与（salary）: 決まった額。多く働くパートナーへ', '資本への利息（interest on capital）: 資本 × 率。多く出資したパートナーへ', '引出しへの利息（interest on drawings）: 引出し × 率 × 月数/12。早く持ち出したパートナーが払う', '残り（residual profit）: 決めた割合（profit-sharing ratio）で分ける']
+          list: ['給与（salary）: 決まった額。多く働くパートナーへ', '資本への利息（interest on capital）: 資本 × 率。多く出資したパートナーへ', '引出しへの利息（interest on drawings）: 引出し × 率（日付があれば月割り）。持ち出したパートナーが払う', '残り（residual profit）: 決めた割合（profit-sharing ratio）で分ける']
         },
         {
           title: '分ける順番',
@@ -105,7 +105,14 @@
           note: { kind: 'tip', text: 'ただし、パートナーが資本とは別に事業へ貸したお金（借入金）の利息は費用になる（X9 でくわしく）。' }
         },
         {
-          title: '引出しへの利息・資本への利息の計算',
+          title: '引出しへの利息①: 日付がないとき',
+          paras: ['引出しが「毎月 $500」「1年で $6,000」のように日付なしで書いてあれば、1年の引出しの合計に率をそのままかける。月割りはしない。', 'たとえば家族の財布から毎月前借りして、年に1回「前借りの合計の 10%」を戻す約束。いつ借りたかは見ず、合計で計算する。'],
+          formula: '日付なし: 引出しへの利息 ＝ 1年の引出しの合計 × 率',
+          example: { problem: 'パートナーの Eri は毎月 $500 を引き出した（日付は書いていない）。引出しへの利息は年 10%。引出しへの利息はいくら？', steps: ['1年の合計: $500 × 12 ＝ $6,000', '率をそのままかける: $6,000 × 10% ＝ $600', '日付がないので月割りしない'], answer: '$600' }
+        },
+        {
+          title: '引出しへの利息②: 日付があるとき',
+          paras: ['引き出した日付が書いてあるとき、または問題文が月割りを指示するときだけ、決算日までの月数で月割りする。早く持ち出した人ほど多く払う。'],
           example: { problem: '（Aki と Ben とは別の例）パートナーの Dan は 4月1日に $12,000 を引き出した。決算日は12月31日、引出しへの利息は年 10%。引出しへの利息はいくら？', steps: ['引き出した日から決算日まで: 4月1日〜12月31日で 9か月', '1年分の利息: $12,000 × 10% ＝ $1,200', '9か月分: $1,200 × 9/12 ＝ $900'], answer: '$900。Dan の取り分から引き、分ける利益に足す' },
           note: { kind: 'tip', text: '資本への利息は、ふつう期首の資本 × 率。期中に資本を増やしたら、増やした分は月割り。例: 7月1日に $10,000 追加、率 5% なら $10,000 × 5% × 6/12 ＝ $250 が加わる。' }
         },
@@ -135,7 +142,7 @@
         },
         {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '①給与や資本への利息を費用として利益から引き、さらに分配でも引く（二重に引いている）。②引出しへの利息を、分ける利益から引く（パートナーが払うので足す）。③最初に利益全部を 3:2 で分ける（給与と利息が先）。④引出しへの利息を月割りしない。' }
+          note: { kind: 'warn', text: '①給与や資本への利息を費用として利益から引き、さらに分配でも引く（二重に引いている）。②引出しへの利息を、分ける利益から引く（パートナーが払うので足す）。③最初に利益全部を 3:2 で分ける（給与と利息が先）。④日付が書いてある引出しを月割りしない（日付があれば月割り。日付がなければ年の合計 × 率）。' }
         },
         {
           title: '覚えるのは3つだけ',
@@ -157,7 +164,8 @@
       quiz: [
         { q: 'C and D are in partnership, sharing residual profits 2:1. Profit for the year was $45,000. D is entitled to a salary of $6,000. Interest on capital is $3,000 for C and $2,000 for D. Interest on drawings is $1,200 for C and $800 for D. What is the total share of profit for C?', type: 'number', answer: 25800, unit: '$', explain: '残り＝$45,000 ＋ $2,000 − $6,000 − $5,000 ＝ $36,000。C は 2/3 で $24,000。C の合計＝$3,000 ＋ $24,000 − $1,200 ＝ $25,800。D は $6,000 ＋ $2,000 ＋ $12,000 − $800 ＝ $19,200 で、合計 $45,000 と一致する。' },
         { q: 'Which of the following is correct when calculating the residual profit of a partnership?', choices: ['Interest on drawings is added; partner salaries and interest on capital are deducted', 'Interest on drawings is deducted; partner salaries and interest on capital are added', 'Interest on drawings, partner salaries and interest on capital are all deducted', 'Only partner salaries are deducted; interest is ignored'], answer: 0, explain: '引出しへの利息はパートナーが払うので足す。給与と資本への利息はパートナーに渡すので引く。2つ目は足し算と引き算が逆。3つ目は引出しへの利息の向きを間違えている。' },
-        { q: 'Ben は 7月1日に $8,000 を引き出した。決算日は12月31日、引出しへの利息は年 5%。引出しへの利息はいくら？', type: 'number', answer: 200, unit: '$', explain: '7月1日〜12月31日で 6か月。$8,000 × 5% × 6/12 ＝ $200。月割りしないと $400 になってしまう。' },
+        { q: 'Ben は 7月1日に $8,000 を引き出した。決算日は12月31日、引出しへの利息は年 5%。引出しへの利息はいくら？', type: 'number', answer: 200, unit: '$', explain: '日付が書いてあるので月割りする。7月1日〜12月31日で 6か月。$8,000 × 5% × 6/12 ＝ $200。月割りしないと $400 になってしまう。' },
+        { q: 'G is a partner. During the year ended 31 December 20X6, G made drawings of $750 per month. Interest on drawings is charged at 8% per annum. No dates are given for the individual drawings. What is the interest on drawings charged to G?', type: 'number', answer: 720, unit: '$', explain: '日付がないので、1年の合計に率をかける。$750 × 12 ＝ $9,000、$9,000 × 8% ＝ $720。平均して半年分とみて $360 にしたり、1か月分だけ $750 × 8% ＝ $60 にしたりしない。' },
         { q: '当期の利益 $12,000。P に給与 $8,000。資本への利息は P $2,000、Q $4,000。残りは P:Q＝1:1。Q の取り分は？', choices: ['$3,000', '$4,000', '$5,000', '$6,000'], answer: 0, explain: '残り＝$12,000 − $8,000 − $6,000 ＝ −$2,000。1:1 で各 −$1,000。Q＝$4,000 − $1,000 ＝ $3,000。$4,000 は損失の負担を忘れたとき、$5,000 はマイナスを足してしまったとき、$6,000 は利益全部を半分にしたとき。' },
         { q: 'How should salaries payable to partners be treated in partnership accounts?', choices: ['As an appropriation of profit', 'As an expense in the statement of profit or loss', 'As a liability in the statement of financial position', 'As a reduction of the capital account'], answer: 0, explain: 'パートナーへの給与は利益の分配。費用にすると、利益を出すときと分けるときで二重に引くことになる。' }
       ]
@@ -428,9 +436,9 @@
           paras: ['のれんを作ったのは前からの2人。加入で Aki の割合は 3/5（60%）から 2/5（40%）に下がり、のれんの 20% を手放した。$50,000 × 20% ＝ $10,000。', 'Ben は 2/5 から 2/5 で変わらないので 0。Chika は何も持っていなかったのに 1/5 をもらうので、$10,000 を払う。割合を手放した人が、その分ののれんを受け取る。']
         },
         {
-          title: 'のれんを帳簿に残す場合',
-          paras: ['問題文で「のれんを帳簿に残す（goodwill is to be retained）」と言われたら、のれんを入れる仕訳だけ行い、消す仕訳はしない。のれん $50,000 が無形資産として SFP に残り、Aki $30,000・Ben $20,000 が資本に加わり、Chika の資本は払い込んだ $30,000 のまま。'],
-          note: { kind: 'tip', text: '「残さない（not retained / eliminated）」なら2つの仕訳を両方行う。問題文のこの一言で処理が変わるので、必ず確かめる。' }
+          title: 'のれんを帳簿に残す場合（例外）',
+          paras: ['問題文に「のれんを残す（goodwill is to be retained）」とあるときだけ、入れる仕訳だけ行う。$50,000 が SFP に残り、Aki ＋$30,000、Ben ＋$20,000、Chika は $30,000 のまま。', '「残さない（eliminated）」とあるか、指示がなければ、2つの仕訳を両方行う。'],
+          note: { kind: 'warn', text: '残すのは例外。IAS 38 では自分で作ったのれんは資産にしない（L58）。パートナーシップの問題で、問題文がそう言うときだけ従う。' }
         },
         {
           title: 'よくある間違い',
@@ -457,7 +465,7 @@
         { q: "H and J share profits 1:1. K is admitted as a partner and the new profit-sharing ratio is H:J:K 2:2:1. Goodwill is valued at $40,000 and is not to be retained in the books. K introduces $25,000 cash as capital. What is the balance on K's capital account after the admission?", type: 'number', answer: 17000, unit: '$', explain: 'のれんを消すとき、K は新しい割合 1/5 で $40,000 × 1/5 ＝ $8,000 を負担する。$25,000 − $8,000 ＝ $17,000。H と J は $20,000 を受け取り $16,000 を負担するので、それぞれ ＋$4,000。' },
         { q: 'A new partner is admitted and goodwill is not to be retained. Which entry eliminates the goodwill?', choices: ["Dr all partners' capital accounts in the new profit-sharing ratio, Cr Goodwill", "Dr Goodwill, Cr the old partners' capital accounts in the old profit-sharing ratio", "Dr all partners' capital accounts in the old profit-sharing ratio, Cr Goodwill", "Dr Goodwill, Cr all partners' current accounts in the new profit-sharing ratio"], answer: 0, explain: '消すときは新しい割合で全員の資本から引く。2つ目はのれんを入れる仕訳で、消す仕訳ではない。3つ目は割合が古いまま。のれんの調整は当座勘定ではなく資本勘定で行う。' },
         { q: 'M と N（1:1）のお店に、7月1日から P が加わった。新しい割合は M:N:P＝2:2:1。決算日は12月31日、当期の利益は $48,000（1年を通して同じペース）。P の取り分は？', type: 'number', answer: 4800, unit: '$', explain: '加入後は 6か月なので $48,000 × 6/12 ＝ $24,000。P は 1/5 で $4,800。1年分の $48,000 を 2:2:1 で分けて $9,600 にするのは、加入前まで新しい割合で分けた間違い。' },
-        { q: '新パートナーが加わるとき、のれんの調整をするのはなぜ？', choices: ['前からのパートナーが作った評判の価値を、新パートナーも分けてもらうから', '新パートナーが現金を払い込むから', 'のれんを毎年償却する必要があるから', '銀行に事業の価値を示すため'], answer: 0, explain: '新パートナーは、前からの人が作った評判から生まれる将来のもうけを分けてもらう。その分を資本勘定の付け替えで払う。' },
+        { q: "Under IAS 38, internally generated goodwill is not recognised as an asset. When should goodwill remain in a partnership's books after a new partner is admitted?", choices: ['Only when the question states that goodwill is to be retained', 'Always, because goodwill was valued at the date of admission', 'Always, because the new partner has paid for a share of it', 'Never, even when the question states that it is to be retained'], answer: 0, explain: '自分で作ったのれんは IAS 38 では資産にしないので、残すのは問題文が「残す」と言うときだけの例外。評価した・新パートナーが払った、は残す理由にならない。4つ目は逆に、問題文の指示を無視している。のれんの調整そのものは、前からの人が作った評判を新パートナーが分けてもらうために行う。' },
         { q: '古い割合 A:B＝1:1、新しい割合 A:B:C＝1:1:1。のれんは $30,000 で、帳簿に残さない。A の資本はどうなる？', choices: ['$5,000 増える', '$5,000 減る', '$15,000 増える', '変わらない'], answer: 0, explain: 'A は古い割合で $15,000 を受け取り、新しい割合で $10,000 を負担する。差し引き ＋$5,000。手放した割合 1/2 − 1/3 ＝ 1/6、$30,000 × 1/6 ＝ $5,000 でも確かめられる。$15,000 は消す仕訳を忘れたとき。' },
         { q: 'L and M share profits 1:1. N was admitted as a partner on 1 April 20X5. From that date the profit-sharing ratio is L:M:N 2:2:1 and N receives a salary of $12,000 per annum. Profit for the year ended 31 December 20X5 was $80,000 and accrued evenly. What is N\'s total share of profit for the year?', type: 'number', answer: 19200, unit: '$', explain: '加入後は 4月〜12月の 9か月。利益 $80,000 × 9/12 ＝ $60,000。給与も按分して $12,000 × 9/12 ＝ $9,000。残り $60,000 − $9,000 ＝ $51,000 の 1/5 で $10,200。N の合計＝$9,000 ＋ $10,200 ＝ $19,200。給与を1年分 $12,000 にすると $21,600 になる間違い。' }
       ]
@@ -547,10 +555,11 @@
     { id: 'X06-5', lesson: 'X06', q: 'profit-sharing ratio とは？', a: '給与・利息を調整した後の、残りの利益（損失）を分ける割合' },
     { id: 'X07-1', lesson: 'X07', q: '利益を分ける順番は？', a: '給与・資本への利息を先に渡し、引出しへの利息を足し、残りを割合で分ける' },
     { id: 'X07-2', lesson: 'X07', q: '残りの利益の式は？', a: '当期の利益＋引出しへの利息−給与−資本への利息' },
-    { id: 'X07-3', lesson: 'X07', q: '引出しへの利息の計算は？', a: '引出し × 率 × 決算日までの月数/12' },
+    { id: 'X07-3', lesson: 'X07', q: '引出しへの利息の計算は？', a: '日付なし: 年の引出しの合計 × 率。日付あり: 引出し × 率 × 決算日までの月数/12' },
     { id: 'X07-4', lesson: 'X07', q: 'なぜ引出しへの利息は、分ける利益に足す？', a: 'パートナーが事業に払うお金なので、分ける利益が増えるから' },
     { id: 'X07-5', lesson: 'X07', q: 'パートナーへの給与は費用？', a: '費用ではない。利益の分配（appropriation）の1つ' },
     { id: 'X07-6', lesson: 'X07', q: '残りがマイナスになったら？', a: '損失も決めた割合で各パートナーが負担する' },
+    { id: 'X07-7', lesson: 'X07', q: '引出しが「毎月 $500」とだけあり（日付なし）、率は年 10%。引出しへの利息は？', a: '$500 × 12 × 10% ＝ $600。日付がないので月割りしない' },
     { id: 'X08-1', lesson: 'X08', q: '資本勘定（capital account）とは？', a: '長く入れておく元手。固定資本なら追加・引き上げ・のれんの調整でだけ動く' },
     { id: 'X08-2', lesson: 'X08', q: '当座勘定（current account）とは？', a: '毎年の取り分と引出しを記録する、パートナーごとの勘定' },
     { id: 'X08-3', lesson: 'X08', q: '当座勘定の貸方に入るものは？', a: '給与、資本への利息、残りの利益の取り分' },
@@ -567,7 +576,7 @@
     { id: 'X10-3', lesson: 'X10', q: 'のれんを入れる仕訳は？', a: 'Dr Goodwill / Cr 前からのパートナーの資本（古い割合）' },
     { id: 'X10-4', lesson: 'X10', q: 'のれんを消す仕訳は？', a: 'Dr 全員の資本（新しい割合） / Cr Goodwill' },
     { id: 'X10-5', lesson: 'X10', q: 'のれんの調整で資本が増えるのは誰？', a: '割合を手放したパートナー。手放した割合 × のれん だけ増える' },
-    { id: 'X10-6', lesson: 'X10', q: '試験で、のれんの金額はどうやって分かる？', a: '問題文に書いてある。のれんそのものの計算は出ない' },
+    { id: 'X10-6', lesson: 'X10', q: '試験で、のれんについて問題文から読み取る2つのことは？', a: '金額（計算しない）と残すかどうか。残すのは「残す」とあるときだけ（IAS 38 の例外）' },
     { id: 'X10-7', lesson: 'X10', q: '加入した年の、年額の給与や資本への利息は？', a: '加入前・加入後の月数で按分してから分ける' },
     { id: 'X11-1', lesson: 'X11', q: '財務分析の目的は？', a: '比率でくらべて、投資・融資・経営の判断に役立てること' },
     { id: 'X11-2', lesson: 'X11', q: '会計方針のちがいが限界になる理由は？', a: '同じ中身でも数字が変わり、他社とそのままくらべられないから' },

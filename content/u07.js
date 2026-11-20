@@ -300,7 +300,8 @@
         {
           title: 'NRV が原価より下がるのはどんなとき？',
           list: ['商品が傷んだ・壊れた', '流行遅れになった・古くなった', '売価が下がった（値下げ、競争）', '修理や販売にかかる費用が増えた'],
-          after: '年末の後、決算をまとめる前に安い値段で売れたら、それは年末の時点の NRV の証拠になる。年末の後に分かった情報も使って判断する。'
+          after: '年末の後、決算をまとめる前に安い値段で売れたら、それは年末の時点の NRV の証拠になる。年末の後に分かった情報も使って判断する。',
+          note: { kind: 'tip', text: '下げた後に NRV がまた上がったら、上がった分だけ戻す。ただし元の原価が上限。例: 原価 $800 を $650 に下げた後、NRV が $900 に戻ったら $800 まで（$900 ではない）。' }
         },
         {
           title: '例題: 品目ごとに評価する',
@@ -363,7 +364,7 @@
         { q: 'Which of the following is the definition of net realisable value?', choices: ['Estimated selling price less estimated costs of completion and costs necessary to make the sale', 'The cost of replacing the item at the year end', 'Estimated selling price less the original cost of the item', 'Original cost plus estimated costs of completion'], answer: 0, explain: 'NRV は売ったときに手元に残る見込みの額。買い直す値段（replacement cost）ではない。売価から原価を引いたものは「もうけ」で、NRV ではない。' },
         { q: 'At the year end a business holds three lines of inventory: X (cost $1,200, NRV $1,500), Y (cost $900, NRV $700) and Z (cost $2,000, NRV $1,800). At what amount should inventory be stated?', choices: ['$3,700', '$4,000', '$4,100', '$4,400'], answer: 0, explain: '品目ごとに低い方: 1,200 ＋ 700 ＋ 1,800 ＝ 3,700。$4,000 は NRV の合計で、合計どうしで比べた答え（原価の合計 4,100 と NRV の合計 4,000 の低い方）。$4,100 は原価の合計のまま、$4,400 は品目ごとに高い方を選んだ答え。' },
         { q: '原価 $30 の商品が200個ある。売価は1個 $32 だが、売る前に1個 $3 の修理と、1個 $2 の配送料がかかる。期末在庫の金額は？', type: 'number', answer: 5400, unit: '$', explain: 'NRV は1個 32 − 3 − 2 ＝ 27。原価 30 より低いので 27 を使う: 27 × 200 ＝ 5,400。' },
-        { q: '原価 $500 の商品が、年末に $900 で売れる見込み（販売費 $50）。期末在庫の金額は？', choices: ['$500', '$850', '$900', '$450'], answer: 0, explain: 'NRV は 900 − 50 ＝ 850。原価 500 の方が低いので原価のまま。もうけは売れるまで計上しない。' },
+        { q: 'Last year an item costing $500 was written down to its NRV of $350. It is still unsold at this year end, and its NRV has risen to $560. At what amount should the item be stated this year?', choices: ['$500', '$560', '$350', '$410'], answer: 0, explain: 'NRV が戻ったので、去年下げた $150 を戻す（今年の売上原価が $150 減り、利益が増える）。ただし上限は元の原価 $500。$560 は原価を超えて上げた答え（もうけを先に計上してしまう）。$350 は戻し忘れ。$410 は原価を超えた分 $60 だけ戻した答え。' },
         { q: 'Closing inventory at cost is $12,000. This includes an item that cost $1,000. The item can be sold for $700, but selling costs of $100 will be incurred. At what amount should closing inventory be stated?', choices: ['$11,600', '$11,700', '$11,000', '$12,000'], answer: 0, explain: 'その品目の NRV は 700 − 100 ＝ 600。原価との差 400 を下げる: 12,000 − 400 ＝ 11,600。$11,700 は販売費を引き忘れた答え、$11,000 は品目を丸ごと消した答え。' },
         { q: '期末在庫の評価を $300 下げた。その年の利益は？', choices: ['$300 減る', '$300 増える', '変わらない（資産だけ減る）', '翌年に $300 減る'], answer: 0, explain: '期末在庫が減ると、その分だけ売上原価が増える（Dr Cost of sales / Cr Inventory）。だから利益も $300 減る。資産だけでなく利益にも響く。' }
       ]
@@ -394,6 +395,7 @@
     { id: 'L36-3', lesson: 'L36', q: '売価が原価より高いとき、在庫の金額は？', a: '原価のまま。もうけは売れるまで計上しない（prudence）' },
     { id: 'L36-4', lesson: 'L36', q: '在庫を NRV まで下げると、利益は？', a: '下げた分だけ売上原価が増え、利益が減る' },
     { id: 'L36-5', lesson: 'L36', q: '合計どうしで比べてはいけない理由は？', a: '値下がりした品目の損が、値上がりした品目の余裕で隠れてしまうから' },
-    { id: 'L36-6', lesson: 'L36', q: 'replacement cost は NRV？', a: '違う。今買い直す値段（再調達原価）で、在庫の評価には使わない' }
+    { id: 'L36-6', lesson: 'L36', q: 'replacement cost は NRV？', a: '違う。今買い直す値段（再調達原価）で、在庫の評価には使わない' },
+    { id: 'L36-7', lesson: 'L36', q: '一度 NRV まで下げた在庫の NRV が、また上がったら？', a: '上がった分だけ戻す（利益が増える）。ただし元の原価が上限' }
   ]
 });

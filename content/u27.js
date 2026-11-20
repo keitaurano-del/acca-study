@@ -313,6 +313,26 @@
           after: '財務諸表の発行の承認は 20X6年3月15日。'
         },
         {
+          title: 'なぜ？ 試算表の数字をそのまま写さない',
+          paras: ['スマホの「月初のギガ残り」は、月末の残りではない。今月使った分を引いて、はじめて月末の数字になる。', '試算表の期首の残高（前期繰越、brought forward、b/f）も同じ。今年の動きや期末の調整がまだ入っていない。'],
+          formula: 'そのまま SFP に使える ＝ 期末に動かない残高だけ',
+          table: {
+            caption: 'Tako Co の試算表で確かめる',
+            head: ['残高', 'そのまま？'],
+            rows: [
+              ['Ordinary shares 100,000、Share premium 20,000', 'はい（今年の株式発行なし）'],
+              ['Plant at cost 80,000、Cash 55,500', 'はい（調整なし）'],
+              ['Inventory 30,000', 'いいえ（期首。期末 34,500 に替わる）'],
+              ['Plant: accumulated depreciation 32,000', 'いいえ（b/f。＋12,000 で 44,000）'],
+              ['Buildings 200,000 と累計額 40,000', 'いいえ（(3) の再評価で 190,000）'],
+              ['Allowance for receivables 1,500', 'いいえ（b/f。(4) で 1,680 に）'],
+              ['Retained earnings 41,000', 'いいえ（b/f。＋当期利益 − 配当 8,000）'],
+              ['(8) 2月の火事と配当', '入れない（非修正。重要なら注記）']
+            ]
+          },
+          after: '設備の原価も、今年に再評価・取得・売却があれば動く。'
+        },
+        {
           title: '例題1: 売上原価',
           example: {
             problem: 'Tako Co の売上原価（cost of sales）を求める。',
@@ -381,16 +401,12 @@
             ],
             total: ['Total equity and liabilities', '', '357,520']
           },
-          paras: ['PPE ＝ 建物は再評価額 $190,000（再評価で累計額は消える）＋ 機械 $80,000 − 累計額 ($32,000 ＋ $12,000) ＝ $226,000。売掛金等 ＝ $45,000 − $3,000 − $1,680 ＋ 前払 $1,200 ＝ $41,520。買掛金等 ＝ $28,000 ＋ 未払利息 $3,000。利益剰余金 ＝ $41,000 ＋ $60,520 − 配当 $8,000 ＝ $93,520。']
-        },
-        {
-          title: 'なぜ？ (8) は数字に入れない',
-          paras: ['2月の火事は決算日の後に生じた状態。2月に宣言した配当は、決算日に払う義務がなかった。どちらも非修正後発事象なので数字には入れず、重要なら注記で開示する。', '一方、20X5年中に払った配当 $8,000 は費用ではない。オーナーへのもうけの分配なので、持分変動計算書（SOCE）で利益剰余金から引く。'],
-          note: { kind: 'warn', text: 'よくある間違い: 法人税費用を $15,000 や $16,000 にする（過大計上の $1,000 は引く）。払った配当を費用に入れる。再評価の利得 $38,000 を利益剰余金に入れる（正しくは再評価剰余金）。' }
+          paras: ['PPE ＝ 建物は再評価額 $190,000（再評価で累計額は消える）＋ 機械 $80,000 − 累計額 ($32,000 ＋ $12,000) ＝ $226,000。売掛金等 ＝ $45,000 − $3,000 − $1,680 ＋ 前払 $1,200 ＝ $41,520。買掛金等 ＝ $28,000 ＋ 未払利息 $3,000。利益剰余金 ＝ 期首 $41,000 ＋ $60,520 − 支払配当 $8,000 ＝ $93,520。']
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['追加情報は1つずつ「どの2か所が動くか」を書いてから集計する', '法人税費用 ＝ 今年の見積り ＋ 前期の過少計上（− 過大計上）。SFP の未払法人税は今年の見積りだけ', '利益剰余金 ＝ 期首 ＋ 当期利益 − 支払配当。再評価の利得は OCI と再評価剰余金へ']
+          numbered: ['追加情報は1つずつ「どの2か所が動くか」を書いてから集計する', '法人税費用 ＝ 今年の見積り ＋ 前期の過少計上（− 過大計上）。SFP の未払法人税は今年の見積りだけ', '利益剰余金 ＝ 期首（b/f）＋ 当期利益 − 支払配当。引当金・累計額の b/f と期首在庫も、動かしてから SFP へ'],
+          note: { kind: 'warn', text: 'よくある間違い: 期首の利益剰余金 $41,000 をそのまま写す。法人税費用を $15,000 にする（過大計上 $1,000 は引く）。払った配当 $8,000 を費用に入れる（SOCE で利益剰余金から引く）。再評価の利得を利益剰余金に入れる（再評価剰余金へ）。' }
         },
         {
           title: '英単語',
@@ -401,7 +417,8 @@
             ['finance costs', 'ファイナンス・コスト', '財務費用'],
             ['income tax expense', '', '法人税費用'],
             ['tax payable', '', '未払法人税'],
-            ['total comprehensive income', '', '包括利益合計']
+            ['total comprehensive income', '', '包括利益合計'],
+            ['brought forward (b/f)', 'ブロート・フォワード', '前期繰越（期首の残高）']
           ]
         }
       ],
@@ -409,7 +426,7 @@
         { q: 'Opening inventory was $20,000 and purchases were $150,000. Closing inventory at cost was $25,000, but items costing $3,000 were sold after the year end for $1,800, with no selling costs. Plant depreciation of $7,000 is charged to cost of sales. What is cost of sales?', type: 'number', answer: 153200, unit: '$', explain: '期末在庫 ＝ $25,000 − $3,000 ＋ $1,800 ＝ $23,800（修正後発事象）。売上原価 ＝ $20,000 ＋ $150,000 − $23,800 ＋ $7,000 ＝ $153,200。在庫を直さないと $152,000 になる。' },
         { q: 'The trial balance shows a debit balance of $1,500 on the income tax account, which is an under-provision for the previous year. The estimated tax for the current year is $22,000. What is the income tax expense in the statement of profit or loss?', type: 'number', answer: 23500, unit: '$', explain: '借方残高は前期の過少計上（払いが見積りより多かった）。今年の費用に足す: $22,000 ＋ $1,500 ＝ $23,500。SFP の未払法人税は $22,000。引いて $20,500 にするのは過大計上と取り違えた間違い。' },
         { q: 'At the year end, buildings were revalued upwards. Where is the gain on revaluation reported?', choices: ['In profit for the year', 'In other comprehensive income, and in the revaluation surplus in equity', 'In retained earnings only', 'As revenue'], answer: 1, explain: '再評価の利得は、売って得たもうけではないので当期利益には入れない。SPLOCI のその他の包括利益（OCI）に載せ、SFP では再評価剰余金に積む。' },
-        { q: '20X5年中に払った配当 $8,000 は、財務諸表のどこに載る？', choices: ['損益計算書の管理費', '持分変動計算書（SOCE）で利益剰余金から引く', '財政状態計算書の流動負債', '損益計算書の財務費用'], answer: 1, explain: '配当は費用ではなく、オーナーへのもうけの分配。SOCE で利益剰余金から引く。もう払ったので負債でもない。' },
+        { q: 'A company\'s trial balance at 31 December 20X5 is prepared before year-end adjustments. Adjustments are still needed for depreciation for the year and the allowance for receivables. No shares were issued during the year and there were no revaluations. Can each balance be included in the statement of financial position at its trial balance amount (Yes/No)? (1) Retained earnings at 1 January 20X5 $41,000 (2) Share premium $20,000 (3) Allowance for receivables $1,500 (4) Plant at cost $80,000', choices: ['(1) No (2) Yes (3) No (4) Yes', '(1) Yes (2) Yes (3) No (4) Yes', '(1) No (2) No (3) No (4) Yes', '(1) No (2) Yes (3) Yes (4) No'], answer: 0, explain: '(1) 期首（b/f）の利益剰余金に当期利益を足し、支払配当を引いてから載せる。(2) 今年の株式発行がないので、株式払込剰余金はそのまま。(3) b/f の引当金は、期末に必要な額に直してから載せる。(4) 今年の減価償却は累計額の方に入るので、原価はそのまま。2つ目は期首の利益剰余金を最終の数字と勘違いした答え、3つ目は発行がないのに株式払込剰余金が動くと考えた答え、4つ目は b/f の引当金をそのまま写し、償却で原価が減ると考えた答え。' },
         { q: 'Retained earnings at 1 January were $25,000. Profit for the year was $48,000, a revaluation gain of $12,000 was recognised, and dividends of $10,000 were paid. What are retained earnings at 31 December?', type: 'number', answer: 63000, unit: '$', explain: '$25,000 ＋ $48,000 − $10,000 ＝ $63,000。再評価の利得 $12,000 は再評価剰余金に入るので、利益剰余金には足さない（足すと $75,000 の間違い）。' },
         { q: '8% loan notes of $50,000 were in issue throughout the year. Interest paid during the year was $2,000. What is the finance cost in the statement of profit or loss?', type: 'number', answer: 4000, unit: '$', explain: '1年分の利息 ＝ $50,000 × 8% ＝ $4,000。払ったのは $2,000 なので、未払い $2,000 を流動負債に載せ、財務費用は $4,000。払った額だけの $2,000 は間違い。' }
       ]
@@ -437,11 +454,11 @@
     { id: 'L135-6', lesson: 'L135', q: 'どの会社も開示する「承認」の情報は？', a: '財務諸表の発行が承認された日と、承認した人' },
     { id: 'L135-7', lesson: 'L135', q: '修正前利益 $50,000。在庫評価損 $800、引当金の追加 $2,000、決算日後の火事 $9,000。修正後の利益は？', a: '$47,200（火事は非修正なので引かない）' },
     { id: 'L136-1', lesson: 'L136', q: 'Section B の会社の総合問題の解き方は？', a: '動く2か所を書く → 集計表 → SPLOCI → 利益剰余金 → SFP で一致を確認' },
-    { id: 'L136-2', lesson: 'L136', q: '法人税費用の計算は？', a: '今年の見積り ＋ 前期の過少計上（− 過大計上）' },
-    { id: 'L136-3', lesson: 'L136', q: '試算表の法人税が貸方残高なら、それは何？', a: '前期の過大計上。今年の法人税費用から引く' },
+    { id: 'L136-2', lesson: 'L136', q: '法人税費用の計算は？試算表の法人税が貸方残高なら？', a: '今年の見積り ＋ 過少計上（− 過大計上）。貸方残高は前期の過大計上なので引く' },
     { id: 'L136-4', lesson: 'L136', q: 'SFP の未払法人税（tax payable）はいくら？', a: '今年の見積りの金額だけ（前期の過大・過少は入れない）' },
     { id: 'L136-5', lesson: 'L136', q: '期中に払った配当はどこに載る？', a: 'SOCE で利益剰余金から引く。費用ではない' },
     { id: 'L136-6', lesson: 'L136', q: '建物の再評価の利得はどこに載る？', a: 'SPLOCI のその他の包括利益（OCI）と、SFP の再評価剰余金' },
-    { id: 'L136-7', lesson: 'L136', q: '期末の利益剰余金の式は？', a: '期首 ＋ 当期利益 − 支払配当' }
+    { id: 'L136-7', lesson: 'L136', q: '期末の利益剰余金の式は？', a: '期首 ＋ 当期利益 − 支払配当' },
+    { id: 'L136-8', lesson: 'L136', q: '会社の調整前の試算表で、そのまま SFP に使えない残高は？', a: 'b/f の利益剰余金・引当金・累計額と期首在庫。株式資本・株式払込剰余金・原価・現金は、発行や再評価がなければそのまま' }
   ]
 });
