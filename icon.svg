@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ACCA FA 入門">
+  <rect width="512" height="512" rx="112" fill="#2f6db5"/>
+  <rect x="96" y="112" width="320" height="288" rx="28" fill="#ffffff"/>
+  <path d="M136 176H376" stroke="#2f6db5" stroke-width="22" stroke-linecap="round"/>
+  <path d="M256 176V360" stroke="#2f6db5" stroke-width="22" stroke-linecap="round"/>
+  <rect x="152" y="216" width="80" height="18" rx="9" fill="#9dbbe0"/>
+  <rect x="152" y="256" width="64" height="18" rx="9" fill="#9dbbe0"/>
+  <rect x="152" y="296" width="80" height="18" rx="9" fill="#9dbbe0"/>
+  <rect x="280" y="216" width="80" height="18" rx="9" fill="#9dbbe0"/>
+  <rect x="280" y="256" width="72" height="18" rx="9" fill="#9dbbe0"/>
+  <rect x="280" y="296" width="56" height="18" rx="9" fill="#9dbbe0"/>
+</svg>
