@@ -371,7 +371,7 @@
       (lesson.slides || []).forEach(function (s, k, arr) { screens.push({ type: 'slide', s: s, k: k, n: arr.length }); });
       (lesson.quiz || []).forEach(function (q, k, arr) { screens.push({ type: 'quiz', q: q, k: k, n: arr.length }); });
       screens.push({ type: 'finish' });
-      flow = { lesson: lesson, screens: screens, i: 0, answers: {}, raw: {}, rated: {}, revealed: {}, ex: {}, result: null };
+      flow = { lesson: lesson, screens: screens, i: 0, answers: {}, raw: {}, order: {}, rated: {}, revealed: {}, ex: {}, result: null };
       view = 'flow';
       enterSubview();
       renderFlow();
@@ -554,7 +554,7 @@
         h += numberFormHTML(q, sc.k);
       } else {
         h += '<div class="choices' + (answered ? ' answered' : '') + '" role="group" aria-label="選択肢">';
-        (q.choices || []).forEach(function (ch, ci) { h += choiceHTML(q, ci, ans); });
+        h += choicesInnerHTML(q, sc.k, ans);
         h += '</div>';
       }
       h += '<div class="feedback" aria-live="polite">' + (answered ? feedbackHTML(q, ans) : '') + '</div>';
@@ -577,7 +577,26 @@
         (answered ? '' : '<button type="submit" class="btn btn-primary">答える</button>') +
         '</form>';
     }
-    function choiceHTML(q, ci, ans) {
+    // Display order of the choices for question k in this lesson run. Shuffled once per run
+    // (so the correct option is not always in the same place) and reused on every re-render.
+    // Scoring and data-c keep the original index (q.answer).
+    function choiceOrder(q, k) {
+      var n = (q.choices || []).length;
+      var o = flow.order[k];
+      if (o && o.length === n) return o;
+      o = [];
+      for (var i = 0; i < n; i++) o.push(i);
+      for (var j = n - 1; j > 0; j--) {
+        var r = Math.floor(Math.random() * (j + 1));
+        var t = o[j]; o[j] = o[r]; o[r] = t;
+      }
+      flow.order[k] = o;
+      return o;
+    }
+    function choicesInnerHTML(q, k, ans) {
+      return choiceOrder(q, k).map(function (ci, pos) { return choiceHTML(q, ci, ans, pos); }).join('');
+    }
+    function choiceHTML(q, ci, ans, pos) {
       var answered = ans !== undefined;
       var cls = 'choice', result = '';
       if (answered) {
@@ -585,7 +604,7 @@
         else if (ci === ans) { cls += ' is-wrong'; result = ICON_NG + 'あなたの答え'; }
       }
       return '<button type="button" class="' + cls + '" data-act="choose" data-c="' + ci + '"' + (answered ? ' disabled' : '') + '>' +
-        '<span class="choice-mark" aria-hidden="true">' + 'ABCDEFGH'.charAt(ci) + '</span>' +
+        '<span class="choice-mark" aria-hidden="true">' + 'ABCDEFGH'.charAt(pos) + '</span>' +
         '<span class="choice-text"' + langAttr(q.choices[ci]) + '>' + esc(q.choices[ci]) + '</span>' +
         '<span class="choice-result">' + result + '</span></button>';
     }
@@ -692,7 +711,7 @@
       var q = sc.q;
       var box = $('.choices');
       box.classList.add('answered');
-      box.innerHTML = q.choices.map(function (_, i) { return choiceHTML(q, i, ci); }).join('');
+      box.innerHTML = choicesInnerHTML(q, sc.k, ci);
       $('.feedback').innerHTML = feedbackHTML(q, ci);
       afterAnswer();
     }
