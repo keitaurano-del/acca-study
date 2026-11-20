@@ -1,16 +1,55 @@
-// Offline cache for ACCA FA 入門. Bump CACHE when files change to force a clean refresh.
-var CACHE = 'acca-study-v1';
+// Offline cache for ACCA FA 入門.
+// The block between BUILD:START and BUILD:END is rewritten by build-manifest.js
+// (cache name = hash of the cached files, file list = app files + content units).
+// BUILD:START
+var CACHE = "acca-study-b50869ffb7c8";
 var FILES = [
-  './',
-  './index.html',
-  './styles.css',
-  './app.js',
-  './content.js',
-  './manifest.webmanifest',
-  './icon.svg',
-  './icon-512.png',
-  './apple-touch-icon.png'
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./manifest.webmanifest",
+  "./icon.svg",
+  "./icon-512.png",
+  "./apple-touch-icon.png",
+  "./content/index.js",
+  "./content/u01.js",
+  "./content/u02.js",
+  "./content/u03.js",
+  "./content/u04.js",
+  "./content/u05.js",
+  "./content/u06.js",
+  "./content/u07.js",
+  "./content/u08.js",
+  "./content/u09.js",
+  "./content/u10.js",
+  "./content/u11.js",
+  "./content/u12.js",
+  "./content/u13.js",
+  "./content/u14.js",
+  "./content/u15.js",
+  "./content/u16.js",
+  "./content/u17.js",
+  "./content/u18.js",
+  "./content/u19.js",
+  "./content/u20.js",
+  "./content/u21.js",
+  "./content/u22.js",
+  "./content/u23.js",
+  "./content/u24.js",
+  "./content/u25.js",
+  "./content/u26.js",
+  "./content/u27.js",
+  "./content/u28.js",
+  "./content/u29.js",
+  "./content/u30.js",
+  "./content/u31.js",
+  "./content/u32.js",
+  "./content/u33.js",
+  "./content/u34.js",
+  "./content/u35.js"
 ];
+// BUILD:END
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
