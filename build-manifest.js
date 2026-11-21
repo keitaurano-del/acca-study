@@ -12,7 +12,7 @@ const crypto = require('crypto');
 
 const ROOT = __dirname;
 const CONTENT = path.join(ROOT, 'content');
-const APP_FILES = ['index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-512.png', 'apple-touch-icon.png'];
+const APP_FILES = ['index.html', 'styles.css', 'scheduler.js', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-512.png', 'apple-touch-icon.png'];
 
 function writeIfChanged(file, text) {
   const old = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;

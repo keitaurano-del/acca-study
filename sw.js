@@ -2,11 +2,12 @@
 // The block between BUILD:START and BUILD:END is rewritten by build-manifest.js
 // (cache name = hash of the cached files, file list = app files + content units).
 // BUILD:START
-var CACHE = "acca-study-d5dba8a9cc50";
+var CACHE = "acca-study-8e3777ad58ed";
 var FILES = [
   "./",
   "./index.html",
   "./styles.css",
+  "./scheduler.js",
   "./app.js",
   "./manifest.webmanifest",
   "./icon.svg",

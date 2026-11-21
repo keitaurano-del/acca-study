@@ -1,0 +1,470 @@
+{
+  "generated": "2026-11-21T16:12:36.549Z",
+  "scheduler": "FSRS-6 (py-fsrs 6.3.3)",
+  "start": "2026-11-23",
+  "examOpen": "2027-07-01",
+  "runsPerScenario": 200,
+  "content": {
+    "K1": {
+      "lessons": 177,
+      "minutes": 2375,
+      "cards": 1084,
+      "quiz": 997
+    },
+    "K2": {
+      "lessons": 168,
+      "minutes": 2468,
+      "cards": 971,
+      "quiz": 920
+    },
+    "K3": {
+      "lessons": 120,
+      "minutes": 1910,
+      "cards": 728,
+      "quiz": 688
+    }
+  },
+  "scenarios": [
+    {
+      "name": "average 15min",
+      "profile": "average",
+      "budget": 15,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-10-09",
+            "p10": "2027-09-27",
+            "p90": "2027-10-26",
+            "medianOfPassedRuns": "2027-10-09",
+            "medianLessonDays": 268,
+            "medianConsolDays": 40,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-10-02",
+            "p10": "2028-09-09",
+            "p90": "2028-10-25",
+            "medianOfPassedRuns": "2028-10-02",
+            "medianLessonDays": 312,
+            "medianConsolDays": 44,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2029-07-01",
+            "p10": "2029-06-03",
+            "p90": "2029-07-27",
+            "medianOfPassedRuns": "2029-07-01",
+            "medianLessonDays": 227,
+            "medianConsolDays": 44,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 7.98966474254451,
+        "avgLessonMin": 8.357044086085278,
+        "avgTestMin": 2.190150369105303,
+        "avgActualMin": 18.53685919773509,
+        "avgTotalReviews": 38750.59,
+        "avgOverflowDays": 17.955,
+        "avgMistakeCards": 587.485,
+        "avgFactor": 1.0263900000000006,
+        "avgStudyDays": 808.215
+      }
+    },
+    {
+      "name": "average 20min",
+      "profile": "average",
+      "budget": 20,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-08-04",
+            "p10": "2027-07-24",
+            "p90": "2027-08-14",
+            "medianOfPassedRuns": "2027-08-04",
+            "medianLessonDays": 213,
+            "medianConsolDays": 26,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-04-25",
+            "p10": "2028-04-09",
+            "p90": "2028-05-14",
+            "medianOfPassedRuns": "2028-04-25",
+            "medianLessonDays": 235,
+            "medianConsolDays": 31,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-11-15",
+            "p10": "2028-10-27",
+            "p90": "2028-12-10",
+            "medianOfPassedRuns": "2028-11-15",
+            "medianLessonDays": 175,
+            "medianConsolDays": 30,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 9.110781937802539,
+        "avgLessonMin": 10.981305245726064,
+        "avgTestMin": 2.4021953280257664,
+        "avgActualMin": 22.49428251155437,
+        "avgTotalReviews": 33626.025,
+        "avgOverflowDays": 11.09,
+        "avgMistakeCards": 578.175,
+        "avgFactor": 1.0074649999999996,
+        "avgStudyDays": 615.045
+      }
+    },
+    {
+      "name": "forgetful 15min",
+      "profile": "forgetful",
+      "budget": 15,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-07-03",
+            "p10": "2028-05-29",
+            "p90": "2028-08-16",
+            "medianOfPassedRuns": "2028-07-03",
+            "medianLessonDays": 494,
+            "medianConsolDays": 84,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2030-08-19",
+            "p10": "2030-06-18",
+            "p90": "2030-10-21",
+            "medianOfPassedRuns": "2030-08-19",
+            "medianLessonDays": 685,
+            "medianConsolDays": 88,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2032-02-11",
+            "p10": "2031-12-04",
+            "p90": "2032-04-26",
+            "medianOfPassedRuns": "2032-02-11",
+            "medianLessonDays": 457,
+            "medianConsolDays": 78,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 13.055544550838542,
+        "avgLessonMin": 5.0050965685146,
+        "avgTestMin": 1.894611883730053,
+        "avgActualMin": 19.955253003083197,
+        "avgTotalReviews": 84633.76,
+        "avgOverflowDays": 70.52,
+        "avgMistakeCards": 908.71,
+        "avgFactor": 0.6305499999999998,
+        "avgStudyDays": 1620.34
+      }
+    },
+    {
+      "name": "forgetful 20min",
+      "profile": "forgetful",
+      "budget": 20,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-12-30",
+            "p10": "2027-12-06",
+            "p90": "2028-01-27",
+            "medianOfPassedRuns": "2027-12-30",
+            "medianLessonDays": 332,
+            "medianConsolDays": 55,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2029-03-28",
+            "p10": "2029-02-18",
+            "p90": "2029-05-11",
+            "medianOfPassedRuns": "2029-03-28",
+            "medianLessonDays": 394,
+            "medianConsolDays": 60,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2030-02-15",
+            "p10": "2030-01-05",
+            "p90": "2030-04-01",
+            "medianOfPassedRuns": "2030-02-15",
+            "medianLessonDays": 272,
+            "medianConsolDays": 48,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 15.795476738371185,
+        "avgLessonMin": 8.081361595028113,
+        "avgTestMin": 2.1872808350831088,
+        "avgActualMin": 26.064119168482407,
+        "avgTotalReviews": 63402.83,
+        "avgOverflowDays": 50.295,
+        "avgMistakeCards": 865.515,
+        "avgFactor": 0.6033299999999999,
+        "avgStudyDays": 1003.305
+      }
+    },
+    {
+      "name": "average 30min",
+      "profile": "average",
+      "budget": 30,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-07-05",
+            "p10": "2027-07-01",
+            "p90": "2027-07-14",
+            "medianOfPassedRuns": "2027-07-05",
+            "medianLessonDays": 198,
+            "medianConsolDays": 13,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-02-01",
+            "p10": "2028-01-20",
+            "p90": "2028-02-14",
+            "medianOfPassedRuns": "2028-02-01",
+            "medianLessonDays": 197,
+            "medianConsolDays": 13,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-07-07",
+            "p10": "2028-06-24",
+            "p90": "2028-07-21",
+            "medianOfPassedRuns": "2028-07-07",
+            "medianLessonDays": 141,
+            "medianConsolDays": 15,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 11.323786694404216,
+        "avgLessonMin": 13.409376756360613,
+        "avgTestMin": 2.4434652862759534,
+        "avgActualMin": 27.17662873704078,
+        "avgTotalReviews": 34217.47,
+        "avgOverflowDays": 0.85,
+        "avgMistakeCards": 548.95,
+        "avgFactor": 1.0025349999999997,
+        "avgStudyDays": 503.615
+      }
+    },
+    {
+      "name": "forgetful 30min",
+      "profile": "forgetful",
+      "budget": 30,
+      "retention": 0.9,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-08-07",
+            "p10": "2027-07-25",
+            "p90": "2027-08-22",
+            "medianOfPassedRuns": "2027-08-07",
+            "medianLessonDays": 214,
+            "medianConsolDays": 28,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-04-20",
+            "p10": "2028-03-30",
+            "p90": "2028-05-10",
+            "medianOfPassedRuns": "2028-04-20",
+            "medianLessonDays": 221,
+            "medianConsolDays": 34,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-10-24",
+            "p10": "2028-10-02",
+            "p90": "2028-11-17",
+            "medianOfPassedRuns": "2028-10-24",
+            "medianLessonDays": 158,
+            "medianConsolDays": 28,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 20.4551190759354,
+        "avgLessonMin": 13.58522063039882,
+        "avgTestMin": 2.623301181215556,
+        "avgActualMin": 36.663640887549775,
+        "avgTotalReviews": 48827.735,
+        "avgOverflowDays": 18.745,
+        "avgMistakeCards": 827.655,
+        "avgFactor": 0.5703350000000001,
+        "avgStudyDays": 596.675
+      }
+    },
+    {
+      "name": "forgetful 20min R0.85",
+      "profile": "forgetful",
+      "budget": 20,
+      "retention": 0.85,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-01-06",
+            "p10": "2027-12-10",
+            "p90": "2028-02-02",
+            "medianOfPassedRuns": "2028-01-06",
+            "medianLessonDays": 340,
+            "medianConsolDays": 59,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2029-05-13",
+            "p10": "2029-04-07",
+            "p90": "2029-06-27",
+            "medianOfPassedRuns": "2029-05-13",
+            "medianLessonDays": 430,
+            "medianConsolDays": 61,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2030-05-18",
+            "p10": "2030-03-27",
+            "p90": "2030-06-29",
+            "medianOfPassedRuns": "2030-05-18",
+            "medianLessonDays": 307,
+            "medianConsolDays": 54,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 15.25732729829673,
+        "avgLessonMin": 7.527448591528896,
+        "avgTestMin": 2.1215121536606323,
+        "avgActualMin": 24.906288043486256,
+        "avgTotalReviews": 65754.29,
+        "avgOverflowDays": 53.99,
+        "avgMistakeCards": 874.525,
+        "avgFactor": 0.5971700000000002,
+        "avgStudyDays": 1077.255
+      }
+    },
+    {
+      "name": "forgetful 30min R0.85",
+      "profile": "forgetful",
+      "budget": 30,
+      "retention": 0.85,
+      "summary": {
+        "subjects": {
+          "K1": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2027-08-12",
+            "p10": "2027-07-29",
+            "p90": "2027-08-27",
+            "medianOfPassedRuns": "2027-08-12",
+            "medianLessonDays": 220,
+            "medianConsolDays": 27,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K2": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-04-29",
+            "p10": "2028-04-05",
+            "p90": "2028-05-22",
+            "medianOfPassedRuns": "2028-04-29",
+            "medianLessonDays": 225,
+            "medianConsolDays": 34,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          },
+          "K3": {
+            "passedRuns": 200,
+            "of": 200,
+            "median": "2028-11-03",
+            "p10": "2028-10-11",
+            "p90": "2028-12-01",
+            "medianOfPassedRuns": "2028-11-03",
+            "medianLessonDays": 161,
+            "medianConsolDays": 27,
+            "medianWaitDays": 14,
+            "examFailRate": 0
+          }
+        },
+        "avgReviewMin": 19.73265653239361,
+        "avgLessonMin": 13.364793600016236,
+        "avgTestMin": 2.5946950370726136,
+        "avgActualMin": 35.69214516948246,
+        "avgTotalReviews": 47881.34,
+        "avgOverflowDays": 18.58,
+        "avgMistakeCards": 830.505,
+        "avgFactor": 0.590845,
+        "avgStudyDays": 606.52
+      }
+    }
+  ],
+  "seconds": 388
+}

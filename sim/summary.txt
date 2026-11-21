@@ -1,0 +1,25 @@
+Content: K1 177 lessons / 2375 min / 1084 cards, K2 168 lessons / 2468 min / 971 cards, K3 120 lessons / 1910 min / 728 cards
+Runs per scenario: 200. Pass date = median [10th-90th percentile] over ALL runs; a run not passed by 2035-12-31 counts as later than that (shown as >2035-12-31). (n/200) = runs that passed.
+"actual" = average minutes actually studied per study day (reviews + lessons + tests); it can exceed the budget because a
+started lesson may run over (up to 30%, longer for a slow learner), re-shown 忘れた cards and the 思い出しチェック are not
+budgeted in advance, and a mini mock (24 min) is done in one sitting.
+
+scenario              K1 pass                                 K2 pass                                 K3 pass                                 actual = rev+lesson+test min/study day, reviews, factor
+average 15min         2027-10-09 [2027-09-27..2027-10-26]     2028-10-02 [2028-09-09..2028-10-25]     2029-07-01 [2029-06-03..2029-07-27]     18.5 = 8.0+8.4+2.2, 38751, 1.03
+average 20min         2027-08-04 [2027-07-24..2027-08-14]     2028-04-25 [2028-04-09..2028-05-14]     2028-11-15 [2028-10-27..2028-12-10]     22.5 = 9.1+11.0+2.4, 33626, 1.01
+forgetful 15min       2028-07-03 [2028-05-29..2028-08-16]     2030-08-19 [2030-06-18..2030-10-21]     2032-02-11 [2031-12-04..2032-04-26]     20.0 = 13.1+5.0+1.9, 84634, 0.63
+forgetful 20min       2027-12-30 [2027-12-06..2028-01-27]     2029-03-28 [2029-02-18..2029-05-11]     2030-02-15 [2030-01-05..2030-04-01]     26.1 = 15.8+8.1+2.2, 63403, 0.60
+average 30min         2027-07-05 [2027-07-01..2027-07-14]     2028-02-01 [2028-01-20..2028-02-14]     2028-07-07 [2028-06-24..2028-07-21]     27.2 = 11.3+13.4+2.4, 34217, 1.00
+forgetful 30min       2027-08-07 [2027-07-25..2027-08-22]     2028-04-20 [2028-03-30..2028-05-10]     2028-10-24 [2028-10-02..2028-11-17]     36.7 = 20.5+13.6+2.6, 48828, 0.57
+forgetful 20min R0.85 2028-01-06 [2027-12-10..2028-02-02]     2029-05-13 [2029-04-07..2029-06-27]     2030-05-18 [2030-03-27..2030-06-29]     24.9 = 15.3+7.5+2.1, 65754, 0.60
+forgetful 30min R0.85 2027-08-12 [2027-07-29..2027-08-27]     2028-04-29 [2028-04-05..2028-05-22]     2028-11-03 [2028-10-11..2028-12-01]     35.7 = 19.7+13.4+2.6, 47881, 0.59
+
+Phase lengths (median days over the runs that reached the phase: lessons / consolidation to ready / ready to pass):
+average 15min         268 / 40 / 14                           312 / 44 / 14                           227 / 44 / 14                           
+average 20min         213 / 26 / 14                           235 / 31 / 14                           175 / 30 / 14                           
+forgetful 15min       494 / 84 / 14                           685 / 88 / 14                           457 / 78 / 14                           
+forgetful 20min       332 / 55 / 14                           394 / 60 / 14                           272 / 48 / 14                           
+average 30min         198 / 13 / 14                           197 / 13 / 14                           141 / 15 / 14                           
+forgetful 30min       214 / 28 / 14                           221 / 34 / 14                           158 / 28 / 14                           
+forgetful 20min R0.85 340 / 59 / 14                           430 / 61 / 14                           307 / 54 / 14                           
+forgetful 30min R0.85 220 / 27 / 14                           225 / 34 / 14                           161 / 27 / 14                           
