@@ -1,5 +1,6 @@
 // Usage: node build-manifest.js
-// 1. Scans content/ for unit files (u01.js, u02.js, ...) and writes content/index.js:
+// 1. Scans content/ for unit files u<number>.js (K1 u01..u35, K2 u101.., K3 u201..), sorted by
+//    number (u35 before u101), and writes content/index.js:
 //      window.ACCA_UNIT_FILES = ['content/u01.js', ...];
 // 2. Rewrites the BUILD block in sw.js: the offline file list (app files + content units)
 //    and the cache name, which is a hash of those files, so any change refreshes the cache.

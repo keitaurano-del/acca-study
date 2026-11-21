@@ -32,11 +32,14 @@ for (const f of files) {
   const u = units[0];
   if (!Number.isInteger(u.unit)) err(f, 'unit must be an integer');
   if (!Number.isInteger(u.part)) err(f, 'part must be an integer');
+  if (u.subject !== undefined && !['K2', 'K3'].includes(u.subject)) err(f, 'subject must be K2 or K3 (omit for K1)');
+  const pref = u.subject === 'K2' ? /^M\d{3}$/ : u.subject === 'K3' ? /^B\d{3}$/ : /^(L\d{2,3}|X\d{2})$/;
+  for (const l of u.lessons || []) if (!pref.test(l.id || '')) err(f, (l.id || '?') + ': id prefix does not match subject');
   if (!isStr(u.partTitle)) err(f, 'partTitle missing');
   if (!Array.isArray(u.lessons) || !u.lessons.length) { err(f, 'lessons missing'); continue; }
   for (const l of u.lessons) {
     const L = `${l.id || '?'}`;
-    if (!/^(L\d{2,3}|X\d{2})$/.test(l.id || '')) err(f, `${L}: bad id`);
+    if (!/^(L\d{2,3}|X\d{2}|[MB]\d{3})$/.test(l.id || '')) err(f, `${L}: bad id`);
     if (lessonIds.has(l.id)) err(f, `${L}: duplicate lesson id (also in ${lessonIds.get(l.id)})`);
     lessonIds.set(l.id, path.basename(f));
     for (const k of ['title', 'goal']) if (!isStr(l[k])) err(f, `${L}: ${k} missing`);
