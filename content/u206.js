@@ -174,12 +174,22 @@
         },
         {
           title: 'Art 35：契約の中身と4つの基準',
-          paras: ['まず、契約が求める数量・品質・種類（description）・包装に合うこと（Art 35(1)）。数量の不足も不適合（lack of conformity）。さらに、別の合意がなければ次の4つも満たす（Art 35(2)）。'],
-          list: ['(a) 同じ種類の物品が通常使われる目的に合う（ordinary purpose）', '(b) 契約時に売主に伝えた特定の目的に合う（particular purpose）。ただし買主が売主の技能や判断に頼っていなかった、または頼るのが不合理なら除く', '(c) 売主が示した見本（sample）・ひな型（model）の品質がある', '(d) 通常の方法で、なければ保存・保護に足りる方法で包装されている']
+          paras: ['まず、契約が求める数量・品質・種類（description）・包装に合うこと（Art 35(1)）。数量の不足も不適合（lack of conformity）。別の合意がなければ、次の4つも満たす（Art 35(2)）。試験は条文の英語で出るので、英語ごと覚える。'],
+          table: {
+            caption: 'Art 35(2) の4つの基準（条文の英語）',
+            head: ['基準', '条文の英語', '意味'],
+            rows: [
+              ['(a) 通常の目的', 'fit for the purposes for which goods of the same description would ordinarily be used', '同じ種類の物品が通常使われる目的に合う'],
+              ['(b) 特定の目的', "fit for any particular purpose expressly or impliedly made known to the seller at the time of the conclusion of the contract, except where the circumstances show that the buyer did not rely, or that it was unreasonable for him to rely, on the seller's skill and judgement", '契約時に、買主が売主に（はっきり、または暗に）伝えた特定の目的に合う。状況から見て、買主が売主の技能・判断に頼っていない、または頼るのが不合理なら除く'],
+              ['(c) 見本・ひな型', 'possess the qualities of goods which the seller has held out to the buyer as a sample or model', '売主が見本・ひな型として示した品質がある'],
+              ['(d) 包装', 'contained or packaged in the manner usual for such goods or, where there is no such manner, in a manner adequate to preserve and protect the goods', '通常の方法で、それがなければ保存・保護に足りる方法で包装されている']
+            ]
+          }
         },
         {
           title: '茶器メーカーの例で確かめる',
-          paras: ['Paris Maison は Kyoto Ceramics に「レストランに売るので、業務用食洗機で洗える湯のみが必要」と伝え、商品選びを任せた。届いた湯のみは家庭用なら問題ないが、業務用食洗機で割れた。', '特定の目的が伝えられ、買主は売主の専門知識に頼っていた → (b) の不適合。逆に、買主が自分で型番を指定し「食洗機の件はこちらで確かめる」と言っていたなら、売主に頼っていないので (b) は使えない。']
+          paras: ['Paris Maison は Kyoto Ceramics に「レストランに売るので、業務用食洗機で洗える湯のみが必要」と伝え、商品選びを任せた。届いた湯のみは業務用食洗機で割れた。', '買主の目的が売主に伝えられ、買主は売主の専門知識に頼っていた → (b) の不適合。買主が自分で型番を指定し「食洗機の件はこちらで確かめる」と言っていたなら、頼っていないので (b) は使えない。'],
+          note: { kind: 'tip', text: '見分け方①: (b) の目的は「買主の目的」で、売主に伝えられたもの。売主がカタログで「贈答用」と説明していても、「売主が説明した目的に合う（fit for a purpose described by the seller）」は Art 35(2) の基準ではない。②: 「買主が買った特定の目的に合う（fit for the particular purpose for which the buyer bought them）」のような短い言い換えは、新しい基準ではなく (b) のこと。' }
         },
         {
           title: '売主が責任を負わない場合と、基準の時点',
@@ -212,7 +222,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['適合性は、契約の中身 ＋ 通常の目的・伝えた特定の目的・見本・包装（Art 35）', '基準は危険が移った時。その時の不適合なら後で分かっても売主の責任（Art 36）', '検査はできるだけ早く、通知は発見から合理的な期間内、引渡しから2年が上限（Art 38・39）']
+          numbered: ['適合性は、契約の中身 ＋ 通常の目的・買主が伝えた特定の目的・見本・包装（Art 35）', '基準は危険が移った時。その時の不適合なら後で分かっても売主の責任（Art 36）', '検査はできるだけ早く、通知は発見から合理的な期間内、引渡しから2年が上限（Art 38・39）']
         },
         {
           title: '英単語',
@@ -220,6 +230,7 @@
             ['conformity / lack of conformity', 'コンフォーミティ', '適合性／不適合'],
             ['fit for the purpose', 'フィット フォー ザ パーパス', '目的に合う'],
             ['particular purpose', 'パティキュラー パーパス', '特定の目的'],
+            ['made known to the seller', 'メイド ノウン', '売主に知らされた（(b) は買主の目的）'],
             ['sample or model', 'サンプル オア モデル', '見本・ひな型'],
             ['examine / examination', 'イグザミン', '検査する／検査'],
             ['give notice specifying the nature', 'スペシファイング', '内容を特定して通知する'],
@@ -233,7 +244,7 @@
         { q: '契約時、買主は見本を見て「少し色ムラがある」と気づいたうえで契約した。届いた品にも同じ色ムラがあった。売主は Art 35(2) の責任を負う？', choices: ['負う。色ムラは品質の不適合だから', '負う。見本どおりでも、通常の目的に合わないから', '負わない。買主は契約時にその不適合を知っていた', '買主が通知さえすれば、必ず負う'], answer: 2, explain: 'Art 35(3)。契約時に買主が知っていた（知らないはずがなかった）不適合について、Art 35(2) の責任は負わない。見本どおりの品なので (c) の点でも適合している。' },
         { q: '運送を伴う契約で、物品は神戸港から船でマルセイユに向かう。買主はいつ検査すればよい？', choices: ['神戸港で船に積んだ時点ですぐ', '引渡しから2年以内ならいつでも', '売主から求められた時', '仕向地のマルセイユに着いてから、できるだけ短い期間のうちに'], answer: 3, explain: 'Art 38(2)。運送を伴うなら、検査は仕向地に着くまで延ばせる。着いた後はできるだけ短い期間で検査する。2年は通知の上限で、検査の期限ではない。' },
         { q: '危険が買主に移った時点で、内部の部品にすでに欠陥があった。欠陥が表に出たのは3か月後。売主の責任は？', choices: ['危険が移った時にあった不適合なので、責任を負う', '危険が移った後に分かったので、責任はない', '売主が欠陥を知っていた場合だけ責任を負う', '買主が保険をかけていれば、責任はない'], answer: 0, explain: 'Art 36(1)。基準は不適合が存在した時点。危険の移転時にあった不適合なら、後で表に出ても売主の責任。売主が知っていたかは関係ない。' },
-        { q: 'Art 39 の通知として、いちばん足りないのはどれ？', choices: ['「500個のうち40個の取っ手にひびがある」と伝えた', '写真を付けて「釉薬がはがれている」と伝えた', '検査報告書を添えて欠陥の種類を示した', '「品質に問題がある」とだけ書いて送った'], answer: 3, explain: '通知は不適合の内容を特定する必要がある（specifying the nature）。「問題がある」だけでは、売主は何を調べ、どう直せばよいか分からない。' }
+        { q: 'Under Art 35(2) CISG, which of the following is NOT a criterion for conformity of the goods?', choices: ['The goods are fit for the purposes for which goods of the same description would ordinarily be used', 'The goods are fit for a particular purpose made known to the seller at the conclusion of the contract', 'The goods are fit for a purpose described by the seller', 'The goods are packaged in the manner usual for such goods'], answer: 2, explain: 'Art 35(2) の4つは (a) 通常の目的、(b) 契約時に売主に知らされた特定の目的、(c) 見本・ひな型、(d) 通常の包装。(b) の目的は買主の目的で、売主が説明した目的ではない。「described by the seller」は (b) に似せたひっかけ。2つ目の選択肢は (b) の短い言い換え、4つ目は (d)。' }
       ]
     },
     {
@@ -408,12 +419,13 @@
     { id: 'B019-4', lesson: 'B019', q: '「3月中に引渡し」の約束。いつ引き渡せばよい？', a: '3月中のいつでもよい。買主が日を選ぶ約束なら、その日（Art 33(b)）' },
     { id: 'B019-5', lesson: 'B019', q: '期限前に渡した書類に不備があった。売主は？', a: '期限まで直せる（不合理な不便・費用がなければ）。買主の損害賠償請求は残る' },
     { id: 'B019-6', lesson: 'B019', q: 'なぜ引渡しは「届いた時」ではなく「渡した時」？', a: '運送中の荷物は売主が管理できないから。運送中の事故には保険などで備える' },
-    { id: 'B020-1', lesson: 'B020', q: 'Art 35(2) の4つの基準は？', a: '通常の目的、伝えた特定の目的、見本・ひな型の品質、通常の（保護に足りる）包装' },
+    { id: 'B020-1', lesson: 'B020', q: 'Art 35(2) の4つの基準は？', a: '通常の目的、買主が売主に伝えた特定の目的、見本・ひな型の品質、通常の（保護に足りる）包装' },
     { id: 'B020-2', lesson: 'B020', q: '特定の目的の基準（Art 35(2)(b)）が使えないのは？', a: '買主が売主の技能・判断に頼っていない、または頼るのが不合理だった場合' },
     { id: 'B020-3', lesson: 'B020', q: '不適合かどうかを判断する時点（Art 36）は？', a: '危険が買主に移った時。その時にあった不適合なら、後で表に出ても売主の責任' },
     { id: 'B020-4', lesson: 'B020', q: '買主の検査の時期（Art 38）は？', a: 'できるだけ短い期間のうち。運送を伴うなら仕向地に着くまで延ばせる' },
     { id: 'B020-5', lesson: 'B020', q: '不適合の通知の期限（Art 39）は？', a: '発見（すべき時）から合理的な期間内に内容を特定して。引渡しから2年が上限' },
     { id: 'B020-6', lesson: 'B020', q: '通知が遅れても主張できるのは？', a: '売主が知っていた（知らないはずがない）のに黙っていた不適合（Art 40）。合理的理由があれば減額か逸失利益を除く賠償（Art 44）' },
+    { id: 'B020-7', lesson: 'B020', q: 'Whose purpose counts in Art 35(2)(b)?', a: "The buyer's particular purpose, made known to the seller at contract time" },
     { id: 'B021-1', lesson: 'B021', q: 'Art 41 の売主の義務は？', a: '第三者の権利・請求のない物品を渡す。買主の同意があれば別。売主の認識は問わない' },
     { id: 'B021-2', lesson: 'B021', q: 'Art 42 で売主が責任を負う知的財産権は？', a: '売主が知っていた（知らないはずがない）権利で、想定した転売・使用の国、なければ買主の国の法律によるもの' },
     { id: 'B021-3', lesson: 'B021', q: 'Art 42(2) で売主が責任を負わない場合は？', a: '契約時に買主が知っていた場合と、買主の図面・設計・仕様に従った結果の場合' },

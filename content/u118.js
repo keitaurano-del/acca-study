@@ -124,7 +124,8 @@
         {
           title: '幅でまとめたデータ（階級）',
           paras: ['売上のように細かい値は、「$200以上$250未満」のような幅でまとめて数える。この幅を階級（class interval）という。', 'まとめると、1つずつの値は分からなくなる。そこで、各階級の値は全部その真ん中にあるとみなして計算する。この真ん中を中点（mid-point）という。'],
-          formula: '中点 ＝（階級の下限 ＋ 上限）÷ 2'
+          formula: '中点 ＝（階級の下限 ＋ 上限）÷ 2',
+          note: { kind: 'tip', text: '人数や件数のような整数のデータは「10〜19」「20〜29」と書くこともある。中点は (10＋19) ÷ 2 ＝ 14.5。階級の幅は、となりの階級の下限どうしの差で 20 − 10 ＝ 10（19 − 10 ＝ 9 ではない）。「$200以上$250未満」の形なら、中点は (200＋250) ÷ 2 ＝ 225、幅は 250 − 200 ＝ 50。' }
         },
         {
           title: '中点で代表させる',
@@ -331,7 +332,8 @@
         { q: 'Product A has mean weekly sales of 400 units and a standard deviation of 60 units. Product B has mean weekly sales of 250 units and a standard deviation of 50 units. Which of the following statements is correct?', choices: ['Product A is relatively more variable because its standard deviation is higher', 'Product B is relatively more variable: its coefficient of variation is 20% compared with 15% for Product A', 'The two products have the same relative variability', 'Product A is relatively more variable: its coefficient of variation is 6.67 compared with 5 for Product B'], answer: 1, explain: '変動係数は A ＝ 60 ÷ 400 ＝ 15%、B ＝ 50 ÷ 250 ＝ 20%。平均に対するぶれは B の方が大きい。標準偏差だけで比べると平均の大きさの違いを無視してしまう。6.67 と 5 は平均 ÷ 標準偏差と逆に割った間違い。' },
         { q: '平均 80、標準偏差 12 のデータの変動係数は何%？', type: 'number', answer: 15, unit: '%', explain: '変動係数 ＝ 標準偏差 ÷ 平均 ＝ 12 ÷ 80 ＝ 0.15 ＝ 15%。逆に 80 ÷ 12 とすると約 6.67 になり誤り。' },
         { q: '階級ごとにまとめた度数分布表で分散を計算するとき、各階級の値 x として使うのは？', choices: ['各階級の中点', '各階級の下限', '各階級の度数', '各階級の上限'], answer: 0, explain: '平均（レッスン71）と同じく、階級の値は中点で代表させる。度数 f は x ではなく、偏差の2乗にかける回数。下限や上限を使うと、ばらつきも平均もずれる。' },
-        { q: 'Which measure is most suitable for comparing the dispersion of two sets of data that have very different means?', choices: ['Range', 'Standard deviation', 'Coefficient of variation', 'Variance'], answer: 2, explain: '変動係数は標準偏差を平均で割るので、平均の大きさの違いが消える。範囲・標準偏差・分散はどれも絶対的な大きさなので、平均の大きいデータほど大きく出やすく、公平に比べられない。' }
+        { q: 'Which measure is most suitable for comparing the dispersion of two sets of data that have very different means?', choices: ['Range', 'Standard deviation', 'Coefficient of variation', 'Variance'], answer: 2, explain: '変動係数は標準偏差を平均で割るので、平均の大きさの違いが消える。範囲・標準偏差・分散はどれも絶対的な大きさなので、平均の大きいデータほど大きく出やすく、公平に比べられない。' },
+        { q: 'The number of calls handled per day by an office is grouped into the classes 10–19, 20–29, 30–39 and 40–49 (whole numbers). What is the mid-point of the class 20–29 used to estimate the mean?', type: 'number', answer: 24.5, unit: '', explain: '整数で書いた階級の中点は (下限 ＋ 上限) ÷ 2 ＝ (20＋29) ÷ 2 ＝ 24.5（レッスン71）。25 は「20以上30未満」とみなして (20＋30) ÷ 2 とした間違い。階級の幅は下限どうしの差で 30 − 20 ＝ 10。' }
       ]
     }
   ],
@@ -348,6 +350,7 @@
     { id: 'M071-4', lesson: 'M071', q: '階級データの平均が推定値になるのはなぜ？', a: '各階級の値が全部中点にあると仮定して計算するから' },
     { id: 'M071-5', lesson: 'M071', q: '「$400以上」のような開いた階級の扱いは？', a: '隣の階級と同じ幅とみなして中点を出す' },
     { id: 'M071-6', lesson: 'M071', q: '値ごとの度数分布表から中央値を出すには？', a: '度数を上から足していき、真ん中の番目が入る値を読む' },
+    { id: 'M071-7', lesson: 'M071', q: '整数データの階級「20〜29」の中点と幅は？', a: '中点 (20＋29) ÷ 2 ＝ 24.5。幅は下限どうしの差 30 − 20 ＝ 10' },
     { id: 'M072-1', lesson: 'M072', q: '範囲（range）の求め方と弱点は？', a: '最大値 − 最小値。両端の2つの値しか使わない' },
     { id: 'M072-2', lesson: 'M072', q: '分散（variance）の式は？', a: '偏差の2乗の平均 Σ(x − x̄)² ÷ n' },
     { id: 'M072-3', lesson: 'M072', q: '標準偏差（standard deviation）とは？', a: '分散の平方根。単位はデータと同じ' },
@@ -358,6 +361,7 @@
     { id: 'M073-2', lesson: 'M073', q: '分散の近道の式は？', a: 'Σfx² ÷ Σf − x̄²（平均の2乗を引く）' },
     { id: 'M073-3', lesson: 'M073', q: '変動係数（coefficient of variation）の式は？', a: '標準偏差 ÷ 平均（× 100%）' },
     { id: 'M073-4', lesson: 'M073', q: '変動係数を使うのはどんなとき？', a: '平均や単位が違うデータどうしのばらつきを比べるとき' },
-    { id: 'M073-5', lesson: 'M073', q: '変動係数が小さいと何が言える？', a: '平均に比べてばらつきが小さく、相対的に安定している（リスクが低い）' }
+    { id: 'M073-5', lesson: 'M073', q: '変動係数が小さいと何が言える？', a: '平均に比べてばらつきが小さく、相対的に安定している（リスクが低い）' },
+    { id: 'M073-6', lesson: 'M073', q: '階級「10〜19」（整数）の中点は？「10以上20未満」との違いは？', a: '14.5（(10＋19) ÷ 2）。「10以上20未満」なら中点は15' }
   ]
 });

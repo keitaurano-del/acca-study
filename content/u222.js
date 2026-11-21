@@ -167,8 +167,9 @@
         },
         {
           title: '強制清算とは',
-          list: ['裁判所への申立て（petition）で始まり、裁判所の清算命令（winding-up order）で清算になる', '申し立てられる人（s124）: 会社、取締役、債権者、出資者（contributory、株主。ふつうは直近18か月のうち6か月以上の保有）、国務大臣（公益のため、s124A）、公的管財人', '最も多いのは、払ってもらえない債権者の申立て'],
-          after: '命令を出すかどうかは裁判所が決める。理由に当たっても、必ず出るとは限らない。'
+          paras: ['裁判所への申立て（petition）→ 裁判所の清算命令（winding-up order）で清算になる。誰が申し立てるかは、理由でだいたい決まる。'],
+          table: { caption: '理由と、ふつう申し立てる人（s124）', head: ['理由', 'ふつう申し立てる人', 'ポイント'], rows: [['支払えない（s122(1)(f)）', '債権者', '会社や取締役も可。最も多い申立て'], ['正当かつ公平（s122(1)(g)）', '出資者（contributory、株主）', '株主を守る理由。お金を取り立てたい債権者は「支払えない」を使う'], ['公益（s124A）', '国務大臣', '調査の結果による別のルート。(g) の正当かつ公平とは別'], ['裁判所による清算の特別決議（s122(1)(a)）', '会社', '株主の特別決議がもと']] },
+          after: '株主の申立ては、ふつう直近18か月のうち6か月以上の保有が必要。命令を出すかは裁判所が決め、理由に当たっても必ず出るとは限らない。'
         },
         {
           title: '裁判所が清算を命じる理由（s122(1)）',
@@ -190,8 +191,9 @@
         },
         {
           title: '正当かつ公平（just and equitable）',
-          paras: ['会社がお金を払えても、続けることが不公平な場合に使う。多くは株主が申し立てる。'],
-          list: ['経営陣が対立して何も決められない（deadlock）', '会社の本来の目的が果たせなくなった', '会社が詐欺の目的で作られた', '実質は信頼で結びついた共同経営（quasi-partnership）なのに、1人が経営から締め出された（Ebrahimi v Westbourne Galleries Ltd、1973）']
+          paras: ['会社がお金を払えても、続けることが不公平な場合に使う。株主を守るための理由なので、ふつうは株主（出資者）が申し立てる。'],
+          list: ['経営陣が対立して何も決められない（deadlock）', '会社の本来の目的が果たせなくなった', '会社が詐欺の目的で作られた', '実質は信頼で結びついた共同経営（quasi-partnership）なのに、1人が経営から締め出された（Ebrahimi v Westbourne Galleries Ltd、1973）'],
+          note: { kind: 'tip', text: '「正当かつ公平を理由に、ふつう申し立てるのは誰？」と聞かれたら、答えは株主（contributories）。債権者は「支払えない」、国務大臣は公益（s124A）のルートを使う。' }
         },
         {
           title: '申立てから命令までの流れ',
@@ -208,7 +210,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['強制清算は申立て → 裁判所の清算命令。主な理由は「支払えない」と「正当かつ公平」', '支払えない: £750 を超える法定の支払請求を3週間放置、執行の不奏功、キャッシュフロー、バランスシート', '開始は申立ての時にさかのぼり、その後の財産の処分は裁判所が認めない限り無効']
+          numbered: ['強制清算は申立て → 裁判所の清算命令。主な理由は「支払えない」（ふつう債権者）と「正当かつ公平」（ふつう株主）', '支払えない: £750 を超える法定の支払請求を3週間放置、執行の不奏功、キャッシュフロー、バランスシート', '開始は申立ての時にさかのぼり、その後の財産の処分は裁判所が認めない限り無効']
         },
         {
           title: '英単語',
@@ -219,6 +221,7 @@
             ['statutory demand', 'スタチュートリー ディマンド', '法定の支払請求'],
             ['just and equitable', 'ジャスト アンド エクイタブル', '正当かつ公平'],
             ['contributory', 'コントリビュートリー', '出資者（株主など）'],
+            ['Secretary of State', 'セクレタリー オブ ステート', '国務大臣（公益の申立て）'],
             ['provisional liquidator', 'プロヴィジョナル', '仮の清算人']
           ]
         }
@@ -228,7 +231,7 @@
         { q: '法定の支払請求（statutory demand）が会社に届いた。会社が何もしないまま何日たつと、支払えないとみなされる？', type: 'number', answer: 21, unit: '日', explain: 's123(1)(a)：3週間＝21日。請求額は £750 を超えている必要がある。' },
         { q: 'A supplier is owed £600 by a company, which is now due. Which of the following statements is correct?', choices: ['The supplier cannot petition for a winding up under any circumstances', 'The supplier may serve a statutory demand and, after three weeks, the company is deemed unable to pay its debts', 'The supplier cannot rely on a statutory demand, but may still petition if it can prove that the company is unable to pay its debts as they fall due', 'The supplier must first obtain the consent of the company\'s members before petitioning'], answer: 2, explain: '法定の支払請求のルートは £750 を超える債務だけ。£600 ではそのルートは使えないが、キャッシュフロー・テストなど別の方法で支払えないことを証明できる。株主の同意は不要。' },
         { q: 'A creditor presents a petition on 10 May, and the court makes a winding-up order on 20 June. No resolution for voluntary winding up was passed earlier. When is the winding up deemed to commence?', choices: ['20 June, the date of the winding-up order', '10 May, the date the petition was presented', 'The date the Official Receiver becomes liquidator', 'The date the order is registered at Companies House'], answer: 1, explain: 's129(2)：強制清算の開始は申立ての時にさかのぼる。財産の持ち出しを防ぐため。' },
-        { q: '申立ての後、命令が出る前に、Oak Ltd は工場を取締役の弟に安く売った。裁判所の承認はない。この売却は？', choices: ['清算命令が出れば、裁判所が認めない限り無効になる', '命令の前の取引なので、そのまま有効', '取締役会の決議があれば有効', '代金を払っていれば有効'], answer: 0, explain: 's127：清算の開始（申立ての時）の後の会社財産の処分は、裁判所が認めない限り無効。' },
+        { q: 'Which party would normally petition for the compulsory winding up of a company on the just and equitable ground?', choices: ['The company\'s shareholders (contributories)', 'An unpaid trade creditor', 'The Secretary of State', 'The Official Receiver'], answer: 0, explain: '正当かつ公平（s122(1)(g)）は株主を守るための理由なので、ふつう株主（出資者）が申し立てる。払ってもらえない取引先などの債権者は、「支払えない」（s122(1)(f)、法定の支払請求など）を理由に申し立てる。国務大臣は、調査の結果をもとに公益（s124A）という別のルートで申し立てる。公的管財人は、ふつう清算命令の後に最初の清算人になる立場で、正当かつ公平の申立ての典型ではない。' },
         { q: '3人で作った小さな会社。信頼で結びついた共同経営だったが、2人が残り1人を取締役から外し、経営から締め出した。締め出された株主が求められる清算の理由は？', choices: ['取引開始の証明書がない', '支払えない（unable to pay its debts）', '1年以内に事業を始めない', '正当かつ公平（just and equitable）'], answer: 3, explain: 'Ebrahimi v Westbourne Galleries Ltd（1973）。会社はお金を払えても、実質的な共同経営の信頼が壊れたなら、正当かつ公平として清算を命じられる。' }
       ]
     },
@@ -478,6 +481,7 @@
     { id: 'B093-3', lesson: 'B093', q: '強制清算の開始はいつ？', a: '申立ての時にさかのぼる（先に任意清算の決議があればその時）' },
     { id: 'B093-4', lesson: 'B093', q: '開始後の会社財産の処分はどうなる？', a: '裁判所が認めない限り無効（s127）' },
     { id: 'B093-5', lesson: 'B093', q: '正当かつ公平の理由になる例は？', a: '経営の行き詰まり、目的の消滅、詐欺目的、共同経営からの締め出し（Ebrahimi）' },
+    { id: 'B093-6', lesson: 'B093', q: '正当かつ公平を理由に、ふつう強制清算を申し立てるのは？', a: '株主（出資者、contributories）。債権者は「支払えない」、国務大臣は公益（s124A）を使う' },
     { id: 'B094-1', lesson: 'B094', q: '清算の弁済順位は？', a: '固定担保→費用→優先→留保分→浮動担保→無担保→未払配当など→株主' },
     { id: 'B094-2', lesson: 'B094', q: '従業員の給与の優先の範囲は？', a: '清算前4か月分で1人 £800 まで。超えた分は無担保' },
     { id: 'B094-3', lesson: 'B094', q: 'HMRC の第2順位の優先債権になる税金は？', a: 'VAT、給与から天引きした所得税（PAYE）と社会保険料など。法人税は無担保' },

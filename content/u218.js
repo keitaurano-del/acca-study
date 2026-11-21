@@ -8,7 +8,7 @@
       id: 'B073',
       no: 73,
       title: '資本維持の原則と減資',
-      goal: '資本を株主に返せない理由と、それを守る個々のルール、私会社と公開会社の減資の手続を説明できるようになる',
+      goal: '資本を株主に返せない理由と、それを守る個々のルール、私会社と公開会社の減資の手続、自己株式の買戻しに必要な決議を説明できるようになる',
       minutes: 16,
       recall: true,
       exam: 'both',
@@ -43,6 +43,12 @@
           list: ['定款が禁止していなければ、会社は自社株を買い戻せる（s690）。全額払込済の株式に限る', '財源は分配可能利益か、そのために新しく発行した株式の代金（s692）', '資本（capital）から払えるのは私会社だけ。特別決議・取締役の支払能力の声明・監査人の報告が必要（s709 以下）', '利益で買い戻したら、減った株式の額面と同じ額を資本償還準備金（capital redemption reserve）に移す（s733）', '分配可能利益で買った株式は、消却せず金庫株（treasury shares）として持つこともできる（B065）']
         },
         {
+          title: '買い方で、必要な株主の決議が変わる',
+          table: { caption: '利益などで払うなら、どちらも普通決議', head: ['買い方', '必要な決議'], rows: [['市場外（off-market）: 特定の株主と個別の契約で買う。私会社の株は取引所にないので、必ずこちら', '買う前に、契約の条件を普通決議で承認する（s694）。売る株主は、その株の分で賛成に加われない（s695）'], ['市場（market）: 認可された証券取引所で買う（s693）', '普通決議で買う権限を与える（s701）。最大の株数・最高と最低の価格・期限を決める']] },
+          after: '市場で買う権限の期限は、決議の日から5年以内の日にする（s701(5)）。',
+          note: { kind: 'warn', text: '市場外の承認は、2013年の改正（SI 2013/999）で特別決議から普通決議に下がった。古い教材の「特別決議」に注意。特別決議がいるのは、私会社が資本から払うとき（s716）。' }
+        },
+        {
           title: '例題: 買い戻しても資本は減らない',
           example: {
             problem: 'Hill Ltd の株式資本は $100,000（1株 $1）、利益剰余金は $60,000。株主から 10,000株を1株 $1.50 で買い戻し、消却する。代金は分配可能利益から払う。資本と利益剰余金はどうなる？',
@@ -59,11 +65,8 @@
           paras: ['有限責任は株主にとって大きな特典。その代わりに債権者は「払い込まれた資本は株主に引き出されない」ことを頼りに取引する。株主が先にお金を持ち出せたら、損をするのは債権者だけになる。', '日本の感覚では「自分の会社のお金は自由に使える」と思いがち。英国法では、株主に返すには、債権者を守る手続（支払能力の声明か裁判所）を通す必要がある。']
         },
         {
-          title: 'よくある間違い',
-          note: { kind: 'warn', text: '資本維持は「資本と同じ額の現金を会社に置いておく義務」ではない。事業で損をして資本を失うことは止められない。止めるのは株主への払戻し。また、私会社の減資に裁判所は不要（支払能力の声明でよい）。公開会社は必ず裁判所の確認がいる。' }
-        },
-        {
-          title: '覚えるのは3つだけ',
+          title: 'よくある間違いと、覚えるのは3つだけ',
+          note: { kind: 'warn', text: '資本維持は「資本と同じ現金を会社に置いておく義務」ではない。事業の損失は止められず、止めるのは株主への払戻し。私会社の減資に裁判所は不要で、公開会社は必ず裁判所の確認がいる。' },
           numbered: ['払い込まれた資本は債権者のクッション。株主に返すのは法律の手続によるときだけ（Trevor v Whitworth）', '減資は特別決議が必要。私会社は支払能力の声明か裁判所、公開会社は裁判所の確認', '利益で自社株を買い戻したら、額面と同じ額を資本償還準備金に移す']
         },
         {
@@ -75,7 +78,9 @@
             ['confirmation by the court', 'コンファメイション', '裁判所の確認'],
             ['capital redemption reserve', 'リデンプション リザーブ', '資本償還準備金'],
             ['financial assistance', 'フィナンシャル アシスタンス', '自社株取得のための資金援助'],
-            ['purchase of own shares', '', '自己株式の買戻し']
+            ['purchase of own shares', '', '自己株式の買戻し'],
+            ['off-market purchase', 'オフマーケット パーチェス', '市場外での自己株式の買戻し（特定の株主との契約）'],
+            ['market purchase', 'マーケット パーチェス', '証券取引所での自己株式の買戻し']
           ]
         }
       ],
@@ -85,7 +90,8 @@
         { q: 'Oak Ltd は自社株 20,000株（額面1株 $0.50）を1株 $2 で、分配可能利益から買い戻して消却した。資本償還準備金に移す額はいくら？', type: 'number', answer: 10000, unit: '$', explain: '資本償還準備金は、減った株式の額面と同じ額（s733）。20,000株 × $0.50 ＝ $10,000。支払額 $40,000 ではない。額面を超える $30,000 は利益剰余金から払う。' },
         { q: '資本維持の原則が禁止していることはどれ？', choices: ['事業の失敗で、資本の額を超える損失を出すこと', '利益剰余金から配当を払うこと', '社債を発行してお金を借りること', '払い込まれた資本を、法律の手続なしに株主に返すこと'], answer: 3, explain: '資本維持が止めるのは株主への払戻し。事業上の損失は止められない。分配可能利益からの配当や借入は、資本を株主に返すことではないので問題ない。' },
         { q: 'A public company\'s net assets fall to half or less of its called-up share capital. Within what period after a director becomes aware of this must the directors call a general meeting?', choices: ['14 days', '21 days', '28 days', '56 days'], answer: 2, explain: 's656。気づいてから28日以内に招集し、総会の日は56日以内にする。56日は総会の日の期限で、招集の期限ではない。' },
-        { q: 'Which of the following companies is prohibited by the Companies Act 2006 from giving financial assistance for the acquisition of its own shares?', choices: ['A private company', 'A public company', 'Any company with more than 50 members', 'No company, because the prohibition was abolished in 2006'], answer: 1, explain: 's678。禁止は公開会社（とその子会社による援助）に残っている。2006年法で廃止されたのは、私会社への原則禁止のほう。株主の人数は関係ない。' }
+        { q: 'Which of the following companies is prohibited by the Companies Act 2006 from giving financial assistance for the acquisition of its own shares?', choices: ['A private company', 'A public company', 'Any company with more than 50 members', 'No company, because the prohibition was abolished in 2006'], answer: 1, explain: 's678。禁止は公開会社（とその子会社による援助）に残っている。2006年法で廃止されたのは、私会社への原則禁止のほう。株主の人数は関係ない。' },
+        { q: 'A private company wishes to buy back shares from one shareholder under a private contract, paying out of distributable profits. What resolution is required?', choices: ['An ordinary resolution', 'A special resolution', 'A resolution of the board of directors only', 'A unanimous resolution of all the members'], answer: 0, explain: '特定の株主との契約で買うのは市場外での買戻し（off-market purchase）。契約の条件を事前に普通決議で承認する（s694）。2013年の改正前は特別決議だった。特別決議がいるのは、私会社が資本から払うとき（s716）。取締役会だけでは決められず、全員一致までは要らない。' }
       ]
     },
     {
@@ -351,6 +357,7 @@
     { id: 'B073-4', lesson: 'B073', q: '公開会社の減資の方法は？', a: '特別決議＋裁判所の確認だけ' },
     { id: 'B073-5', lesson: 'B073', q: '利益で自社株を買い戻したとき、資本償還準備金に移す額は？', a: '減った株式の額面と同じ額（s733）' },
     { id: 'B073-6', lesson: 'B073', q: '公開会社の純資産が払込請求済株式資本の半分以下になったら？', a: '取締役は28日以内に総会を招集。総会は56日以内（s656）' },
+    { id: 'B073-7', lesson: 'B073', q: '自己株式の買戻しに必要な決議は？（市場外・市場）', a: 'どちらも普通決議。市場外は契約の条件を承認（s694）、市場は権限を与え期限は5年以内（s701）。資本から払うときは特別決議（s716）' },
     { id: 'B074-1', lesson: 'B074', q: '分配可能利益の定義（s830）は？', a: '累積実現利益 − 累積実現損失（配当・資本組入れ済みの分は除く）' },
     { id: 'B074-2', lesson: 'B074', q: '今年黒字でも配当できないのはどんなとき？', a: '過去の損失を含めた累積で、実現利益が実現損失を下回るとき' },
     { id: 'B074-3', lesson: 'B074', q: '再評価剰余金は配当に使える？', a: '使えない（未実現）。資産を売れば実現して使えるようになる' },

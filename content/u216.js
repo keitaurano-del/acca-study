@@ -50,16 +50,17 @@
             '公開会社には最低資本（authorised minimum）がある。割当済みの株式資本の額面が £50,000 以上必要（s763）。授権資本とは別の話', '会社は株式を割り当てると、株式の数・額面の合計・払込済と未払の額を示す資本の明細（statement of capital）を登記所に出す']
         },
         {
-          title: 'なぜ？ 区分を分けて数える理由',
-          paras: ['有限責任の株主は、自分の株式のまだ払っていない分までしか責任を負わない。会社が倒産すると、清算人はこの未払いの分を株主に請求して、債権者への支払いに回す。', 'だから債権者にとって大事なのは、払込済の額だけでなく「あといくら株主から取れるか」。払込請求済と未請求を分けておくと、それが一目で分かる。']
+          title: 'なぜ？ 未払い分は会社に払う',
+          paras: ['株主の未払い分の責任は、会社（company）に対するもの。会社の財産に払い込む義務で、債権者が株主を直接訴えることはできない。', '会社が続いている間は取締役が、清算（winding up）では清算人（liquidator）が、会社の名前で払込みを請求する。集めたお金は会社の財産になり、そこから債権者に払う（Insolvency Act 1986 s74）。だから「あといくら集められるか」を示す未請求の額が大事になる。'],
+          formula: '責任の相手 → 会社　清算で請求する人 → 清算人'
         },
         {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '「払込請求済＝実際に払われた額」は誤り。請求した額で、払われたかは問わない。払われた額は払込済。また、株主の責任は株価ではなく、額面（とプレミアム）のうち未払いの分で決まる。' }
+          note: { kind: 'warn', text: '「払込請求済＝実際に払われた額」は誤り。請求した額で、払われたかは問わない。払われた額は払込済。また、株主の責任は株価ではなく、額面（とプレミアム）のうち未払いの分で決まる。未払い分は債権者に直接払うものでもない。払う相手は会社。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['発行済 ≧ 払込請求済 ≧ 払込済。発行済 − 払込請求済 ＝ 未請求', '株主の責任の上限は、自分の株式の未払いの分（額面＋プレミアムのうち払っていない額）', '株式資本は返さなくてよい出資、借入資本は利息を払って返す借金']
+          numbered: ['発行済 ≧ 払込請求済 ≧ 払込済。発行済 − 払込請求済 ＝ 未請求', '株主の責任の上限は、自分の株式の未払いの分。払う相手は会社で、清算では清算人が請求する', '株式資本は返さなくてよい出資、借入資本は利息を払って返す借金']
         },
         {
           title: '英単語',
@@ -71,13 +72,16 @@
             ['uncalled capital', 'アンコールド', '未請求の資本'],
             ['reserve capital', 'リザーブ', '留保資本（清算時だけ請求できる）'],
             ['loan capital', 'ローン', '借入資本'],
-            ['authorised share capital', 'オーソライズド', '授権資本（現在は不要）']
+            ['authorised share capital', 'オーソライズド', '授権資本（現在は不要）'],
+            ['call', 'コール', '払込みの請求（会社が株主に求める）'],
+            ['liquidator', 'リクイデイター', '清算人（清算で会社のために未払い分を請求する）']
           ]
         }
       ],
       quiz: [
         { q: '額面 $0.50 の株式 300,000株を額面で発行した。会社は1株 $0.40 の払込みを請求した。20,000株の株主だけが1株 $0.25 しか払っておらず、ほかは全額払った。払込済株式資本（paid-up share capital）はいくら？', type: 'number', answer: 117000, unit: '$', explain: '払込請求済は 300,000 × $0.40 ＝ $120,000。未払いは 20,000 × ($0.40 − $0.25) ＝ $3,000。払込済は $120,000 − $3,000 ＝ $117,000。' },
-        { q: 'Which of the following best describes called-up share capital?', choices: ['The amount shareholders have actually paid on their shares', 'The total nominal value of all shares the company has allotted', 'The amount the company has required shareholders to pay on their shares, whether or not it has been paid', 'The amount the company may only call for if it goes into liquidation'], answer: 2, explain: '払込請求済は、請求した額で、払われたかは問わない。「実際に払った額」は paid-up（払込済）、「割り当てた額面の合計」は issued（発行済）、「清算のときだけ請求できる額」は reserve capital（留保資本）。' },
+        { q: 'Shares in a company are partly paid. To whom is a shareholder liable for the amount unpaid on the shares?', choices: ['The company\'s creditors', 'The directors personally', 'The company', 'The Registrar of Companies'], answer: 2, explain: '未払い分の責任は会社に対するもので、会社の財産に払い込む義務。債権者は株主を直接訴えられない（お金は会社の財産を通して債権者に回る）。取締役は会社の名前で請求するだけで、取締役個人に払うのではない。登記所（Registrar）は記録を受け取るだけ。' },
+        { q: 'A company is in insolvent liquidation. Some of its shares are partly paid. Who will call up the unpaid amount from the shareholders?', choices: ['The liquidator, acting for the company', 'The company\'s creditors, each for its own debt', 'The directors, at a board meeting', 'The Registrar of Companies'], answer: 0, explain: '清算では清算人が会社の名前で未払い分を請求し、集めたお金を会社の財産に加えて債権者に分ける（Insolvency Act 1986 s74）。債権者が個別に取り立てることはできない。清算人が選ばれると取締役の権限は止まるので、取締役は請求しない。' },
         { q: 'A shareholder holds 5,000 ordinary shares of $1 each, issued at par, on which $0.60 per share has been paid. The company goes into insolvent liquidation. What is the maximum further amount the shareholder can be required to pay?', choices: ['$3,000', '$2,000', '$5,000', 'Nothing, because the shareholder has limited liability'], answer: 1, explain: '責任の上限は未払いの分: 5,000 × ($1 − $0.60) ＝ $2,000。有限責任は「責任ゼロ」ではなく「未払い分まで」。$3,000 は払った額、$5,000 は額面の合計。' },
         { q: '公開会社（plc）が額面 $1 の株式を1株 $1.40 で割り当てる。割当てのときに最低限払い込まれていなければならない1株あたりの額は？', type: 'number', answer: 0.65, unit: '$', explain: 's586: 額面の4分の1以上とプレミアムの全額。$1 × 1/4 ＝ $0.25、プレミアム $0.40。合計 $0.65。' },
         { q: 'Companies Act 2006 のもとでの授権資本（authorised share capital）について正しいのは？', choices: ['すべての会社は定款で授権資本を定めなければならない', '授権資本は払込済株式資本と同じ意味である', '公開会社だけは授権資本の上限まで必ず株式を発行しなければならない', '会社は授権資本を定める必要がない。古い会社では定款の制限として残っていることがある'], answer: 3, explain: '2006年法で授権資本の仕組みはなくなった。昔の会社の上限は、定款による割当ての制限として扱われる。授権資本は「発行できる上限」で、払込済とは別。' }
@@ -324,6 +328,7 @@
     { id: 'B063-4', lesson: 'B063', q: '有限責任の株主があと払う責任の上限は？', a: '自分の株式の未払いの分（額面とプレミアムのうち払っていない額）' },
     { id: 'B063-5', lesson: 'B063', q: '公開会社が株式を割り当てるとき、最低限払い込まれている必要がある額は？（s586）', a: '額面の4分の1以上とプレミアムの全額' },
     { id: 'B063-6', lesson: 'B063', q: '公開会社の最低資本（authorised minimum）は？（s763）', a: '割当済みの株式資本の額面が £50,000 以上' },
+    { id: 'B063-7', lesson: 'B063', q: '未払いの株式資本は、だれに対する責任？清算ではだれが請求する？（Unpaid share capital: owed to whom / who collects in liquidation?）', a: '会社に対する責任。清算では清算人が会社の名前で請求する' },
     { id: 'B064-1', lesson: 'B064', q: '定款に書いていないとき、優先株の配当は累積的？非累積的？', a: '累積的と推定する（Webb v Earle）' },
     { id: 'B064-2', lesson: 'B064', q: '権利が定められた優先株は、追加の配当や清算時の余りに参加できる？', a: '参加しないと推定する。参加させるなら定款に書く（参加的優先株）' },
     { id: 'B064-3', lesson: 'B064', q: '優先株主は、宣言されていない配当を会社に請求できる？', a: 'できない。配当は宣言されて初めて請求でき、累積的なら繰り越されるだけ' },

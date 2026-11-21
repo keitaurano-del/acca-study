@@ -322,7 +322,7 @@
       id: 'B108',
       no: 108,
       title: '第9部 総合演習：企業・金融犯罪',
-      goal: '会計事務所とその顧客の場面で、インサイダー取引、市場の濫用、マネーロンダリング、贈賄、防止懈怠、サイバー犯罪、不正取引・不当取引のどれに当たるかを判断できるようになる',
+      goal: '会計事務所とその顧客の場面で、インサイダー取引、市場の濫用、マネーロンダリングと顧客の確認（CDD）、贈収賄、防止懈怠、サイバー犯罪、不正取引・不当取引のどれに当たるかを判断できるようになる',
       minutes: 20,
       recall: true,
       exam: 'both',
@@ -339,15 +339,24 @@
         },
         {
           title: '第9部の地図',
-          table: { caption: 'F1〜F6 の主な罪', head: ['テーマ', '法律', '要点'], rows: [['インサイダー取引（F1）', 'CJA 1993', '内部者が内部情報で取引・勧誘・開示'], ['市場の濫用（F1）', 'UK MAR（FCA）', '民事・規制の制裁。相場操縦も'], ['マネロン（F2）', 'POCA 2002、規則', '隠す・関与・取得。通報と内報の罪'], ['贈賄（F3）', 'Bribery Act 2010', '贈賄・収賄・外国公務員・防止懈怠（s7）'], ['防止懈怠（F4）', 'CFA 2017、ECCTA 2023', '脱税ほう助・不正。合理的な手続'], ['サイバー（F5）', 'CMA 1990', 's1 アクセス、s2 目的、s3 妨害'], ['不正・不当取引（F6）', 'CA s993、IA s213・s214', '意図あり／知るべきだった']] }
+          table: { caption: 'F1〜F6 の主な罪', head: ['テーマ', '法律', '要点'], rows: [['インサイダー取引（F1）', 'CJA 1993', '個人の取引・勧誘・開示'], ['市場の濫用（F1）', 'UK MAR（FCA）', 'インサイダー取引・不正な開示・相場操縦。会社も対象'], ['マネロン（F2）', 'POCA 2002、MLR 2017', '隠匿・関与・取得。通報しない罪と内報。CDD などの対策'], ['贈収賄（F3）', 'Bribery Act 2010', '贈賄・収賄・外国公務員・防止懈怠（s7）'], ['防止懈怠（F4）', 'CFA 2017、ECCTA 2023', '脱税ほう助・不正。合理的な手続'], ['サイバー（F5）', 'CMA 1990', 's1 アクセス、s2 目的、s3 妨害'], ['不正・不当取引（F6）', 'CA s993、IA s213・s214', '意図あり／知るべきだった']] }
         },
         {
           title: '場面1: Orbit plc の買収の話',
-          list: ['Orbit の財務担当取締役が、未公表の買収計画を友人 Gus に話した → 内部者による情報の開示（disclosing）の罪', 'Gus はその情報で Orbit の株を買った → 情報源から情報を得た内部者による取引（dealing）の罪', 'Gus が兄にも買うよう勧めた → 取引の勧誘（encouraging）の罪', '同じ行為は、FCA による市場の濫用（market abuse）の民事の制裁の対象にもなる']
+          list: ['Orbit に、今の株価より高い値段で買収提案が来た（未公表）。公表されれば株価が大きく上がる → 内部情報', '財務担当取締役が友人 Gus に話した → 仕事の正当な遂行以外なので開示（disclosing）の罪', 'Gus は未公表の話で、取締役から聞いたと知って、証券会社を通して Orbit 株を買った → 取引（dealing）の罪', 'Gus が兄に買うよう勧めた → 勧誘（encouraging）の罪。兄が買わなくても成立'],
+          after: 'この3つの罪は個人だけ。同じ行為は市場の濫用（UK MAR）にもなり、FCA が制裁金を科せる。'
         },
         {
           title: '場面2: Ledger の中で起きたこと',
-          list: ['Delta の社長が大量の現金を持ち込み、いくつもの会社を経由させていた。担当の Ledger の従業員 Pam は疑いを持った → マネロンの疑い。Pam はマネロン報告責任者（MLRO）に報告する。報告しないと、規制対象業種の通報しない罪', 'Pam は社長に「報告したよ」と言ってはいけない → 内報（tipping off）の罪', 'Vix が海外の公務員にお金を渡して契約を取った → 外国公務員への贈賄（s6）。Ledger も贈賄防止の懈怠（s7）。抗弁は適切な手続', 'Ledger の別の従業員が、顧客の売上隠しを手伝った → Ledger に脱税ほう助の防止懈怠（CFA s45）']
+          list: ['Delta の社長が大量の現金をいくつもの会社に通していた。担当の Pam は疑った → できるだけ早く MLRO に報告する。怠れば通報しない罪（s330）', 'Pam は報告したことを社長に言わない → 言えば内報（tipping off）の罪', 'Vix が海外の公務員にお金を渡して契約を取った → 外国公務員への贈賄（s6）。Ledger は営利団体の防止懈怠（s7）。抗弁は適切な手続', '別の従業員が、顧客の犯罪としての脱税を故意に手伝った → Ledger に脱税ほう助の防止懈怠（CFA s45）']
+        },
+        {
+          title: '場面2の続き: 新しい顧客の確認',
+          example: {
+            problem: 'Delta の社長 Lee が、別の会社 Nova Ltd の会計も頼みたいと言ってきた。Nova の株は Lee が70%、知人2人が15%ずつ持つ。手続は Lee の秘書が Nova の代わりに行う。Ledger はいつ、誰を確かめるか？',
+            steps: ['いつ: 顧客の確認（CDD）の確認と裏付けは、取引関係を始める前に済ませる', '顧客: Nova。会社名・登録番号・登録住所などを登記の情報で確かめる', '実質的支配者: 株か議決権の25%超を持つ Lee。15%の2人は、ほかの方法で支配していなければ当たらない', '代わりに動く人: 秘書本人と、Nova から任された権限を確かめる', 'Lee には疑いがある → 高リスクとして厳格な確認（EDD）。疑いは MLRO に報告し、Lee には言わない'],
+            answer: '始める前に、Nova・Lee・秘書（権限も）を確かめる。確認できなければ取引を始めない'
+          }
         },
         {
           title: '場面3: サイバー攻撃と Delta の最後',
@@ -376,14 +385,15 @@
             ['tipping off', 'ティッピング オフ', '内報（相手に知らせる罪）'],
             ['money laundering reporting officer', 'エムエルアールオー', 'マネロン報告責任者（MLRO）'],
             ['adequate procedures', 'アデクワット', '適切な手続（贈賄防止の抗弁）'],
-            ['market abuse', 'マーケット アビューズ', '市場の濫用']
+            ['market abuse', 'マーケット アビューズ', '市場の濫用'],
+            ['beneficial owner', 'ベネフィシャル オーナー', '実質的支配者（25%超を持つ人など）']
           ]
         }
       ],
       quiz: [
-        { q: 'The finance director of Orbit plc tells a friend about an unannounced takeover bid. The friend buys shares in Orbit plc before the announcement. Under the Criminal Justice Act 1993, which offences have been committed?', choices: ['The director has committed disclosing and the friend has committed dealing', 'Only the friend has committed an offence, because the director did not deal', 'Only the director has committed an offence, because the friend is not an insider', 'Neither, because the information was passed in a private conversation'], answer: 0, explain: '取締役は内部者で、情報を職務の外で開示した。友人は内部者から情報を得た情報源経由の内部者で、取引した。私的な会話でも罪になる。' },
-        { q: 'Pam, an employee of Ledger LLP, suspects that a client is laundering money. Which of the following actions would be an offence?', choices: ['Reporting her suspicion to the money laundering reporting officer', 'Telling the client that she has made a report, so that the client can explain', 'Continuing to keep records of the client\'s transactions', 'Asking the client for evidence of identity under customer due diligence'], answer: 1, explain: '報告したことを相手に知らせるのは内報（tipping off）の罪。MLRO への報告は義務で、記録の保存と顧客の確認もマネロン対策の一部。' },
-        { q: 'Vix, a partner in Ledger LLP, pays a foreign public official to win a contract for Ledger LLP. Ledger LLP has no anti-bribery policies. Which of the following is correct?', choices: ['Only Vix commits an offence, because Ledger LLP did not know of the payment', 'Ledger LLP commits no offence because the payment was made outside the UK', 'Ledger LLP commits the offence of failing to prevent bribery and cannot rely on the adequate procedures defence', 'Ledger LLP is guilty only if its members approved the payment'], answer: 2, explain: 'Vix は外国公務員への贈賄（s6）。Ledger は関係者の贈賄を防げなかった（s7）。会社が知らなくても成立し、抗弁の適切な手続（adequate procedures）がない。' },
+        { q: 'The finance director of Orbit plc tells a friend that Orbit plc has received an unannounced takeover bid at a price above the current share price. The friend, knowing that the information is unpublished and where it came from, buys shares in Orbit plc through a stockbroker before the announcement. Under the Criminal Justice Act 1993, which offences have been committed?', choices: ['The director has committed disclosing and the friend has committed dealing', 'Only the friend has committed an offence, because the director did not deal', 'Only the director has committed an offence, because the friend is not an insider', 'Neither, because the information was passed in a private conversation'], answer: 0, explain: '取締役は内部者で、仕事の正当な遂行以外で内部情報を開示した。友人は未公表の話で、取締役から聞いたと知っているので内部者（情報を聞いた人）で、証券会社（プロの仲介者）を通して取引した。私的な会話でも罪になる。' },
+        { q: 'Ledger LLP is asked to act for Nova Ltd. Mr Lee holds 70% of Nova Ltd\'s shares and two investors hold 15% each. Nova Ltd\'s instructions are given by Mr Lee\'s secretary on its behalf. Under customer due diligence, whom must Ledger LLP identify and verify, and when?', choices: ['Nova Ltd only, before the relationship begins', 'Nova Ltd, Mr Lee and the secretary, after the first fee is paid', 'Nova Ltd, Mr Lee and the secretary, before the relationship begins', 'Nova Ltd and all three shareholders, before the relationship begins'], answer: 2, explain: 'CDD の確認と裏付けは、取引関係を始める前に済ませる。確かめるのは顧客の Nova、25%超を持つ実質的支配者の Lee、Nova の代わりに動く秘書（本人と権限）。会社だけでは足りない。15%の2人は、ほかの方法で支配していなければ実質的支配者ではない。' },
+        { q: 'Vix, a partner in Ledger LLP, pays a foreign public official to win a contract for Ledger LLP. Ledger LLP has no anti-bribery policies. Which of the following is correct?', choices: ['Only Vix commits an offence, because Ledger LLP did not know of the payment', 'Ledger LLP commits no offence because the payment was made outside the UK', 'Ledger LLP commits the offence of failing to prevent bribery and cannot rely on the adequate procedures defence', 'Ledger LLP is guilty only if its members approved the payment'], answer: 2, explain: 'Vix は外国公務員への贈賄（s6）。Ledger は関係者の贈賄を防げなかったので、営利団体の防止懈怠（s7）。会社が知らなくても成立し、抗弁の適切な手続（adequate procedures）がない。' },
         { q: 'Last year Ledger LLP had turnover of £40m, a balance sheet total of £12m and 300 employees. An employee commits fraud intending to benefit a client of Ledger LLP. Which of the following is correct?', choices: ['Ledger LLP is outside the failure to prevent fraud offence because its balance sheet total is below £18m', 'Ledger LLP is outside the offence because the fraud benefited the client, not Ledger LLP', 'Ledger LLP is guilty only if a senior manager knew of the fraud', 'Ledger LLP may be guilty of failure to prevent fraud unless it had reasonable fraud prevention procedures'], answer: 3, explain: '3つの基準のうち売上高と従業員の2つを満たすので大規模組織。顧客の利益を図る詐欺も対象。経営陣が知らなくても成立し、抗弁は合理的な不正防止手続。' },
         { q: 'A former employee of Ledger LLP uses a password that was never disabled to log into Ledger LLP\'s system and copy client files, intending to sell them to a fraudster. Under the Computer Misuse Act 1990, the most serious offence committed is:', choices: ['Unauthorised access with intent to commit or facilitate further offences', 'Unauthorised access to computer material only', 'No offence, because the password had not been disabled', 'Unauthorised acts causing serious damage to national security'], answer: 0, explain: '退職後のアクセスに権限はない。パスワードが残っていても権限にはならない。データを売って詐欺に使わせる目的があるので s2。国家の安全への深刻な損害（s3ZA）ではない。' },
         { q: 'The directors of Delta Ltd continued to trade and take credit when they ought to have concluded that insolvent liquidation could not be avoided. They had no intention to defraud creditors. Delta Ltd is now in insolvent liquidation. The directors are most likely liable for:', choices: ['Fraudulent trading under s993 Companies Act 2006', 'Fraud in anticipation of winding up under s206 Insolvency Act 1986', 'Wrongful trading under s214 Insolvency Act 1986', 'Failure to prevent fraud under the Economic Crime and Corporate Transparency Act 2023'], answer: 2, explain: 'だます意図がないので不正取引ではない。知るべきだった後も取引を続けたので不当取引（民事）。財産を隠したわけではないので s206 でもない。Delta は小さな私会社で、防止懈怠の話でもない。' }
@@ -417,7 +427,9 @@
     { id: 'B107-6', lesson: 'B107', q: '不当取引の拠出額の目安は？', a: '知るべきだった日から清算開始までに増えた不足額（裁判所の裁量）' },
     { id: 'B108-1', lesson: 'B108', q: '犯罪の問題を解く順番は？', a: '誰が何をした → どの罪の要件 → 心の状態 → 抗弁 → 会社の責任' },
     { id: 'B108-2', lesson: 'B108', q: '会社が刑事責任を負う2つの道は？', a: '防止懈怠（贈賄・脱税ほう助・不正）と、上級管理職の経済犯罪の帰属' },
-    { id: 'B108-3', lesson: 'B108', q: 'マネロンを疑った従業員がすべきこと・してはいけないことは？', a: 'MLRO に報告する。相手に報告を知らせる（tipping off）のは罪' },
-    { id: 'B108-4', lesson: 'B108', q: '倒産の場面での3つの見分け方は？', a: 'だます意図→不正取引、知るべきだった→不当取引、財産・帳簿を隠す→s206・s208' }
+    { id: 'B108-3', lesson: 'B108', q: 'マネロンを疑った従業員がすべきこと・してはいけないことは？', a: 'できるだけ早く MLRO に報告。報告や捜査を相手に知らせると内報（tipping off）の罪' },
+    { id: 'B108-4', lesson: 'B108', q: '倒産の場面での3つの見分け方は？', a: 'だます意図→不正取引、知るべきだった→不当取引、財産・帳簿を隠す→s206・s208' },
+    { id: 'B108-5', lesson: 'B108', q: 'CDD はいつ、誰を確かめる？', a: '原則、取引関係を始める前に。顧客、25%超の実質的支配者、代わりに動く人（本人と任された権限）' },
+    { id: 'B108-6', lesson: 'B108', q: '取締役から未公表の買収提案を聞いた友人が、証券会社で株を買い兄に勧めた。罪は？', a: '取締役は開示、友人は取引と勧誘（兄が買わなくても成立）' }
   ]
 });

@@ -203,7 +203,7 @@
         },
         {
           title: '関連範囲と固定費',
-          paras: ['固定費が一定なのは関連範囲の中だけ。ボトル工場の機械で作れるのが 9,000個までなら、それを超えると機械をもう1台借りる費用がかかる。固定費は階段のように上がる（段階固定費、stepped fixed cost）。'],
+          paras: ['固定費が一定なのは関連範囲の中だけ。ボトル工場の機械で作れるのが 12,000個までなら、それを超えると機械をもう1台借りる費用がかかる。固定費は階段のように上がる（段階固定費、stepped fixed cost）。', '例: ここでは値引きはなく、売価 $25・変動費 $15 のままとする。12,000個までは固定費 $60,000、超えると $75,000。13,000個売ると、利益 ＝ $10 × 13,000 − $75,000 ＝ $55,000。固定費を $60,000 のままにすると $70,000 と多く見込んでしまう。'],
           note: { kind: 'warn', text: '「1個あたりの固定費が一定」は前提ではない。一定なのは総額で、1個あたりは作る数で変わる（$60,000 ÷ 6,000個 ＝ $10、÷ 8,000個 ＝ $7.50）。試験ではまちがった前提を選ぶ問題でよく出る。' }
         },
         {
@@ -225,7 +225,7 @@
         { q: 'A company gives customers a discount on the selling price of every unit when they buy in large quantities. Which assumption of CVP analysis does this break?', choices: ['Fixed costs are constant in total within the relevant range', 'Selling price per unit is constant at all levels of activity', 'Production volume equals sales volume', 'Variable cost per unit is constant at all levels of activity'], answer: 1, explain: '数量が多いと売価が下がるので「1単位の売価は一定」が崩れ、売上高線が直線でなくなる。ほかの選択肢は固定費・在庫・変動費についての前提。変動費単価の前提が崩れるのは、会社が材料を大量に買って割引を受けるとき。' },
         { q: 'Which of the following statements about CVP analysis is true?', choices: ['It can be used without splitting costs into fixed and variable elements', 'It assumes that total fixed costs rise in proportion to output', 'It is most reliable over the short term and within the relevant range', 'It assumes that the sales mix of several products changes with volume'], answer: 2, explain: '直線の近似が当てはまるのは、短期で関連範囲の中。原価を固定費と変動費に分けることは CVP の前提そのもの。固定費の総額は一定、組み合わせも一定と考えるので、残りの2つは逆。' },
         { q: '今期は作った数が売った数より多く、在庫が増えた。会社は全部原価計算で利益を報告している。CVP で予測した利益と比べると、報告された利益はどうなりやすい？', choices: ['固定製造間接費の一部が在庫に入るので、CVP の予測より大きくなる', '固定製造間接費の一部が在庫に入るので、CVP の予測より小さくなる', '在庫は利益に関係しないので、必ず一致する', '変動費が在庫に入らないので、CVP の予測より小さくなる'], answer: 0, explain: '在庫が増えると、全部原価計算では固定製造間接費の一部が期末在庫に入り、次の期へ繰り越される。今期の費用が減るので、固定費を全部その期の費用にする CVP（直接原価計算と同じ）の予測より利益が大きくなる。変動費はどちらの方法でも在庫に入る。' },
-        { q: 'ボトル工場（売価 $25、変動費 $15 は一定）。9,000個までは固定費 $60,000 だが、超えると機械をもう1台借りて固定費が $75,000 になる。9,500個売るときの利益は？', type: 'number', answer: 20000, unit: '$', explain: '9,500個は 9,000個を超えるので固定費は $75,000。利益 ＝ $10 × 9,500 − $75,000 ＝ $95,000 − $75,000 ＝ $20,000。固定費を $60,000 のままにすると $35,000 と予測してしまう。関連範囲を超えると、固定費の総額は一定でなくなる。' }
+        { q: 'ボトル工場（売価 $25、変動費 $15 は一定）。12,000個までは固定費 $60,000 だが、超えると機械をもう1台借りて固定費が $75,000 になる。12,500個売るときの利益は？', type: 'number', answer: 50000, unit: '$', explain: '12,500個は 12,000個を超えるので固定費は $75,000。利益 ＝ $10 × 12,500 − $75,000 ＝ $125,000 − $75,000 ＝ $50,000。固定費を $60,000 のままにすると $65,000 と予測してしまう。関連範囲を超えると、固定費の総額は一定でなくなる。' }
       ]
     }
   ],
@@ -247,6 +247,7 @@
     { id: 'M144-3', lesson: 'M144', q: 'CVP の前提: 在庫と製品は？', a: '生産量 ＝ 販売量。製品は1種類か、組み合わせ（sales mix）が一定' },
     { id: 'M144-4', lesson: 'M144', q: '関連範囲（relevant range）とは？', a: '固定費の総額や変動費単価が一定と言える活動量の幅' },
     { id: 'M144-5', lesson: 'M144', q: 'なぜ CVP には前提が要る？', a: '売上と原価を直線にするため。直線なら割り算1回で答えが出る' },
-    { id: 'M144-6', lesson: 'M144', q: '大口の値引きはどの前提を崩す？', a: '1単位の売価は販売量にかかわらず一定、という前提' }
+    { id: 'M144-6', lesson: 'M144', q: '大口の値引きはどの前提を崩す？', a: '1単位の売価は販売量にかかわらず一定、という前提' },
+    { id: 'M144-7', lesson: 'M144', q: '関連範囲を超えて生産すると固定費は？', a: '機械の追加などで階段のように上がる（段階固定費）。超えた後は新しい固定費で利益を計算し直す' }
   ]
 });

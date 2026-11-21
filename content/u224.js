@@ -181,9 +181,14 @@
           after: '最初の3つは、事務所の大きさと性質から見て適切な場合に求められる。社員がおらず、ほかの人と組んで業務もしない1人の事務所なら、責任者も MLRO も要らない。'
         },
         {
-          title: '(iii) 顧客の確認（customer due diligence、CDD）',
-          list: ['顧客が誰かを確かめ（identify）、信頼できる独立した書類で裏付ける（verify）', '実質的支配者（beneficial owner）を確かめる。例：株式や議決権の25%超を持つ人', '取引の目的と性質を理解する', '取引が始まった後も見続ける（ongoing monitoring）'],
-          after: '行う時：取引関係を始める時、一定額以上の一回限りの取引、マネロンの疑いがある時、前の確認情報が疑わしい時。'
+          title: '(iii) 顧客の確認（CDD）：誰を確かめるか',
+          list: ['顧客が誰かを確かめ（identify）、信頼できる独立した書類で裏付ける（verify）', '顧客の代わりに動く人（代理人など）も確かめて裏付け、本当に任されている（authorised）かも確かめる', '実質的支配者（beneficial owner）を確かめる。例：株式や議決権の25%超を持つ人', '取引の目的と性質を理解する'],
+          after: '例：社長の代わりに経理部長が依頼に来たら、部長の身元と、会社から任されている証拠（委任状など）の両方を確かめる。'
+        },
+        {
+          title: '(iii) 顧客の確認（CDD）：いつするか',
+          table: { caption: 'CDD の時期（MLR 2017）', head: ['時期', 'すること'], rows: [['始める時', '取引関係を始める前、または一定額以上の一回限りの取引の前に、裏付けまで終える'], ['取引の間', '取引を見続ける（ongoing monitoring）。事情が変わった時なども確認し直す'], ['特別なきっかけ', 'マネロンの疑いがある時、前の確認情報が疑わしい時、顧客のために会社を設立する時（1回だけの依頼でも）']] },
+          after: '例外は、業務を止めないために必要で、リスクが低い時だけ。その場合も関係を作る途中で、できるだけ早く終える。「関係が終わるまでに確認すればよい」は誤り。'
         },
         {
           title: '確認の強さを変える',
@@ -206,7 +211,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['5つの仕組み：リスク管理、内部統制、顧客の確認、依拠と記録の保存、モニタリングと周知', 'CDD＝顧客と実質的支配者を確かめ、目的を理解し、見続ける。高リスクは厳格な確認、低リスクは簡易な確認', '依拠しても責任は残る。記録は取引関係の終了から5年保存']
+          numbered: ['5つの仕組み：リスク管理、内部統制、顧客の確認、依拠と記録の保存、モニタリングと周知', 'CDD＝顧客・代理人・実質的支配者を、関係を始める前に確かめ、その後も見続ける。高リスクは厳格な確認、低リスクは簡易な確認', '依拠しても責任は残る。記録は取引関係の終了から5年保存']
         },
         {
           title: '英単語',
@@ -226,7 +231,8 @@
         { q: 'An accountancy firm takes on a new client who is a senior government minister of another country. Which level of customer due diligence should the firm apply?', choices: ['Simplified due diligence', 'No due diligence, because the client is a public official', 'Standard due diligence at the start of the relationship only', 'Enhanced due diligence'], answer: 3, explain: '外国の大臣は PEP（重要な公的地位にある人）に当たるので、厳格な確認（EDD）が必要。上級経営陣の承認と、財産と資金の出どころの確認をする。公務員だから確認を省く、は逆。' },
         { q: 'For how many years must customer due diligence records normally be kept after the business relationship has ended?', type: 'number', answer: 5, unit: '年', explain: '顧客の確認の書類と取引の記録は、取引関係が終わってから5年間保存する。' },
         { q: '会計事務所が、銀行がすでに行った顧客の確認に依拠（reliance）して新しい顧客を受け入れた。後で、確認に不備が見つかった。責任は誰にある？', choices: ['依拠した会計事務所に残る', '銀行だけが負う', '顧客だけが負う', '誰も負わない。依拠は規則で認められているから'], answer: 0, explain: '依拠は認められているが、責任までは移らない。不備の責任は依拠した側の事務所に残る。だから依拠する相手の確認の質も見ておく必要がある。' },
-        { q: '顧客の確認（CDD）について正しいのは？', choices: ['契約の最初に1回確かめれば、その後は不要', '取引関係が始まった後も、取引を見続ける必要がある', '会社の顧客なら会社だけ確かめればよく、実質的支配者は不要', '確認ができなくても、手数料が払われれば取引を始めてよい'], answer: 1, explain: 'CDD には継続的な監視（ongoing monitoring）が含まれる。会社が顧客なら、株式や議決権の25%超を持つ人などの実質的支配者も確かめる。確認ができない顧客とは取引を始めない。' }
+        { q: '顧客の確認（CDD）について正しいのは？', choices: ['契約の最初に1回確かめれば、その後は不要', '取引関係が始まった後も、取引を見続ける必要がある', '会社の顧客なら会社だけ確かめればよく、実質的支配者は不要', '確認ができなくても、手数料が払われれば取引を始めてよい'], answer: 1, explain: 'CDD には継続的な監視（ongoing monitoring）が含まれる。会社が顧客なら、株式や議決権の25%超を持つ人などの実質的支配者も確かめる。確認ができない顧客とは取引を始めない。' },
+        { q: 'Which of the following statements about customer due diligence (CDD) is NOT correct?', choices: ['CDD must be completed before a business relationship is established', 'A person acting on behalf of a client must be identified and verified', 'CDD is required when forming a company for a client', 'CDD need only be performed once a business relationship has come to an end'], answer: 3, explain: '裏付けは、取引関係を始める前（または取引をする前）に終えるのが原則。関係が終わってからでは遅く、これが誤り。顧客の代わりに動く人も確かめて裏付け、任されているかも確かめる。顧客のために会社を設立する時は、1回だけの依頼でも確認が要る。' }
       ]
     },
     {
@@ -326,6 +332,8 @@
     { id: 'B102-5', lesson: 'B102', q: '顧客の確認の記録の保存期間は？', a: '取引関係が終わってから5年' },
     { id: 'B102-6', lesson: 'B102', q: 'リスクベース・アプローチとは？', a: '危険の高い所に手間をかけ、低い所は軽くする考え方' },
     { id: 'B102-7', lesson: 'B102', q: '内部統制の例は？', a: '責任者の任命、社員の審査、独立した監査、MLRO の指名' },
+    { id: 'B102-8', lesson: 'B102', q: 'CDD の裏付けはいつまでに終える？（timing of CDD verification）', a: '取引関係を始める前、または取引をする前。例外は低リスクで業務を止めないため必要な時だけ' },
+    { id: 'B102-9', lesson: 'B102', q: '顧客の代わりに動く人（agent）には何をする？', a: '本人を確かめて裏付け、任されている（authorised）かも確かめる' },
     { id: 'B103-1', lesson: 'B103', q: 'Bribery Act 2010 の4つの犯罪は？', a: '贈賄（s1）、収賄（s2）、外国公務員への贈賄（s6）、営利団体の防止懈怠（s7）' },
     { id: 'B103-2', lesson: 'B103', q: 's7（防止懈怠）の唯一の抗弁は？', a: '贈賄を防ぐ適切な手続（adequate procedures）を整えていたこと' },
     { id: 'B103-3', lesson: 'B103', q: '適切な手続の6つの原則は？', a: '釣り合い、トップの関与、リスク評価、取引先の確認、周知と研修、モニタリング' },

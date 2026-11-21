@@ -225,13 +225,13 @@
         },
         {
           title: 'なぜ？ RI は ROI の弱点を補う',
-          paras: ['部門の ROI より低いが、資本コストより高い投資は、会社にはプラスなのに ROI を下げる。責任者の得と会社の得がずれる（目標の不一致）。RI なら、資本コストを上回る投資で必ず増える。'],
+          paras: ['部門の ROI より低いが資本コストより高い投資は、会社には得なのに ROI を下げる（目標の不一致）。RI は資金のコストを利益から引くので、この弱点を補う。'],
           table: {
             caption: 'ROI と RI の長所・短所',
             head: ['点', 'ROI', 'RI'],
             rows: [
-              ['長所', '率なので、規模の違う部門を比べやすい', '資本コストを上回る投資で増え、会社の目標と一致しやすい'],
-              ['短所', '会社に得な投資を断らせることがある', '金額なので大きい部門ほど有利。規模の違う部門を比べにくい']
+              ['長所', '率なので、規模の違う部門を比べやすい', '① 投下資本 × 資本コストを引くので、資産をまかなう資金のコストを責任者に意識させる（関西事業部なら $72,000）② リスクの違う部門には違う資本コスト率を使える ③ 資本コストを上回る投資で必ず増え、会社の目標と一致しやすい'],
+              ['短所', '会社に得な投資を断らせることがある。資金のコストが指標に出ないので、責任者に意識させない', '金額なので大きい部門ほど有利。規模の違う部門を比べにくい']
             ]
           }
         },
@@ -259,7 +259,7 @@
       ],
       quiz: [
         { q: 'Division X has controllable profit of $45,000 and capital employed of $300,000. The cost of capital is 10%. What is the residual income of Division X?', type: 'number', answer: 15000, unit: '$', explain: 'みなしの利息は $300,000 × 10% ＝ $30,000。RI ＝ $45,000 − $30,000 ＝ $15,000。$45,000 × 10% を引いて $40,500 とするのは間違い。' },
-        { q: 'B事業部の利益は $72,000、投下資本は $480,000。ROI は何%？', type: 'number', answer: 15, unit: '%', explain: '$72,000 ÷ $480,000 × 100% ＝ 15%。' },
+        { q: 'Which of the following statements are advantages of residual income compared with return on investment?\n(1) It makes divisional managers aware of the cost of financing their divisions\n(2) It allows easy comparison of divisions of different sizes\n(3) It encourages managers to accept projects earning more than the cost of capital\n(4) It is a relative (percentage) measure', choices: ['(1) and (3) only', '(2) and (4) only', '(1), (2) and (3)', '(1), (3) and (4)'], answer: 0, explain: '(1) RI の長所。投下資本 × 資本コスト（みなしの利息）を利益から引くので、部門の資産をまかなう資金のコストを責任者が意識する。(2) ROI の長所。RI は金額なので大きい部門ほど有利で、規模の違う部門を比べにくい。(3) RI の長所。資本コストを上回る投資なら RI は必ず増える（目標の一致）。(4) 率（%）で表すのは ROI。RI は金額で表す。' },
         { q: 'Which of the following is the most appropriate measure of the performance of a revenue centre manager?', choices: ['Return on investment', 'Actual sales revenue compared with budgeted sales revenue', 'Cost per unit produced', 'Residual income'], answer: 1, explain: '収益センターは売上だけに責任を持つので、売上と予算の比較が合う。ROI と RI は資産に責任を持つ投資センターの指標、1単位あたりの原価はコストセンターの指標。' },
         { q: 'Which of the following is a disadvantage of residual income compared with return on investment?', choices: ['It is difficult to use for comparing divisions of different sizes', 'It may lead managers to reject projects that earn more than the cost of capital', 'It ignores the cost of capital', 'It can only be used for cost centres'], answer: 0, explain: 'RI は金額なので、大きい部門ほど大きくなりやすく、規模の違う部門を比べにくい。2つ目は ROI の弱点。RI は資本コストを引いて計算するので、3つ目は逆。RI は投資センターの指標。' },
         { q: 'C事業部の ROI は 18%、会社の資本コストは 12%。ROI 15% の投資案がある。ROI で評価される責任者はどうしやすく、会社にとってはどうか？', choices: ['ROI が上がるので受けやすい。会社にとっても得な投資', 'ROI が下がるので断りやすい。会社にとっても損な投資', 'ROI が下がるので断りやすい。会社にとっては得な投資', 'ROI は変わらないので、どちらでもよい'], answer: 2, explain: '15% は部門の 18% より低いので、受けると部門の ROI は下がる。でも資本コスト 12% より高いので、会社にとっては得。これが ROI の弱点（目標の不一致）。' },
@@ -401,6 +401,7 @@
     { id: 'M023-4', lesson: 'M023', q: 'RI の弱点は？', a: '金額なので、規模の違う部門を比べにくい' },
     { id: 'M023-5', lesson: 'M023', q: '利益センターの店長を評価する利益は？', a: '管理可能利益。本社費の配分額など、決められない費用は除く' },
     { id: 'M023-6', lesson: 'M023', q: '収益センターに向く業績指標を2つ', a: '売上と予算の差、市場シェア（販売数量・売上の伸び率も可）' },
+    { id: 'M023-7', lesson: 'M023', q: 'なぜ RI は、部門の資金のコストを責任者に意識させる？', a: '利益から「投下資本 × 資本コスト」（みなしの利息）を引くから' },
     { id: 'M024-1', lesson: 'M024', q: '素価（prime cost）とは？', a: '直接材料費 ＋ 直接労務費 ＋ 直接経費の合計' },
     { id: 'M024-2', lesson: 'M024', q: '高低点法で最高と最低を選ぶ基準は？', a: '原価ではなく、量（活動量）の最高と最低' },
     { id: 'M024-3', lesson: 'M024', q: '高低点法で階段状の固定費があるときは？', a: '変動費を出す前に、段の分の固定費を足し引きして段をそろえる' },

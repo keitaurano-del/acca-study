@@ -116,11 +116,17 @@
         },
         {
           title: '登記の後で、名前の変更を命じられる場合',
-          table: { caption: '大臣・裁定人による変更の命令', head: ['理由', '期限など'], rows: [['登記簿の名前に似すぎている（too like、s67）', '登記から12か月以内に命令できる'], ['登記の時に誤解を招く情報を出した（s75）', '登記から5年以内に命令できる'], ['事業の内容をひどく誤解させ、公衆に害が出そう（s76）', '6週間以内に変更。会社は3週間以内に裁判所へ取消しを申し立てられる'], ['他人ののれんのある名前と同じか似ている（s69）', '会社名の裁定人への異議（次のスライド）']] }
+          table: { caption: '大臣・裁定人による変更の命令', head: ['理由', '期限など'], rows: [['登記簿の名前に似すぎている（too like、s67）', '登記から12か月以内に命令できる'], ['登記の時に誤解を招く情報を出した（s75）', '登記から5年以内に命令できる'], ['事業の内容をひどく誤解させ、公衆に害が出そう（s76）', '6週間以内に変更。会社は3週間以内に裁判所へ取消しを申し立てられる'], ['他人ののれんのある名前と同じか似ている（s69）', '会社名審判所（Company Names Tribunal）の裁定人への異議（次のスライド）']] }
         },
         {
           title: '会社名の裁定人（company names adjudicator）',
-          paras: ['ある名前に評判（goodwill）を持つ人は、その名前と同じか、つながりがあると誤解させるほど似た名前で登記した会社に異議を出せる（s69）。会社が次のどれかを示せば、異議は退けられる。'],
+          paras: ['ある名前に評判（goodwill）を持つ人は、同じ名前や、つながりを誤解させるほど似た名前で登記した会社に異議を出せる（s69）。判断するのが会社名の裁定人。', '裁定人は、英国知的財産庁（UK Intellectual Property Office）の中の会社名審判所（Company Names Tribunal）にいる。試験の選択肢では、どちらの名前でも同じ機関を指す。'],
+          table: { caption: '似た名前を止める3つの道', head: ['手段', '誰が・いつ'], rows: [['s67 の変更命令（too like）', '大臣（Secretary of State）が自分の判断で。登記から12か月以内'], ['s69 の異議', '評判を持つ人が申し立て、審判所の裁定人が決める'], ['パッシング・オフ（passing off）', '評判を持つ人が裁判所に訴え、使用の差止めを求める']] },
+          note: { kind: 'tip', text: '例: 登記から3年たった Kumo Trading Ltd の名前は、s67 ではもう変えさせられない。Kumo の名前に評判を持つ会社は、s69 で審判所に異議を出せる。' }
+        },
+        {
+          title: '異議に対する会社の反論',
+          paras: ['会社が次のどれかを示せば、s69 の異議は退けられる。'],
           list: ['相手が評判を得る前から、その名前で登記していた', 'その名前で営業している、または営業の準備で大きな費用をかけた', '会社設立の業者が、売るために普通の条件で登記した', '善意でその名前を選んだ', '相手の利益をほとんど害していない'],
           after: 'ただし、最初の3つを示しても、相手からお金を取る、または相手がその名前で登記するのを妨げることが主な目的だったと示されれば、異議が認められる（s69(5)）。裁定人は名前の変更を命じ、従わなければ新しい名前を決める（s73）。'
         },
@@ -139,7 +145,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['公開会社は plc、私会社は Ltd で終わる。同じ名前・不快な名前は登記できず、特別な語は大臣の承認が要る', '似すぎた名前は12か月以内に変更命令。のれんのある人は会社名の裁定人に異議を出せる', '社名変更は特別決議。効力は新しい証明書の日から。権利・義務はそのまま']
+          numbered: ['公開会社は plc、私会社は Ltd で終わる。同じ名前・不快な名前は登記できず、特別な語は大臣の承認が要る', '似すぎた名前は大臣が12か月以内に変更命令（s67）。のれんのある人は会社名審判所の裁定人に異議を出せる（s69）', '社名変更は特別決議。効力は新しい証明書の日から。権利・義務はそのまま']
         },
         {
           title: '英単語',
@@ -148,6 +154,7 @@
             ['sensitive words and expressions', 'センシティヴ', '承認が必要な特別な語'],
             ['too like', 'トゥー ライク', '（既存の名前に）似すぎている'],
             ['company names adjudicator', 'アジュディケイター', '会社名の裁定人'],
+            ['Company Names Tribunal', 'トリビューナル', '会社名審判所（裁定人がいる、英国知的財産庁の中の機関）'],
             ['goodwill', 'グッドウィル', 'のれん（顧客をひきつける評判）'],
             ['passing off', 'パッシング オフ', '他人の商品・事業と誤認させる行為']
           ]
@@ -158,6 +165,7 @@
         { q: '登記簿にすでに「Sakura Trading Ltd」がある。新しい会社が「Sakura Trading Limited」で登記を申請した。どうなる？', choices: ['Ltd と Limited で違う名前なので、登記できる', '住所が違えば登記できる', '同じ名前とみなされ、登記できない', '登記はできるが、5年以内に変更を命じられる'], answer: 2, explain: 's66。同じかどうかは、Ltd と Limited の違いなどを無視して比べる。住所が違えば同じ商号でも登記できるのは日本の商業登記のルールで、英国では使えない。' },
         { q: 'A company is registered with a name which is too like a name already on the registrar\'s index. Within what period after registration may the Secretary of State direct the company to change its name?', type: 'number', answer: 12, unit: 'か月', explain: 's67。似すぎた名前（too like）の変更命令は、登記から12か月以内。登記の時に誤解を招く情報を出した場合（s75）は5年以内。' },
         { q: 'A person with goodwill in a name objects to the company names adjudicator about a company with a similar name. Which of the following would cause the objection to be upheld, even if the company could otherwise show a defence?', choices: ['The company adopted the name in good faith', 'The main purpose of registering the name was to obtain money from the objector or to prevent the objector from registering the name', 'The company was operating under the name before the objector acquired goodwill', 'The interests of the objector are not adversely affected to any significant extent'], answer: 1, explain: 's69(5)。ほかの3つは会社側の反論（defence）になる。お金を取る、または相手の登記を妨げるのが主な目的だったと示されれば、反論があっても異議は認められる。' },
+        { q: 'Kumo Ltd has goodwill in the name \'Kumo\'. Three years ago another company was registered as \'Kumo Trading Ltd\'. Kumo Ltd wants the name changed without bringing court proceedings. To whom should it object?', choices: ['The Secretary of State, who may direct a change of a name that is too like another name', 'A company names adjudicator at the Company Names Tribunal of the UK Intellectual Property Office', 'The High Court, by bringing an action for passing off', 'The registrar of companies, who must refuse any name similar to an existing name'], answer: 1, explain: 's69。評判を持つ人の異議は、英国知的財産庁の会社名審判所（Company Names Tribunal）にいる裁定人が判断する。どちらの名前で出ても同じ機関。大臣の s67 の命令は登記から12か月以内なので、3年後では使えない。パッシング・オフは裁判所の手続き。登記所が登記の時に断るのは「同じ」名前（s66）で、似た名前ではない。' },
         { q: 'A private company passes a special resolution to change its name. When does the change of name take effect?', choices: ['From the date on which the new certificate of incorporation is issued', 'From the date on which the special resolution is passed', 'From the date on which the members are notified', '15 days after the resolution is passed'], answer: 0, explain: 's81(1)。決議の日ではなく、登記所が新しい名前の証明書を出した日から。名前が変わっても、会社の権利・義務や進行中の裁判には影響しない。' }
       ]
     },
@@ -257,6 +265,7 @@
     { id: 'B061-4', lesson: 'B061', q: '会社名の裁定人に異議を出せるのは誰？', a: 'その名前に評判（goodwill）を持つ人' },
     { id: 'B061-5', lesson: 'B061', q: '社名変更の方法と効力の発生日は？', a: '特別決議。新しい登記の証明書が出た日から' },
     { id: 'B061-6', lesson: 'B061', q: '日本と英国の会社名のルールの違いは？', a: '日本は住所が違えば同じ商号も可。英国は登記簿全体で同じ名前は不可' },
+    { id: 'B061-7', lesson: 'B061', q: 'Company Names Tribunal = ?', a: 'The office of the company names adjudicators who decide s69 objections' },
     { id: 'B062-1', lesson: 'B062', q: '小会社の3つの基準（2025年4月以降）は？', a: '売上 £15m・総資産 £7.5m・従業員 50人以下のうち2つ以上' },
     { id: 'B062-2', lesson: 'B062', q: '小会社の区分が変わるのはいつ？', a: '基準を2年続けて満たした（外れた）とき。公開会社は常に対象外' },
     { id: 'B062-3', lesson: 'B062', q: 'plc の株式を割り当てる時の最低の払込みは？', a: '額面の4分の1以上とプレミアム全額' },

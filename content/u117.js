@@ -355,7 +355,7 @@
         {
           title: '同じデータを積み上げ棒グラフで',
           svg: `<svg viewBox="0 0 440 290" role="img" aria-label="地域別売上の積み上げ棒グラフ。単位は千ドル。2025年は下から North 240、South 360、East 200 で合計800。2026年は North 288、South 342、East 270 で合計900" font-size="14"><text x="20" y="30" font-size="12.5" fill="var(--quiet)">$000</text><path d="M70 210 H420 M70 170 H420 M70 130 H420 M70 90 H420 M70 50 H420" fill="none" stroke="var(--edge)" stroke-width="1" stroke-dasharray="3 4"/><path d="M70 250 H420" fill="none" stroke="var(--edge)" stroke-width="1.5"/><text x="62" y="254" text-anchor="end" font-size="12.5" fill="var(--quiet)">0</text><text x="62" y="214" text-anchor="end" font-size="12.5" fill="var(--quiet)">200</text><text x="62" y="174" text-anchor="end" font-size="12.5" fill="var(--quiet)">400</text><text x="62" y="134" text-anchor="end" font-size="12.5" fill="var(--quiet)">600</text><text x="62" y="94" text-anchor="end" font-size="12.5" fill="var(--quiet)">800</text><text x="62" y="54" text-anchor="end" font-size="12.5" fill="var(--quiet)">1,000</text><rect x="120" y="202" width="80" height="48" fill="none" stroke="var(--ink)" stroke-width="1.5"/><rect x="120" y="130" width="80" height="72" fill="none" stroke="var(--ink)" stroke-width="1.5"/><rect x="120" y="90" width="80" height="40" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="160" y="230" text-anchor="middle" font-size="12.5" fill="var(--ink)">North</text><text x="160" y="170" text-anchor="middle" font-size="12.5" fill="var(--ink)">South</text><text x="160" y="114" text-anchor="middle" font-size="12.5" fill="var(--ink)">East</text><text x="206" y="206" font-size="12.5" fill="var(--ink)">240</text><text x="206" y="134" font-size="12.5" fill="var(--ink)">600</text><text x="206" y="94" font-size="12.5" fill="var(--ink)">800</text><rect x="270" y="192.4" width="80" height="57.6" fill="none" stroke="var(--ink)" stroke-width="1.5"/><rect x="270" y="124" width="80" height="68.4" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><rect x="270" y="70" width="80" height="54" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="310" y="225" text-anchor="middle" font-size="12.5" fill="var(--ink)">North</text><text x="310" y="162" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--ink)">South</text><text x="310" y="101" text-anchor="middle" font-size="12.5" fill="var(--ink)">East</text><text x="356" y="196" font-size="12.5" fill="var(--ink)">288</text><text x="356" y="128" font-size="12.5" fill="var(--ink)">630</text><text x="356" y="74" font-size="12.5" fill="var(--ink)">900</text><text x="160" y="274" text-anchor="middle" fill="var(--ink)">2025</text><text x="310" y="274" text-anchor="middle" fill="var(--ink)">2026</text></svg>`,
-          caption: '棒の右の数字は、区切りの境目の値（下からの累計）。1つの区切りの値は「上の境目 − 下の境目」で読む。2026年の South は 630 − 288 ＝ 342。'
+          caption: '棒の右の数字は、区切りの境目の値（下からの累計）。1つの区切りの値は「上の境目 − 下の境目」で読む。2026年の South は 630 − 288 ＝ 342。百分率の積み上げ棒グラフ（どの棒も100%）は割合しか示さない。金額は「合計 × 区切りの %」で、合計が書いてあるときだけ出せる。例: 合計 $800,000 で材料費 35% なら $280,000。'
         },
         {
           title: '例題: 円グラフから金額を出す',
@@ -379,7 +379,7 @@
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['増減率 ＝（今期 − 前期）÷ 前期 × 100', '構成比 ＝ 部分 ÷ 合計 × 100。構成比どうしの差は「ポイント」で言う', '円グラフの金額 ＝ 角度 ÷ 360 × 合計。積み上げ棒の区切りの値 ＝ 上の境目 − 下の境目']
+          numbered: ['増減率 ＝（今期 − 前期）÷ 前期 × 100', '構成比 ＝ 部分 ÷ 合計 × 100。構成比どうしの差は「ポイント」で言う', '円グラフ・百分率の積み上げ棒の金額 ＝ 合計 × 割合（円は角度 ÷ 360）。積み上げ棒の区切りの値 ＝ 上の境目 − 下の境目']
         },
         {
           title: '英単語',
@@ -397,7 +397,7 @@
       ],
       quiz: [
         { q: 'Sales were $250,000 in 20X5 and $290,000 in 20X6. What was the percentage increase in sales?', type: 'number', answer: 16, unit: '%', explain: '増減額 $290,000 − $250,000 ＝ $40,000。前期で割る: 40,000 ÷ 250,000 × 100 ＝ 16%。今期で割ると 13.8% になって誤り。' },
-        { q: 'A pie chart shows total costs of $720,000. The sector representing labour costs has an angle of 90 degrees. What are the labour costs?', type: 'number', answer: 180000, unit: '$', explain: '90 ÷ 360 ＝ 25%。$720,000 × 25% ＝ $180,000。角度の 90 をそのまま割合（90%）と読まない。' },
+        { q: 'A percentage component bar shows total costs of $600,000; materials are 40% of the bar. What is the materials cost?', type: 'number', answer: 240000, unit: '$', explain: '金額 ＝ 合計 × 区切りの %: $600,000 × 40% ＝ $240,000。百分率の積み上げ棒グラフは、どの棒も 100% にそろえて割合（構成比）だけを示す。棒の長さから金額は読めないので、合計が与えられたときだけ金額にできる。40% を答えたり $40,000 と読んだりしない。円グラフも同じで、角度 ÷ 360 が割合、金額 ＝ 合計 × 割合。' },
         { q: '2025年に構成比 45% だった South が、2026年には 38% になった。正しい説明は？', choices: ['構成比が 7% 下がった', '売上が 7% 減った', '構成比が 7ポイント下がった', '売上が 7ポイント減った'], answer: 2, explain: '割合どうしの差は「ポイント」で言う: 45% − 38% ＝ 7ポイント。構成比そのものの減り方は 7 ÷ 45 ＝ 約16%。South の売上の減少率は (342 − 360) ÷ 360 ＝ −5% で、構成比の変化とは別の数字。' },
         { q: 'In a component bar chart (figures in $000), the bar for Year 2 shows Product A from 0 to 150, Product B from 150 to 270 and Product C from 270 to 400. What were the sales of Product B in Year 2?', choices: ['$270,000', '$150,000', '$130,000', '$120,000'], answer: 3, explain: '区切りの値は上の境目 − 下の境目: 270 − 150 ＝ 120（$000）→ $120,000。$270,000 は上の境目（A と B の合計）を読んだ答え。$150,000 は A、$130,000 は C（400 − 270）。' },
         { q: 'A店の売上 $950,000 と、B店の $1,000,000 を棒グラフで比べている。縦軸は $900,000 から始まっていて、B店の棒がA店の2倍の長さに見える。正しい読み取りは？', choices: ['B店はA店の約2倍', 'B店はA店より約5%多いだけ', 'B店はA店より50%多い', '縦軸の始まりは、読み取りに関係ない'], answer: 1, explain: '差は $50,000。50,000 ÷ 950,000 ＝ 約5.3%。縦軸が 0 から始まらないので、棒の長さ（50 と 100）が実際の比率を表していない。数字に戻して確かめる。' },
@@ -433,7 +433,7 @@
     { id: 'M069-1', lesson: 'M069', q: '増減率の式は？', a: '（今期 − 前期）÷ 前期 × 100。前期（比べる元）で割る' },
     { id: 'M069-2', lesson: 'M069', q: '構成比の式は？', a: '部分 ÷ 合計 × 100' },
     { id: 'M069-3', lesson: 'M069', q: '構成比が45%から38%になった。どう言う？', a: '7ポイント下がった（7%下がった、ではない）' },
-    { id: 'M069-4', lesson: 'M069', q: '円グラフの角度から金額を出す式は？', a: '角度 ÷ 360 × 合計' },
+    { id: 'M069-4', lesson: 'M069', q: '円グラフや百分率の積み上げ棒グラフから金額を出すには？', a: '金額 ＝ 合計 × 割合（円は角度 ÷ 360）。割合だけのグラフは合計がないと金額にならない' },
     { id: 'M069-5', lesson: 'M069', q: '積み上げ棒グラフの1区切りの値の読み方は？', a: '上の境目 − 下の境目' },
     { id: 'M069-6', lesson: 'M069', q: '散布図で相関が見えたら、因果も言える？', a: '言えない。相関と因果は別。外れ値は理由を調べる' },
     { id: 'M069-7', lesson: 'M069', q: 'グラフを読むとき最初に確かめることは？', a: '表題・期間・単位と、目盛り・軸が0から始まるか' }

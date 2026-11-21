@@ -120,7 +120,7 @@
         },
         {
           title: '会社名を守る3つのルート',
-          table: { caption: 'B061 の会社法の手続きとパッシング・オフ', head: ['ルート', '判断する人', '使う場面'], rows: [['似すぎた名前の変更命令（CA 2006 s67）', '大臣（Secretary of State）', '登記から12か月以内'], ['会社名の裁定人への異議（s69）', '会社名の裁定人（company names adjudicator）', 'その名前にのれんがある人'], ['パッシング・オフ', '裁判所', '会社名に限らず、商品名・包装も。差止めとお金の救済']] },
+          table: { caption: 'B061 の会社法の手続きとパッシング・オフ', head: ['ルート', '判断する人', '使う場面'], rows: [['似すぎた名前の変更命令（CA 2006 s67）', '大臣（Secretary of State）', '登記から12か月以内'], ['会社名の裁定人への異議（s69）', '会社名の裁定人（company names adjudicator、Company Names Tribunal）', 'その名前にのれんがある人'], ['パッシング・オフ', '裁判所', '会社名に限らず、商品名・包装も。差止めとお金の救済']] },
           after: '会社法の手続きは、登記された名前を直すだけ。パッシング・オフは、紛らわしい商売そのものを止め、損害の埋め合わせも求められる。'
         },
         {
@@ -149,7 +149,8 @@
             ['damage', 'ダミッジ', '損害'],
             ['tort', 'トート', '不法行為'],
             ['get-up', 'ゲットアップ', '包装・外装の見た目'],
-            ['classic trinity', 'クラシック トリニティ', '3要件（のれん・誤解・損害）']
+            ['classic trinity', 'クラシック トリニティ', '3要件（のれん・誤解・損害）'],
+            ['Company Names Tribunal', 'カンパニー ネームズ トリビューナル', '会社名の裁定人が s69 の異議を判断する場']
           ]
         }
       ],
@@ -158,7 +159,8 @@
         { q: 'A new business has created a distinctive name and logo but has not yet started trading or acquired any customers. Another business starts using a very similar name. Why is an action for passing off likely to fail?', choices: ['Passing off only protects registered trade marks', 'The new business has no goodwill to protect', 'The other business did not intend to deceive anyone', 'Passing off only applies to company names'], answer: 1, explain: 'のれんは、客を引きつける力で、実際の営業から生まれる。客がいなければのれんがない。パッシング・オフは登録のない名前を守る仕組みで、会社名に限らない。だます意図は要件ではない。' },
         { q: 'Ewing v Buttercup Margarine（1917）の結論として正しいものはどれ？', choices: ['会社名は登記されていたので、パッシング・オフは成立しないとした', '原告は名前を商標登録していなかったので、訴えを退けた', '2社の事業が同じ地域になかったので、混同のおそれはないとした', '「Buttercup Dairy」の店を持つ原告ののれんを守り、似た名前の会社の名前の使用を差し止めた'], answer: 3, explain: '会社名を正しく登記しても、パッシング・オフの責任は免れない。原告の事業が将来広がれば客が混同するとして、差止めが認められた。商標登録は要件ではない。' },
         { q: 'Shortly after a merger of Glaxo plc and Wellcome plc was announced, two individuals registered a company called Glaxowellcome Ltd, intending to sell it to the merged group for a large sum. What did the court do?', choices: ['It refused relief because the company name had been validly registered', 'It awarded damages only, because no goods had been sold', 'It ordered the individuals to change the name of the company', 'It refused relief because more than 12 months had passed since registration'], answer: 2, explain: 'Glaxo v Glaxowellcome（1996）。名前を高く売るための登記は、だますための道具として、名前の変更を命じた。会社名の登記は有効でも、パッシング・オフから守られない。12か月の期限は大臣の変更命令（s67）の話で、裁判所の救済には関係ない。' },
-        { q: 'E社は F社の評判を知らず、たまたま F社によく似た店名と看板で営業を始めた。客は E社を F社の支店だと思っている。正しいものはどれ？', choices: ['パッシング・オフは成立しうる。誤解させる表示に、だます意図は必要ない', 'E社に悪意がないので、パッシング・オフは成立しない', 'F社が商標登録していない限り、何もできない', '会社法の手続きしか使えない'], answer: 0, explain: '誤解させる表示は、客が誤解すれば足り、E社の意図は問わない。登録は不要。のれん・誤解・損害がそろえば成立する。' }
+        { q: 'E社は F社の評判を知らず、たまたま F社によく似た店名と看板で営業を始めた。客は E社を F社の支店だと思っている。正しいものはどれ？', choices: ['パッシング・オフは成立しうる。誤解させる表示に、だます意図は必要ない', 'E社に悪意がないので、パッシング・オフは成立しない', 'F社が商標登録していない限り、何もできない', '会社法の手続きしか使えない'], answer: 0, explain: '誤解させる表示は、客が誤解すれば足り、E社の意図は問わない。登録は不要。のれん・誤解・損害がそろえば成立する。' },
+        { q: 'G Ltd has goodwill in the name "Lumen". A new company is registered as Lumen Lights Ltd, a name similar enough to suggest a connection with G Ltd. G Ltd wishes to object under s69 of the Companies Act 2006 rather than bring a court action. Who decides the objection?', choices: ['The Secretary of State, within 12 months of registration', 'A company names adjudicator of the Company Names Tribunal', 'The High Court, in an action for passing off', 'The registrar of companies, when the name is first registered'], answer: 1, explain: 's69 の異議は、会社名の裁定人（Company Names Tribunal）が判断し、名前の変更を命じられる。大臣の12か月以内の命令は s67 の「似すぎた名前」の別ルート。裁判所はパッシング・オフ。登記所は登記の時に同じ名前を断るだけで、のれんの有無は判断しない。' }
       ]
     },
     {
@@ -336,6 +338,7 @@
     { id: 'B114-4', lesson: 'B114', q: 'のれん（goodwill）とは？', a: '客を引きつける力。英国内に客が必要で、海外の評判だけでは足りない' },
     { id: 'B114-5', lesson: 'B114', q: 'Ewing v Buttercup Margarine の結論は？', a: '似た名前の会社の名前の使用を差し止めた。登記してもパッシング・オフは免れない' },
     { id: 'B114-6', lesson: 'B114', q: 'なぜ登録なしでもパッシング・オフで守られる？', a: 'のれんは営業で積み上げた財産で、ただ乗りして客を奪うのは不公平だから' },
+    { id: 'B114-7', lesson: 'B114', q: 's69 の会社名の異議を判断するのは誰？', a: '会社名の裁定人（company names adjudicator）。Company Names Tribunal で判断する' },
     { id: 'B115-1', lesson: 'B115', q: '知的財産の主な民事の救済は？', a: '差止め、損害賠償か利益の返還、引渡し・廃棄' },
     { id: 'B115-2', lesson: 'B115', q: '損害賠償と利益の返還は両方取れる？', a: '取れない。どちらか1つを選ぶ（election）' },
     { id: 'B115-3', lesson: 'B115', q: '仮差止めの基準（American Cyanamid）は？', a: '重大な問題があるか、損害賠償で足りるか、不都合のバランス' },

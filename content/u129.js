@@ -241,7 +241,7 @@
         },
         {
           title: '固定費は配賦して原価にする',
-          paras: ['固定製造間接費（fixed production overhead）は、工場の家賃や管理者の給料など、作る量で変わらない費用。標準全部原価計算では、予算の生産量で割った標準配賦率で、1脚ずつに配賦する。', '椅子工房: 予算 $40,000 ÷ 予算生産量 2,000脚 ＝ 1脚 $20（1脚 2時間なので1時間 $10）。今月は 1,900脚作り、実際の固定費は $41,500。'],
+          paras: ['固定製造間接費（fixed production overhead）は、工場の家賃や管理者の給料など、作る量で変わらない費用。標準全部原価計算では、予算の生産量で割った標準配賦率で、1脚ずつに配賦する。', '椅子工房: 今月の予算 $32,000 ÷ 予算生産量 2,000脚 ＝ 1脚 $16。1脚 2時間なので1時間 $8 で、M117 の標準原価カードと同じ配賦率。今月は 1,900脚作り、実際の固定費は $33,500。'],
           formula: '標準配賦率 ＝ 予算の固定費 ÷ 予算の生産量（または予算の時間）'
         },
         {
@@ -251,29 +251,29 @@
           formula: '総差異 ＝ 予算差異 ＋ 操業度差異'
         },
         {
-          svg: `<svg viewBox="0 0 440 262" role="img" aria-label="固定製造間接費の差異の3列。実際の固定費と予算の固定費の差が予算差異。予算の固定費と配賦した額の差が操業度差異。両端の差が総差異" font-size="14"><text x="20" y="26" font-size="17" font-weight="600" fill="var(--ink)">固定費も3列で並べる</text><rect x="20" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="80" y="66" text-anchor="middle" fill="var(--ink)">実際の固定費</text><text x="80" y="90" text-anchor="middle" fill="var(--quiet)">actual</text><text x="80" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$41,500</text><rect x="160" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="220" y="66" text-anchor="middle" fill="var(--ink)">予算の固定費</text><text x="220" y="90" text-anchor="middle" fill="var(--quiet)">budget</text><text x="220" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$40,000</text><rect x="300" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="360" y="66" text-anchor="middle" fill="var(--ink)">配賦した額</text><text x="360" y="90" text-anchor="middle" fill="var(--quiet)">1,900 × $20</text><text x="360" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$38,000</text><path d="M80,134 L80,144 L220,144 L220,134" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><path d="M220,134 L220,144 L360,144 L360,134" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><text x="150" y="166" text-anchor="middle" fill="var(--ink)">予算差異</text><text x="150" y="186" text-anchor="middle" fill="var(--ink)">$1,500 A</text><text x="290" y="166" text-anchor="middle" fill="var(--ink)">操業度差異</text><text x="290" y="186" text-anchor="middle" fill="var(--ink)">$2,000 A</text><path d="M80,198 L80,208 L360,208 L360,198" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><rect x="130" y="216" width="180" height="32" rx="8" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="220" y="237" text-anchor="middle" font-weight="600" fill="var(--ink)">総差異 $3,500 A</text></svg>`,
-          caption: '真ん中が「予算の固定費」になるのが材料・労務とのちがい。総差異 $3,500 A は、固定費の過小配賦と同じ額。'
+          svg: `<svg viewBox="0 0 440 262" role="img" aria-label="固定製造間接費の差異の3列。実際の固定費と予算の固定費の差が予算差異。予算の固定費と配賦した額の差が操業度差異。両端の差が総差異" font-size="14"><text x="20" y="26" font-size="17" font-weight="600" fill="var(--ink)">固定費も3列で並べる</text><rect x="20" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="80" y="66" text-anchor="middle" fill="var(--ink)">実際の固定費</text><text x="80" y="90" text-anchor="middle" fill="var(--quiet)">actual</text><text x="80" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$33,500</text><rect x="160" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="220" y="66" text-anchor="middle" fill="var(--ink)">予算の固定費</text><text x="220" y="90" text-anchor="middle" fill="var(--quiet)">budget</text><text x="220" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$32,000</text><rect x="300" y="42" width="120" height="86" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="360" y="66" text-anchor="middle" fill="var(--ink)">配賦した額</text><text x="360" y="90" text-anchor="middle" fill="var(--quiet)">1,900 × $16</text><text x="360" y="114" text-anchor="middle" font-weight="600" fill="var(--ink)">$30,400</text><path d="M80,134 L80,144 L220,144 L220,134" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><path d="M220,134 L220,144 L360,144 L360,134" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><text x="150" y="166" text-anchor="middle" fill="var(--ink)">予算差異</text><text x="150" y="186" text-anchor="middle" fill="var(--ink)">$1,500 A</text><text x="290" y="166" text-anchor="middle" fill="var(--ink)">操業度差異</text><text x="290" y="186" text-anchor="middle" fill="var(--ink)">$1,600 A</text><path d="M80,198 L80,208 L360,208 L360,198" fill="none" stroke="var(--quiet)" stroke-width="1.5"/><rect x="130" y="216" width="180" height="32" rx="8" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/><text x="220" y="237" text-anchor="middle" font-weight="600" fill="var(--ink)">総差異 $3,100 A</text></svg>`,
+          caption: '真ん中が「予算の固定費」になるのが材料・労務とのちがい。総差異 $3,100 A は、固定費の過小配賦と同じ額。'
         },
         {
           title: '例題: 椅子工房の固定費の差異',
           example: {
-            problem: '固定製造間接費の予算 $40,000、予算生産量 2,000脚。今月は 1,900脚作り、実際の固定費は $41,500。標準全部原価計算で、総差異・予算差異・操業度差異を出す。',
-            steps: ['標準配賦率 ＝ $40,000 ÷ 2,000 ＝ 1脚 $20', '配賦した額 ＝ 1,900 × $20 ＝ $38,000。総差異 ＝ $38,000 − $41,500 ＝ −$3,500 → $3,500 A', '予算差異 ＝ $40,000 − $41,500 ＝ −$1,500 → $1,500 A', '操業度差異 ＝（1,900 − 2,000）× $20 ＝ −$2,000 → $2,000 A', '確かめ: $1,500 A ＋ $2,000 A ＝ $3,500 A'],
-            answer: '総差異 $3,500 A ＝ 予算差異 $1,500 A ＋ 操業度差異 $2,000 A'
+            problem: '固定製造間接費の予算 $32,000、予算生産量 2,000脚（1脚2時間、1時間 $8）。今月は 1,900脚作り、実際の固定費は $33,500。標準全部原価計算で、総差異・予算差異・操業度差異を出す。',
+            steps: ['標準配賦率 ＝ $32,000 ÷ 2,000 ＝ 1脚 $16（＝ 2時間 × $8）', '配賦した額 ＝ 1,900 × $16 ＝ $30,400。総差異 ＝ $30,400 − $33,500 ＝ −$3,100 → $3,100 A', '予算差異 ＝ $32,000 − $33,500 ＝ −$1,500 → $1,500 A', '操業度差異 ＝（1,900 − 2,000）× $16 ＝ −$1,600 → $1,600 A', '確かめ: $1,500 A ＋ $1,600 A ＝ $3,100 A'],
+            answer: '総差異 $3,100 A ＝ 予算差異 $1,500 A ＋ 操業度差異 $1,600 A'
           }
         },
         {
           title: 'なぜ？ 操業度差異が出る理由',
-          paras: ['$40,000 の固定費は、2,000脚作る前提で1脚 $20 ずつ回収する計画だった。実際は 1,900脚なので、配賦できたのは $38,000。足りない $2,000 が操業度差異（不利）。', '予定より多く作れば、固定費を多く配賦できるので有利になる。操業度差異は「固定費をいくら払ったか」ではなく、「工場をどれだけ使って作ったか」を表す。払った額のずれは予算差異が表す。']
+          paras: ['$32,000 の固定費は、2,000脚作る前提で1脚 $16 ずつ回収する計画だった。実際は 1,900脚なので、配賦できたのは $30,400。足りない $1,600 が操業度差異（不利）。', '予定より多く作れば、固定費を多く配賦できるので有利になる。操業度差異は「固定費をいくら払ったか」ではなく、「工場をどれだけ使って作ったか」を表す。払った額のずれは予算差異が表す。']
         },
         {
           title: '時間で配賦するとき・直接原価計算のとき',
-          paras: ['配賦率が作業1時間あたりなら、操業度差異 ＝（実際生産の標準時間 − 予算の時間）× 1時間の配賦率。椅子工房なら（3,800 − 4,000）× $10 ＝ $2,000 A で同じ答えになる。', '標準直接原価計算（standard marginal costing）では固定費を配賦しないので、出るのは予算差異だけ。操業度差異は出ない。'],
+          paras: ['配賦率が作業1時間あたりなら、操業度差異 ＝（実際生産の標準時間 − 予算の時間）× 1時間の配賦率。椅子工房なら（3,800 − 4,000）× $8 ＝ $1,600 A で同じ答えになる。時間の差には1時間の $8、個数の差には1脚の $16（$8 × 2時間）を掛ける。', '標準直接原価計算（standard marginal costing）では固定費を配賦しないので、出るのは予算差異だけ。操業度差異は出ない。'],
           note: { kind: 'tip', text: '操業度差異は次のレッスンで、生産能力差異（capacity variance）と能率差異（efficiency variance）に分ける。' }
         },
         {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '予算差異で、予算を実際の生産量に合わせて直すのは誤り。固定費は作る量で変わらないので、元の予算 $40,000 とそのまま比べる。操業度差異に実際の配賦率（$41,500 ÷ 1,900）を使うのも誤り。いつも標準配賦率を使う。予算より少なく作ったら不利、多く作ったら有利。' }
+          note: { kind: 'warn', text: '予算差異で、予算を実際の生産量に合わせて直すのは誤り。固定費は作る量で変わらないので、元の予算 $32,000 とそのまま比べる。操業度差異に実際の配賦率（$33,500 ÷ 1,900）を使うのも誤り。いつも標準配賦率を使う。予算より少なく作ったら不利、多く作ったら有利。' }
         },
         {
           title: '覚えるのは3つだけ',
@@ -296,7 +296,8 @@
         { q: 'Budgeted fixed production overheads were $120,000 and actual fixed production overheads were $123,000. Budgeted output was 10,000 units and actual output was 9,500 units. Under standard absorption costing, what is the fixed overhead volume variance?', choices: ['$3,000 adverse', '$6,000 adverse', '$6,000 favourable', '$9,000 adverse'], answer: 1, explain: '標準配賦率 $120,000 ÷ 10,000 ＝ $12。（9,500 − 10,000）× $12 ＝ −$6,000 → $6,000 A。$3,000 A は予算差異（$120,000 − $123,000）、$9,000 A は総差異（9,500 × $12 − $123,000）。予算より少なく作ったので有利にはならない。' },
         { q: 'Budgeted fixed production overheads were $84,000 for a budgeted output of 7,000 units. Actual output was 6,500 units and actual fixed production overheads were $81,200. What is the total fixed overhead variance (in $)?', type: 'number', answer: 3200, unit: '$', explain: '標準配賦率 $84,000 ÷ 7,000 ＝ $12。配賦した額 6,500 × $12 ＝ $78,000。$78,000 − $81,200 ＝ −$3,200 → $3,200 A（過小配賦）。内訳は予算差異 $2,800 F と操業度差異（6,500 − 7,000）× $12 ＝ $6,000 A。' },
         { q: 'Under standard marginal costing, which fixed overhead variance(s) will be reported?', choices: ['Volume variance only', 'Both expenditure and volume variances', 'Expenditure variance only', 'No fixed overhead variances'], answer: 2, explain: '直接原価計算では固定費を製品に配賦しないので、操業度差異は出ない。予算と実際の固定費の差（予算差異）だけが出る。' },
-        { q: '固定製造間接費の操業度差異が有利になるのは、どんなとき？', choices: ['実際の生産量が予算の生産量より多かったとき', '実際の固定費が予算より少なかったとき', '作業時間が実際生産の標準時間より短かったとき', '実際の配賦率が標準配賦率より低かったとき'], answer: 0, explain: '操業度差異は生産量のずれ × 標準配賦率。予算より多く作ると、固定費を予算より多く配賦できるので有利。固定費が少なかったのは予算差異。作業が速かったのは能率差異（次のレッスンで学ぶ）。' }
+        { q: '固定製造間接費の操業度差異が有利になるのは、どんなとき？', choices: ['実際の生産量が予算の生産量より多かったとき', '実際の固定費が予算より少なかったとき', '作業時間が実際生産の標準時間より短かったとき', '実際の配賦率が標準配賦率より低かったとき'], answer: 0, explain: '操業度差異は生産量のずれ × 標準配賦率。予算より多く作ると、固定費を予算より多く配賦できるので有利。固定費が少なかったのは予算差異。作業が速かったのは能率差異（次のレッスンで学ぶ）。' },
+        { q: '固定製造間接費は作業1時間 $8 で配賦し、1脚の標準時間は2時間。予算は 2,000脚。実際は 2,100脚作った。操業度差異は？', choices: ['$800 F', '$1,600 F', '$1,600 A', '$3,200 F'], answer: 1, explain: '1脚の配賦率は $8 × 2時間 ＝ $16。（2,100 − 2,000）× $16 ＝ $1,600 F（予算より多く作った）。時間で出しても（4,200 − 4,000）× $8 ＝ $1,600 F で同じ。$800 は個数の差に1時間の $8 を掛けた誤り。$3,200 は時間の差に1脚の $16 を掛けた誤り。多く作ったので不利ではない。' }
       ]
     }
   ],
@@ -320,6 +321,7 @@
     { id: 'M122-2', lesson: 'M122', q: '固定製造間接費の操業度差異（volume variance）の式は？', a: '（実際生産 − 予算生産）× 1個の標準配賦率' },
     { id: 'M122-3', lesson: 'M122', q: '固定製造間接費の総差異は、何と同じ金額？', a: '過小配賦・過大配賦の額（配賦した額 − 実際の固定費）' },
     { id: 'M122-4', lesson: 'M122', q: '標準直接原価計算で出る固定製造間接費の差異は？', a: '予算差異だけ。固定費を配賦しないので操業度差異は出ない' },
-    { id: 'M122-5', lesson: 'M122', q: 'なぜ予算より少なく作ると操業度差異が不利になる？', a: '予定より配賦できる固定費が少なく、固定費を回収しきれないため' }
+    { id: 'M122-5', lesson: 'M122', q: 'なぜ予算より少なく作ると操業度差異が不利になる？', a: '予定より配賦できる固定費が少なく、固定費を回収しきれないため' },
+    { id: 'M122-6', lesson: 'M122', q: '固定費の1個あたりの配賦率と1時間あたりの関係は？', a: '1個あたり ＝ 1時間の配賦率 × 1個の標準時間（椅子: $8 × 2時間 ＝ $16）' }
   ]
 });

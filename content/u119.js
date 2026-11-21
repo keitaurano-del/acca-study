@@ -8,21 +8,17 @@
       id: 'M074',
       no: 74,
       title: '確率の基本: 単純確率と同時確率',
-      goal: '単純確率・同時確率・「AまたはB」の確率を、計算と表の読み取りで求められるようになる',
+      goal: '単純確率・同時確率（戻さずに取り出す場合を含む）・「AまたはB」の確率を、計算と表の読み取りで求められるようになる',
       minutes: 14,
       recall: true,
       exam: 'both',
       outcomes: ['K2:A3(e)'],
       slides: [
         {
-          title: '商店街の福引',
-          paras: ['福引の箱に玉が100個入っていて、当たりは5個。1回引いて当たる確率は 5 ÷ 100 ＝ 0.05（5%）になる。', '引いた玉を箱に戻して、もう1回引く。2回とも当たる確率は 0.05 × 0.05 ＝ 0.0025。「当たり」の中からさらに「当たり」に絞られるので、確率はぐっと小さくなる。']
-        },
-        {
-          title: '確率（probability）とは',
-          paras: ['ある出来事がどれくらい起こりやすいかを、0から1の数で表したものを確率（probability）という。0は「絶対に起こらない」、1は「必ず起こる」。'],
+          title: '商店街の福引と確率',
+          paras: ['福引の箱に玉が100個、当たりは5個。1回引いて当たる確率は 5 ÷ 100 ＝ 0.05（5%）。', 'どれくらい起こりやすいかを0から1の数で表したものを確率（probability）という。0は「絶対に起こらない」、1は「必ず起こる」。'],
           formula: 'P(A) ＝ A が起こる場合の数 ÷ 全部の場合の数',
-          after: '起こらない確率は 1 − P(A)。当たる確率が 0.05 なら、はずれる確率は 0.95。1つの出来事だけの確率を単純確率（simple probability）という。'
+          after: '起こらない確率は 1 − P(A)。はずれる確率は 1 − 0.05 ＝ 0.95。1つの出来事だけの確率を単純確率（simple probability）という。'
         },
         {
           title: '2つの出来事を組み合わせる',
@@ -60,12 +56,22 @@
           paras: ['1,000週を想像する。X が故障するのは 0.1 の 100週。そのうち Y も故障するのは 0.2 の 20週。20 ÷ 1,000 ＝ 0.02。「〜のうちの〜」を数えると、自然に掛け算になる。', '分割表で新規客 0.4 と買う 0.4 を掛けると 0.16 で、表の 0.1 と合わない。新規客は買いにくい、つまり独立ではないから。この場合は2つ目に「新規客の中で買う」確率 0.25 を使う。0.4 × 0.25 ＝ 0.1 で表と一致する。表があれば、表のマスから直接数えればよい。']
         },
         {
+          title: '例題: 戻さずに続けて取り出す',
+          paras: ['取り出した物を戻さない（without replacement）と、1回目の結果で2回目の確率が変わる。独立ではないので、2回目は「残った物の中での確率」を掛ける。'],
+          formula: '戻さない: 同じ種類を続けて取るたびに、分子も分母も1ずつ減る',
+          example: {
+            problem: '部品10個の箱に不良品が3個ある。1個取り出し、戻さずにもう1個取り出す。2個とも不良品である確率は？ 戻す場合とも比べる。',
+            steps: ['1個目が不良品: 3 ÷ 10', '2個目: 残り9個のうち不良品は2個なので 2 ÷ 9（分子も分母も1減る）', '2個とも不良品: 3/10 × 2/9 ＝ 6/90 ＝ 0.067', '戻す場合: 2個目も10個中3個なので 3/10 × 3/10 ＝ 0.09', '戻さないと不良品が減っていくので、確率は 0.09 より小さくなる'],
+            answer: '0.067（戻す場合は 0.09）'
+          }
+        },
+        {
           title: 'よくある間違い',
-          note: { kind: 'warn', text: '「または」で重なりを引き忘れる（0.1 ＋ 0.2 ＝ 0.3 は誤り。正しくは 0.28）。独立でないのに確率を掛ける。「新規客の中から」のように範囲が決まっているのに、分母を全体の 200人のままにする。' }
+          note: { kind: 'warn', text: '「または」で重なりを引き忘れる（0.1 ＋ 0.2 ＝ 0.3 は誤り。正しくは 0.28）。独立でないのに確率をそのまま掛ける。「新規客の中から」や「戻さずに」なのに、分母を全体のまま（200人、10個）にする。' }
         },
         {
           title: '覚えるのは3つだけ',
-          numbered: ['単純確率 ＝ 起こる場合の数 ÷ 全部の場合の数。起こらない確率は 1 − P', '同時確率（両方起こる）: 独立なら掛け算。独立でなければ「〜の中で」の確率を掛ける。表があれば表のマスから数える', '「A または B」 ＝ P(A) ＋ P(B) − P(A and B)。重なりを引く']
+          numbered: ['単純確率 ＝ 起こる場合の数 ÷ 全部の場合の数。起こらない確率は 1 − P', '同時確率（両方起こる）: 独立なら掛け算。独立でなければ「〜の中で」の確率を掛ける（戻さないなら2回目は分子も分母も1減る）', '「A または B」 ＝ P(A) ＋ P(B) − P(A and B)。重なりを引く']
         },
         {
           title: '英単語',
@@ -77,7 +83,8 @@
             ['mutually exclusive', 'ミューチュアリー エクスクルーシブ', '互いに排反（同時には起こらない）'],
             ['contingency table', 'コンティンジェンシー テーブル', '分割表（2つの分け方で数えた表）'],
             ['at random', 'アット ランダム', '無作為に'],
-            ['given that', 'ギヴン ザット', '〜だと分かっているとき（その中での確率を聞く）']
+            ['given that', 'ギヴン ザット', '〜だと分かっているとき（その中での確率を聞く）'],
+            ['with / without replacement', 'ウィズ／ウィズアウト リプレイスメント', '取り出した物を戻して／戻さずに']
           ]
         }
       ],
@@ -85,7 +92,7 @@
         { q: 'A box contains 40 components, of which 6 are defective. One component is selected at random. What is the probability that it is NOT defective? (Give your answer as a decimal.)', type: 'number', answer: 0.85, unit: '', explain: '不良品の確率は 6 ÷ 40 ＝ 0.15。不良品でない確率は 1 − 0.15 ＝ 0.85（34 ÷ 40 でも同じ）。0.15 と答えるのは、聞かれていない側の確率。' },
         { q: 'The probability that Machine A breaks down in a week is 0.1 and the probability that Machine B breaks down in a week is 0.3. Breakdowns of the two machines are independent. What is the probability that both machines break down in the same week?', choices: ['0.40', '0.37', '0.03', '0.63'], answer: 2, explain: '両方故障は、独立なので掛け算: 0.1 × 0.3 ＝ 0.03。0.40 は足し算をしてしまった答え。0.37 は「少なくとも1台」（1 − 0.9 × 0.7）、0.63 は「どちらも故障しない」（0.9 × 0.7）の確率。' },
         { q: 'レッスンの分割表（客200人。新規客: 買った20人・買わなかった60人、リピーター: 買った60人・買わなかった60人）を使う。リピーターの中から1人を無作為に選んだとき（given that the customer is a repeat customer）、買わなかった人である確率は？', choices: ['0.30', '0.60', '0.36', '0.50'], answer: 3, explain: '「リピーターの中から」なので分母はリピーターの 120人。そのうち買わなかったのは 60人で、60 ÷ 120 ＝ 0.50。0.30 は分母を全体の 200人にした答え（「リピーターで、かつ買わなかった」同時確率）。0.60 はリピーター全体（120 ÷ 200）。0.36 は 0.6 × 0.6 と掛けた答えで、独立でないデータには使えない。' },
-        { q: 'In a survey of 500 employees, 300 are full-time and 200 are part-time. 120 of the full-time employees and 30 of the part-time employees hold a professional qualification. One employee is chosen at random. What is the probability that the employee is part-time and holds a professional qualification?', choices: ['0.15', '0.06', '0.30', '0.12'], answer: 1, explain: '同時確率は、両方に当てはまる人数 ÷ 全体: 30 ÷ 500 ＝ 0.06。0.15 は分母を part-time の 200人にした答え（part-time の中から選ぶ場合）。0.30 は資格を持つ人全体（150 ÷ 500）。0.12 は part-time の確率 0.4 と資格ありの確率 0.3 を掛けた答えで、独立かどうか確かめずに掛けている。' },
+        { q: 'A batch of 20 invoices contains 4 invoices with errors. Two invoices are selected at random without replacement. What is the probability that both invoices contain errors? (Give your answer to 2 decimal places.)', type: 'number', answer: 0.03, unit: '', explain: '1枚目に誤りあり: 4 ÷ 20。戻さないので、2枚目は残り19枚のうち誤りあり3枚: 3 ÷ 19。4/20 × 3/19 ＝ 12/380 ＝ 0.0316 で、小数第2位まで 0.03。0.04 は 4/20 × 4/20 と計算した答えで、戻す場合の確率（分子と分母を減らし忘れている）。' },
         { q: '機械P と機械Q が1か月に故障する確率は、P が 0.2、Q が 0.25 で、互いに独立。1か月の間に少なくとも1台が故障する確率は？（小数で答える）', type: 'number', answer: 0.4, unit: '', explain: 'どちらも故障しない確率は 0.8 × 0.75 ＝ 0.6。少なくとも1台 ＝ 1 − 0.6 ＝ 0.4。0.2 ＋ 0.25 − 0.05（両方故障 0.2 × 0.25）でも 0.4 になる。0.45 は重なりの 0.05 を引き忘れた答え。' },
         { q: '70% of a company\'s employees work at head office and 30% work in branches. 20% of head office employees and 40% of branch employees hold a professional qualification. One employee is selected at random. What is the probability that the employee works in a branch and holds a professional qualification?', choices: ['0.12', '0.40', '0.26', '0.06'], answer: 0, explain: '支店勤務 0.3 ×「支店勤務の中で資格あり」0.4 ＝ 0.12。2つ目の 0.4 は「支店勤務の中で」の確率なので、そのまま掛けてよい（独立でないときの同時確率）。0.40 は支店勤務の中での確率で、同時確率ではない。0.26 は資格ありの人全体（0.7 × 0.2 ＋ 0.3 × 0.4 ＝ 0.14 ＋ 0.12）。0.06 は支店勤務 0.3 に本社勤務の 0.2 を掛けた取り違え。' }
       ]
@@ -405,11 +412,11 @@
   cards: [
     { id: 'M074-1', lesson: 'M074', q: '単純確率（simple probability）の式は？', a: '起こる場合の数 ÷ 全部の場合の数（0〜1の数）' },
     { id: 'M074-2', lesson: 'M074', q: 'ある出来事が「起こらない」確率は？', a: '1 − 起こる確率' },
-    { id: 'M074-3', lesson: 'M074', q: '独立な A と B が両方起こる確率（同時確率）は？', a: 'P(A) × P(B)' },
+    { id: 'M074-3', lesson: 'M074', q: 'A と B が両方起こる確率（同時確率）は？', a: '独立なら P(A) × P(B)。独立でなければ P(A) ×「A の中で B が起こる確率」' },
     { id: 'M074-4', lesson: 'M074', q: '両方起こることもある「A または B」の確率は？', a: 'P(A) ＋ P(B) − P(A and B)（重なりを引く）' },
     { id: 'M074-5', lesson: 'M074', q: '分割表で「新規客の中から選んで買った人」の確率の分母は？', a: '新規客の人数（全体の人数ではない）' },
     { id: 'M074-6', lesson: 'M074', q: 'なぜ表のデータでは、確率を掛け算せずマスから数える？', a: '2つが独立とは限らず、掛けると実際の数と合わないことがあるから' },
-    { id: 'M074-7', lesson: 'M074', q: '独立でない A と B が両方起こる確率は？', a: 'P(A) ×「A の中で B が起こる確率」（例: 0.4 × 0.25 ＝ 0.1）' },
+    { id: 'M074-8', lesson: 'M074', q: '戻さずに（without replacement）続けて取り出すとき、2回目の確率はどう変わる？', a: '同じ種類を続けて取るなら、分子も分母も1ずつ減る（3/10 × 2/9）' },
     { id: 'M075-1', lesson: 'M075', q: '期待値（expected value）の式は？', a: 'Σ（結果 × 確率）。確率の合計は1' },
     { id: 'M075-2', lesson: 'M075', q: '期待値は何を表す？', a: '同じ判断を何回もくり返したときの、1回あたりの平均' },
     { id: 'M075-3', lesson: 'M075', q: '期待値で案を選ぶルールは？', a: '利益なら期待値が最大、費用なら最小の案を選ぶ' },

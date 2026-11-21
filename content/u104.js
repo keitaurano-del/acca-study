@@ -194,11 +194,8 @@
         },
         {
           title: '切片と傾きを読む',
-          paras: ['総原価の直線が縦軸と交わる点（切片、intercept）は固定費。活動量が0でもかかる金額だから。', '線の傾き（gradient）は1単位の変動費。1単位増えると、原価がいくら増えるかを表す。'],
-          formula: '総原価 ＝ 固定費（切片）＋ 1単位の変動費（傾き）× 活動量'
-        },
-        {
-          title: '例題: グラフから読み取る',
+          paras: ['直線が縦軸と交わる点（切片、intercept）は固定費。活動量が0でもかかるから。線の傾き（gradient）は、1単位増えたときに増える原価＝1単位の変動費。'],
+          formula: '総原価 ＝ 固定費（切片）＋ 1単位の変動費（傾き）× 活動量',
           example: {
             problem: '電気代のグラフは直線で、0パックのとき $400、5,000パックのとき $1,400 を通る。固定の部分と、1パックあたりの変動の部分は？ 3,000パックのときの電気代は？',
             steps: ['切片を読む: 0パックで $400 → 固定の部分は $400', '傾き: ($1,400 − $400) ÷ (5,000 − 0) ＝ $1,000 ÷ 5,000 ＝ $0.20', '3,000パック: $400 ＋ $0.20 × 3,000 ＝ $1,000'],
@@ -208,12 +205,22 @@
         {
           title: 'ほかによく出る形',
           svg: `<svg viewBox="0 0 440 210" role="img" aria-label="数量割引、無料枠つき、上限つきの総原価のグラフ" font-size="14"><text x="30" y="40" font-size="15" font-weight="600" fill="var(--ink)">①数量割引</text><line x1="30" y1="55" x2="30" y2="150" stroke="var(--ink)" stroke-width="1.25"/><line x1="30" y1="150" x2="140" y2="150" stroke="var(--ink)" stroke-width="1.25"/><polyline points="30,150 85,95 135,75" fill="none" stroke="var(--ink)" stroke-width="3"/><line x1="85" y1="95" x2="85" y2="150" stroke="var(--edge)" stroke-width="1.25" stroke-dasharray="4 3"/><text x="165" y="40" font-size="15" font-weight="600" fill="var(--ink)">②無料枠つき</text><line x1="165" y1="55" x2="165" y2="150" stroke="var(--ink)" stroke-width="1.25"/><line x1="165" y1="150" x2="275" y2="150" stroke="var(--ink)" stroke-width="1.25"/><polyline points="165,120 215,120 270,70" fill="none" stroke="var(--ink)" stroke-width="3"/><line x1="215" y1="120" x2="215" y2="150" stroke="var(--edge)" stroke-width="1.25" stroke-dasharray="4 3"/><text x="300" y="40" font-size="15" font-weight="600" fill="var(--ink)">③上限つき</text><line x1="300" y1="55" x2="300" y2="150" stroke="var(--ink)" stroke-width="1.25"/><line x1="300" y1="150" x2="410" y2="150" stroke="var(--ink)" stroke-width="1.25"/><polyline points="300,150 355,85 405,85" fill="none" stroke="var(--ink)" stroke-width="3"/><line x1="355" y1="85" x2="355" y2="150" stroke="var(--edge)" stroke-width="1.25" stroke-dasharray="4 3"/><text x="85" y="174" text-anchor="middle" font-size="13" fill="var(--ink)">傾きがゆるくなる</text><text x="220" y="174" text-anchor="middle" font-size="13" fill="var(--ink)">水平→右上がり</text><text x="355" y="174" text-anchor="middle" font-size="13" fill="var(--ink)">右上がり→水平</text><text x="220" y="202" text-anchor="middle" fill="var(--ink)">横軸＝活動量、縦軸＝総原価</text></svg>`,
-          caption: '点線のところで、単価か原価の型が変わっている。'
+          list: ['① 材料が 1,000kg を越えると、越えた分だけ単価が下がる', '② 電話代が月 $20 で 100分まで定額、越えた分は1分 $0.10', '③ 機械のレンタル料が1時間 $5、ただし月 $1,000 が上限'],
+          after: '点線のところで単価か型が変わる。水平な部分は固定、斜めの部分は変動。傾きが急なほど1単位の変動費が大きい。'
         },
         {
-          title: '3つの形と例',
-          list: ['① 傾きがゆるくなる: 材料を 1,000kg より多く買うと、越えた分の単価が下がる（数量割引）', '② 水平から右上がり: 電話代が月 $20 で 100分まで定額、越えた分は1分 $0.10', '③ 右上がりから水平: 機械のレンタル料が1時間 $5、ただし月 $1,000 が上限'],
-          after: '読み方はいつも同じ。水平な部分は固定、斜めの部分は変動。傾きが急なほど、1単位の変動費が大きい。割引が越えた分だけでなく「全部の量」にかかる場合は、境目で総原価がいったん下に落ち、そこからゆるい傾きで上がる。'
+          title: '全部の量にかかる割引のグラフ',
+          svg: `<svg viewBox="0 0 440 232" role="img" aria-label="全部の量にかかる数量割引の総原価のグラフ。原点から右上がりに $10,000 まで上がり、1,000kg で $8,000 に真下へ落ち、そこから2,000kg で $16,000 までゆるい傾きで上がる。落ちた後の線をのばすと原点を通る" font-size="14"><line x1="60" y1="24" x2="60" y2="190" stroke="var(--ink)" stroke-width="1.25"/><line x1="60" y1="190" x2="420" y2="190" stroke="var(--ink)" stroke-width="1.25"/><line x1="60" y1="190" x2="230" y2="90" stroke="var(--ink)" stroke-width="3"/><line x1="230" y1="90" x2="230" y2="110" stroke="var(--ink)" stroke-width="3"/><line x1="230" y1="110" x2="400" y2="30" stroke="var(--ink)" stroke-width="3"/><line x1="60" y1="190" x2="230" y2="110" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/><line x1="230" y1="110" x2="230" y2="190" stroke="var(--edge)" stroke-width="1.25" stroke-dasharray="4 3"/><text x="222" y="84" text-anchor="end" fill="var(--ink)">$10,000</text><text x="238" y="128" fill="var(--ink)">$8,000</text><text x="392" y="22" text-anchor="end" fill="var(--ink)">$16,000</text><text x="120" y="184" fill="var(--accent)">のばすと原点へ</text><text x="230" y="207" text-anchor="middle" fill="var(--ink)">1,000</text><text x="400" y="207" text-anchor="middle" fill="var(--ink)">2,000</text><text x="220" y="226" text-anchor="middle" fill="var(--ink)">横軸＝買う量（kg）、縦軸＝総原価</text></svg>`,
+          paras: ['境目を越えると全部の量が新しい単価になる（総原価 ＝ 新しい単価 × 全部の量）。だから落ちた後の線は原点を通る直線の上にあり、傾きは新しい単価。落ちた直後の高さ ÷ 境目の量 も新しい単価になる。', '落ちる幅 ＝（元の単価 − 新しい単価）× 境目の量。落ちた後の線をのばして縦軸の0より上に当たるなら、固定の部分もある。越えた分だけの割引なら、落ちずに傾きがゆるくなるだけ。']
+        },
+        {
+          title: '例題: 全部の量にかかる割引',
+          example: {
+            problem: '材料は1kg $10。1,000kg より多く買うと、全部の kg が $8 になる。1,000kg、1,000kg を少し越えたとき、2,000kg の総原価は？ グラフはどんな形？',
+            steps: ['1,000kg: $10 × 1,000 ＝ $10,000', '少し越える: 全部が $8 → $8 × 1,000 ＝ $8,000。落ちる幅 $2,000 ＝ ($10 − $8) × 1,000', '2,000kg: $8 × 2,000 ＝ $16,000', '確かめ: $16,000 ÷ 2,000 ＝ $8、$8,000 ÷ 1,000 ＝ $8。どちらも原点を通る直線（1kg $8）の上にある'],
+            answer: '$10,000 → 真下に落ちて $8,000 → $16,000。落ちた後の線は傾き $8 で、のばすと原点を通る'
+          },
+          note: { kind: 'tip', text: '選択肢のグラフは4点で確かめる。①原点から始まる ②境目の前のほうが急 ③境目で真下に落ちる ④落ちた後の線は原点に向かう。1つでも外れるものを消し、4つ全部を満たすものを選ぶ。' }
         },
         {
           title: 'なぜ？ グラフで見る理由',
@@ -235,6 +242,8 @@
             ['intercept', 'インターセプト', '切片（縦軸と交わる点＝固定費）'],
             ['gradient / slope', 'グレイディエント / スロープ', '傾き（1単位の変動費）'],
             ['bulk discount', 'バルク ディスカウント', '数量割引'],
+            ['discount on all units', 'ディスカウント オン オール ユニッツ', '全部の量にかかる割引（境目で総原価が落ちる）'],
+            ['origin', 'オリジン', '原点（縦軸と横軸が交わる0の点）'],
             ['horizontal line', '', '水平な線']
           ]
         }
@@ -242,9 +251,9 @@
       quiz: [
         { q: 'A graph plots total cost on the vertical axis against the level of activity on the horizontal axis. The line is horizontal. Which type of cost does the graph show?', choices: ['Variable cost', 'Fixed cost', 'Semi-variable cost', 'Stepped fixed cost'], answer: 1, explain: '総原価が量に関係なく一定なのは固定費。1単位あたりのグラフで水平なら変動費になるので、縦軸を確かめるのが大事。' },
         { q: 'A graph plots cost per unit on the vertical axis against the level of activity on the horizontal axis. The line falls steeply at first and then flattens out as activity increases. Which cost does the graph show?', choices: ['Variable cost per unit', 'Total variable cost', 'Fixed cost per unit', 'Total semi-variable cost'], answer: 2, explain: '同じ固定費をより多くの単位で割るので、1単位あたりは下がり続け、0に近づく。1単位の変動費は水平になる。' },
-        { q: 'A graph of total cost against the level of activity is a straight line which starts above zero on the vertical axis and rises as activity increases. Which type of cost does the graph show?', choices: ['Semi-variable cost', 'Variable cost', 'Fixed cost', 'Stepped fixed cost'], answer: 0, explain: '0より上から始まる＝固定の部分がある。右上がり＝変動の部分がある。両方あるのは準変動費。変動費なら原点（0）から始まる。' },
+        { q: 'A material costs $6 per kg. If more than 5,000 kg are bought in a month, the price of all kg bought that month falls to $5 per kg. What is the total cost of buying 6,000 kg in a month?', type: 'number', answer: 30000, unit: '$', explain: '6,000kg は 5,000kg を越えるので、全部の kg が $5。$5 × 6,000 ＝ $30,000。$35,000 は 5,000kg まで $6、越えた 1,000kg だけ $5 にした答え（越えた分だけの割引と混同）。$36,000 は割引を忘れた答え。' },
         { q: '総原価のグラフは直線で、活動量0のとき $2,000、1,000単位のとき $5,000 を通る。1単位あたりの変動費はいくら？', type: 'number', answer: 3, unit: '$', explain: '傾き ＝ ($5,000 − $2,000) ÷ 1,000 ＝ $3。$5 は $5,000 ÷ 1,000 で、固定費 $2,000 を引き忘れた答え。' },
-        { q: '電話代は月 $20 で 100分まで定額、越えた分は1分 $0.10。総原価のグラフの形は？', choices: ['0から右上がり、100分から水平', '100分までは水平、そこから右上がり', '最初から右上がりの直線', '100分ごとに一段上がる階段'], answer: 1, explain: '100分までは何分話しても $20 なので水平。越えると1分ごとに増えるので右上がり。1つ目は上限つきの形。' },
+        { q: 'A supplier charges a lower price per kg on ALL kg bought once purchases exceed a threshold quantity. There are no other costs. Which description matches the graph of total cost against quantity bought?', choices: ['Rises from the origin, falls vertically at the threshold, then rises less steeply along a line which, extended back, would pass through the origin', 'Rises from the origin, falls vertically at the threshold, then rises less steeply along a line which, extended back, would meet the vertical axis above zero', 'Rises from the origin and becomes less steep at the threshold, with no fall', 'Rises from the origin and becomes steeper at the threshold, with no fall'], answer: 0, explain: '境目を越えると総原価 ＝ 新しい単価 × 全部の量なので、落ちた後の線は原点を通る直線の上にある。落ちた後の線をのばすと0より上で縦軸に当たる（meet the vertical axis above zero）のは、固定の部分もある形。落ちずに傾きがゆるくなる（less steep, with no fall）のは、越えた分だけの割引。傾きが急になる（steeper）のは、境目を越えると単価が上がる形。' },
         { q: 'A graph plots cost per unit on the vertical axis against the level of activity on the horizontal axis. The line falls as activity increases and gets closer and closer to a level above zero, but never falls below it. Which cost does the graph show?', choices: ['Fixed cost per unit', 'Variable cost per unit', 'Total semi-variable cost', 'Semi-variable cost per unit'], answer: 3, explain: '準変動費の1単位あたりは、固定の部分が多くの単位に薄まって下がり、1単位の変動費（一定）の高さに近づく。0に近づくなら固定費。1単位の変動費なら水平。総原価なら右上がりになる。' }
       ]
     },
@@ -429,13 +438,13 @@
     { id: 'M013-3', lesson: 'M013', q: '準変動費（semi-variable cost）とは？', a: '固定の部分と変動の部分が混ざった原価（mixed cost とも）' },
     { id: 'M013-4', lesson: 'M013', q: '準変動費の例を2つ', a: '電気代（基本料金＋使用量）、営業の給料（固定給＋歩合）' },
     { id: 'M013-5', lesson: 'M013', q: '準変動費の式は？', a: '固定の部分 ＋ 1単位の変動費 × 活動量' },
-    { id: 'M014-1', lesson: 'M014', q: '総原価のグラフで水平な線は？', a: '固定費' },
-    { id: 'M014-2', lesson: 'M014', q: '1単位あたりのグラフで水平な線は？', a: '変動費（1単位の変動費は一定）' },
+    { id: 'M014-1', lesson: 'M014', q: '水平な線は、総原価のグラフと1単位あたりのグラフでそれぞれ何？', a: '総原価なら固定費、1単位あたりなら変動費' },
     { id: 'M014-3', lesson: 'M014', q: '1単位あたりの固定費のグラフの形は？', a: '右下がりの曲線。0に近づくが0にならない' },
     { id: 'M014-4', lesson: 'M014', q: '総原価の直線で、切片と傾きは何を表す？', a: '切片＝固定費、傾き＝1単位の変動費' },
-    { id: 'M014-5', lesson: 'M014', q: '準変動費の総原価のグラフは？', a: '0より上（固定の部分）から始まる右上がりの直線' },
-    { id: 'M014-6', lesson: 'M014', q: '階段状の固定費のグラフは？', a: '水平な線が、一定の量ごとに一段上がる階段' },
+    { id: 'M014-5', lesson: 'M014', q: '総原価のグラフ: 準変動費と階段状の固定費の形は？', a: '準変動費＝0より上から右上がりの直線。階段状＝一定量ごとに一段上がる' },
     { id: 'M014-7', lesson: 'M014', q: '1単位あたりの準変動費のグラフの形は？', a: '右下がりの曲線。0ではなく1単位の変動費の高さに近づく' },
+    { id: 'M014-8', lesson: 'M014', q: '全部の量にかかる数量割引のグラフ。落ちた後の線はどうなる？', a: '原点を通る直線の上にある。傾きは新しい単価' },
+    { id: 'M014-9', lesson: 'M014', q: '全部の量にかかる数量割引。境目で総原価が落ちる幅は？', a: '（元の単価 − 新しい単価）× 境目の量' },
     { id: 'M015-1', lesson: 'M015', q: '総原価の見積もりの手順は？', a: '型ごとに分ける → 見積もる量で型ごとに計算 → 足す' },
     { id: 'M015-2', lesson: 'M015', q: 'なぜ1単位あたりの総原価を別の量にかけてはいけない？', a: '固定費が混ざっていて、量が変わると1単位あたりの原価も変わるから' },
     { id: 'M015-3', lesson: 'M015', q: '量が増えたのに1単位あたりの原価が上がるのは？', a: '階段状の固定費が一段上がったとき' },

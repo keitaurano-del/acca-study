@@ -21,7 +21,8 @@
         {
           title: '申込みになる3つの条件（Art 14(1)）',
           list: ['特定の相手（one or more specific persons）に向けている', '十分に確定（sufficiently definite）している: 物品を示し、数量と代金を決めているか、決め方を示している（明示でも黙示でもよい）', '承諾されたら拘束される意思（intention to be bound）を示している'],
-          formula: '申込み ＝ 特定の相手 ＋ 物品・数量・代金が確定 ＋ 拘束される意思'
+          formula: '申込み ＝ 特定の相手 ＋ 物品・数量・代金が確定 ＋ 拘束される意思',
+          after: '代金は「出荷日の当社価格表の値段で」と決め方を示すだけでもよい。引渡しの日や支払の条件がなくても、申込みでなくなることはない。'
         },
         {
           title: '申込みの誘引（Art 14(2)）',
@@ -29,9 +30,8 @@
         },
         {
           title: 'お茶の輸出で確かめる',
-          paras: ['日本の茶葉メーカー「みどり茶園」が、ドイツのカフェにメールを2通送った。日本もドイツも CISG の締約国。'],
-          table: { caption: 'メールA「抹茶200kgを1kgあたり$50、9月出荷で売ります。返事は6月30日までに」、メールB「良い抹茶をお安く提供できます。ご興味があればご連絡を」', head: ['条件', 'メールA', 'メールB'], rows: [['特定の相手', 'ある', 'ある'], ['物品', '抹茶', '抹茶'], ['数量', '200kg', 'なし'], ['代金', '$50/kg', 'なし'], ['結果', '申込み', '申込みではない']] },
-          after: '代金は「出荷日の当社価格表の値段で」のように、決め方を示すだけでもよい。引渡しの日や支払の条件が書かれていなくても、それだけで申込みでなくなることはない。'
+          paras: ['日本の茶葉メーカー「みどり茶園」が、ドイツのカフェ（両国とも CISG の締約国）にメールAを送った。「抹茶200kgを1kgあたり$50、9月出荷で売ります。返事は6月30日までに」。特定の相手に物品・数量・代金を示した見積り（quotation of price）で、「はい」の一言で決まるので申込みになる。'],
+          table: { caption: '申込みになるもの・ならないもの', head: ['言葉', '申込み？', '理由'], rows: [['メールA（特定の相手への見積り）', '申込み', '相手・物品・数量・代金が確定。「はい」で決まる'], ['多くの人に送る価格表・カタログ', 'ならない', '申込みの誘引（Art 14(2)）'], ['将来契約を結ぶ合意「価格と数量は来月決めましょう」', 'ならない', '大事な条件が後回しで、今は拘束される意思がない。契約でもない'], ['「当社は子会社を支える方針です」', 'ならない', '今の方針の表明（念書 letter of comfort。レッスン40）']] }
         },
         {
           title: '効力は到達で生じる（Art 15・16(1)）',
@@ -67,6 +67,8 @@
             ['offer', 'オファー', '申込み'],
             ['offeror / offeree', 'オフェラー / オフェリー', '申込者 / 申込みを受けた相手'],
             ['invitation to make offers', '', '申込みの誘引（英国法では invitation to treat）'],
+            ['quotation (of price)', 'クォテーション', '見積り。特定の相手に確定した条件なら申込み'],
+            ['agreement to agree', '', '将来契約を結ぶという合意。申込みでも契約でもない'],
             ['sufficiently definite', '', '十分に確定している'],
             ['withdrawal', 'ウィズドローアル', '（到達前の）取りやめ'],
             ['revocation', 'レヴォケーション', '（到達後の）撤回'],
@@ -77,7 +79,7 @@
         }
       ],
       quiz: [
-        { q: 'ドイツの会社が業界誌に「部品X、1個$3、在庫限り」と広告を出した。日本の会社がそれを見て「500個買います」とメールした。CISG ではどうなる？', choices: ['広告が申込みで、注文のメールで契約が成立する', '広告も注文も申込みの誘引で、まだ何も始まっていない', '広告は申込みの誘引で、日本の会社の注文が申込みになる', '広告を見た時点で契約が成立する'], answer: 2, explain: '不特定の人に向けた広告は、原則として申込みの誘引（Art 14(2)）。注文は特定の相手への確定した提案なので申込みになり、ドイツの会社が承諾すれば契約が成立する。広告を申込みとみるのは、広告主が申込みの意思をはっきり示した場合だけ。' },
+        { q: 'Which of the following is most likely to amount to an offer?', choices: ['A statement of the company\'s present policy', 'A quotation sent to a named buyer stating the goods, the quantity and the price', 'An agreement to enter into a contract at a later date', 'An advertisement in a trade journal'], answer: 1, explain: '特定の相手に、物品・数量・代金を決めて出した見積りは、「はい」の一言で契約が決まるので申込みになる（Art 14(1)）。今の方針の表明は、将来の約束ではないので申込みではない（念書と同じ考え方）。将来契約を結ぶという合意は、大事な条件を後回しにしていて今は拘束される意思がないので、申込みでも契約でもない。業界誌の広告は不特定の人に向けたもので、原則は申込みの誘引（Art 14(2)）。' },
         { q: 'Under the CISG, which of the following is required for a proposal to be sufficiently definite?', choices: ['It states the goods, the quantity, the price and the delivery date', 'It indicates the goods and expressly or implicitly fixes or makes provision for determining the quantity and the price', 'It is made in writing and signed by the offeror', 'It indicates the goods and the price, but the quantity may be left open'], answer: 1, explain: 'Art 14(1) が求めるのは、物品・数量・代金（決め方でもよい）。引渡しの日は要件ではない。書面や署名も不要（CISG は方式自由）。数量を空けたままでは確定とはいえない。' },
         { q: 'On 1 May, S sent an offer to B. The offer reached B on 3 May. B dispatched an acceptance on 6 May, which reached S on 9 May. A revocation sent by S reached B on 7 May. The offer was not irrevocable. Under the CISG, which statement is correct?', choices: ['No contract was concluded, because the revocation reached B before the acceptance reached S', 'A contract was concluded on 6 May, when B dispatched the acceptance', 'No contract was concluded, because the offer was withdrawn', 'A contract was concluded on 9 May, because the revocation reached B after B had dispatched the acceptance'], answer: 3, explain: '撤回は、相手が承諾を発信する前に届く必要がある（Art 16(1)）。7日の撤回は6日の発信より後なので無効。契約は承諾が到達した9日に成立する（Art 18(2)・23）。6日（発信の日）ではない。申込みはすでに到達していたので、取りやめ（withdrawal）でもない。' },
         { q: 'An offer states that it is irrevocable. A notice cancelling the offer reaches the offeree at the same time as the offer itself. What is the effect under the CISG?', choices: ['The offer is effectively withdrawn', 'The offer cannot be cancelled because it is irrevocable', 'The offer is revoked, but the offeror must pay damages', 'The offer remains open until the offeree replies'], answer: 0, explain: '撤回できない申込みでも、取りやめの通知が申込みより先か同時に届けば取りやめられる（Art 15(2)）。まだ効力が生じておらず、相手が頼る前だから。取消不能が効くのは、到達した後の撤回に対してだけ。' },
@@ -259,6 +261,7 @@
     { id: 'B015-4', lesson: 'B015', q: 'withdrawal と revocation の違いは？', a: '到達前に止める＝取りやめ（Art 15(2)）。到達後、承諾の発信前に止める＝撤回（Art 16(1)）' },
     { id: 'B015-5', lesson: 'B015', q: '撤回できない申込みになる2つの場合は？', a: '期限や取消不能を示した／撤回されないと信じるのがもっともで、相手がそれに頼って行動した（Art 16(2)）' },
     { id: 'B015-6', lesson: 'B015', q: '撤回できない申込みでも消えるのは？', a: '拒絶が申込者に到達した時（Art 17）。到達前の取りやめもできる' },
+    { id: 'B015-7', lesson: 'B015', q: 'Quotation vs price list vs agreement to agree?', a: 'Specific + definite quotation = offer; price list = invitation; agreement to agree = no contract' },
     { id: 'B016-1', lesson: 'B016', q: '沈黙は承諾になる？', a: 'それだけでは承諾にならない（Art 18(1)）。当事者間の慣行があれば別' },
     { id: 'B016-2', lesson: 'B016', q: '承諾の効力が生じ、契約が成立するのはいつ？', a: '同意の表示が申込者に到達した時（Art 18(2)・23）' },
     { id: 'B016-3', lesson: 'B016', q: 'CISG の「到達」とは？', a: '口頭で伝えた時、または本人・営業所・郵便の宛先（なければ常居所）に届けた時（Art 24）。読んだかは問わない' },
