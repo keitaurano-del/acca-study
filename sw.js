@@ -2,7 +2,7 @@
 // The block between BUILD:START and BUILD:END is rewritten by build-manifest.js
 // (cache name = hash of the cached files, file list = app files + content units).
 // BUILD:START
-var CACHE = "acca-study-eaada53f713d";
+var CACHE = "acca-study-d5dba8a9cc50";
 var FILES = [
   "./",
   "./index.html",
@@ -121,7 +121,7 @@ var FILES = [
 // BUILD:END
 
 self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
+  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES.map(function (f) { return new Request(f, { cache: 'reload' }); })); }).then(function () { return self.skipWaiting(); }));
 });
 
 self.addEventListener('activate', function (e) {

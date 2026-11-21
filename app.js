@@ -1030,8 +1030,20 @@
   }
 
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+    // A new version takes over → reload once so the user never stays on the old copy.
+    var hadController = !!navigator.serviceWorker.controller, reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!hadController || reloading) return;
+      reloading = true;
+      location.reload();
+    });
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('sw.js').catch(function () { /* offline cache unavailable */ });
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        // Check for a new version whenever the app comes back to the foreground.
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') reg.update().catch(function () {});
+        });
+      }).catch(function () { /* offline cache unavailable */ });
     });
   }
 })();
